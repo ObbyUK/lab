@@ -1,12 +1,13 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-const who = () => <div>Who you</div>;
+// Page
+import HomePage from './../pages/HomePage.jsx';
 
 export default (
   <div>
     <Switch>
-      <Route exact path="/" component={who} />
+      <Route exact path="/" component={HomePage} />
     </Switch>
   </div>
 );

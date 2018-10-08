@@ -24,7 +24,10 @@
     "react-router-dom": "^4.1.1",
     "react-router-redux": "^5.0.0-alpha.9",
     "redux": "^3.7.0",
+    "redux-observable": "^1.0.0",
     "rimraf": "^2.6.2",
+    "rxjs": "^6.3.3",
+    "rxjs-compat": "^6.3.3",
     "webpack": "^4.11.0",
     "webpack-merge": "^4.1.0"
   },
