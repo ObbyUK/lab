@@ -4,6 +4,8 @@ import { mergeAll } from 'ramda';
 
 import { viewAction } from './../appActions';
 
+import './homePage.less';
+
 const mapStateToProps = (state) => ({
 
 });
@@ -29,7 +31,7 @@ class HomePageContainer extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="homePage">
         Who what where
       </div>
     );
