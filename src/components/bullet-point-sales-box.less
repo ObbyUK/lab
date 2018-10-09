@@ -1,0 +1,42 @@
+@import './../styles/variables';
+
+.bullet-point-sales-box {
+  font-family: "Founders Grotesk", 'Arial', sans-serif;
+  letter-spacing: 0.3px;
+  
+  &__title {
+    font-size: 36px;
+    line-height: 1.2;
+    font-weight: 600;
+    margin: 0 0 20px;
+  }
+  
+  &__description {
+    font-size: @m-paragraph;
+    line-height: @m-paragraph-lh;
+    margin: 0 0 30px;
+  }
+  
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  &__point {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+  
+  &__point-image {
+    margin-right: 12px;
+  }
+  
+  &__point-text {
+    font-size: @m-paragraph;
+    line-height: @m-paragraph-lh;
+  }
+
+}

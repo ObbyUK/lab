@@ -43,7 +43,7 @@ class HomePageContainer extends React.Component {
           blurt="¡Increíble!"
           title="Ready to Learn Spanish"
           descirption="Tell us a bit more about what you're looking for"
-          src="https://obby.co.uk/images/home_passion.png"
+          src="https://obby.co.uk/icons/home_passion.png"
         />
         <TextList
           list={[
