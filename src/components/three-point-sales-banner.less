@@ -1,0 +1,75 @@
+@import './../styles/variables';
+
+.three-point-sales-banner {
+  text-align: center;
+  padding: 80px 20px;
+
+  &--white {
+    background-color: #fff;
+  }
+
+  &--cruise {
+    background-color: @cruise;
+  }
+
+  &__section {
+    max-width: @max-page-width;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: @m-heading-mobile;
+    line-height: 1;
+    font-weight: 400;
+    color: @ebony-clay;
+    // text-transform: uppercase;
+    margin: 0 0 66px;
+
+    @media (min-width:@sm-width) {
+      font-size: @m-heading;
+    }
+  }
+
+  &__points {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    padding-bottom: 20px;
+    width: 100%;
+    margin-bottom: 25px;
+
+    @media (min-width:@md-width) {
+      width: 33.33%;
+      padding: 0 15px;
+    }
+  }
+
+  &__item-image {
+    max-width: 150px;
+    margin: 0 auto 30px;
+  }
+
+  &__item-title {
+    font-family: "Founders Grotesk", sans-serif;
+    font-size: @sm-heading-mobile;
+    line-height: 1;
+    font-weight: 600;
+    color: @ebony-clay;
+    margin-bottom: 20px;
+
+    @media (min-width:@sm-width) {
+      font-size: @sm-heading;
+    }
+  }
+
+  &__item-description {
+    font-family: "Founders Grotesk", sans-serif;
+    font-size: @m-paragraph;
+    line-height: @m-paragraph-lh;
+    font-weight: 400;
+    color: @ebony-clay;
+  }
+}

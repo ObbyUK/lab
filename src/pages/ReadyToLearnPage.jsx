@@ -10,6 +10,7 @@ import BlankCard from './../components/BlankCard.jsx';
 import ImageBanner from '../components/ImageBanner.jsx';
 import Menu from '../components/Menu.jsx';
 import TextList from '../components/TextList.jsx';
+import ThreePointSalesBanner from '../components/ThreePointSalesBanner.jsx';
 
 const mapStateToProps = (state) => ({
 
@@ -37,7 +38,7 @@ class HomePageContainer extends React.Component {
   render () {
     return (
       <div className="ready-to-learn-page">
-        <Menu/>
+        
         <ImageBanner
           blurt="¡Increíble!"
           title="Ready to Learn Spanish"
