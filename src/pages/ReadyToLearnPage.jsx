@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { mergeAll } from 'ramda';
+import 'normalize-css';
 
 // Components
 import BlankCard from './../components/BlankCard.jsx';
 import ImageBanner from '../components/ImageBanner.jsx';
+import Menu from '../components/Menu.jsx';
 
 import { viewAction } from '../appActions';
 import './ready-to-learn-page.less';
@@ -35,6 +37,7 @@ class HomePageContainer extends React.Component {
   render () {
     return (
       <div className="ready-to-learn-page">
+        <Menu/>
         <ImageBanner
           blurt="¡Increíble!"
           title="Ready to Learn Spanish"

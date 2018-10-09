@@ -1,0 +1,29 @@
+@import './../styles/variables';
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.menu {
+  width: 100%;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 80px;
+
+  &__logo {
+    width: 81px;
+  }
+
+  &__button {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    letter-spacing: 0.3px;
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    cursor: pointer;
+  }
+}
