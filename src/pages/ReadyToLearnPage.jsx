@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { mergeAll } from 'ramda';
-import 'normalize-css';
+
 
 // Components
 import BlankCard from './../components/BlankCard.jsx';
