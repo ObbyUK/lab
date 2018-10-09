@@ -1,5 +1,5 @@
 const path = require('path');
-
+const express = require('express');
 const webpack = require('webpack');
 const morgan = require('morgan');
 
@@ -20,7 +20,9 @@ const dev = app => {
     })
   );
   app.use(require('webpack-hot-middleware')(compiler));
+  app.use(express.static('public'));
   app.use('*', (req, res, next) => {
+    console.log('happens on every request');
     let entry = path.join(compiler.outputPath, 'index.html');
     compiler.outputFileSystem.readFile(entry, (err, result) => {
       if (err) {

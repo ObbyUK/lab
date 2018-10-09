@@ -2,9 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { mergeAll } from 'ramda';
 
-import { viewAction } from './../appActions';
+// Components
+import BlankCard from './../components/BlankCard.jsx';
+import ImageBanner from '../components/ImageBanner.jsx';
 
-import './homePage.less';
+import { viewAction } from '../appActions';
+import './ready-to-learn-page.less';
 
 const mapStateToProps = (state) => ({
 
@@ -31,8 +34,16 @@ class HomePageContainer extends React.Component {
 
   render () {
     return (
-      <div className="homePage">
-        Who what where
+      <div className="ready-to-learn-page">
+        <ImageBanner
+          blurt="¡Increíble!"
+          title="Ready to Learn Spanish"
+          descirption="Tell us a bit more about what you're looking for"
+          src="https://obby.co.uk/images/home_passion.png"
+        />
+        <BlankCard>
+          Who you
+        </BlankCard>
       </div>
     );
   }
