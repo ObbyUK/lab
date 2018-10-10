@@ -1,0 +1,92 @@
+@import './../styles/variables';
+
+// This is not bem refactor at some point
+.footer {
+
+  font-family: "Founders Grotesk", sans-serif;
+  font-weight: 400;
+  background-color: @humming-bird;
+  padding: 0 16px 90px;
+  
+  @media (min-width:@md-width) {
+    padding: 0 16px;
+  }
+
+  &__cookie-toast {
+    position: fixed;
+    z-index: @cookie-z;
+    bottom: 20px;
+    left: 20px;
+  }
+
+  .container-fluid {
+    padding: 50px 0;
+    max-width: 1150px;
+
+    @media (max-width: 500px) {
+      padding: 20px;
+    }
+  }
+  
+  h3 {
+    font-family: "Founders Grotesk", sans-serif;
+    font-size: @sm-paragraph;
+    font-weight: 400;
+    line-height: @sm-paragraph-lh;
+    letter-spacing: 0.3px;
+    margin: 20px 40px 20px 0;
+    max-width: 440px;
+  }
+
+  img {
+    width: 100px;
+  }
+
+  .social-button {
+    margin-right: 15px;
+
+    img {
+      width: 20px;
+    }
+  }
+
+  .social-button:last-child {
+    margin-right: 0px;
+  }
+
+  .footer__links {
+    margin: 40px 0 0 20px;
+  }
+
+  .footer__links a {
+    color: @ebony-clay;
+  }
+
+  .footer__links h4 {
+    font-size: 20px;
+
+    @media (max-width: 400px) {
+      font-size: 14px;
+    }
+  }
+  
+  .footer__links--big h4 {
+    font-size: 25px;
+    font-family: "Founders Grotesk X Condensed";
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+
+  .footer__links--big ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .footer__links--big ul li {
+    margin-top: 5px;
+  }
+  
+  .footer__links--big a {
+    color: @ebony-clay;
+  }
+}

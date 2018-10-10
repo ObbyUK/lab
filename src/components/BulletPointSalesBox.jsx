@@ -13,7 +13,10 @@ export default (props) => (
     {isFullArray(props.points) &&
       <div className="bullet-point-sales-box__list">
         {props.points.map((point, index) => (
-          <div className="bullet-point-sales-box__point">
+          <div 
+            key={index} 
+            className="bullet-point-sales-box__point"
+          >
             <img 
               alt={point.text} 
               src={point.image} 

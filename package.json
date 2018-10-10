@@ -12,6 +12,7 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
+    "js-cookie": "^2.2.0",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
     "morgan": "^1.8.2",

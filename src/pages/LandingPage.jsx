@@ -6,8 +6,10 @@ import './landing-page.less';
 // Components
 import Menu from './../components/Menu.jsx';
 import ThreePointSalesBanner from './../components/ThreePointSalesBanner.jsx';
-import BulletPointSalesBox from '../components/BulletPointSalesBox.jsx';
 import ImageTextListBanner from '../components/ImageTextListBanner.jsx';
+import LanguageButton from '../components/LanguageButton.jsx';
+import ReviewsBanner from '../components/ReviewsBanner.jsx';
+import Footer from '../components/Footer.jsx';
 
 const mapStateToProps = (state) => ({
 
@@ -30,6 +32,45 @@ class LandingPageContainer extends React.Component {
     return (
       <div className="landing-page">
         <Menu/>
+        <div className="landing-page__header">
+          <img 
+            src="/images/header-image.jpg" 
+            alt=""
+            className="landing-page__header-image"
+          />
+          <div className="landing-page__header-text">
+            <h1 className="landing-page__header-title">
+              <span className="landing-page__header-title-part">
+                ¡Holá!
+              </span>
+              <span className="landing-page__header-title-part">
+                What are you
+              </span>
+              <span className="landing-page__header-title-part">
+                here to learn?
+              </span>
+            </h1>
+            <div className="landing-page__header-buttons">
+              <LanguageButton 
+                onClick={() => console.log('clicked flag button')}
+                text="Spanish"
+              />
+              <LanguageButton 
+                onClick={() => console.log('clicked flag button')}
+                text="German"
+              />
+              <LanguageButton 
+                onClick={() => console.log('clicked flag button')}
+                text="French"
+              />
+              <LanguageButton 
+                onClick={() => console.log('clicked flag button')}
+                text="Italian"
+              />
+            </div>
+            <div className="landing-page__header-price">Starting from £10/class</div>
+          </div>
+        </div>
         <ThreePointSalesBanner
           title="What you get"
           points={[
@@ -50,22 +91,7 @@ class LandingPageContainer extends React.Component {
             }
           ]}
         />
-        {/* <div className="landing-page__image-text-section">
-          <div className="landing-page__image-text-section-text">
-            <BulletPointSalesBox 
-              title="Money back guarantee!"
-              description="We ensure quality. If your class doesn't reach your expectations, we'll give your money back."
-              points={[
-                { image: "/icons/tick.svg", text: "Cancel at any time" },
-                { image: "/icons/tick.svg", text: "Full-refund" },
-                { image: "/icons/tick.svg", text: "We will help you find an alternative teacher that better suits your needs" },
-              ]}
-            />
-          </div>
-          <div className="landing-page__image-text-section-image">
-            <img className="landing-page__image" src="/images/money-back.png"/>
-          </div>
-        </div> */}
+        <ReviewsBanner />
         <ImageTextListBanner
           title="Money back guarantee!"
           description="We ensure quality. If your class doesn't reach your expectations, we'll give your money back."
@@ -109,8 +135,25 @@ class LandingPageContainer extends React.Component {
           ]}
         />
         <div className="landing-page__here-to-learn">
-          
+          <h2 className="landing-page__sub-title">What are you here to learn?</h2>
+          <LanguageButton 
+            onClick={() => console.log('clicked flag button')}
+            text="Spanish"
+          />
+          <LanguageButton 
+            onClick={() => console.log('clicked flag button')}
+            text="German"
+          />
+          <LanguageButton 
+            onClick={() => console.log('clicked flag button')}
+            text="French"
+          />
+          <LanguageButton 
+            onClick={() => console.log('clicked flag button')}
+            text="Italian"
+          />
         </div>
+        <Footer/>
       </div>
     );
   }

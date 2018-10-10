@@ -1,0 +1,57 @@
+@import './../styles/variables';
+@import './../styles/animations/popout';
+@import './../styles/animations/fadeIn';
+
+.cookie-toast {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  background-color: @ebony-clay;
+  border-radius: 4px;
+  padding: 20px;
+  width: 300px;
+  
+  &--hidden {
+    display: none;
+  }
+
+  &--sun {
+    background-color: @sun;
+  }
+  
+  &__text {
+    width: 300px;
+    letter-spacing: 0.3px;
+    font-family: "Founders Grotesk", sans-serif;
+    font-weight: 400;
+    font-size: @m-paragraph;
+    line-height: @m-paragraph-lh;
+    color: @humming-bird;
+    animation:popout 250ms, fadeIn 250ms;
+
+    &--sun {
+      color: @camelot;
+    }
+  }
+  
+  &__button {
+    width: 34px;
+    height: 34px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    g {
+      stroke: @humming-bird;
+    }
+    margin-bottom: 5px;
+    animation:popout 250ms, fadeIn 250ms;
+
+    &--sun {
+      g {
+        stroke: @ebony-clay;
+      }
+    }
+  }
+}
