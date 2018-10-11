@@ -1,5 +1,5 @@
 import { combineEpics } from 'redux-observable';
 
-import consoleLogOnPageViewEpic from './epics/consoleLogOnPageViewEpic';
+import redirectOnChooseLanguage from './epics/redirectOnChooseLanguage';
 
-export default combineEpics(consoleLogOnPageViewEpic);
+export default combineEpics(redirectOnChooseLanguage);

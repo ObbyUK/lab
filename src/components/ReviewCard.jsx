@@ -1,13 +1,8 @@
 import React from 'react';
 
 import './review-card.less';
+import { languageToFlagSvg } from './../constants/languages';
 
-const languageToFlagSvg = {
-  Spanish: "/icons/spain-flag.svg",
-  Italian: "/icons/italy-flag.svg",
-  French: "/icons/france-flag.svg",
-  German: "/icons/germany-flag.svg",
-};
 
 export default (props) => (
   <div className="review-card">

@@ -1,13 +1,7 @@
 import React from 'react';
 
 import './language-button.less';
-
-const languageToFlagSvg = {
-  Spanish: "/icons/spain-flag.svg",
-  Italian: "/icons/italy-flag.svg",
-  French: "/icons/france-flag.svg",
-  German: "/icons/germany-flag.svg",
-};
+import { languageToFlagSvg } from './../constants/languages';
 
 export default (props) => (
   <div 
@@ -15,7 +9,7 @@ export default (props) => (
     onClick={props.onClick}
   >
     <img 
-      src={languageToFlagSvg[props.flag||props.text]}
+      src={languageToFlagSvg[props.language||props.text]}
       alt={props.text} 
       className="language-button__flag"
     />

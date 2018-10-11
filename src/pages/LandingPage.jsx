@@ -3,6 +3,14 @@ import { connect } from 'react-redux';
 import { mergeAll } from 'ramda';
 
 import './landing-page.less';
+// Actions
+import { 
+  chooseLanguageAction,
+  viewLandingPageAction 
+} from './../appActions.js';
+// Constants
+import reviews from './../constants/reviews';
+import { languagesValueAndName } from './../constants/languages';
 // Components
 import Menu from './../components/Menu.jsx';
 import ThreePointSalesBanner from './../components/ThreePointSalesBanner.jsx';
@@ -16,7 +24,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
-
+  viewLandingPage: () => dispatch(viewLandingPageAction()),
+  chooseLanguage: (language) => dispatch(chooseLanguageAction(language))
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
@@ -28,6 +37,11 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
 ]);
 
 class LandingPageContainer extends React.Component {
+
+  componentDidMount() {
+    this.props.viewLandingPage();
+  }
+
   render () {
     return (
       <div className="landing-page">
@@ -51,22 +65,14 @@ class LandingPageContainer extends React.Component {
               </span>
             </h1>
             <div className="landing-page__header-buttons">
-              <LanguageButton 
-                onClick={() => console.log('clicked flag button')}
-                text="Spanish"
-              />
-              <LanguageButton 
-                onClick={() => console.log('clicked flag button')}
-                text="German"
-              />
-              <LanguageButton 
-                onClick={() => console.log('clicked flag button')}
-                text="French"
-              />
-              <LanguageButton 
-                onClick={() => console.log('clicked flag button')}
-                text="Italian"
-              />
+              {languagesValueAndName.map(({ value, name }) => (
+                <LanguageButton 
+                  key={value}
+                  onClick={() => this.props.chooseLanguage(value)}
+                  language={value}
+                  text={name}
+                />
+              ))}
             </div>
             <div className="landing-page__header-price">Starting from £10/class</div>
           </div>
@@ -92,26 +98,7 @@ class LandingPageContainer extends React.Component {
           ]}
         />
         <ReviewsBanner
-          reviews={[
-            {
-              image: '/images/astrid-avatar.jpg',
-              name: 'Astrid',
-              language: 'Italian',
-              text: 'The company I work for just opened an office in Italy, and it felt natural to learn a bit of italian to better communicate with my italian colleagues. Doing this on Obby felt natural, and Vicenzo is definitely one of the nicest and most patient teachers ever. I would recommend this to anyone!',
-            },
-            {
-              image: '/images/astrid-avatar.jpg',
-              name: 'Sarah',
-              language: 'Spanish',
-              text: 'The company I work for just opened an office in Italy, and it felt natural to learn a bit of italian to better communicate with my italian colleagues. Doing this on Obby felt natural, and Vicenzo is definitely one of the nicest and most patient teachers ever. I would recommend this to anyone!',
-            },
-            {
-              image: '/images/astrid-avatar.jpg',
-              name: 'Julie',
-              language: 'French',
-              text: 'The company I work for just opened an office in Italy, and it felt natural to learn a bit of italian to better communicate with my italian colleagues. Doing this on Obby felt natural, and Vicenzo is definitely one of the nicest and most patient teachers ever. I would recommend this to anyone!',
-            }
-          ]}
+          reviews={reviews}
         />
         <ImageTextListBanner
           title="Money back guarantee!"
@@ -157,22 +144,14 @@ class LandingPageContainer extends React.Component {
         />
         <div className="landing-page__here-to-learn">
           <h2 className="landing-page__sub-title">What are you here to learn?</h2>
-          <LanguageButton 
-            onClick={() => console.log('clicked flag button')}
-            text="Spanish"
-          />
-          <LanguageButton 
-            onClick={() => console.log('clicked flag button')}
-            text="German"
-          />
-          <LanguageButton 
-            onClick={() => console.log('clicked flag button')}
-            text="French"
-          />
-          <LanguageButton 
-            onClick={() => console.log('clicked flag button')}
-            text="Italian"
-          />
+          {languagesValueAndName.map(({ value, name }) => (
+            <LanguageButton 
+              key={value}
+              onClick={() => this.props.chooseLanguage(value)}
+              language={value}
+              text={name}
+            />
+          ))}
         </div>
         <Footer/>
       </div>

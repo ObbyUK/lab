@@ -16,8 +16,8 @@ export default (props) => (
       {props.title &&
         <h1 className="image-banner__title">{props.title}</h1>
       }
-      {props.descirption &&
-        <p className="image-banner__description">{props.descirption}</p>
+      {props.description &&
+        <p className="image-banner__description">{props.description}</p>
       }
     </div>
   </div>
