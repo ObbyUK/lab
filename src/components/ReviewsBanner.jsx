@@ -18,7 +18,7 @@ export default class extends React.Component {
         <div className="reviews-banner__title">Loved by everyone</div>
         <div className="reviews-banner__description">Our classes are rated 5⭐️ by people all across London. </div>
 
-        <div className="reviews-banner__review-wrap">
+        <div className="reviews-banner__review-wrap container">
           <div className="reviews-banner__review-button">
             <Icon icon={ArrowLeft} height={38}/>
           </div>

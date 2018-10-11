@@ -9,7 +9,12 @@
     display: flex;
     align-items: center;
     width: 100%;
-    height: 700px;
+    height: 500px;
+    margin-bottom: -70px;
+    @media (min-width:@sm-width) {
+      margin-bottom: 0;
+      height: 700px;
+    }
   }
 
   &__header-image {
@@ -21,18 +26,26 @@
   }
 
   &__header-text {
-    margin-left: 80px;
+    width: 100%;
+    padding-left: 25px;
+    // margin-left: 80px;
   }
 
   &__header-title {
     display: flex;
     flex-wrap: wrap;
     font-family: "Founders Grotesk", 'Arial', sans-serif;
-    font-size: @l-heading;
     line-height: 1;
     font-weight: 600;
-    width: 400px;
+    width: 100%;
     margin-bottom: 45px;
+    font-size: @l-heading-mobile;
+    
+    @media (min-width:@sm-width) {
+      padding-left: 0px;
+      width: 400px;
+      font-size: @l-heading;
+    }
   }
 
   &__header-title-part {
@@ -40,7 +53,10 @@
   }
 
   &__header-buttons {
-    margin-bottom: 60px;
+    margin-bottom: 10px;
+    @media (min-width:@sm-width) {
+      margin-bottom: 60px;
+    }
   }
 
   &__header-price {
@@ -50,14 +66,12 @@
     color: @gray;
   }
 
-  
-  
   &__here-to-learn {
     background-color: @astra;
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
-    padding: 95px 0;
+    padding: 95px 10px;
   }
 
   &__sub-title {
@@ -69,6 +83,7 @@
     font-size: 36px;
     line-height: 1.2;
     margin-bottom: 44px;
+    font-weight: 600;
   }
 
   &__language-button {}

@@ -4,6 +4,7 @@
 
   font-family: "Founders Grotesk", 'Arial', sans-serif;
   display: flex;
+  flex-wrap: wrap;
   letter-spacing: 0.3px;
   width: 100%;
   background-color: white;
@@ -12,12 +13,21 @@
   line-height: @l-paragraph-lh;
   border: 1px solid @mercury;
   box-shadow: 0 2px 4px 0 rgba(191, 191, 191, 0.5);
+  justify-content: center;
+
+  @media (min-width:@md-width) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
   
   &__image-wrap {
     position: relative;
     width: 120px;
     height: 120px;
-    margin-right: 50px;
+
+    @media (min-width:@md-width) {
+      margin-right: 50px;
+    }
   }
   
   &__flag {
@@ -31,12 +41,24 @@
   }
   
   &__text-wrap {
-    flex: 1;
+    width: 100%;
+    @media (min-width:@md-width) {
+      flex: 1;
+    }
   }
   
   &__name-wrap {
     display: flex;
-    margin-bottom: 8px;
+    justify-content: center;
+    font-size: @sm-paragraph;
+    line-height: @sm-paragraph-lh;
+    display: flex;
+    margin: 8px 0;
+    @media (min-width:@md-width) {
+      justify-content: flex-start;
+      font-size: @m-paragraph;
+      line-height: @m-paragraph-lh;
+    }
   }
 
   &__name {

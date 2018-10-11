@@ -6,7 +6,7 @@ import BulletPointSalesBox from './BulletPointSalesBox.jsx';
 export default (props) => (
   <div className={`image-text-list-banner ${props.reverse && 'image-text-list-banner--reverse'}`}>
     
-    <div className="image-text-list-banner__image-wrap">
+    <div className="image-text-list-banner__image-wrap col-sm-12 col-md-6">
       <img 
         className="image-text-list-banner__image" 
         alt={props.title} 
@@ -14,7 +14,7 @@ export default (props) => (
       />
     </div>
 
-    <div className="image-text-list-banner__text">
+    <div className="image-text-list-banner__text col-sm-12 col-md-6">
       <BulletPointSalesBox 
         title={props.title}
         description={props.description}

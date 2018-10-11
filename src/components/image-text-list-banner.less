@@ -4,18 +4,27 @@
 
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
+
+  @media (min-width:@md-width) {
+    flex-wrap: nowrap;
+  }
 
   &--reverse {
     flex-direction: row-reverse;
   }
 
   &__text {
-    padding: 120px 80px;
-    width: 50%;
+    padding: 40px;
+    @media (min-width:@md-width) {
+      padding: 120px 80px;
+    }
+    // width: 50%;
   }
 
   &__image-wrap {
-    width: 50%;
+    padding: 0;
+    // width: 50%;
   }
 
   &__image {
