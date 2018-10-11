@@ -29,9 +29,13 @@ config.module = {
     },
     {
       test: /\.css$/,
-      exclude: /node_modules/,
-      use: [MiniCssExtractPlugin.loader].concat(cssLoaders)
+      use: [MiniCssExtractPlugin.loader].concat(['style-loader', 'css-loader',])
     }
+    // {
+    //   test: /\.css$/,
+    //   exclude: /node_modules/,
+    //   use: [MiniCssExtractPlugin.loader].concat(cssLoaders)
+    // }
   ]
 };
 

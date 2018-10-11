@@ -21,7 +21,7 @@ export default () => (
       <div className='row'>
         <div className="col-lg-6 col-md-5 col-sm-12">
           <div className="col-xs-12">
-            <img src="/logo/logo-navy.svg" alt="Obby - Discover London's favourite courses, classes and workshops." title="Obby - Discover London's favourite courses, classes and workshops." className="img-responsive footer-logo" />
+            <img src="/icons/logo-navy.svg" alt="Obby - Discover London's favourite courses, classes and workshops." title="Obby - Discover London's favourite courses, classes and workshops." className="img-responsive footer-logo" />
             <h3>With passionate teachers and inspiring environments, Obby is on a mission to get everyone to rethink learning. From pottery to salsa, piano to Spanish, discover the best classes, courses and workshops London has to offer.</h3>
           </div>
 
@@ -56,16 +56,16 @@ export default () => (
         <div className='d-block d-md-none col-xs-12 footer__links'>
           <div className='row'>
             <div className='col'>
-              <a href="/about-us"><h4>About</h4></a>
+              <a href="https://obby.co.uk/about-us"><h4>About</h4></a>
             </div>
             <div className='col'>
-              <a href="/blog"><h4>Blog</h4></a>
+              <a href="https://obby.co.uk/blog"><h4>Blog</h4></a>
             </div>
             <div className='col'>
-              <a href="/contact-us"><h4>Contact</h4></a>
+              <a href="https://obby.co.uk/contact-us"><h4>Contact</h4></a>
             </div>
             <div className='col'>
-              <a href="/terms"><h4>Terms</h4></a>
+              <a href="https://obby.co.uk/terms"><h4>Terms</h4></a>
             </div>
           </div>
         </div>
@@ -75,19 +75,19 @@ export default () => (
             <div className="col-xs-6 col-sm-4 footer__link--big">
               <h4>Company</h4>
               <ul>
-                <li><a href="/about-us">About us</a></li>
-                <li><a href="/contact-us">Contact us</a></li>
-                <li><a href="/terms">Terms</a></li>
+                <li><a href="https://obby.co.uk/about-us">About us</a></li>
+                <li><a href="https://obby.co.uk/contact-us">Contact us</a></li>
+                <li><a href="https://obby.co.uk/terms">Terms</a></li>
               </ul>
             </div>
 
             <div className="col-xs-6 col-sm-4 footer__link--big">
               <h4>Discover</h4>
               <ul>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/group-workshops/london">For groups</a></li>
-                <li><a href="/gift">Gift cards</a></li>
-                <li><a href="/invite">Give & get £10</a></li>
+                <li><a href="https://obby.co.uk/blog">Blog</a></li>
+                <li><a href="https://obby.co.uk/group-workshops/london">For groups</a></li>
+                <li><a href="https://obby.co.uk/gift">Gift cards</a></li>
+                <li><a href="https://obby.co.uk/invite">Give & get £10</a></li>
               </ul>
             </div>
 

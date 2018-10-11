@@ -8,7 +8,7 @@ const cssLoaders = [
     loader: 'css-loader',
     options: {
       importLoaders: 1,
-      modules: true,
+      modules: false,
       localIdentName: identName
     }
   },
