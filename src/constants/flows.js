@@ -1,12 +1,13 @@
 import languages from './languages';
+import skillLevels, { levelNames } from './skillLevels';
 
 var flows = {};
 
 flows[languages.SPANISH] = {
   levelOptions: [
     {
-      title: "Beginner",
-      value: "begginer",
+      title: levelNames.BEGGINER,
+      value: skillLevels.BEGGINER,
       description: "You know almoust nothing in Spanish",
       sessionsPreview: [
         {
@@ -24,14 +25,14 @@ flows[languages.SPANISH] = {
       ]
     },
     {
-      title: "Intermediate",
-      value: "intermediate",
+      title: levelNames.INTERMEDIATE,
+      value: skillLevels.INTERMEDIATE,
       description: "You can have a decent conversation in Spanish",
       sessionsPreview: []
     },
     {
-      title: "Advanced",
-      value: "advanced",
+      title: levelNames.ADVANCED,
+      value: skillLevels.ADVANCED,
       description: "You’re almost there, but want to get perfect.",
       sessionsPreview: []
     }

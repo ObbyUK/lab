@@ -2,25 +2,29 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { mergeAll } from 'ramda';
 
-// Constants
-import flows from './../constants/flows.js';
+// Lib
+import getUrlParamaters from './../lib/getUrlParamaters';
 // Actions & Style
-import { viewAction } from '../appActions';
+import { 
+  viewReadyToLearnPageAction,
+  selectSkillLevelAction
+} from '../appActions';
 import './ready-to-learn-page.less';
 // Components
 import Menu from '../components/Menu.jsx';
 import Footer from '../components/Footer.jsx';
 import BlankCard from './../components/BlankCard.jsx';
 import ImageBanner from '../components/ImageBanner.jsx';
-import TextList from '../components/TextList.jsx';
 import SkillLevelRadios from '../components/SkillLevelRadios.jsx';
 
 const mapStateToProps = (state) => ({
-  flow: state.app.flow
+  flow: state.app.flow,
+  skillLevel: state.app.skillLevel
 });
 
-const mapDispatchToProps = (dispatch, state) => ({
-  viewPage: () => dispatch(viewAction())
+const mapDispatchToProps = (dispatch) => ({
+  viewReadyToLearnPageAction: (urlParamaters) => dispatch(viewReadyToLearnPageAction(urlParamaters)),
+  selectSkillLevel: (skillLevel) => dispatch(selectSkillLevelAction(skillLevel)),
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
@@ -34,6 +38,7 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
 class HomePageContainer extends React.Component {
 
   componentDidMount() {
+    this.props.viewReadyToLearnPageAction(getUrlParamaters());
   }
 
   render () {
@@ -51,11 +56,12 @@ class HomePageContainer extends React.Component {
         <div className="ready-to-learn-page__body container">
           <BlankCard>
             <SkillLevelRadios
-              selected={this.props.flow.levelOptions[0].value}
+              selected={this.props.skillLevel}
               radios={this.props.flow.levelOptions}
+              onChange={this.props.selectSkillLevel.bind(this)}
             />
           </BlankCard>
-          <TextList
+          {/* <TextList
             list={[
               { title: 'Pronouncinations & Grammar', text: "You'll learn how the spanish alphabet is all something something"},
               { title: 'Pronouncinations & Grammar', text: "You'll learn how the spanish alphabet is all something something"},
@@ -71,7 +77,7 @@ class HomePageContainer extends React.Component {
                 { title: 'Pronouncinations & Grammar', text: "You'll learn how the spanish alphabet is all something something"}
               ]}
             />
-          </BlankCard>
+          </BlankCard> */}
         </div>
         <Footer />
       </div>
