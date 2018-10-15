@@ -15,7 +15,7 @@ import Menu from '../components/Menu.jsx';
 import Footer from '../components/Footer.jsx';
 import BlankCard from './../components/BlankCard.jsx';
 import ImageBanner from '../components/ImageBanner.jsx';
-import SkillLevelRadios from '../components/SkillLevelRadios.jsx';
+import BigRadios from '../components/BigRadios.jsx';
 
 const mapStateToProps = (state) => ({
   flow: state.app.flow,
@@ -55,7 +55,7 @@ class HomePageContainer extends React.Component {
         </div>
         <div className="ready-to-learn-page__body container">
           <BlankCard>
-            <SkillLevelRadios
+            <BigRadios
               selected={this.props.skillLevel}
               radios={this.props.flow.levelOptions}
               onChange={this.props.selectSkillLevel.bind(this)}
