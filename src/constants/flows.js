@@ -1,9 +1,11 @@
 import languages from './languages';
 import skillLevels, { levelNames } from './skillLevels';
+import timeOfDay, { timeOfDayNames } from './timeOfDay';
 
 var flows = {};
 
 flows[languages.SPANISH] = {
+  famousPerson: 'Antonio Banderas',
   levelOptions: [
     {
       title: levelNames.BEGGINER,
@@ -63,6 +65,22 @@ flows[languages.SPANISH] = {
       ]
     }
   ],
+  timeOptions: [
+    {
+      title: timeOfDayNames.DAYTIME,
+      value: timeOfDay.DAYTIME,
+      description: "9AM - 5PM",
+    },
+    {
+      title: timeOfDayNames.EVENING,
+      value: timeOfDay.EVENING,
+      description: "5PM onwards",
+    },
+    {
+      title: timeOfDayNames.WEEKENDS,
+      value: timeOfDay.WEEKENDS,
+    }
+  ]
 };
 
 export default flows;

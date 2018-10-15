@@ -7,7 +7,8 @@ import getUrlParamaters from './../lib/getUrlParamaters';
 // Actions & Style
 import { 
   viewReadyToLearnPageAction,
-  selectSkillLevelAction
+  selectSkillLevelAction,
+  selectTimeAction
 } from '../appActions';
 import './ready-to-learn-page.less';
 // Components
@@ -19,12 +20,14 @@ import BigRadios from '../components/BigRadios.jsx';
 
 const mapStateToProps = (state) => ({
   flow: state.app.flow,
-  skillLevel: state.app.skillLevel
+  skillLevel: state.app.skillLevel,
+  time: state.app.time,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   viewReadyToLearnPageAction: (urlParamaters) => dispatch(viewReadyToLearnPageAction(urlParamaters)),
   selectSkillLevel: (skillLevel) => dispatch(selectSkillLevelAction(skillLevel)),
+  selectTime: (time) => dispatch(selectTimeAction(time))
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
@@ -54,30 +57,36 @@ class HomePageContainer extends React.Component {
           />
         </div>
         <div className="ready-to-learn-page__body container">
-          <BlankCard>
-            <BigRadios
-              selected={this.props.skillLevel}
-              radios={this.props.flow.levelOptions}
-              onChange={this.props.selectSkillLevel.bind(this)}
-            />
-          </BlankCard>
-          {/* <TextList
-            list={[
-              { title: 'Pronouncinations & Grammar', text: "You'll learn how the spanish alphabet is all something something"},
-              { title: 'Pronouncinations & Grammar', text: "You'll learn how the spanish alphabet is all something something"},
-              { title: 'Pronouncinations & Grammar', text: "You'll learn how the spanish alphabet is all something something"}
-            ]}
-          />
-          <BlankCard>
-            <TextList
-              isNumbered={true}
-              list={[
-                { title: 'Pronouncinations & Grammar', text: "You'll learn how the spanish alphabet is all something something"},
-                { title: 'Pronouncinations & Grammar', text: "You'll learn how the spanish alphabet is all something something"},
-                { title: 'Pronouncinations & Grammar', text: "You'll learn how the spanish alphabet is all something something"}
-              ]}
-            />
-          </BlankCard> */}
+          <div className="ready-to-learn-page__card">
+            <BlankCard>
+              <h2 className="ready-to-learn-page__card-title">
+                What's your level of expertise?
+              </h2>
+              <p className="ready-to-learn-page__card-description">
+                On a scale from 1 to {this.props.flow.famousPerson}, how good are you?
+              </p>
+              <BigRadios
+                selected={this.props.skillLevel}
+                radios={this.props.flow.levelOptions}
+                onChange={this.props.selectSkillLevel.bind(this)}
+              />
+            </BlankCard>
+          </div>
+          <div className="ready-to-learn-page__card">
+            <BlankCard>
+              <h2 className="ready-to-learn-page__card-title">
+                When are you available?
+              </h2>
+              <p className="ready-to-learn-page__card-description">
+                We know your time is important, so let us know your availability.
+              </p>
+              <BigRadios
+                selected={this.props.time}
+                radios={this.props.flow.timeOptions}
+                onChange={this.props.selectTime.bind(this)}
+              />
+            </BlankCard>
+          </div>
         </div>
         <Footer />
       </div>

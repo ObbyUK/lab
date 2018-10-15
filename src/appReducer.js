@@ -15,6 +15,7 @@ const viewingReducer = cond([
 
 const anwseringQuestionsReducer = cond([
   [isActionType(appActions.SELECT_SKILL_LEVEL), selectSkillLevel],
+  [isActionType(appActions.SELECT_TIME), selectTime],
   [T, identity]
 ]);
 
@@ -37,7 +38,6 @@ function viewLandingPage(state) {
 }
 
 function viewReadyToLearnPage(state, { payload }) {
-  console.log('i was indeed called');
   return pipe(
     assoc('selectedLanguage', payload.language),
     assoc('flow', flows[payload.language]),
@@ -56,5 +56,11 @@ function chooseLanguage(state, { payload }) {
 function selectSkillLevel(state, { payload }) {
   return pipe(
     assoc('skillLevel', payload.skillLevel)
+  )(state);
+}
+
+function selectTime(state, { payload }) {
+  return pipe(
+    assoc('time', payload.time)
   )(state);
 }

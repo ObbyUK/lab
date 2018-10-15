@@ -12,6 +12,7 @@ export default class AppState {
     this.status = appStatuses.VIEWING;
     this.selectedLanguage = languages.SPANISH;
     this.flow = flows[languages.SPANISH];
-    this.skillLevel = skillLevels.BEGGINER
+    this.skillLevel = null;
+    this.time = null;
   }
 }

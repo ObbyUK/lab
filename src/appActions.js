@@ -3,6 +3,7 @@ const actions = {
   VIEW_READY_TO_LEARN_PAGE: 'readyToLearnPageHasBeenViewed',
   CHOOSE_LANGUAGE: 'userSelectsLanguageToLearn',
   SELECT_SKILL_LEVEL: 'userSelectsSkillLevel',
+  SELECT_TIME: 'userSelectsTime',
 };
 
 export const viewLandingPageAction = () => ({
@@ -25,6 +26,13 @@ export const selectSkillLevelAction = (skillLevel) => ({
   type: actions.SELECT_SKILL_LEVEL,
   payload: {
     skillLevel
+  }
+});
+
+export const selectTimeAction = (time) => ({
+  type: actions.SELECT_TIME,
+  payload: {
+    time
   }
 });
 
