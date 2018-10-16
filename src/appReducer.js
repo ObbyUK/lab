@@ -23,6 +23,9 @@ const anwseringQuestionsReducer = cond([
 ]);
 
 const enteringContactInformationReducer = cond([
+  [isActionType(appActions.TYPE_NAME), typeName],
+  [isActionType(appActions.TYPE_EMAIL), typeEmail],
+  [isActionType(appActions.SUBMIT), submit],
   [T, identity]
 ]);
 
@@ -83,6 +86,30 @@ function submitQuestions(state) {
   return assoc(
     'status', 
     appStatuses.ENTERING_CONTACT_INFORMATION, 
+    state
+  );
+}
+
+function typeName(state, { payload }) {
+  return assoc(
+    'name', 
+    payload.name, 
+    state
+  );
+}
+
+function typeEmail(state, { payload }) {
+  return assoc(
+    'email',
+    payload.email,
+    state
+  );
+}
+
+function submit(state) {
+  return assoc(
+    'status',
+    appStatuses.SUBMITTED,
     state
   );
 }

@@ -6,6 +6,9 @@ const actions = {
   SELECT_TIME: 'userSelectsTime',
   TOGGLE_LOCATION: 'userTogglesLocation',
   SUBMIT_QUESTIONS: 'userSubmitsClassPereference',
+  TYPE_NAME: 'userTypesName',
+  TYPE_EMAIL: 'userTypesEmail',
+  SUBMIT: 'userSubmitsEmailAndInformation',
 };
 
 export const viewLandingPageAction = () => ({
@@ -47,6 +50,25 @@ export const toggleLocationAction = (location) => ({
 
 export const submitQuestionsAction = () => ({
   type: actions.SUBMIT_QUESTIONS
+});
+
+export const typeNameAction = (name) => ({
+  type: actions.TYPE_NAME,
+  payload: {
+    name
+  }
+});
+
+export const typeEmailAction = (email) => ({
+  type: actions.TYPE_EMAIL,
+  payload: {
+    email
+  }
+});
+
+export const submitAction = (details) => ({
+  type: actions.SUBMIT,
+  payload: details
 });
 
 export default actions;

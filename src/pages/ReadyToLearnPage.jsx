@@ -5,6 +5,7 @@ import { propEq, find, mergeAll, contains } from 'ramda';
 // Lib & Constants
 import getUrlParamaters from './../lib/getUrlParamaters';
 import isFullArray from './../lib/isFullArray';
+import isValidEmail from './../lib/isValidEmail';
 import String__UpperCaseFirstLetter from './../lib/String__UpperCaseFirstLetter';
 // Actions & Style
 import { 
@@ -12,7 +13,10 @@ import {
   selectSkillLevelAction,
   selectTimeAction,
   toggleLocationAction,
-  submitQuestionsAction
+  submitQuestionsAction,
+  typeNameAction,
+  typeEmailAction,
+  submitAction
 } from '../appActions';
 import { appStatuses } from './../AppState';
 import './ready-to-learn-page.less';
@@ -35,6 +39,8 @@ const mapStateToProps = (state) => ({
   time: state.app.time,
   locations: state.app.locations,
   status: state.app.status,
+  name: state.app.name,
+  email: state.app.email,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -42,7 +48,10 @@ const mapDispatchToProps = (dispatch) => ({
   selectSkillLevel: (skillLevel) => dispatch(selectSkillLevelAction(skillLevel)),
   selectTime: (time) => dispatch(selectTimeAction(time)),
   toggleLocation: (location) => dispatch(toggleLocationAction(location)),
-  submitQuestions: () => dispatch(submitQuestionsAction())
+  submitQuestions: () => dispatch(submitQuestionsAction()),
+  typeName: (event) => dispatch(typeNameAction(event.target.value)),
+  typeEmail: (event) => dispatch(typeEmailAction(event.target.value)),
+  submit: (details) => dispatch(submitAction(details))
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
@@ -82,6 +91,13 @@ class HomePageContainer extends React.Component {
     );
   }
 
+  isContactInformationProvided() {
+    return (
+      isFullArray(this.props.name) &&
+      isValidEmail(this.props.email)
+    );
+  }
+
   render () {
     return (
       <div className="ready-to-learn-page">
@@ -97,102 +113,8 @@ class HomePageContainer extends React.Component {
             src="/images/header_flow.png"
           />
         </div>
-
-        {/* {this.props.status === appStatuses.ENTERING_CONTACT_INFORMATION && */}
-        <div className="ready-to-learn-page__body container">
-          <div className="row">
-            {/* EMAIL DETAILS */}
-            <div className="ready-to-learn-page__card col-lg-8">
-              <BlankCard>
-                <h2 className="ready-to-learn-page__card-title">
-                  Tell us where to find you
-                </h2>
-                <p className="ready-to-learn-page__card-description">
-                  We’ll be in touch to match you with the right teacher and schedule your first class.
-                </p>
-                {/* NAME */}
-                <div className="ready-to-learn-page__field">
-                  <div className="ready-to-learn-page__label">Name</div>
-                  <div className="ready-to-learn-page__input">
-                    <Input
-                      placeholder="Frida Khalo"
-                    />
-                  </div>
-                </div>
-                {/* EMAIL */}
-                <div className="ready-to-learn-page__field">
-                  <div className="ready-to-learn-page__label">Email</div>
-                  <div className="ready-to-learn-page__input">
-                    <Input
-                      placeholder="frida@khalo.com"
-                    />
-                  </div>
-                </div>
-                <div className="ready-to-learn-page__continue-form">
-                  <div className="ready-to-learn-page__button">
-                    <PrimaryButton
-                      size="huge"
-                      text="Start learning"
-                      onClick={console.log}
-                    />
-                  </div>
-                </div>
-              </BlankCard>
-            </div>
-            {/* PAYMENT SUMMARY */}
-            <div className="ready-to-learn-page__card col-lg-4">
-              <BlankCard>
-                <h2 className="ready-to-learn-page__card-title">
-                  8 classes
-                </h2>
-                <PriceSum 
-                  calculation="8 x £20"
-                  total="£160"
-                />
-                <div className="ready-to-learn-page__summary-section">
-                  <ImageBulletPoints
-                    size="small"
-                    points={[
-                      {
-                        icon: BarChart,
-                        text: String__UpperCaseFirstLetter(this.props.skillLevel),
-                      },
-                      {
-                        icon: Location,
-                        text: this.props.locations.join(', '),
-                      },
-                      {
-                        icon: Clock,
-                        text: String__UpperCaseFirstLetter(this.props.time)
-                      }
-                    ]}
-                  />
-                </div>
-                <div className="ready-to-learn-page__summary-section">
-                  <ImageBulletPoints
-                    points={[
-                      {
-                        image: "/icons/tick.svg",
-                        text: "Money back guarantee",
-                      },
-                      {
-                        image: "/icons/instalments.svg",
-                        text: "Pay in installments",
-                      },
-                      {
-                        image: "/icons/study-groups-blue.svg",
-                        text: "Learn with people on the same journey",
-                      }
-                    ]}
-                  />
-                </div>
-              </BlankCard>
-            </div>
-          </div>
-        </div>
-        {/* } */}
         
-        {/* ANWSERING QUESTIONS */}
+        {/* SCREEN 1: ANWSERING QUESTIONS */}
         {this.props.status === appStatuses.ANWSERING_QUESTIONS &&
           <div className="ready-to-learn-page__body container">
             {/* SKILL LEVEL CARD */}
@@ -272,25 +194,130 @@ class HomePageContainer extends React.Component {
               </BlankCard>
             </div>
             <div className="ready-to-learn-page__continue-row">
-              {!this.areAllQuestionsAnwsered() &&
-                <div className="ready-to-learn-page__button">
-                  <PrimaryButton 
-                    size="huge"
-                    text="Please anwser all questions to continue..."
-                    disabled={true}
-                    onClick={this.props.submitQuestions.bind(this)}
+              <div className="ready-to-learn-page__button">
+                <PrimaryButton 
+                  size="huge"
+                  text="Continue"
+                  disabled={this.areAllQuestionsAnwsered()}
+                  onClick={this.props.submitQuestions.bind(this)}
+                />
+              </div>
+            </div>
+          </div>
+        }
+
+        {/* SCREEN 2: CONTACT INFORMATION */}
+        {this.props.status === appStatuses.ENTERING_CONTACT_INFORMATION &&
+          <div className="ready-to-learn-page__body container">
+            <div className="row">
+              {/* EMAIL DETAILS */}
+              <div className="ready-to-learn-page__card col-lg-8">
+                <BlankCard>
+                  <h2 className="ready-to-learn-page__card-title">
+                    Tell us where to find you
+                  </h2>
+                  <p className="ready-to-learn-page__card-description">
+                    We’ll be in touch to match you with the right teacher and schedule your first class.
+                  </p>
+                  {/* NAME */}
+                  <div className="ready-to-learn-page__field">
+                    <div className="ready-to-learn-page__label">Name</div>
+                    <div className="ready-to-learn-page__input">
+                      <Input
+                        placeholder="Frida Khalo"
+                        value={this.props.name}
+                        onChange={this.props.typeName.bind(this)}
+                      />
+                    </div>
+                  </div>
+                  {/* EMAIL */}
+                  <div className="ready-to-learn-page__field">
+                    <div className="ready-to-learn-page__label">Email</div>
+                    <div className="ready-to-learn-page__input">
+                      <Input
+                        placeholder="frida@khalo.com"
+                        value={this.props.email}
+                        onChange={this.props.typeEmail.bind(this)}
+                      />
+                    </div>
+                  </div>
+                  <div className="ready-to-learn-page__continue-form">
+                    <div className="ready-to-learn-page__button">
+                      <PrimaryButton
+                        size="huge"
+                        text="Start learning"
+                        disabled={!this.isContactInformationProvided()}
+                        onClick={this.props.submit.bind(this)}
+                      />
+                    </div>
+                  </div>
+                </BlankCard>
+              </div>
+              {/* PAYMENT SUMMARY */}
+              <div className="ready-to-learn-page__card col-lg-4">
+                <BlankCard>
+                  <h2 className="ready-to-learn-page__card-title">
+                    8 classes
+                  </h2>
+                  <PriceSum 
+                    calculation="8 x £20"
+                    total="£160"
                   />
-                </div>
-              }
-              {this.areAllQuestionsAnwsered() &&
-                <div className="ready-to-learn-page__button">
-                  <PrimaryButton 
-                    size="huge"
-                    text="Continue"
-                    onClick={this.props.submitQuestions.bind(this)}
-                  />
-                </div>
-              }
+                  <div className="ready-to-learn-page__summary-section">
+                    <ImageBulletPoints
+                      size="small"
+                      points={[
+                        {
+                          icon: BarChart,
+                          text: String__UpperCaseFirstLetter(this.props.skillLevel),
+                        },
+                        {
+                          icon: Location,
+                          text: this.props.locations.join(', '),
+                        },
+                        {
+                          icon: Clock,
+                          text: String__UpperCaseFirstLetter(this.props.time)
+                        }
+                      ]}
+                    />
+                  </div>
+                  <div className="ready-to-learn-page__summary-section">
+                    <ImageBulletPoints
+                      points={[
+                        {
+                          image: "/icons/tick.svg",
+                          text: "Money back guarantee",
+                        },
+                        {
+                          image: "/icons/instalments.svg",
+                          text: "Pay in installments",
+                        },
+                        {
+                          image: "/icons/study-groups-blue.svg",
+                          text: "Learn with people on the same journey",
+                        }
+                      ]}
+                    />
+                  </div>
+                </BlankCard>
+              </div>
+            </div>
+          </div>
+        }
+
+        {/* SCREEN 3: THANK YOU */}
+        {this.props.status === appStatuses.SUBMITTED &&
+          <div className="ready-to-learn-page__body container">
+            <div className="ready-to-learn-page__card">
+              <BlankCard>
+                <h2 className="ready-to-learn-page__card-title">
+                  Thank you!
+                </h2>
+                <p className="ready-to-learn-page__card-description ready-to-learn-page__card-description--small">
+                  We’ll be in touch to match you with the right teacher and schedule your first class.
+                </p>
+              </BlankCard>
             </div>
           </div>
         }

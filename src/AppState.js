@@ -6,6 +6,7 @@ export const appStatuses = {
   VIEWING: 'userIsViewingApp',
   ANWSERING_QUESTIONS: 'userIsAnwseringQuestions',
   ENTERING_CONTACT_INFORMATION: 'userIsEnteringContactInformation',
+  SUBMITTED: 'userHasSubmittedInformation',
 };
 
 export default class AppState {
