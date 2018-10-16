@@ -1,6 +1,6 @@
 # Obby Lab
 
-![AltText](https://media.giphy.com/media/5tXQajadUxLLa/giphy.gif)
+![AltText](https://media.giphy.com/media/wAxlCmeX1ri1y/giphy.gif)
 
 ### Setup & Play
 
