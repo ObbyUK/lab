@@ -1,7 +1,10 @@
 @import './../styles/variables.less';
+@import './../styles/animations/popout';
+@import './../styles/animations/fadeIn';
 
 .ready-to-learn-page {
   font-family: "Founders Grotesk", 'Arial', sans-serif; 
+  letter-spacing: 0.3px;
 
   &__header {
     position: relative;
@@ -34,5 +37,52 @@
 
   &__checkboxes {
     width: 70%;
+  }
+
+  &__addresses {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 24px;
+    animation:popout 350ms, fadeIn 350ms;
+  }
+
+  &__sub-title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    
+    &--bold {
+      font-weight: 600;
+      margin: 0 0 10px;
+    }
+  }
+
+  &__area-adresses {
+    display: none;
+    width: 100%;
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    margin-bottom: 24px;
+    &--show {
+      display: block;
+      animation:popout 350ms, fadeIn 350ms;
+    }
+  }
+
+  &__address {
+    display: inline-flex;
+    color: @gray;
+    text-decoration: underline;
+  }
+
+  &__dot {
+    color: @gray;
+    display: inline-flex;
+    margin: 0 10px;
+    &:last-child {
+      display: none;
+    }
   }
 }
