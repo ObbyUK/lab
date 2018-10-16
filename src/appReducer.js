@@ -18,6 +18,11 @@ const anwseringQuestionsReducer = cond([
   [isActionType(appActions.SELECT_SKILL_LEVEL), selectSkillLevel],
   [isActionType(appActions.SELECT_TIME), selectTime],
   [isActionType(appActions.TOGGLE_LOCATION), toggleLocation],
+  [isActionType(appActions.SUBMIT_QUESTIONS), submitQuestions],
+  [T, identity]
+]);
+
+const enteringContactInformationReducer = cond([
   [T, identity]
 ]);
 
@@ -25,8 +30,11 @@ export default (state = new AppState(), action) =>
   cond([
     [isActionType(appActions.VIEW_LANDING_PAGE), viewLandingPage],
     [isActionType(appActions.VIEW_READY_TO_LEARN_PAGE), viewReadyToLearnPage],
+
     [propEq('status', appStatuses.VIEWING), viewingReducer],
     [propEq('status', appStatuses.ANWSERING_QUESTIONS), anwseringQuestionsReducer],
+    [propEq('status', appStatuses.ENTERING_CONTACT_INFORMATION), enteringContactInformationReducer],
+
     [T, viewingReducer]
   ])(state, action);
 
@@ -67,6 +75,14 @@ function toggleLocation(state, { payload }) {
   return assoc(
     'locations', 
     toggleValueFromCheckboxArray(payload.location, state.locations), 
+    state
+  );
+}
+
+function submitQuestions(state) {
+  return assoc(
+    'status', 
+    appStatuses.ENTERING_CONTACT_INFORMATION, 
     state
   );
 }

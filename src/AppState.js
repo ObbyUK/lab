@@ -5,6 +5,7 @@ import flows from './constants/flows';
 export const appStatuses = {
   VIEWING: 'userIsViewingApp',
   ANWSERING_QUESTIONS: 'userIsAnwseringQuestions',
+  ENTERING_CONTACT_INFORMATION: 'userIsEnteringContactInformation',
 };
 
 export default class AppState {

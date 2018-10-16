@@ -5,6 +5,7 @@ const actions = {
   SELECT_SKILL_LEVEL: 'userSelectsSkillLevel',
   SELECT_TIME: 'userSelectsTime',
   TOGGLE_LOCATION: 'userTogglesLocation',
+  SUBMIT_QUESTIONS: 'userSubmitsClassPereference',
 };
 
 export const viewLandingPageAction = () => ({
@@ -42,6 +43,10 @@ export const toggleLocationAction = (location) => ({
   payload: {
     location
   }
+});
+
+export const submitQuestionsAction = () => ({
+  type: actions.SUBMIT_QUESTIONS
 });
 
 export default actions;
