@@ -16,5 +16,7 @@ export default class AppState {
     this.skillLevel = null;
     this.time = null;
     this.locations = [];
+    this.name = "";
+    this.email = "";
   }
 }

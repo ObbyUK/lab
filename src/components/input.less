@@ -1,0 +1,74 @@
+@import './../styles/variables';
+
+.input {
+  width: 100%;
+  display: flex;
+
+  &__icon {
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+
+    &--size-medium {
+      height: 37px;
+    }
+
+    &--size-large {
+      height: 42px;
+    }
+
+    &--ebony-clay {
+      g {
+        stroke: @ebony-clay;
+      }
+    }
+    
+    &--dolphin {
+      g {
+        stroke: @gallery;
+      }
+    }
+  }
+
+  &__input {
+    width: 100%;
+    font-family: "Founders Grotesk", sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    padding: 8px 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+
+    &--text-medium {
+      font-size: @m-paragraph;
+    }
+    
+    &--text-large {
+      font-size: @sm-heading;
+    }
+
+    &--ebony-clay {
+      color: @ebony-clay;
+      &::placeholder {
+        color: @gray;
+      }
+    }
+    
+    &--dolphin {
+      color: @gallery;
+      &::placeholder {
+        color: @dolphin;
+      }
+    }
+  }
+
+  &--ebony-clay {
+    border-bottom: 1px solid @camelot;
+  }
+
+  &--dolphin {
+    border-bottom: 1px solid @dolphin;
+  }
+}

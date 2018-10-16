@@ -4,7 +4,9 @@ import './menu.less';
 
 export default () => (
   <div className="menu">
-    <img src="/icons/logo-red.svg" alt="" className="menu__logo"/>
+    <a href="/">
+      <img src="/icons/logo-red.svg" alt="" className="menu__logo"/>
+    </a>
     <div className="menu__button">
       Help
     </div>

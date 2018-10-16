@@ -2,9 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { propEq, find, mergeAll, contains } from 'ramda';
 
-// Lib
+// Lib & Constants
 import getUrlParamaters from './../lib/getUrlParamaters';
-import isFullArray from '../lib/isFullArray';
+import isFullArray from './../lib/isFullArray';
+import String__UpperCaseFirstLetter from './../lib/String__UpperCaseFirstLetter';
 // Actions & Style
 import { 
   viewReadyToLearnPageAction,
@@ -23,6 +24,10 @@ import ImageBanner from '../components/ImageBanner.jsx';
 import BigRadios from '../components/BigRadios.jsx';
 import MultipleCheckboxes from '../components/MultipleCheckboxes.jsx';
 import PrimaryButton from '../components/PrimaryButton.jsx';
+import PriceSum from '../components/PriceSum.jsx';
+import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
+import Input from '../components/Input.jsx';
+import { Clock, BarChart, Location } from './../components/Icons.jsx'
 
 const mapStateToProps = (state) => ({
   flow: state.app.flow,
@@ -93,6 +98,101 @@ class HomePageContainer extends React.Component {
           />
         </div>
 
+        {/* {this.props.status === appStatuses.ENTERING_CONTACT_INFORMATION && */}
+        <div className="ready-to-learn-page__body container">
+          <div className="row">
+            {/* EMAIL DETAILS */}
+            <div className="ready-to-learn-page__card col-lg-8">
+              <BlankCard>
+                <h2 className="ready-to-learn-page__card-title">
+                  Tell us where to find you
+                </h2>
+                <p className="ready-to-learn-page__card-description">
+                  We’ll be in touch to match you with the right teacher and schedule your first class.
+                </p>
+                {/* NAME */}
+                <div className="ready-to-learn-page__field">
+                  <div className="ready-to-learn-page__label">Name</div>
+                  <div className="ready-to-learn-page__input">
+                    <Input
+                      placeholder="Frida Khalo"
+                    />
+                  </div>
+                </div>
+                {/* EMAIL */}
+                <div className="ready-to-learn-page__field">
+                  <div className="ready-to-learn-page__label">Email</div>
+                  <div className="ready-to-learn-page__input">
+                    <Input
+                      placeholder="frida@khalo.com"
+                    />
+                  </div>
+                </div>
+                <div className="ready-to-learn-page__continue-form">
+                  <div className="ready-to-learn-page__button">
+                    <PrimaryButton
+                      size="huge"
+                      text="Start learning"
+                      onClick={console.log}
+                    />
+                  </div>
+                </div>
+              </BlankCard>
+            </div>
+            {/* PAYMENT SUMMARY */}
+            <div className="ready-to-learn-page__card col-lg-4">
+              <BlankCard>
+                <h2 className="ready-to-learn-page__card-title">
+                  8 classes
+                </h2>
+                <PriceSum 
+                  calculation="8 x £20"
+                  total="£160"
+                />
+                <div className="ready-to-learn-page__summary-section">
+                  <ImageBulletPoints
+                    size="small"
+                    points={[
+                      {
+                        icon: BarChart,
+                        text: String__UpperCaseFirstLetter(this.props.skillLevel),
+                      },
+                      {
+                        icon: Location,
+                        text: this.props.locations.join(', '),
+                      },
+                      {
+                        icon: Clock,
+                        text: String__UpperCaseFirstLetter(this.props.time)
+                      }
+                    ]}
+                  />
+                </div>
+                <div className="ready-to-learn-page__summary-section">
+                  <ImageBulletPoints
+                    points={[
+                      {
+                        image: "/icons/tick.svg",
+                        text: "Money back guarantee",
+                      },
+                      {
+                        image: "/icons/instalments.svg",
+                        text: "Pay in installments",
+                      },
+                      {
+                        image: "/icons/study-groups-blue.svg",
+                        text: "Learn with people on the same journey",
+                      }
+                    ]}
+                  />
+                </div>
+              </BlankCard>
+            </div>
+          </div>
+        </div>
+        {/* } */}
+        
+        {/* ANWSERING QUESTIONS */}
         {this.props.status === appStatuses.ANWSERING_QUESTIONS &&
           <div className="ready-to-learn-page__body container">
             {/* SKILL LEVEL CARD */}
@@ -192,12 +292,6 @@ class HomePageContainer extends React.Component {
                 </div>
               }
             </div>
-          </div>
-        }
-
-        {this.props.status === appStatuses.ENTERING_CONTACT_INFORMATION &&
-          <div className="ready-to-learn-page__body container">
-            Contact info here
           </div>
         }
 
