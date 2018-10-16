@@ -4,6 +4,7 @@ const actions = {
   CHOOSE_LANGUAGE: 'userSelectsLanguageToLearn',
   SELECT_SKILL_LEVEL: 'userSelectsSkillLevel',
   SELECT_TIME: 'userSelectsTime',
+  TOGGLE_LOCATION: 'userTogglesLocation',
 };
 
 export const viewLandingPageAction = () => ({
@@ -33,6 +34,13 @@ export const selectTimeAction = (time) => ({
   type: actions.SELECT_TIME,
   payload: {
     time
+  }
+});
+
+export const toggleLocationAction = (location) => ({
+  type: actions.TOGGLE_LOCATION,
+  payload: {
+    location
   }
 });
 

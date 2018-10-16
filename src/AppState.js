@@ -14,5 +14,6 @@ export default class AppState {
     this.flow = flows[languages.SPANISH];
     this.skillLevel = null;
     this.time = null;
+    this.locations = [];
   }
 }

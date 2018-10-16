@@ -28,3 +28,10 @@ export const Cross = {
     </g>
   )
 };
+
+export const Tick = {
+  viewBox: '0 0 512 512',
+  body: () => (
+    <path d='M432 64l-240 240-112-112-80 80 192 192 320-320z' />
+  )
+};

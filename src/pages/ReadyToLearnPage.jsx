@@ -8,7 +8,8 @@ import getUrlParamaters from './../lib/getUrlParamaters';
 import { 
   viewReadyToLearnPageAction,
   selectSkillLevelAction,
-  selectTimeAction
+  selectTimeAction,
+  toggleLocationAction
 } from '../appActions';
 import './ready-to-learn-page.less';
 // Components
@@ -17,17 +18,20 @@ import Footer from '../components/Footer.jsx';
 import BlankCard from './../components/BlankCard.jsx';
 import ImageBanner from '../components/ImageBanner.jsx';
 import BigRadios from '../components/BigRadios.jsx';
+import MultipleCheckboxes from '../components/MultipleCheckboxes.jsx';
 
 const mapStateToProps = (state) => ({
   flow: state.app.flow,
   skillLevel: state.app.skillLevel,
   time: state.app.time,
+  locations: state.app.locations
 });
 
 const mapDispatchToProps = (dispatch) => ({
   viewReadyToLearnPageAction: (urlParamaters) => dispatch(viewReadyToLearnPageAction(urlParamaters)),
   selectSkillLevel: (skillLevel) => dispatch(selectSkillLevelAction(skillLevel)),
-  selectTime: (time) => dispatch(selectTimeAction(time))
+  selectTime: (time) => dispatch(selectTimeAction(time)),
+  toggleLocation: (location) => dispatch(toggleLocationAction(location))
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
@@ -47,7 +51,10 @@ class HomePageContainer extends React.Component {
   render () {
     return (
       <div className="ready-to-learn-page">
+        
         <Menu />
+
+        {/* HEADER */}
         <div className="ready-to-learn-page__header">
           <ImageBanner
             blurt="¡Increíble!"
@@ -57,6 +64,8 @@ class HomePageContainer extends React.Component {
           />
         </div>
         <div className="ready-to-learn-page__body container">
+
+          {/* SKILL LEVEL CARD */}
           <div className="ready-to-learn-page__card">
             <BlankCard>
               <h2 className="ready-to-learn-page__card-title">
@@ -72,6 +81,27 @@ class HomePageContainer extends React.Component {
               />
             </BlankCard>
           </div>
+
+          {/* LOCATION CARD */}
+          <div className="ready-to-learn-page__card">
+            <BlankCard>
+              <h2 className="ready-to-learn-page__card-title">
+                Where would you like to learn?
+              </h2>
+              <p className="ready-to-learn-page__card-description">
+                We’re offering classes from east to west, north to south. Select as many as you want.
+              </p>
+              <div className="ready-to-learn-page__checkboxes">
+                <MultipleCheckboxes
+                  checked={this.props.locations}
+                  options={this.props.flow.locationOptions}
+                  onChange={this.props.toggleLocation.bind(this)}
+                />
+              </div>
+            </BlankCard>
+          </div>
+
+          {/* TIME CARD */}
           <div className="ready-to-learn-page__card">
             <BlankCard>
               <h2 className="ready-to-learn-page__card-title">

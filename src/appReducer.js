@@ -1,7 +1,8 @@
-import { pipe, assoc, identity, T, cond, propEq } from 'ramda';
+import { contains, pipe, assoc, identity, T, cond, propEq } from 'ramda';
 
 // Lib & Constants
 import isActionType from './lib/isActionType';
+import toggleValueFromCheckboxArray from './lib/toggleValueFromCheckboxArray';
 import flows from './constants/flows';
 // Actions & State
 import AppState, { appStatuses } from './AppState';
@@ -16,6 +17,7 @@ const viewingReducer = cond([
 const anwseringQuestionsReducer = cond([
   [isActionType(appActions.SELECT_SKILL_LEVEL), selectSkillLevel],
   [isActionType(appActions.SELECT_TIME), selectTime],
+  [isActionType(appActions.TOGGLE_LOCATION), toggleLocation],
   [T, identity]
 ]);
 
@@ -54,13 +56,18 @@ function chooseLanguage(state, { payload }) {
 }
 
 function selectSkillLevel(state, { payload }) {
-  return pipe(
-    assoc('skillLevel', payload.skillLevel)
-  )(state);
+  return assoc('skillLevel', payload.skillLevel, state);
 }
 
 function selectTime(state, { payload }) {
-  return pipe(
-    assoc('time', payload.time)
-  )(state);
+  return assoc('time', payload.time, state);
 }
+
+function toggleLocation(state, { payload }) {
+  return assoc(
+    'locations', 
+    toggleValueFromCheckboxArray(payload.location, state.locations), 
+    state
+  );
+}
+
