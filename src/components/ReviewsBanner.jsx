@@ -54,6 +54,7 @@ export default class extends React.Component {
               image={this.state.reviews[this.state.onReviewIndex].image}
               name={this.state.reviews[this.state.onReviewIndex].name}
               language={this.state.reviews[this.state.onReviewIndex].language}
+              languageName={this.state.reviews[this.state.onReviewIndex].languageName}
               text={this.state.reviews[this.state.onReviewIndex].text}
             />
           </div>

@@ -7,6 +7,13 @@ const languages = {
 
 export default languages;
 
+export const languageNames = {
+  SPANISH: 'Spanish',
+  ITALIAN: 'Italian',
+  FRENCH: 'French',
+  GERMAN: 'German',
+};
+
 export const languagesValueAndName = [
   { value: languages.SPANISH, name: 'Spanish' },
   { value: languages.ITALIAN, name: 'Italian' },

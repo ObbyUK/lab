@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { mergeAll, contains } from 'ramda';
+import { propEq, find, mergeAll, contains } from 'ramda';
 
 // Lib
 import getUrlParamaters from './../lib/getUrlParamaters';
@@ -54,7 +54,15 @@ class HomePageContainer extends React.Component {
       contains(location.value, this.props.locations) &&
       isFullArray(location.addresses)
     );
-  } 
+  }
+
+  canShowAnyLocationAddress() {
+    return (
+      isFullArray(this.props.flow.locationOptions) && 
+      isFullArray(this.props.locations) &&
+      this.canLocationAddressesBeShown(find(propEq('value', this.props.locations[0]), this.props.flow.locationOptions))
+    );
+  }
 
   render () {
     return (
@@ -109,7 +117,7 @@ class HomePageContainer extends React.Component {
               </div>
 
               {/* ADDRESS PREVIEWS */}
-              {(isFullArray(this.props.flow.locationOptions) && isFullArray(this.props.locations)) &&
+              {this.canShowAnyLocationAddress() &&
                 <div className="ready-to-learn-page__addresses">
                   <h3 className="ready-to-learn-page__sub-title ready-to-learn-page__sub-title--bold">
                     We currently run classes at these locations: 
