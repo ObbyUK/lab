@@ -2,10 +2,33 @@ import languages from './languages';
 import skillLevels, { levelNames } from './skillLevels';
 import timeOfDay, { timeOfDayNames } from './timeOfDay';
 import regions, { regionNames } from './regions';
+import { appStatuses } from './../AppState';
+
 
 var flows = {};
 
+var spanishHeaders = {};
+spanishHeaders[appStatuses.ANWSERING_QUESTIONS] = {
+  blurt: "¡Increíble!",
+  title: "Ready to Learn Spanish",
+  description: "Tell us a bit more about what you're looking for?",
+  src: "/images/header_flow.png",
+};
+spanishHeaders[appStatuses.ENTERING_CONTACT_INFORMATION] = {
+  blurt: 'Bueno.',
+  title: 'Here are your options.',
+  description: "After booking, you can select your teacher, agree on an exact time or go over any requirements if necessary.",
+  src: "/images/header_flow_2.png",
+};
+spanishHeaders[appStatuses.SUBMITTED] = {
+  blurt: 'Todo bien.',
+  title: 'Let’s get to work.',
+  src: "/images/header_flow_3.png",
+};
+
+
 flows[languages.SPANISH] = {
+  headers: spanishHeaders,
   famousPerson: 'Antonio Banderas',
   levelOptions: [
     {

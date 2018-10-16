@@ -41,6 +41,7 @@ const mapStateToProps = (state) => ({
   status: state.app.status,
   name: state.app.name,
   email: state.app.email,
+  header: state.app.flow.headers[state.app.status]||{}
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -107,10 +108,10 @@ class HomePageContainer extends React.Component {
         {/* HEADER */}
         <div className="ready-to-learn-page__header">
           <ImageBanner
-            blurt="¡Increíble!"
-            title="Ready to Learn Spanish"
-            description="Tell us a bit more about what you're looking for?"
-            src="/images/header_flow.png"
+            blurt={this.props.header.blurt}
+            title={this.props.header.title}
+            description={this.props.header.description}
+            src={this.props.header.src}
           />
         </div>
         
@@ -198,7 +199,7 @@ class HomePageContainer extends React.Component {
                 <PrimaryButton 
                   size="huge"
                   text="Continue"
-                  disabled={this.areAllQuestionsAnwsered()}
+                  disabled={!this.areAllQuestionsAnwsered()}
                   onClick={this.props.submitQuestions.bind(this)}
                 />
               </div>
