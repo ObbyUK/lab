@@ -1,14 +1,14 @@
 Arguments: 
-  /Users/ciki/.nvm/versions/node/v6.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js add nodemailer
+  /Users/ciki/.nvm/versions/node/v8.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js start
 
 PATH: 
-  /Users/ciki/.nvm/versions/node/v6.9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  /Users/ciki/.nvm/versions/node/v8.9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  6.9.4
+  8.9.4
 
 Platform: 
   darwin x64
@@ -26,14 +26,18 @@ npm manifest:
       "start": "node server/index.js"
     },
     "dependencies": {
-      "body-parser": "^1.17.2",
+      "q": "^1.4.1",
+      "body-parser": "^1.18.3",
       "bootstrap": "^4.1.3",
+      "dotenv-safe": "^6.1.0",
       "express": "^4.15.3",
       "jquery": "^3.3.1",
       "js-cookie": "^2.2.0",
       "less": "^3.8.1",
       "less-loader": "^4.1.0",
+      "mandrill-api": "^1.0.45",
       "morgan": "^1.8.2",
+      "node-mandrill": "^1.0.1",
       "normalize-css": "^2.3.1",
       "path": "^0.12.7",
       "popper": "^1.0.1",
@@ -270,6 +274,10 @@ Lockfile:
     dependencies:
       jsonparse "^1.2.0"
       through ">=2.2.7 <3"
+  
+  Q@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/Q/-/Q-1.0.0.tgz#c857afc928c9bea146202dd5c37fa1b1b63d9e28"
   
   abab@^1.0.3:
     version "1.0.4"
@@ -1599,7 +1607,7 @@ Lockfile:
       raw-body "2.3.2"
       type-is "~1.6.15"
   
-  body-parser@1.18.3, body-parser@^1.17.2:
+  body-parser@1.18.3, body-parser@^1.18.3:
     version "1.18.3"
     resolved "https://registry.yarnpkg.com/body-parser/-/body-parser-1.18.3.tgz#5b292198ffdd553b3a0f20ded0592b956955c8b4"
     dependencies:
@@ -3025,6 +3033,16 @@ Lockfile:
     dependencies:
       dom-serializer "0"
       domelementtype "1"
+  
+  dotenv-safe@^6.1.0:
+    version "6.1.0"
+    resolved "https://registry.yarnpkg.com/dotenv-safe/-/dotenv-safe-6.1.0.tgz#df6e72ced7d5bcfd9d870c9f656962a02197337b"
+    dependencies:
+      dotenv "^6.1.0"
+  
+  dotenv@^6.1.0:
+    version "6.1.0"
+    resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-6.1.0.tgz#9853b6ca98292acb7dec67a95018fa40bccff42c"
   
   duplexer2@^0.1.2, duplexer2@~0.1.0, duplexer2@~0.1.2:
     version "0.1.4"
@@ -5453,6 +5471,10 @@ Lockfile:
     dependencies:
       tmpl "1.0.x"
   
+  mandrill-api@^1.0.45:
+    version "1.0.45"
+    resolved "https://registry.yarnpkg.com/mandrill-api/-/mandrill-api-1.0.45.tgz#163939cf486bd18277b0f3baf412c3e65d84a72d"
+  
   map-age-cleaner@^0.1.1:
     version "0.1.2"
     resolved "https://registry.yarnpkg.com/map-age-cleaner/-/map-age-cleaner-0.1.2.tgz#098fb15538fd3dbe461f12745b0ca8568d4e3f74"
@@ -5864,6 +5886,13 @@ Lockfile:
       util "^0.10.3"
       vm-browserify "0.0.4"
   
+  node-mandrill@^1.0.1:
+    version "1.0.1"
+    resolved "https://registry.yarnpkg.com/node-mandrill/-/node-mandrill-1.0.1.tgz#86580b7adbc152db3c658a864a7cec90f8d086fd"
+    dependencies:
+      request ">= 2.9.100"
+      underscore ">= 1.3.3"
+  
   node-notifier@^5.0.2:
     version "5.2.1"
     resolved "https://registry.yarnpkg.com/node-notifier/-/node-notifier-5.2.1.tgz#fa313dd08f5517db0e2502e5758d664ac69f9dea"
@@ -5887,6 +5916,10 @@ Lockfile:
       rimraf "^2.6.1"
       semver "^5.3.0"
       tar "^4"
+  
+  nodemailer@^4.6.8:
+    version "4.6.8"
+    resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-4.6.8.tgz#f82fb407828bf2e76d92acc34b823d83e774f89c"
   
   nomnom@~1.6.2:
     version "1.6.2"
@@ -7368,7 +7401,7 @@ Lockfile:
       tunnel-agent "^0.6.0"
       uuid "^3.1.0"
   
-  request@^2.79.0, request@^2.83.0, request@^2.88.0:
+  "request@>= 2.9.100", request@^2.79.0, request@^2.83.0, request@^2.88.0:
     version "2.88.0"
     resolved "https://registry.yarnpkg.com/request/-/request-2.88.0.tgz#9c2fca4f7d35b592efe57c7f0a55e81052124fef"
     dependencies:
@@ -8471,6 +8504,10 @@ Lockfile:
       simple-concat "^1.0.0"
       xtend "^4.0.1"
   
+  "underscore@>= 1.3.3":
+    version "1.9.1"
+    resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.9.1.tgz#06dce34a0e68a7babc29b365b8e74b8925203961"
+  
   underscore@~1.4.4:
     version "1.4.4"
     resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.4.4.tgz#61a6a32010622afa07963bf325203cf12239d604"
@@ -8987,12 +9024,17 @@ Lockfile:
       readable-stream "^2.0.0"
 
 Trace: 
-  Error: Found incompatible module
-      at MessageError.Error (native)
-      at new MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)
-      at checkOne (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:62444:11)
-      at Object.check (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:62463:5)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:22803:73
-      at next (native)
-      at step (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:98:30)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:109:13
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c node server/index.js
+  Directory: /Users/ciki/Obby/lab
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
