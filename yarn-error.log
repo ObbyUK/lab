@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/ciki/.nvm/versions/node/v6.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js add node-fetch
+  /Users/ciki/.nvm/versions/node/v6.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js add nodemailer
 
 PATH: 
   /Users/ciki/.nvm/versions/node/v6.9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin

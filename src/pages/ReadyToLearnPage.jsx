@@ -34,6 +34,7 @@ import Input from '../components/Input.jsx';
 import { Clock, BarChart, Location } from './../components/Icons.jsx'
 
 const mapStateToProps = (state) => ({
+  selectedLanguage: state.app.selectedLanguage,
   flow: state.app.flow,
   skillLevel: state.app.skillLevel,
   time: state.app.time,
@@ -59,7 +60,14 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
   stateProps,
   dispatchProps,
   {
-    
+    submit: () => dispatchProps.submit({
+      language: stateProps.selectedLanguage,
+      name: stateProps.name,
+      email: stateProps.email,
+      skillLevel: stateProps.skillLevel,
+      locations: stateProps.locations,
+      time: stateProps.time,
+    })
   }
 ]);
 

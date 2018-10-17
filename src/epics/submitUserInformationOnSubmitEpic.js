@@ -15,12 +15,9 @@ export default (action$, store) =>
     .mergeMap((action) =>
       Observable.from(
         wrappedFetch({
-          url: '/api/submit',
+          url: '/api/submit-lead',
           method: 'POST',
-          body: {
-            email: "yohoooo",
-            name: "who what where",
-          }
+          body: action.payload
         })
       )
     )

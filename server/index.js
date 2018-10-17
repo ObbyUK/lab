@@ -1,10 +1,10 @@
 const path = require('path');
-
 const express = require('express');
 const webpack = require('webpack');
 const bodyParser = require('body-parser');
 
 const config = require('../webpack.config');
+require('dotenv-safe').config();
 
 const app = express();
 const compiler = webpack(config);
@@ -12,6 +12,11 @@ const router = express.Router();
 const port = process.env.PORT || 5000;
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+})); 
+app.use(express.json());
+app.use(express.urlencoded());
 
 app.use('/api', router);
 require('./routes')(router);
