@@ -291,7 +291,7 @@ class HomePageContainer extends React.Component {
                           text: "Money back guarantee",
                         },
                         {
-                          image: "/icons/instalments.svg",
+                          image: "/icons/installments.svg",
                           text: "Pay in installments",
                         },
                         {

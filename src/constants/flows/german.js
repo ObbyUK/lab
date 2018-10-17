@@ -5,35 +5,35 @@ import { appStatuses } from './../../AppState';
 
 var headers = {};
 headers[appStatuses.ANWSERING_QUESTIONS] = {
-  blurt: "¡Increíble!",
-  title: "Ready to Learn Spanish",
+  blurt: "Unglaublich!",
+  title: "Ready to Learn German",
   description: "Tell us a bit more about what you're looking for?",
   src: "/images/header_flow.png",
 };
 headers[appStatuses.ENTERING_CONTACT_INFORMATION] = {
-  blurt: 'Bueno.',
+  blurt: 'Gut.',
   title: 'Here are your options.',
   description: "After booking, you can select your teacher, agree on an exact time or go over any requirements if necessary.",
   src: "/images/header_flow_2.png",
 };
 headers[appStatuses.SUBMITTED] = {
-  blurt: 'Todo bien.',
+  blurt: 'Alles ist bereit.',
   title: 'Let’s get to work.',
   src: "/images/header_flow_3.png",
 };
 
 export default {
-  headers: headers,
-  famousPerson: 'Antonio Banderas',
+  headers,
+  famousPerson: 'Jean Reno',
   levelOptions: [
     {
       title: levelNames.BEGGINER,
       value: skillLevels.BEGGINER,
-      description: "You know almoust nothing in Spanish",
+      description: "You know almoust nothing in German",
       sessionsPreview: [
         {
           title: "Pronunciation rules & Grammar",
-          text: "You’ll learn how the Spanish alphabet is different than the English one, and how to apply those rules.",
+          text: "You’ll learn how the German alphabet is different than the English one, and how to apply those rules.",
         },
         {
           title: "Greetings & Farewells",
@@ -41,14 +41,14 @@ export default {
         },
         {
           title: "Basic conversation",
-          text: "When you’re done, you’ll be able to have a basic conversation in fluent Spanish.",
+          text: "When you’re done, you’ll be able to have a basic conversation in fluent German.",
         },
       ]
     },
     {
       title: levelNames.INTERMEDIATE,
       value: skillLevels.INTERMEDIATE,
-      description: "You can have a decent conversation in Spanish",
+      description: "You can have a decent conversation in German",
       sessionsPreview: [
         {
           title: 'Improving conversations',
