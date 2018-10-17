@@ -9,6 +9,7 @@ const actions = {
   TYPE_NAME: 'userTypesName',
   TYPE_EMAIL: 'userTypesEmail',
   SUBMIT: 'userSubmitsEmailAndInformation',
+  SUBMIT_COMPLETE: 'userSubmissionComplete',
 };
 
 export const viewLandingPageAction = () => ({
@@ -69,6 +70,10 @@ export const typeEmailAction = (email) => ({
 export const submitAction = (details) => ({
   type: actions.SUBMIT,
   payload: details
+});
+
+export const submitCompleteAction = () => ({
+  type: actions.SUBMIT_COMPLETE
 });
 
 export default actions;
