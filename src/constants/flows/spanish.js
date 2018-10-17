@@ -128,11 +128,11 @@ export default {
         'Camden Town NW1',
       ]
     },
-    {
-      name: regionNames.GREATER_LONDON,
-      value: regions.GREATER_LONDON,
-      addresses: []
-    },
+    // {
+    //   name: regionNames.GREATER_LONDON,
+    //   value: regions.GREATER_LONDON,
+    //   addresses: []
+    // },
   ],
   timeOptions: [
     {

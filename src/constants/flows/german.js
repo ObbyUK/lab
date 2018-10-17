@@ -24,7 +24,7 @@ headers[appStatuses.SUBMITTED] = {
 
 export default {
   headers,
-  famousPerson: 'Jean Reno',
+  famousPerson: 'Ludwig van Beethoven',
   levelOptions: [
     {
       title: levelNames.BEGGINER,

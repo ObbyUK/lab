@@ -15,6 +15,14 @@
   &__body {
   }
 
+  &__checkout {
+    display: flex;
+    flex-direction: column-reverse;
+    @media (min-width: @lg-width) {
+      flex-direction: row;
+    }
+  }
+
   &__card {
     margin-bottom: 20px;
   }
@@ -77,7 +85,6 @@
   &__address {
     display: inline-flex;
     color: @gray;
-    text-decoration: underline;
     margin-bottom: 5px;
   }
 

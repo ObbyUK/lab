@@ -74,7 +74,7 @@ class LandingPageContainer extends React.Component {
                 />
               ))}
             </div>
-            <div className="landing-page__header-price">Starting from £10/class</div>
+            <div className="landing-page__header-price">Starting from £20/class</div>
           </div>
         </div>
         <ThreePointSalesBanner
@@ -83,7 +83,7 @@ class LandingPageContainer extends React.Component {
             { 
               image: "/icons/university-hat.svg", 
               title: "Top rated instructors", 
-              description: "We vet all our teachers personally, to ensure the highest quality teaching - so you don't have to worry."
+              description: "We vet all our teachers personally, to ensure the highest quality teaching - so you don't have to worry"
             },
             { 
               image: "/icons/person.svg",
@@ -93,7 +93,7 @@ class LandingPageContainer extends React.Component {
             { 
               image: "/icons/thumbs-up.svg", 
               title: "Money back guarantee", 
-              description: "If your class doesn't reach your expectations, we'll give your money back."
+              description: "If your class doesn't reach your expectations, we'll give your money back"
             }
           ]}
         />
@@ -123,7 +123,7 @@ class LandingPageContainer extends React.Component {
             { 
               image: "/icons/2.svg",
               title: "Choose your options", 
-              description: "You can choose from a large variety of options, from single day classes to montly subsctiptions"
+              description: "You can choose from a large variety of options, from single day classes to monthly subsctiptions"
             },
             { 
               image: "/icons/3.svg", 

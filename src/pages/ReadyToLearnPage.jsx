@@ -218,7 +218,7 @@ class HomePageContainer extends React.Component {
         {/* SCREEN 2: CONTACT INFORMATION */}
         {this.props.status === appStatuses.ENTERING_CONTACT_INFORMATION &&
           <div className="ready-to-learn-page__body container">
-            <div className="row">
+            <div className="ready-to-learn-page__checkout row">
               {/* EMAIL DETAILS */}
               <div className="ready-to-learn-page__card col-lg-8">
                 <BlankCard>
