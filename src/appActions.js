@@ -10,6 +10,7 @@ const actions = {
   TYPE_EMAIL: 'userTypesEmail',
   SUBMIT: 'userSubmitsEmailAndInformation',
   SUBMIT_COMPLETE: 'userSubmissionComplete',
+  ANALYTICS_TRACKED: 'analyticsHasBeenTracked',
 };
 
 export const viewLandingPageAction = () => ({
@@ -74,6 +75,11 @@ export const submitAction = (details) => ({
 
 export const submitCompleteAction = () => ({
   type: actions.SUBMIT_COMPLETE
+});
+
+export const analyticsTrackedAction = (details) => ({
+  type: actions.ANALYTICS_TRACKED,
+  payload: details
 });
 
 export default actions;

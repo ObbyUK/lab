@@ -1,11 +1,13 @@
 import { combineEpics } from 'redux-observable';
 
-import redirectOnChooseLanguage from './epics/redirectOnChooseLanguage';
+import redirectOnChooseLanguageEpic from './epics/redirectOnChooseLanguageEpic';
 import submitUserInformationOnSubmitEpic from './epics/submitUserInformationOnSubmitEpic';
-import scrollToTopOnViewChange from './epics/scrollToTopOnViewChange';
+import scrollToTopOnViewChangeEpic from './epics/scrollToTopOnViewChangeEpic';
+import analyticsEpic from './epics/analyticsEpic';
 
 export default combineEpics(
-  redirectOnChooseLanguage,
+  analyticsEpic,
+  redirectOnChooseLanguageEpic,
   submitUserInformationOnSubmitEpic,
-  scrollToTopOnViewChange
+  scrollToTopOnViewChangeEpic
 );

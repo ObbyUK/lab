@@ -1,9 +1,10 @@
 import { pipe, assoc, concat } from 'ramda';
-// import settings from '~/settings';
+import settings from './../settings';
 
 const wrappedFetch = ({ url, method, headers = {}, body = null }) => {
+  console.log(process.env.PORT);
   return fetch(
-    'http://localhost:5000' + url,
+    settings.host + url,
     {
       method: method,
       headers: pipe(
