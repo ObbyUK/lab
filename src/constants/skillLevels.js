@@ -1,12 +1,11 @@
 export default {
-  BEGGINER: 'begginer',
+  BEGGINER: 'beginner',
   INTERMEDIATE: 'intermediate',
   ADVANCED: 'advanced',
 };
 
-
 export const levelNames = {
-  BEGGINER: 'Begginer',
+  BEGGINER: 'Beginner',
   INTERMEDIATE: 'Intermediate',
   ADVANCED: 'Advanced',
 }

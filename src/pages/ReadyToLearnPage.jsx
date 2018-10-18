@@ -289,7 +289,7 @@ class HomePageContainer extends React.Component {
                         },
                         {
                           icon: Clock,
-                          text: String__UpperCaseFirstLetter(this.props.time)
+                          text: this.props.time.map(String__UpperCaseFirstLetter).join(', ')
                         }
                       ]}
                     />
