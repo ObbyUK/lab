@@ -4,7 +4,11 @@ const paths = require('./paths');
 
 let config = {};
 
-config.entry = ['babel-polyfill', 'react-hot-loader/patch', paths.app.srcIndex];
+config.entry = [
+  'babel-polyfill', 
+  'react-hot-loader/patch', 
+  paths.app.srcIndex
+];
 
 config.output = {
   path: paths.app.build,

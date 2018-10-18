@@ -4,8 +4,7 @@ const webpack = require('webpack');
 
 const config = {};
 
-config.mode = 'production';
-
+config.mode = 'none';
 config.devtool = 'source-map';
 
 config.output = {
@@ -19,14 +18,16 @@ config.module = {
       exclude: /node_modules/,
       use: [
         MiniCssExtractPlugin.loader,
-        'style-loader',
         'css-loader',
         'less-loader',
       ],
     },
     {
       test: /\.css$/,
-      use: [MiniCssExtractPlugin.loader].concat(['style-loader', 'css-loader',])
+      use: [
+        MiniCssExtractPlugin.loader,
+        'css-loader'
+      ]
     }
   ]
 };

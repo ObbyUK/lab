@@ -1,4 +1,3 @@
-// Development config
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const webpack = require('webpack');
@@ -6,9 +5,7 @@ const webpack = require('webpack');
 const config = {};
 
 config.mode = 'development';
-
 config.devtool = 'eval';
-
 config.entry = ['webpack-hot-middleware/client'];
 
 config.output = {
@@ -28,7 +25,10 @@ config.module = {
     },
     {
       test: /\min.css$/,
-      use: ['style-loader', 'css-loader']
+      use: [
+        'style-loader', 
+        'css-loader'
+      ]
     }
   ]
 };
