@@ -7,8 +7,5 @@ export default () => (
     <a href="/">
       <img src="/icons/logo-red.svg" alt="" className="menu__logo"/>
     </a>
-    <div className="menu__button">
-      Help
-    </div>
   </div>
 );

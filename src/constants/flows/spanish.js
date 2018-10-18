@@ -136,17 +136,17 @@ export default {
   ],
   timeOptions: [
     {
-      title: timeOfDayNames.DAYTIME,
+      name: timeOfDayNames.DAYTIME,
       value: timeOfDay.DAYTIME,
       description: "9AM - 5PM",
     },
     {
-      title: timeOfDayNames.EVENING,
+      name: timeOfDayNames.EVENING,
       value: timeOfDay.EVENING,
       description: "5PM onwards",
     },
     {
-      title: timeOfDayNames.WEEKENDS,
+      name: timeOfDayNames.WEEKENDS,
       value: timeOfDay.WEEKENDS,
     }
   ]

@@ -16,7 +16,7 @@ const viewingReducer = cond([
 
 const anwseringQuestionsReducer = cond([
   [isActionType(appActions.SELECT_SKILL_LEVEL), selectSkillLevel],
-  [isActionType(appActions.SELECT_TIME), selectTime],
+  [isActionType(appActions.SELECT_TIME), toggleTime],
   [isActionType(appActions.TOGGLE_LOCATION), toggleLocation],
   [isActionType(appActions.SUBMIT_QUESTIONS), submitQuestions],
   [T, identity]
@@ -70,8 +70,12 @@ function selectSkillLevel(state, { payload }) {
   return assoc('skillLevel', payload.skillLevel, state);
 }
 
-function selectTime(state, { payload }) {
-  return assoc('time', payload.time, state);
+function toggleTime(state, { payload }) {
+  return assoc(
+    'time', 
+    toggleValueFromCheckboxArray(payload.time, state.time),
+    state
+  );
 }
 
 function toggleLocation(state, { payload }) {

@@ -1,9 +1,6 @@
-// Production config
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
-
-const cssLoaders = require('./cssLoaders');
 
 const config = {};
 
@@ -31,11 +28,6 @@ config.module = {
       test: /\.css$/,
       use: [MiniCssExtractPlugin.loader].concat(['style-loader', 'css-loader',])
     }
-    // {
-    //   test: /\.css$/,
-    //   exclude: /node_modules/,
-    //   use: [MiniCssExtractPlugin.loader].concat(cssLoaders)
-    // }
   ]
 };
 

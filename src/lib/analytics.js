@@ -16,7 +16,6 @@ export const page = (event) => {
 };
 
 export const track = (event) => {
-  console.log('TRACK', event);
   return new Promise((resolve, reject) => {
     segment.track(event, (error) => {
       if (error) {

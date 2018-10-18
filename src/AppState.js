@@ -1,5 +1,4 @@
 import languages from './constants/languages';
-import skillLevels from './constants/skillLevels';
 import flows from './constants/flows';
 
 export const appStatuses = {
@@ -15,7 +14,7 @@ export default class AppState {
     this.selectedLanguage = languages.SPANISH;
     this.flow = flows[languages.SPANISH];
     this.skillLevel = null;
-    this.time = null;
+    this.time = [];
     this.locations = [];
     this.name = "";
     this.email = "";

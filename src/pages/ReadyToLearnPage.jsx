@@ -186,6 +186,7 @@ class HomePageContainer extends React.Component {
                 }
               </BlankCard>
             </div>
+
             {/* TIME CARD */}
             <div className="ready-to-learn-page__card">
               <BlankCard>
@@ -195,11 +196,13 @@ class HomePageContainer extends React.Component {
                 <p className="ready-to-learn-page__card-description">
                   We know your time is important, so let us know your availability.
                 </p>
-                <BigRadios
-                  selected={this.props.time}
-                  radios={this.props.flow.timeOptions}
-                  onChange={this.props.selectTime.bind(this)}
-                />
+                <div className="ready-to-learn-page__checkboxes">
+                  <MultipleCheckboxes
+                    checked={this.props.time}
+                    options={this.props.flow.timeOptions}
+                    onChange={this.props.selectTime.bind(this)}
+                  />
+                </div>
               </BlankCard>
             </div>
             <div className="ready-to-learn-page__continue-row">

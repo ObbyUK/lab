@@ -3,8 +3,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const webpack = require('webpack');
 
-const cssLoaders = require('./cssLoaders');
-
 const config = {};
 
 config.mode = 'development';
@@ -32,11 +30,6 @@ config.module = {
       test: /\min.css$/,
       use: ['style-loader', 'css-loader']
     }
-    // {
-    //   test: /\.css$/,
-    //   exclude: /node_modules/,
-    //   use: ['style-loader', ...cssLoaders]
-    // }
   ]
 };
 
