@@ -55,15 +55,19 @@ class LandingPageContainer extends React.Component {
           <div className="landing-page__header-text">
             <h1 className="landing-page__header-title">
               <span className="landing-page__header-title-part">
-                ¡Holá!
+                The most personal
               </span>
               <span className="landing-page__header-title-part">
-                What are you
+                language course
               </span>
               <span className="landing-page__header-title-part">
-                here to learn?
+                ever.
               </span>
             </h1>
+            <h2 className="landing-page__header-description">
+              Obby's language courses are designed to create the best learning experience for you. 
+              In-person learning. flexible locations, and ongoing support via our online platform & community.
+            </h2>
             <div className="landing-page__header-buttons">
               {languagesValueAndName.map(({ value, name }) => (
                 <LanguageButton 

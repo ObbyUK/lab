@@ -9,7 +9,8 @@
   "scripts": {
     "make-var-files": "cp .env.example .env && cp settings.example.js settings.js",
     "start": "node server/index.js",
-    "prod": "pm2 start server/index.js"
+    "prod": "pm2 start server/index.js",
+    "pm2": "pm2"
   },
   "dependencies": {
     "analytics-node": "^3.3.0",
