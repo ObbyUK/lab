@@ -1,6 +1,6 @@
 {
   "name": "lab",
-  "version": "0.0.1",
+  "version": "1.0",
   "description": "App for testing a new obby app",
   "main": "index.js",
   "author": "Obby Team",

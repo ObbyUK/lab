@@ -40,7 +40,7 @@ export default class extends React.Component {
     return (
       <div className="reviews-banner">
         <div className="reviews-banner__title">Loved by everyone</div>
-        <div className="reviews-banner__description">Our classes are rated 5⭐️ by people all across London. </div>
+        <div className="reviews-banner__description">Our classes are rated 5<span role="img" aria-label="stars">⭐️</span> by people all across London. </div>
 
         <div className="reviews-banner__review-wrap container">
           <div 

@@ -1,4 +1,4 @@
-import { contains, pipe, assoc, identity, T, cond, propEq } from 'ramda';
+import { pipe, assoc, identity, T, cond, propEq } from 'ramda';
 
 // Lib & Constants
 import isActionType from './lib/isActionType';

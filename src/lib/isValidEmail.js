@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { isNil } from 'ramda';
 
 export default (email) => !isNil(email.match(

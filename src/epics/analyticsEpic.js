@@ -1,4 +1,4 @@
-import { curry, map, __, contains, pipe, prop, cond, propEq } from 'ramda';
+import { __, contains, pipe, prop, cond, propEq } from 'ramda';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';

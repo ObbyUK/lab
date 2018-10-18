@@ -18,6 +18,7 @@ export default (props) => (
         <div className="big-radios__face">
           {(props.selected === radio.value) &&
             <img
+              alt={radio.title}
               src="/icons/tick.svg"
               className="big-radios__radio-icon"
             />

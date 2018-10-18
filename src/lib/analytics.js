@@ -1,5 +1,5 @@
-import { analytics } from './../settings';
 import Analytics from 'analytics-node';
+import { analytics } from './../../settings';
 
 const segment = new Analytics(analytics.apiKey);
 

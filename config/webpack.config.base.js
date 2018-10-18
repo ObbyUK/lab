@@ -25,8 +25,13 @@ config.module = {
     {
       test: /\.(js|jsx)?$/,
       enforce: 'pre',
-      use: 'eslint-loader',
-      include: paths.app.src
+      use: {
+        loader: 'eslint-loader',
+        options: {
+          fix: true
+        }
+      },
+      include: paths.app.src,
     },
     {
       test: /\.(js|jsx)?$/,

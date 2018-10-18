@@ -27,7 +27,7 @@ export default () => (
 
           <div className="social-icons col-xs-12">
             <span className="social-button">
-              <a href="https://www.facebook.com/obbyuk/" target="_blank">
+              <a href="https://www.facebook.com/obbyuk/" target="_blank" rel="noopener noreferrer">
                 <img
                   src="/icons/facebook-dark.svg"
                   alt={`Share Obby class in London via twitter`}
@@ -35,7 +35,7 @@ export default () => (
               </a>
             </span>
             <span className="social-button">
-              <a href="https://www.instagram.com/obbyuk/" target="_blank">
+              <a href="https://www.instagram.com/obbyuk/" target="_blank" rel="noopener noreferrer">
                 <img
                   src="/icons/instagram-dark.svg"
                   alt={`Share Obby class in London via twitter`}
@@ -43,7 +43,7 @@ export default () => (
               </a>
             </span>
             <span className="social-button">
-              <a href="https://twitter.com/ObbyUK" target="_blank">
+              <a href="https://twitter.com/ObbyUK" target="_blank" rel="noopener noreferrer">
                 <img
                   src="/icons/twitter-dark.svg"
                   alt={`Share Obby class in London via twitter`}

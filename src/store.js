@@ -10,7 +10,6 @@ import rootEpic from './rootEpic';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default function configureStore(history) {
-  // const middleware = routerMiddleware(history);
   const epicMiddleware = createEpicMiddleware();
   const middlewares = [routerMiddleware(history), epicMiddleware];
 
