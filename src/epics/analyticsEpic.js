@@ -11,6 +11,7 @@ import Event__AnalyticsPromise from './../lib/Event__AnalyticsPromise';
 import EventFactoryArray__TypeAndAppState__EventObjectsArray from './../lib/EventFactoryArray__TypeAndAppState__EventObjectsArray';
 import actions, { analyticsTrackedAction } from './../appActions';
 // Analytics Events
+import identifyEventFactory from '../analyticsEvents/identifyEventFactory';
 import pageViewedEventFactory from '../analyticsEvents/pageViewedEventFactory';
 import startFormEventFactory from '../analyticsEvents/startFormEventFactory';
 import completeFormEventFactory from '../analyticsEvents/completeFormEventFactory';
@@ -31,6 +32,7 @@ export default (action$, store) => {
       [
         propEq('type', actions.VIEW_LANDING_PAGE), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
+          identifyEventFactory,
           pageViewedEventFactory('Languages Test LP'),
           startFormEventFactory
         ])
@@ -48,7 +50,10 @@ export default (action$, store) => {
       ],
       [
         propEq('type', actions.SUBMIT), 
-        EventFactoryArray__TypeAndAppState__EventObjectsArray([conversionEventFactory])
+        EventFactoryArray__TypeAndAppState__EventObjectsArray([
+          conversionEventFactory,
+          identifyEventFactory,
+        ])
       ],
     ]))
     .mergeMap((eventObjectsArray) =>

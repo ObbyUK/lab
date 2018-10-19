@@ -27,4 +27,17 @@ export const track = (event) => {
   });
 };
 
-export const identify = () => {};
+export const identify = (event) => {
+  return new Promise((resolve, reject) => {
+    segment.identify(
+      event,
+      (error) => {
+        if (error) {
+          reject({ ok: false, error: error });
+        } else {
+          resolve({ ok: true });
+        }
+      }
+    );
+  });  
+};
