@@ -66,7 +66,7 @@ class LandingPageContainer extends React.Component {
             </h1>
             <h2 className="landing-page__header-description">
               Obby's language courses are designed to create the best learning experience for you. 
-              In-person learning. flexible locations, and ongoing support via our online platform & community.
+              In-person learning, flexible locations, and ongoing support via our online platform & community.
             </h2>
             <div className="landing-page__header-buttons">
               {languagesValueAndName.map(({ value, name }) => (
@@ -78,7 +78,6 @@ class LandingPageContainer extends React.Component {
                 />
               ))}
             </div>
-            <div className="landing-page__header-price">Starting from £20/class</div>
           </div>
         </div>
         <ThreePointSalesBanner

@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/ciki/.nvm/versions/node/v8.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js prod
+  /Users/ciki/.nvm/versions/node/v8.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js build
 
 PATH: 
   /Users/ciki/.nvm/versions/node/v8.9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -24,8 +24,10 @@ npm manifest:
     "private": true,
     "scripts": {
       "make-var-files": "cp .env.example .env && cp settings.example.js settings.js",
+      "build": "rimraf build && mkdir build/public && cp -R public build/public && webpack --progress",
       "start": "node server/index.js",
-      "prod": "pm2 stop && pm2 start server/index.js"
+      "prod": "pm2 start server/index.js",
+      "pm2": "pm2"
     },
     "dependencies": {
       "analytics-node": "^3.3.0",
@@ -105,8 +107,8 @@ npm manifest:
       "webpack-dev-server": "^3.1.4",
       "webpack-hot-middleware": "^2.18.0"
     },
-    "engines" : { 
-      "node" : ">=8.9.4" 
+    "engines": {
+      "node": ">=8.9.4"
     }
   }
 
@@ -9523,7 +9525,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c pm2 stop && pm2 start server/index.js
+  Arguments: -c rimraf build && mkdir build/public && cp -R public build/public && webpack --progress
   Directory: /Users/ciki/Obby/lab
   Output:
   

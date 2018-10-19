@@ -14,4 +14,5 @@
 
 * Set prod `.env` and `settings.js` files
 * `yarn`
+* `yarn build`
 * `yarn prod` (this will use **pm2** to run the app)

@@ -24,6 +24,7 @@ require('./routes')(router);
 if (process.env.NODE_ENV !== 'production') {
   require('./config/dev.js')(app);
 } else {
+  // console.log(path.resolve(__dirname, '..', 'build'));
   app.use(express.static(path.resolve(__dirname, '..', 'build')));
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(compiler.outputPath, 'index.html'));

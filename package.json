@@ -8,6 +8,7 @@
   "private": true,
   "scripts": {
     "make-var-files": "cp .env.example .env && cp settings.example.js settings.js",
+    "build": "rimraf build && webpack --progress && cp -R public/. build",
     "start": "node server/index.js",
     "prod": "pm2 start server/index.js",
     "pm2": "pm2"
@@ -90,7 +91,7 @@
     "webpack-dev-server": "^3.1.4",
     "webpack-hot-middleware": "^2.18.0"
   },
-  "engines" : { 
-    "node" : ">=8.9.4" 
+  "engines": {
+    "node": ">=8.9.4"
   }
 }
