@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/ciki/.nvm/versions/node/v8.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js build
+  /Users/ciki/.nvm/versions/node/v8.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js build-lang
 
 PATH: 
   /Users/ciki/.nvm/versions/node/v8.9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -24,9 +24,10 @@ npm manifest:
     "private": true,
     "scripts": {
       "make-var-files": "cp .env.example .env && cp settings.example.js settings.js",
-      "build": "rimraf build && mkdir build/public && cp -R public build/public && webpack --progress",
-      "start": "node server/index.js",
-      "prod": "pm2 start server/index.js",
+      "build": "rimraf build && webpack --progress && cp -R public/. build",
+      "build-lang": "cd languages/ && rimraf build && webpack --progress && cp -R ../public/. build",
+      "start-lang": "node langauges/server/index.js",
+      "prod": "yarn build && pm2 start server/index.js",
       "pm2": "pm2"
     },
     "dependencies": {
@@ -9525,7 +9526,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c rimraf build && mkdir build/public && cp -R public build/public && webpack --progress
+  Arguments: -c cd languages/ && rimraf build && webpack --progress && cp -R ../public/. build
   Directory: /Users/ciki/Obby/lab
   Output:
   
