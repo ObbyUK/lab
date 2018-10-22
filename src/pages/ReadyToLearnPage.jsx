@@ -6,7 +6,6 @@ import { propEq, find, mergeAll, contains } from 'ramda';
 import getUrlParamaters from './../lib/getUrlParamaters';
 import isFullArray from './../lib/isFullArray';
 import isValidEmail from './../lib/isValidEmail';
-import String__UpperCaseFirstLetter from './../lib/String__UpperCaseFirstLetter';
 // Actions & Style
 import { 
   viewReadyToLearnPageAction,
@@ -25,13 +24,8 @@ import Menu from '../components/Menu.jsx';
 import Footer from '../components/Footer.jsx';
 import BlankCard from './../components/BlankCard.jsx';
 import ImageBanner from '../components/ImageBanner.jsx';
-import BigRadios from '../components/BigRadios.jsx';
-import MultipleCheckboxes from '../components/MultipleCheckboxes.jsx';
-import PrimaryButton from '../components/PrimaryButton.jsx';
-import PriceSum from '../components/PriceSum.jsx';
-import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
-import Input from '../components/Input.jsx';
-import { Clock, BarChart, Location } from './../components/Icons.jsx'
+import FormContainer from '../containers/FormContainer.jsx';
+import ConversionContainer from '../containers/ConversionContainer.jsx';
 
 const mapStateToProps = (state) => ({
   selectedLanguage: state.app.selectedLanguage,
@@ -125,200 +119,13 @@ class HomePageContainer extends React.Component {
         
         {/* SCREEN 1: ANWSERING QUESTIONS */}
         {this.props.status === appStatuses.ANWSERING_QUESTIONS &&
-          <div className="ready-to-learn-page__body container">
-            {/* SKILL LEVEL CARD */}
-            <div className="ready-to-learn-page__card">
-              <BlankCard>
-                <h2 className="ready-to-learn-page__card-title">
-                  What's your level of expertise?
-                </h2>
-                <p className="ready-to-learn-page__card-description">
-                  On a scale from 1 to {this.props.flow.famousPerson}, how good are you?
-                </p>
-                <BigRadios
-                  selected={this.props.skillLevel}
-                  radios={this.props.flow.levelOptions}
-                  onChange={this.props.selectSkillLevel.bind(this)}
-                />
-              </BlankCard>
-            </div>
-            {/* LOCATION CARD */}
-            <div className="ready-to-learn-page__card">
-              <BlankCard>
-                <h2 className="ready-to-learn-page__card-title">
-                  Where would you like to learn?
-                </h2>
-                <p className="ready-to-learn-page__card-description">
-                  We’re offering classes from east to west, north to south. Select as many as you want.
-                </p>
-                
-                <div className="ready-to-learn-page__checkboxes">
-                  <MultipleCheckboxes
-                    checked={this.props.locations}
-                    options={this.props.flow.locationOptions}
-                    onChange={this.props.toggleLocation.bind(this)}
-                  />
-                </div>
-
-                {/* ADDRESS PREVIEWS */}
-                {this.canShowAnyLocationAddress() &&
-                  <div className="ready-to-learn-page__addresses">
-                    <h3 className="ready-to-learn-page__sub-title ready-to-learn-page__sub-title--bold">
-                      We currently run classes at these locations: 
-                    </h3>
-
-                    {this.props.flow.locationOptions.map((location, index) => (
-                      <div 
-                        key={index} 
-                        className={`
-                          ready-to-learn-page__area-adresses 
-                          ${this.canLocationAddressesBeShown(location) && 'ready-to-learn-page__area-adresses--show'}
-                        `}
-                      >
-                        <div className="ready-to-learn-page__sub-title">{location.name}</div>
-                        {isFullArray(location.addresses) && location.addresses.map((address, index) => [
-                          <div key={`${index}_address`} className="ready-to-learn-page__address">{address}</div>,
-                          <div key={`${index}_dot`} className="ready-to-learn-page__dot">•</div>
-                        ])}
-                      </div>
-                    ))}
-                  </div>
-                }
-              </BlankCard>
-            </div>
-
-            {/* TIME CARD */}
-            <div className="ready-to-learn-page__card">
-              <BlankCard>
-                <h2 className="ready-to-learn-page__card-title">
-                  When are you available?
-                </h2>
-                <p className="ready-to-learn-page__card-description">
-                  We know your time is important, so let us know your availability.
-                </p>
-                <div className="ready-to-learn-page__checkboxes">
-                  <MultipleCheckboxes
-                    checked={this.props.time}
-                    options={this.props.flow.timeOptions}
-                    onChange={this.props.selectTime.bind(this)}
-                  />
-                </div>
-              </BlankCard>
-            </div>
-            <div className="ready-to-learn-page__continue-row">
-              <div className="ready-to-learn-page__button">
-                <PrimaryButton 
-                  size="huge"
-                  text="Continue"
-                  disabled={!this.areAllQuestionsAnwsered()}
-                  onClick={this.props.submitQuestions.bind(this)}
-                />
-              </div>
-            </div>
-          </div>
+          <FormContainer />
         }
 
-        {/* SCREEN 2: CONTACT INFORMATION */}
         {this.props.status === appStatuses.ENTERING_CONTACT_INFORMATION &&
-          <div className="ready-to-learn-page__body container">
-            <div className="ready-to-learn-page__checkout row">
-              {/* EMAIL DETAILS */}
-              <div className="ready-to-learn-page__card col-lg-8">
-                <BlankCard>
-                  <h2 className="ready-to-learn-page__card-title">
-                    Tell us where to find you
-                  </h2>
-                  <p className="ready-to-learn-page__card-description">
-                    We’ll be in touch to match you with the right teacher and schedule your first class.
-                  </p>
-                  {/* NAME */}
-                  <div className="ready-to-learn-page__field">
-                    <div className="ready-to-learn-page__label">Name</div>
-                    <div className="ready-to-learn-page__input">
-                      <Input
-                        placeholder="Frida Khalo"
-                        value={this.props.name}
-                        onChange={this.props.typeName.bind(this)}
-                      />
-                    </div>
-                  </div>
-                  {/* EMAIL */}
-                  <div className="ready-to-learn-page__field">
-                    <div className="ready-to-learn-page__label">Email</div>
-                    <div className="ready-to-learn-page__input">
-                      <Input
-                        placeholder="frida@khalo.com"
-                        value={this.props.email}
-                        onChange={this.props.typeEmail.bind(this)}
-                      />
-                    </div>
-                  </div>
-                  <div className="ready-to-learn-page__continue-form">
-                    <div className="ready-to-learn-page__button">
-                      <PrimaryButton
-                        size="huge"
-                        text="Start learning"
-                        disabled={!this.isContactInformationProvided()}
-                        onClick={this.props.submit.bind(this)}
-                      />
-                    </div>
-                  </div>
-                </BlankCard>
-              </div>
-              {/* PAYMENT SUMMARY */}
-              <div className="ready-to-learn-page__card col-lg-4">
-                <BlankCard>
-                  <h2 className="ready-to-learn-page__card-title">
-                    8 classes
-                  </h2>
-                  <PriceSum 
-                    calculation="8 x £20"
-                    total="£160"
-                  />
-                  <div className="ready-to-learn-page__summary-section">
-                    <ImageBulletPoints
-                      size="small"
-                      points={[
-                        {
-                          icon: BarChart,
-                          text: String__UpperCaseFirstLetter(this.props.skillLevel),
-                        },
-                        {
-                          icon: Location,
-                          text: this.props.locations.join(', '),
-                        },
-                        {
-                          icon: Clock,
-                          text: this.props.time.map(String__UpperCaseFirstLetter).join(', ')
-                        }
-                      ]}
-                    />
-                  </div>
-                  <div className="ready-to-learn-page__summary-section">
-                    <ImageBulletPoints
-                      points={[
-                        {
-                          image: "/icons/tick.svg",
-                          text: "Money back guarantee",
-                        },
-                        {
-                          image: "/icons/installments.svg",
-                          text: "Pay in installments",
-                        },
-                        {
-                          image: "/icons/study-groups-blue.svg",
-                          text: "Learn with people on the same journey",
-                        }
-                      ]}
-                    />
-                  </div>
-                </BlankCard>
-              </div>
-            </div>
-          </div>
+          <ConversionContainer />
         }
 
-        {/* SCREEN 3: THANK YOU */}
         {this.props.status === appStatuses.SUBMITTED &&
           <div className="ready-to-learn-page__body container">
             <div className="ready-to-learn-page__card">
