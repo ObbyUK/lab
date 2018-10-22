@@ -7,11 +7,12 @@
   "license": "PRIVATE",
   "private": true,
   "scripts": {
-    
     "make-var-files": "cp .env.example .env && cp languages/settings.example.js languages/settings.js",
     "start-lang": "node languages/server/index.js",
     "build-lang": "cd languages && rimraf build && webpack --progress && cp -R ../public/. build",
     "prod-lang": "yarn build-lang && pm2 start languages/server/index.js",
+
+    "start-med": "node medidation/server/index.js",
 
     "pm2": "pm2"
   },

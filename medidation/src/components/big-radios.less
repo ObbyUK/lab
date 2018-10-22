@@ -1,0 +1,54 @@
+@import './../styles/variables';
+
+.big-radios {
+  font-family: "Founders Grotesk", 'Arial', sans-serif;
+  letter-spacing: 0.3px;
+
+  &__radio {
+    margin-bottom: 25px;
+    cursor: pointer;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__face {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+  
+  &__radio-icon {
+    margin-right: 22px;
+    cursor: pointer;
+  }
+
+  &__radio-circle {
+    flex: none;
+    width: 35px;
+    height: 35px;
+    border: 1px solid @gray;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-right: 22px;
+    @media (min-width:@md-width) {
+    }
+  }
+  
+  &__text {}
+  
+  &__title {
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    margin: 0;
+  }
+  
+  &__description {
+    font-size: @m-paragraph;
+    line-height: @m-paragraph-lh;
+    margin: 0;
+    color: @gray;
+    font-weight: 400;
+  }
+}

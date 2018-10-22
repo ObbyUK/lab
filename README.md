@@ -7,7 +7,8 @@
 * Be on node `8.9.4` or greater
 * `yarn`
 * `yarn make-var-files`
-* `yarn start-lang`
+* `yarn start-lang` to run the languages app
+* `yarn start-med` to run the medidation app
 * Go to `localhost:5000`
 
 ### Deployment

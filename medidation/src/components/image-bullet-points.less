@@ -1,0 +1,45 @@
+@import './../styles/variables';
+
+.image-bullet-points {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  
+  &__point {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    &--large {
+      margin-bottom: 25px;
+    }
+
+    &--small {
+      margin-bottom: 20px;
+    }
+  }
+  
+  &__point-image {
+    margin-right: 12px;
+  }
+  
+  &__point-icon {
+    margin-right: 12px;
+    g {
+      stroke: @gray;
+    }
+
+    path {
+      stroke: @gray;
+    }
+  }
+  
+  &__point-text {
+    font-size: @m-paragraph;
+    line-height: @m-paragraph-lh;
+  }
+}
