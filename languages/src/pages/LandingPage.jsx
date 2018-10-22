@@ -18,6 +18,7 @@ import ImageTextListBanner from '../components/ImageTextListBanner.jsx';
 import LanguageButton from '../components/LanguageButton.jsx';
 import ReviewsBanner from '../components/ReviewsBanner.jsx';
 import Footer from '../components/Footer.jsx';
+import Header from '../components/Header.jsx';
 
 const mapStateToProps = (state) => ({
 
@@ -46,40 +47,25 @@ class LandingPageContainer extends React.Component {
     return (
       <div className="landing-page">
         <Menu/>
-        <div className="landing-page__header">
-          <img 
-            src="/images/header-image.jpg" 
-            alt=""
-            className="landing-page__header-image"
-          />
-          <div className="landing-page__header-text">
-            <h1 className="landing-page__header-title">
-              <span className="landing-page__header-title-part">
-                The most personal
-              </span>
-              <span className="landing-page__header-title-part">
-                language course
-              </span>
-              <span className="landing-page__header-title-part">
-                ever.
-              </span>
-            </h1>
-            <h2 className="landing-page__header-description">
-              Obby's language courses are designed to create the best learning experience for you. 
-              In-person learning, flexible locations, and ongoing support via our online platform & community.
-            </h2>
-            <div className="landing-page__header-buttons">
-              {languagesValueAndName.map(({ value, name }) => (
-                <LanguageButton 
-                  key={value}
-                  onClick={() => this.props.chooseLanguage(value)}
-                  language={value}
-                  text={name}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
+        <Header
+          image="/images/header-image.jpg"
+          title={[
+            "The most personal",
+            "language course",
+            "ever.",
+          ]}
+          description={`Obby's language courses are designed to create the best learning experience for you. 
+            In-person learning, flexible locations, and ongoing support via our online platform & community.`}
+        >
+          {languagesValueAndName.map(({ value, name }) => (
+            <LanguageButton 
+              key={value}
+              onClick={() => this.props.chooseLanguage(value)}
+              language={value}
+              text={name}
+            />
+          ))}
+        </Header>
         <ThreePointSalesBanner
           title="What you get"
           points={[
