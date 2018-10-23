@@ -2,8 +2,15 @@
 
 .reviews-banner {
   width: 100%;
-  background-color: @azalea;
   padding: 100px 10px 150px;
+  
+  &--azalea {
+    background-color: @azalea;
+  }
+  
+  &--cruise {
+    background-color: @cruise;
+  }
 
   &__title {
     font-family: "Founders Grotesk", 'Arial', sans-serif;
@@ -39,6 +46,17 @@
 
   &__review-button {
     cursor: pointer;
+    &--azalea {
+      path {
+        stroke: #A2646F;
+      }
+    }
+
+    &--cruise {
+      path {
+        stroke: #6d9484;
+      }
+    }
   }
 
   &__review {

@@ -3,16 +3,25 @@
 .primary-button {
   width: 100%;
   font-family: "Founders Grotesk", sans-serif;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1;
   margin: 0;
   border-radius: 3px;
   cursor: pointer;
-  border: 1px solid @camelot;
-  background-color: @camelot;
-  color: @gallery;
   outline: none !important;
   transition: all 350ms;
+  
+  &--camelot {
+    background-color: @camelot;
+    color: @gallery;
+    border: 1px solid @camelot;
+  }
+
+  &--gallery {
+    background-color: @gallery;
+    color: @ebony-clay;
+    border: 1px solid @gallery;
+  }
 
   &--huge {
     font-size: @sm-heading;

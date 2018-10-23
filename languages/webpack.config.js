@@ -9,7 +9,7 @@ const TARGET = process.env.npm_lifecycle_event;
 let config = {};
 
 switch (TARGET) {
-  case 'start': {
+  case 'start-lang': {
     config = merge.smart(baseConfig, devConfig);
     break;
   }

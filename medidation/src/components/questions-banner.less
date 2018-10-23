@@ -1,0 +1,64 @@
+@import './../styles/variables';
+
+.questions-banner {
+  
+  background-color: @astra;
+  padding: 80px 20px;
+
+  &__title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: @m-heading-mobile;
+    line-height: 1;
+    font-weight: 600;
+    color: @ebony-clay;
+    margin: 0 0 33px;
+    width: 100%;
+
+    @media (min-width:@sm-width) {
+      font-size: @m-heading;
+    }
+  }
+
+  &__body {
+    max-width: @max-page-width;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  &__question {
+    display: inline-flex;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+    
+    @media (min-width:@sm-width) {
+      width: 50%;
+      margin-bottom: 59px;
+    }
+  }
+  
+  &__question-title {
+    font-family: "Founders Grotesk", sans-serif;
+    font-size: @sm-heading-mobile;
+    line-height: 1;
+    font-weight: 600;
+    color: @ebony-clay;
+    margin-bottom: 9x;
+
+    @media (min-width:@sm-width) {
+      font-size: @sm-heading;
+    }
+  }
+
+  &__question-text {
+    font-family: "Founders Grotesk", sans-serif;
+    font-size: @m-paragraph;
+    line-height: @m-paragraph-lh;
+    font-weight: 400;
+    color: @ebony-clay;
+    margin: 0;
+    padding-right: 20px;
+  }
+}

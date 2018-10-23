@@ -7,6 +7,7 @@ export default (props) => (
     className={`
       primary-button 
       primary-button--${props.size||'large'} 
+      primary-button--${props.color||'camelot'} 
       ${(props.disabled && ' primary-button--disabled')}
       ${props.className}
     `}

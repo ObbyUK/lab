@@ -38,13 +38,13 @@ export default class extends React.Component {
 
   render () {
     return (
-      <div className="reviews-banner">
+      <div className={`reviews-banner reviews-banner--${this.props.color||'azalea'}`}>
         <div className="reviews-banner__title">Loved by everyone</div>
         <div className="reviews-banner__description">Our classes are rated 5<span role="img" aria-label="stars">⭐️</span> by people all across London. </div>
 
         <div className="reviews-banner__review-wrap container">
           <div 
-            className="reviews-banner__review-button"
+            className={`reviews-banner__review-button reviews-banner__review-button--${this.props.color||'azalea'}`}
             onClick={this.previousReview.bind(this)}
           >
             <Icon icon={ArrowLeft} height={38}/>
@@ -59,7 +59,7 @@ export default class extends React.Component {
             />
           </div>
           <div 
-            className="reviews-banner__review-button"
+            className={`reviews-banner__review-button reviews-banner__review-button--${this.props.color||'azalea'}`}
             onClick={this.nextReview.bind(this)}
           >
             <Icon icon={ArrowRight} height={38}/>
