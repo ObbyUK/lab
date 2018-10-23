@@ -1,0 +1,147 @@
+@import './../styles/variables';
+
+.schedule {
+
+  border-top: 1px solid @gallery;
+  padding-top: 70px;
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 75px;
+  }
+
+  &__header-text {
+    width: 100%;
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    font-weight: 400;
+    color: @ebony-clay;
+    margin: 10px 0 0;
+    text-align: right;
+  }
+
+  &__detail {
+    display: inline-flex;
+    margin-left: 20px;
+    align-items:center;
+  }
+
+  &__header-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  
+  &__title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 600;
+    color: @ebony-clay;
+    margin: 0 0 33px;
+
+    @media (min-width:@sm-width) {
+      font-size: 36px;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__week {
+    width: 50%;
+    margin-bottom: 90px;
+    &:nth-child(2n+1) {
+      padding-right: 12px;
+    }
+    &:nth-child(2n+2) {
+      padding-left: 12px;
+    }
+  }
+
+  &__week-title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 400;
+    color: @ebony-clay;
+    margin: 0;
+  }
+
+  &__week-subtitle {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 600;
+    color: @ebony-clay;
+    margin: 0 0 20px;
+
+    &--robbins-egg-blue {
+      color: @robbins-egg-blue;
+    }
+    &--sun {
+      color: @sun;
+    }
+    &--emerald {
+      color: @emerald;
+    }
+    &--camelot {
+      color: @camelot;
+    }
+    &--deep-blush {
+      color: @deep-blush;
+    }
+  }
+
+  &__text {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: @m-paragraph;
+    line-height: @m-paragraph-lh;
+    font-weight: 400;
+    color: @ebony-clay;
+    margin: 0;
+  }
+
+  &__note-wrap {
+    width: 50%;
+    &:nth-child(2n+1) {
+      padding-right: 12px;
+    }
+    &:nth-child(2n+2) {
+      padding-left: 12px;
+    }
+  }
+
+  &__note {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    background-color: @astra;
+    padding: 33px;
+  }
+
+  &__note-title {
+    width: 100%;
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    font-weight: 600;
+    color: @ebony-clay;
+    margin: 0 0 8px;
+  }
+
+  &__note-text {
+    width: 100%;
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    font-weight: 400;
+    color: @ebony-clay;
+    margin: 0;
+  }
+
+}

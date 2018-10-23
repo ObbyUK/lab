@@ -10,11 +10,14 @@ import {
 import flow from './../constants/flow';
 // Components
 import Header from './../components/Header.jsx';
+import Footer from './../components/Footer.jsx';
 import PrimaryButton from './../components/PrimaryButton.jsx';
 import ThreePointSalesBanner from './../components/ThreePointSalesBanner.jsx';
 import ReviewsBanner from './../components/ReviewsBanner.jsx';
 import ImageTextListBanner from './../components/ImageTextListBanner.jsx';
 import QuestionsBanner from '../components/QuestionsBanner.jsx';
+import ClassesByLocationsContainer from '../containers/ClassesByLocationsContainer.jsx';
+import Schedule from '../components/Schedule.jsx';
 
 const mapStateToProps = (state) => ({
 
@@ -100,11 +103,18 @@ class LandingPageContainer extends React.Component {
             }
           ]}
         />
+        <Schedule
+          price={flow.schedule.price}
+          buttonText={flow.schedule.buttonText}
+          blurb={flow.schedule.blurb}
+          note={flow.schedule.note}
+          weeks={flow.schedule.weeks}
+        />
         <ImageTextListBanner
           color="azalea"
           title="Great teachers, great vibes"
           description="We’ve hand picked some of the best meditation teachers in London, helping you easily get up to speed with etc."
-          image="/images/learn.png"
+          image="/images/teachers.png"
           points={[
             { image: "/icons/small-class-icon.svg", text: "Hand-picked teachers" },
             { image: "/icons/study-groups.svg", text: "Tried and tested curriculums" },
@@ -114,7 +124,7 @@ class LandingPageContainer extends React.Component {
         <ImageTextListBanner
           title="All across London, in some of the nicest venues"
           description="We have courses available at multiple times, all across London. Don’t need to worry about finding the right time."
-          image="/images/money-back.png"
+          image="/images/venues.png"
           reverse={true}
           points={[
             { image: "/icons/tick.svg", text: "Multiple locations" },
@@ -122,10 +132,12 @@ class LandingPageContainer extends React.Component {
             { image: "/icons/tick.svg", text: "Money back guarantee if you don’t enjoy your first class" },
           ]}
         />
+        <ClassesByLocationsContainer/>
         <QuestionsBanner
           title="Frequently asked questions"
           questions={flow.faq}
         />
+        <Footer/>
       </div>
     );
   }
