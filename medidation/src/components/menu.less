@@ -7,23 +7,33 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
-  background-color: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
+
+  &--normal {
+    background-color:white;
+    box-shadow: 0 2px 4px 0 rgba(191, 191, 191, 0.5);
+  }
+  
+  &--absolute {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+  }
+
   @media (min-width:@sm-width) {
     padding: 0 80px;
+  }
+
+  &__logo-wrap {
+    display: inline-flex;
   }
 
   &__logo {
     width: 81px;
   }
 
-  &__button {
-    font-family: "Founders Grotesk", 'Arial', sans-serif;
-    letter-spacing: 0.3px;
-    font-size: @l-paragraph;
-    line-height: @l-paragraph-lh;
-    cursor: pointer;
+  &__body {
+    display: inline-flex;
+    align-items: center;
   }
 }
