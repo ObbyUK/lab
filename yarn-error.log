@@ -1,14 +1,14 @@
 Arguments: 
-  /Users/ciki/.nvm/versions/node/v6.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js add jquery
+  /Users/ciki/.nvm/versions/node/v8.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js start-med
 
 PATH: 
-  /Users/ciki/.nvm/versions/node/v6.9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  /Users/ciki/.nvm/versions/node/v8.9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  6.9.4
+  8.9.4
 
 Platform: 
   darwin x64
@@ -23,13 +23,11 @@ npm manifest:
     "license": "PRIVATE",
     "private": true,
     "scripts": {
-      "make-var-files": "cp .env.example .env && cp languages/settings.example.js languages/settings.js",
+      "make-var-files": "cp .env.example .env && cp languages/settings.example.js languages/settings.js && cp meditation/settings.example.js meditation/settings.js",
       "start-lang": "node languages/server/index.js",
       "build-lang": "cd languages && rimraf build && webpack --progress && cp -R ../public/. build",
       "prod-lang": "yarn build-lang && pm2 start languages/server/index.js",
-  
       "start-med": "node medidation/server/index.js",
-  
       "pm2": "pm2"
     },
     "dependencies": {
@@ -9525,14 +9523,17 @@ Lockfile:
       readable-stream "^2.0.0"
 
 Trace: 
-  Error: Found incompatible module
-      at MessageError.Error (native)
-      at new MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)
-      at Object.checkOne (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:62444:11)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:22773:75
-      at next (native)
-      at step (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:98:30)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:116:14
-      at Promise.F (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:23451:28)
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:95:12
-      at /usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:22777:27
+  Error: Command failed.
+  Exit code: 1
+  Command: sh
+  Arguments: -c node medidation/server/index.js
+  Directory: /Users/ciki/Obby/lab
+  Output:
+  
+      at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)
+      at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:226:113)
+      at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:30281:17)
+      at emitTwo (events.js:126:13)
+      at ChildProcess.emit (events.js:214:7)
+      at maybeClose (internal/child_process.js:925:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)

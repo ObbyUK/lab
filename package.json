@@ -11,7 +11,7 @@
     "start-lang": "node languages/server/index.js",
     "build-lang": "cd languages && rimraf build && webpack --progress && cp -R ../public/. build",
     "prod-lang": "yarn build-lang && pm2 start languages/server/index.js",
-    "start-med": "node medidation/server/index.js",
+    "start-med": "node meditation/server/index.js",
     "pm2": "pm2"
   },
   "dependencies": {
