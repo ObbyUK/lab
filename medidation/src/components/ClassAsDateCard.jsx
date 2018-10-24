@@ -30,9 +30,15 @@ export default (props) => (
 
     <div className="class-as-date-card__bottom-row">
       <div className="class-as-date-card__details">
-        <IconLabel icon={Location} text={props.class.location}/>
-        <IconLabel icon={Clock} text={props.class.time}/>
-        <IconLabel icon={Clock} text={props.class.dates}/>
+        <div className="class-as-date-card__detail">
+          <IconLabel icon={Location} text={props.class.location}/>
+        </div>
+        <div className="class-as-date-card__detail">
+          <IconLabel icon={Clock} text={props.class.time}/>
+        </div>
+        <div className="class-as-date-card__detail">
+          <IconLabel icon={Clock} text={props.class.dates}/>
+        </div>
       </div>
       <div className="class-as-date-card__button">
         <PrimaryButton text="Book a spot" />

@@ -14,20 +14,22 @@ export default class  extends React.Component {
 
   render () {
     return (
-      <div className="classes-by-locations-container container">
-        <h2 className="classes-by-locations-container__title">
-          Choose your Location
-        </h2>
-        {flow.classesByLocation.map((location, index) => (
-          <div key={index} className="classes-by-locations-container__location">
-            <div className="classes-by-locations-container__location-title">{location.name}</div>
-            {location.classes.map((classAsDate, index) => (
-              <div key={index} className="classes-by-locations-container__class-card">
-                <ClassAsDateCard class={classAsDate}/>
-              </div>
-            ))}
-          </div>
-        ))}        
+      <div className="classes-by-locations-container">
+        <div className="container">
+          <h2 className="classes-by-locations-container__title">
+            Choose your Location
+          </h2>
+          {flow.classesByLocation.map((location, index) => (
+            <div key={index} className="classes-by-locations-container__location">
+              <div className="classes-by-locations-container__location-title">{location.name}</div>
+              {location.classes.map((classAsDate, index) => (
+                <div key={index} className="classes-by-locations-container__class-card">
+                  <ClassAsDateCard class={classAsDate}/>
+                </div>
+              ))}
+            </div>
+          ))}        
+        </div>
       </div>
     );
   }

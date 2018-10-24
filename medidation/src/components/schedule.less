@@ -4,11 +4,50 @@
 
   border-top: 1px solid @gallery;
   padding-top: 70px;
-  
+
   &__header {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 75px;
+    margin-bottom: 50px;
+    @media (min-width:@sm-width) {
+      margin-bottom: 75px;
+    }
+  }
+
+  &__title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 600;
+    color: @ebony-clay;
+    margin: 0 0 20px;
+    
+    @media (min-width:@sm-width) {
+      margin: 0 0 33px;
+      font-size: 36px;
+    }
+  }
+  
+  &__header-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    @media (min-width:@sm-width) {
+      justify-content: flex-end;
+    }
+  }
+
+  &__detail {
+    display: flex;
+    // width: 100%;
+    margin-right: 10px;
+    align-items:center;
+    
+    @media (min-width:@sm-width) {
+      margin-left: 20px;
+      display: inline-flex;
+    }
   }
 
   &__header-text {
@@ -19,31 +58,10 @@
     font-weight: 400;
     color: @ebony-clay;
     margin: 10px 0 0;
-    text-align: right;
-  }
-
-  &__detail {
-    display: inline-flex;
-    margin-left: 20px;
-    align-items:center;
-  }
-
-  &__header-details {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-  
-  &__title {
-    font-family: "Founders Grotesk", 'Arial', sans-serif;
-    font-size: 36px;
-    line-height: 1;
-    font-weight: 600;
-    color: @ebony-clay;
-    margin: 0 0 33px;
-
+    text-align: left;
+    
     @media (min-width:@sm-width) {
-      font-size: 36px;
+      text-align: right;
     }
   }
 
@@ -53,13 +71,19 @@
   }
 
   &__week {
-    width: 50%;
-    margin-bottom: 90px;
-    &:nth-child(2n+1) {
-      padding-right: 12px;
-    }
-    &:nth-child(2n+2) {
-      padding-left: 12px;
+
+    width: 100%;
+    margin-bottom: 40px;
+    
+    @media (min-width:@sm-width) {
+      width: 50%;
+      margin-bottom: 90px;
+      &:nth-child(2n+1) {
+        padding-right: 12px;
+      }
+      &:nth-child(2n+2) {
+        padding-left: 12px;
+      }
     }
   }
 
@@ -107,12 +131,20 @@
   }
 
   &__note-wrap {
-    width: 50%;
-    &:nth-child(2n+1) {
-      padding-right: 12px;
-    }
-    &:nth-child(2n+2) {
-      padding-left: 12px;
+
+    width: 100%;
+    margin-bottom: 40px;
+
+    @media (min-width:@sm-width) {
+      
+      width: 50%;
+
+      &:nth-child(2n+1) {
+        padding-right: 12px;
+      }
+      &:nth-child(2n+2) {
+        padding-left: 12px;
+      }
     }
   }
 

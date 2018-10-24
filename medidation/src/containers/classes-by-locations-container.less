@@ -2,8 +2,13 @@
 
 .classes-by-locations-container {
   
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 40px;
+  border-top: 1px solid @gallery;
+  
+  @media (min-width:@lg-width) {
+    padding-top: 100px;
+  }
 
   &__title {
     font-family: "Founders Grotesk", 'Arial', sans-serif;
