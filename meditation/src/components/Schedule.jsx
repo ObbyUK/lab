@@ -12,26 +12,15 @@ export default (props) => (
       <div className="schedule__title">
         {props.title||'Schedule'}
       </div>
-      <div className="schedule__header-details">
-        <div className="schedule__detail">
-          <PriceSum calculation={props.price.calculation} total={props.price.total}/>
-        </div>
-        <div className="schedule__detail">
-          <PrimaryButton 
-            text={props.buttonText}
-            color="ebony-clay"
-          />
-        </div>
-        <div className="schedule__header-text">
-          {props.blurb}
-        </div>
+      <div className="schedule__description">
+        {props.description}
       </div>
     </div>
 
     <div className="schedule__body container">
       {props.weeks.map((week, index) => (
         <div key={index} className="schedule__week">
-          <div className="schedule__week-title">Week {index}</div>
+          <div className="schedule__week-title">{week.supTitle||`Week ${index}`}</div>
           <div className={`schedule__week-subtitle schedule__week-subtitle--${week.color}`}>{week.title}</div>
           <div className="schedule__text">{week.text}</div>
         </div>

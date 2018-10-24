@@ -4,8 +4,8 @@ export default {
   reviews: [
     {
       image: '/images/astrid-avatar.jpg',
-      name: 'Astrid',
-      text: 'The company I work for just opened an office in Italy, and it felt natural to learn a bit of italian to better communicate with my italian colleagues. Doing this on Obby felt natural, and Vicenzo is definitely one of the nicest and most patient teachers ever. I would recommend this to anyone!',
+      name: 'Tanja',
+      text: 'I have been incredibly busy with work over the past few months and increasingly felt stressed. I have always wanted to learn to become a bit more mindful and calm. So I did that! Found the beginners mindfulness course on Obby and it was perfect, had a great time with Louise and really learned lots!',
     },
     {
       image: '/images/florien-avatar.png',
@@ -19,6 +19,8 @@ export default {
     }
   ],
   schedule: {
+    title: "Schedule",
+    description: "We have found the perfect length for a beginner meditation course is 4-weeks, with one-hour sessions each week.  Any shorter and you don’t get much out of it, any longer and it gets too much. Here is what you cover each week:",
     price: {
       calculation: "4 classes",
       total: "£100"
@@ -31,9 +33,10 @@ export default {
     },
     weeks: [
       {
-        title: "Welcoming pack",
+        supTitle: "Once you sign up",
+        title: "Free Welcome pack",
         color: "robbins-egg-blue",
-        text: "Receive our welcoming pack by post, and get access to our online learning journal where you can get to know your teachers and engage with other fellow students."
+        text: "As soon as you join, you will get a welcome pack sent to you by post with everything you need to get started, including a welcome letter from your teacher, instructions and access to your online learning journal, a personal notebook to keep track of your progress, and a copy of The Power of Now by Eckhart Tolle."
       },
       {
         title: "Grounding & Grattitude",
@@ -65,19 +68,21 @@ export default {
           title: "Sunday, 21 Nov",
           location: "42 Acress Street, EC2A 4LW",
           time: "12PM - 3PM",
-          dates: "Every Sundary starting from 21 Nov",
+          dates: "Every Sunday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
           link: "",
+          buttonText: "Pay £25 today"
         },
         {
           title: "Tuesday, 23 Nov",
           location: "42 Acress Street, EC2A 4LW",
           time: "6PM - 9PM",
-          dates: "Every Tuesday starting from 23 Nov",
+          dates: "Every Tuesday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
           link: "",
+          buttonText: "Pay £25 today"
         }
       ]
     },
@@ -88,19 +93,21 @@ export default {
           title: "Saturday, 20 Nov",
           location: "Iris & June, W2 4ND",
           time: "12PM - 3PM",
-          dates: "Every Saturday starting from 20 Nov",
+          dates: "Every Saturday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
           link: "",
+          buttonText: "Pay £25 today"
         },
         {
           title: "Wednesday, 24 Nov",
           location: "Iris & June, W2 4ND",
           time: "6PM - 9PM",
-          dates: "Every Wednesday starting from 24 Nov",
+          dates: "Every Wednesday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
           link: "",
+          buttonText: "Pay £25 today"
         },
       ]
     },
@@ -111,19 +118,21 @@ export default {
           title: "Sunday, 21 Nov",
           location: "Kane, N5 6DR",
           time: "12PM - 3PM",
-          dates: "Every Sunday starting from 21 Nov",
+          dates: "Every Sunday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
           link: "",
+          buttonText: "Pay £25 today"
         },
         {
           title: "Tuesday, 23 Nov",
           location: "Kane, N5 6DR",
           time: "6PM - 9PM",
-          dates: "Every Tuesday starting from 23 Nov",
+          dates: "Every Tuesday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
           link: "",
+          buttonText: "Pay £25 today"
         },
       ]
     },
@@ -134,19 +143,21 @@ export default {
           title: "Saturday, 20 Nov",
           location: "Form Space, S3 7LD",
           time: "12PM - 3PM",
-          dates: "Every Saturday starting from 20 Nov",
+          dates: "Every Saturday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
           link: "",
+          buttonText: "Pay £25 today"
         },
         {
           title: "Wednesday, 24 Nov",
           location: "Form Space, S3 7LD",
           time: "6PM - 9PM",
-          dates: "Every Wednesday starting from 24 Nov",
+          dates: "Every Wednesday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
           link: "",
+          buttonText: "Pay £25 today"
         },
       ]
     }

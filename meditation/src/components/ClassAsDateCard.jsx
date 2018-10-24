@@ -41,7 +41,7 @@ export default (props) => (
         </div>
       </div>
       <div className="class-as-date-card__button">
-        <PrimaryButton text="Book a spot" />
+        <PrimaryButton text={props.class.buttonText||'Book a spot'} />
       </div>
     </div>
   </div>
