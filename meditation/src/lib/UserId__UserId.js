@@ -4,7 +4,7 @@ import getUUIDv4 from './getUUIDv4';
 
 export default (userId) => {
 
-  var anonymousUserIdCookieName = 'obbyLangaugesAnonymousUserId';
+  var anonymousUserIdCookieName = 'obbyMeditationAnonymousUserId';
   var anonymousUserId = cookie.get(anonymousUserIdCookieName);
 
   if (isNil(userId) && isNil(anonymousUserId)) {

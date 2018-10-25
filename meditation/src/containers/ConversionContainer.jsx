@@ -119,7 +119,7 @@ class FormContainer extends React.Component {
                   points={[
                     {
                       icon: Calendar,
-                      text: `${this.props.chosenClass.title} and then ${this.props.chosenClass.dates}`
+                      text: this.props.chosenClass.summary
                     },
                     {
                       icon: Location,
