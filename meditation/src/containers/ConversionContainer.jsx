@@ -64,10 +64,10 @@ class FormContainer extends React.Component {
           <div className="conversion-container__card col-lg-8">
             <BlankCard>
               <h2 className="conversion-container__card-title">
-                Tell us where to find you
+                We start taking bookings one week ahead of the course start date, to make sure the venue space and teachers are available.
               </h2>
               <p className="conversion-container__card-description">
-                We’ll be in touch to match you with the right teacher and schedule your first class.
+                Register your interest now and we will send you an email to once bookings are live!
               </p>
               {/* NAME */}
               <div className="conversion-container__field">
