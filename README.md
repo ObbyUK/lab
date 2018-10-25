@@ -15,5 +15,8 @@
 ### Deployment
 
 * Set prod `.env` and `settings.js` files
+* Make sure both `meditation` and `languages` listen to different ports (this will be set by default if you copy the `.example` files)
+* make sure in `settings.js` for both apps that the  `host` is not `localhost`
 * `yarn`
 * `yarn prod-lang` (this will use **pm2** to run the app)
+* `yarn prod-med` (this will use **pm2** to run the app)
