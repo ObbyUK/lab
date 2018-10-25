@@ -57,7 +57,7 @@ class PitchContainer extends React.Component {
             <a href="#classes" className="pitch-container__menu-button">
               <PrimaryButton 
                 color="ebony-clay"
-                text="Book a course"
+                text="See dates"
                 onClick={console.log}
               />
             </a>
@@ -75,7 +75,7 @@ class PitchContainer extends React.Component {
             <div className="pitch-container__button">
               <PrimaryButton
                 size="huge"
-                text="Book a course"
+                text="See dates"
                 color="gallery"
               />
             </div>
@@ -101,7 +101,7 @@ class PitchContainer extends React.Component {
                 { 
                   image: "/icons/in-person.svg",
                   title: "In-person & online", 
-                  description: "In-person learning to help you get disconnect and learn from real people + Online resources to make the most of your commitment to yourself"
+                  description: "In-person learning to help you get disconnect and learn from real people + online resources to make the most of your commitment to yourself"
                 }
               ]}
             />

@@ -10,12 +10,12 @@ export default {
     {
       image: '/images/florien-avatar.png',
       name: 'Florien',
-      text: 'I took Spanish for GCSE and A-Levels but lost pretty much everything I learned. After a trip to Madrid last summer I realised I couldn’t even order a Sangria so I made it my mission to learn Spanish again. Really happy with Obby’s classes. Great teachers and prices!',
+      text: 'I tried meditating with several apps, but its just not the same as learning with someone you can talk to. I found the Obby course and it was the perfect length to get me started. I now feel much more comofortable meditating on my own, and even with the apps. Highly recommended!',
     },
     {
       image: '/images/alex-avatar.png',
       name: 'Alex',
-      text: 'I never thought I would end up becoming near fluent in German but somehow I did. My best mate is from Munich and he bet me that I wouldn’t be able to learn German in 6 months - I found a bunch of Obby classes and knocked it out the park! Dankeschoen Obby!',
+      text: 'I took this meditation course through my work as an initiative to promote personal wellness and it was really great. I never noticed quite how much my mind wanders, I now meditate regularly to calm myself and it has honestly changed my life.',
     }
   ],
   schedule: {
@@ -39,7 +39,7 @@ export default {
         text: "As soon as you join, you will get a welcome pack sent to you by post with everything you need to get started, including a welcome letter from your teacher, instructions and access to your online learning journal, a personal notebook to keep track of your progress, and a copy of The Power of Now by Eckhart Tolle."
       },
       {
-        title: "Grounding & Grattitude",
+        title: "Grounding & Gratitude",
         color: "sun",
         text: "An introduction to Mindfulness and Meditation and its history, it's relevance in today's society and the benefits and techniques it holds. You will go over strategies for managing stress and a lack of energy."
       },
@@ -67,7 +67,7 @@ export default {
         {
           title: "Sunday, 21 Nov",
           location: "42 Acress Street, EC2A 4LW",
-          time: "12PM - 3PM",
+          time: "12PM - 1PM",
           dates: "Every Sunday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
@@ -77,7 +77,7 @@ export default {
         {
           title: "Tuesday, 23 Nov",
           location: "42 Acress Street, EC2A 4LW",
-          time: "6PM - 9PM",
+          time: "6PM - 7PM",
           dates: "Every Tuesday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
@@ -92,7 +92,7 @@ export default {
         {
           title: "Saturday, 20 Nov",
           location: "Iris & June, W2 4ND",
-          time: "12PM - 3PM",
+          time: "12PM - 1PM",
           dates: "Every Saturday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
@@ -102,7 +102,7 @@ export default {
         {
           title: "Wednesday, 24 Nov",
           location: "Iris & June, W2 4ND",
-          time: "6PM - 9PM",
+          time: "6PM - 7PM",
           dates: "Every Wednesday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
@@ -117,7 +117,7 @@ export default {
         {
           title: "Sunday, 21 Nov",
           location: "Kane, N5 6DR",
-          time: "12PM - 3PM",
+          time: "12PM - 1PM",
           dates: "Every Sunday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
@@ -127,7 +127,7 @@ export default {
         {
           title: "Tuesday, 23 Nov",
           location: "Kane, N5 6DR",
-          time: "6PM - 9PM",
+          time: "6PM - 7PM",
           dates: "Every Tuesday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
@@ -142,7 +142,7 @@ export default {
         {
           title: "Saturday, 20 Nov",
           location: "Form Space, S3 7LD",
-          time: "12PM - 3PM",
+          time: "12PM - 1PM",
           dates: "Every Saturday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
@@ -152,7 +152,7 @@ export default {
         {
           title: "Wednesday, 24 Nov",
           location: "Form Space, S3 7LD",
-          time: "6PM - 9PM",
+          time: "6PM - 7PM",
           dates: "Every Wednesday for 4 weeks",
           price: "£100",
           priceLabel: "4 classes",
