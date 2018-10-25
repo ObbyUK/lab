@@ -19,8 +19,7 @@ import conversionEventFactory from '../analyticsEvents/conversionEventFactory';
 
 const trackedActions = [
   actions.VIEW_LANDING_PAGE,
-  actions.VIEW_READY_TO_LEARN_PAGE,
-  actions.SUBMIT_QUESTIONS,
+  actions.CHOOSE_CLASS,
   actions.SUBMIT,
 ];
 
@@ -33,26 +32,20 @@ export default (action$, store) => {
         propEq('type', actions.VIEW_LANDING_PAGE), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
           identifyEventFactory,
-          pageViewedEventFactory('Languages Test LP'),
+          pageViewedEventFactory('Meditation Test LP'),
           startFormEventFactory
         ])
       ],
       [
-        propEq('type', actions.VIEW_READY_TO_LEARN_PAGE), 
+        propEq('type', actions.CHOOSE_CLASS), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
-          pageViewedEventFactory('Languages Test Form'),
           startFormEventFactory
         ])
-      ],
-      [
-        propEq('type', actions.SUBMIT_QUESTIONS), 
-        EventFactoryArray__TypeAndAppState__EventObjectsArray([completeFormEventFactory])
       ],
       [
         propEq('type', actions.SUBMIT), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
           conversionEventFactory,
-          identifyEventFactory,
         ])
       ],
     ]))

@@ -68,3 +68,13 @@ export const BarChart = {
     </g>
   )
 };
+
+export const Calendar = {
+  viewBox: '0 0 20 20',
+  body: () => (
+    <g fill="none" fillRule="evenodd" stroke="#822D50" transform="translate(2 1)">
+      <rect width="15" height="14" x=".5" y="2.5" rx="2"/>
+      <path strokeLinecap="square" d="M1 7.5h14M11.5.5V4M4.5.5V4"/>
+    </g>
+  )
+};

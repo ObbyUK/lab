@@ -1,12 +1,30 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { mergeAll } from 'ramda';
 
 import './classes-by-locations-container.less';
 // Actions
-import {} from './../appActions.js';
+import { chooseClassAction } from './../appActions.js';
 import flow from './../constants/flow';
 import ClassAsDateCard from '../components/ClassAsDateCard.jsx';
 
-export default class  extends React.Component {
+const mapStateToProps = (state) => ({
+
+});
+
+const mapDispatchToProps = (dispatch, state) => ({
+  chooseClass: (chosenClass) => dispatch(chooseClassAction(chosenClass)),
+});
+
+const mergeProps = (stateProps, dispatchProps) => mergeAll([
+  stateProps,
+  dispatchProps,
+  {
+    
+  }
+]);
+
+class ClassesByLocationContainer extends React.Component {
 
   constructor (props) {
     super(props)
@@ -24,7 +42,10 @@ export default class  extends React.Component {
               <div className="classes-by-locations-container__location-title">{location.name}</div>
               {location.classes.map((classAsDate, index) => (
                 <div key={index} className="classes-by-locations-container__class-card">
-                  <ClassAsDateCard class={classAsDate}/>
+                  <ClassAsDateCard 
+                    class={classAsDate}
+                    onClick={this.props.chooseClass.bind(this)}
+                  />
                 </div>
               ))}
             </div>
@@ -34,3 +55,9 @@ export default class  extends React.Component {
     );
   }
 }
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+  mergeProps
+)(ClassesByLocationContainer);

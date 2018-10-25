@@ -11,7 +11,7 @@ export default class StickyFollowWrap extends React.Component {
 
   constructor (props) {
     super(props);
-    // this.stickOrFollowListener = this.stickOrFollowOnScroll.bind(this);
+    
     this.state = {
       status: StickyFollowWrapStatuses.STICK_ORIGINAL,
       offsetValue: props.offset || 0,
@@ -20,11 +20,12 @@ export default class StickyFollowWrap extends React.Component {
   }
 
   componentDidMount () {
-    window.addEventListener('scroll', this.stickOrFollowOnScroll.bind(this));
+    this.stickOrFollowListener = this.stickOrFollowOnScroll.bind(this);
+    window.addEventListener('scroll', this.stickOrFollowListener);
   }
 
   componentWillUnmount () {
-    window.removeEventListener('scroll', this.stickOrFollowOnScroll);
+    window.removeEventListener('scroll', this.stickOrFollowListener);
   }
 
   stickOrFollowOnScroll() {

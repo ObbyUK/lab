@@ -1,0 +1,63 @@
+@import './../styles/variables';
+
+.conversion-container {
+  &__checkout {
+    display: flex;
+    flex-direction: column-reverse;
+    @media (min-width: @lg-width) {
+      flex-direction: row;
+    }
+  }
+
+  &__card {
+    margin-bottom: 20px;
+  }
+
+  &__card-title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: 28px;
+    line-height: 1.25;   
+    margin: 0 0 10px;
+    font-weight: 600;
+  }
+
+  &__card-description {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    margin: 0 0 23px;
+
+    &--small {
+      max-width: 400px;
+    }
+  }
+
+   &__field {
+    margin-bottom: 30px;
+  }
+
+  &__label {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: 20px;
+    line-height: 1.25;
+    margin-bottom: 10px;
+  }
+
+  &__input {}
+
+   &__continue-form {
+    display: flex;
+    justify-content: flex-end;
+    margin: 40px 0 40px;
+  }
+
+   &__button {
+    display: inline-flex;
+  }
+
+  &__summary-section {
+    margin-top: 23px;
+    padding-top: 30px;
+    border-top: 1px solid @mercury;
+  }
+}

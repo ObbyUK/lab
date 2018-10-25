@@ -41,7 +41,10 @@ export default (props) => (
         </div>
       </div>
       <div className="class-as-date-card__button">
-        <PrimaryButton text={props.class.buttonText||'Book a spot'} />
+        <PrimaryButton 
+          text={props.class.buttonText||'Book a spot'}
+          onClick={() => props.onClick(props.class)}
+        />
       </div>
     </div>
   </div>

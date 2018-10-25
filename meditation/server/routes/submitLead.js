@@ -4,10 +4,10 @@ module.exports = app => {
   app.post('/submit-lead', (req, res) => {
 
     emailPromise({
-      name: 'Lanages Test App',
-			from: 'languages-test-app@obby.co.uk',
+      name: 'Meditation Test App',
+			from: 'meditation-test-app@obby.co.uk',
 			to: process.env.LEAD_GENERATION_EMAIL,
-			subject: 'Lead Generated from the Languages Test',
+			subject: 'Lead Generated from the Meditation Test',
 			text: JSON.stringify(req.body),
 		})
       .then((error) => {

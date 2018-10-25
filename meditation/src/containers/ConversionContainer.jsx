@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { mergeAll } from 'ramda';
 
+import './conversion-container.less';
 // Lib & Constants
 import isFullArray from './../lib/isFullArray';
 import isValidEmail from './../lib/isValidEmail';
@@ -19,18 +20,13 @@ import PrimaryButton from '../components/PrimaryButton.jsx';
 import PriceSum from '../components/PriceSum.jsx';
 import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
 import Input from '../components/Input.jsx';
-import { Clock, BarChart, Location } from './../components/Icons.jsx'
+import { Clock, BarChart, Location, Calendar } from './../components/Icons.jsx'
 
 const mapStateToProps = (state) => ({
-  selectedLanguage: state.app.selectedLanguage,
-  flow: state.app.flow,
-  skillLevel: state.app.skillLevel,
-  time: state.app.time,
-  locations: state.app.locations,
   status: state.app.status,
   name: state.app.name,
   email: state.app.email,
-  header: state.app.flow.headers[state.app.status]||{}
+  chosenClass: state.app.chosenClass
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -45,12 +41,9 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
   dispatchProps,
   {
     submit: () => dispatchProps.submit({
-      language: stateProps.selectedLanguage,
       name: stateProps.name,
       email: stateProps.email,
-      skillLevel: stateProps.skillLevel,
-      locations: stateProps.locations,
-      time: stateProps.time,
+      chosenClass: stateProps.chosenClass,
     })
   }
 ]);
@@ -66,20 +59,20 @@ class FormContainer extends React.Component {
 
   render () {
     return (
-      <div className="ready-to-learn-page__body container">
-        <div className="ready-to-learn-page__checkout row">
-          <div className="ready-to-learn-page__card col-lg-8">
+      <div className="conversion-container__body container">
+        <div className="conversion-container__checkout row">
+          <div className="conversion-container__card col-lg-8">
             <BlankCard>
-              <h2 className="ready-to-learn-page__card-title">
+              <h2 className="conversion-container__card-title">
                 Tell us where to find you
               </h2>
-              <p className="ready-to-learn-page__card-description">
+              <p className="conversion-container__card-description">
                 We’ll be in touch to match you with the right teacher and schedule your first class.
               </p>
               {/* NAME */}
-              <div className="ready-to-learn-page__field">
-                <div className="ready-to-learn-page__label">Name</div>
-                <div className="ready-to-learn-page__input">
+              <div className="conversion-container__field">
+                <div className="conversion-container__label">Name</div>
+                <div className="conversion-container__input">
                   <Input
                     placeholder="Frida Khalo"
                     value={this.props.name}
@@ -88,9 +81,9 @@ class FormContainer extends React.Component {
                 </div>
               </div>
               {/* EMAIL */}
-              <div className="ready-to-learn-page__field">
-                <div className="ready-to-learn-page__label">Email</div>
-                <div className="ready-to-learn-page__input">
+              <div className="conversion-container__field">
+                <div className="conversion-container__label">Email</div>
+                <div className="conversion-container__input">
                   <Input
                     placeholder="frida@khalo.com"
                     value={this.props.email}
@@ -98,8 +91,8 @@ class FormContainer extends React.Component {
                   />
                 </div>
               </div>
-              <div className="ready-to-learn-page__continue-form">
-                <div className="ready-to-learn-page__button">
+              <div className="conversion-container__continue-form">
+                <div className="conversion-container__button">
                   <PrimaryButton
                     size="huge"
                     text="Start learning"
@@ -111,35 +104,35 @@ class FormContainer extends React.Component {
             </BlankCard>
           </div>
 
-          <div className="ready-to-learn-page__card col-lg-4">
+          <div className="conversion-container__card col-lg-4">
             <BlankCard>
-              <h2 className="ready-to-learn-page__card-title">
-                8 classes
+              <h2 className="conversion-container__card-title">
+                4 classes
               </h2>
               <PriceSum 
-                calculation="8 x £20"
-                total="£160"
+                calculation="4 x £25"
+                total="£100"
               />
-              <div className="ready-to-learn-page__summary-section">
+              <div className="conversion-container__summary-section">
                 <ImageBulletPoints
                   size="small"
                   points={[
                     {
-                      icon: BarChart,
-                      text: String__UpperCaseFirstLetter(this.props.skillLevel),
+                      icon: Calendar,
+                      text: `${this.props.chosenClass.title} and then ${this.props.chosenClass.dates}`
                     },
                     {
                       icon: Location,
-                      text: this.props.locations.join(', '),
+                      text: this.props.chosenClass.location,
                     },
                     {
                       icon: Clock,
-                      text: this.props.time.map(String__UpperCaseFirstLetter).join(', ')
-                    }
+                      text: this.props.chosenClass.time
+                    },
                   ]}
                 />
               </div>
-              <div className="ready-to-learn-page__summary-section">
+              <div className="conversion-container__summary-section">
                 <ImageBulletPoints
                   points={[
                     {
