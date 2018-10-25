@@ -165,19 +165,19 @@ export default {
   faq: [
     {
       title: "What are the benefits of meditation?",
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      text: "There are lots of studies out there that have shown that mindfulness and meditation can have a hugely positive impact on mental, as well as physical health. The benefits range from reducing stress, improving sleep patterns, increasing focus and improving relationships. Research has shown that meditation works, our job is to help you learn how to do it.",
     },
     {
       title: "What kind of community will I find in this class?",
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      text: "Community is incredibly important to us. We believe in getting offline, away from our busy lives and devices, and learning from real people in intimate settings. Being supportive is our #1 objective. All  class sizes are kept small so that you have plenty of teacher interaction and the learning doesn't start and end with the actual class. We have built tools to help you connect with your teacher and other learners via our online platform, with supportive materials and guidance to help you to continue on your learning journey.",
     },
     {
       title: "What if I don’t like it?",
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      text: "No hard feelings. Sometimes it's just not for you and we get that, so we make it super easy for you to cancel after your first class and get your full money back immediately (including what you paid for the first class). We want to encourage as many people as possible to take up meditation, so we would rather have you try it out and decide its not for you, than not try at all!",
     },
     {
       title: "What is Obby?",
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      text: "Obby is a community learning platform. We combine the best of offline, in-person learning, with online resources and tools. We want to encourage others to get out and learn new things - from meditation to pottery, Spanish to Salsa.",
     },
   ]
 };
