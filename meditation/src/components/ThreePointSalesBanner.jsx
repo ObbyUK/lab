@@ -6,13 +6,14 @@ import './three-point-sales-banner.less';
 export default (props) => (
   <div className={`three-point-sales-banner three-point-sales-banner--${props.color||'white'}`}>
     <div className="three-point-sales-banner__section">
+
       {props.title &&
         <h2 className="three-point-sales-banner__title">
           {props.title}
         </h2>
       }
 
-      {isFullArray(props.points) && 
+      {isFullArray(props.points) &&
         <div className="three-point-sales-banner__points">
           {props.points.map((point, index) => (
             <div key={index} className="three-point-sales-banner__item">
@@ -25,6 +26,20 @@ export default (props) => (
           ))}
         </div>
       }
+
+      {isFullArray(props.smallPoints) &&
+        <div className="three-point-sales-banner__small-points-wrap">
+          <div className="three-point-sales-banner__small-points-title">+More:</div>
+          <div className="three-point-sales-banner__small-points">
+            {props.smallPoints.map((point, index) => [
+              <div key={index} className="three-point-sales-banner__small-point">{point}</div>,
+              <div key={`${index}_dot`} className="three-point-sales-banner__small-points-dot">•</div>
+            ])}
+          </div>
+        </div>
+      }
+
+
     </div>
   </div>
 );

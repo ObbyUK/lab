@@ -71,4 +71,53 @@
     font-weight: 400;
     color: @ebony-clay;
   }
+
+  &__small-points-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: "Founders Grotesk", sans-serif;
+    font-size: @m-paragraph;
+    line-height: @m-paragraph-lh;
+    margin-top: 40px;
+    @media (min-width:@sm-width) {
+      margin-top: 90px;
+    }
+  }
+
+  &__small-points-title {
+    width: 100%;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  &__small-points {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    @media (min-width:@sm-width) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__small-point {
+    color: @ebony-clay;
+    margin: 0 0 10px;
+    @media (min-width:@sm-width) {
+      margin: 0 6px;
+    }
+  }
+
+  &__small-points-dot {
+    color: @gray;
+    display: none;
+    @media (min-width:@sm-width) {
+      display: inline-block;
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+
 }

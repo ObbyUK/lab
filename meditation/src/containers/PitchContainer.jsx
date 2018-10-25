@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { mergeAll } from 'ramda';
+import { mergeAll, identity } from 'ramda';
 
 import './pitch-container.less';
 // Constants
@@ -58,7 +58,7 @@ class PitchContainer extends React.Component {
               <PrimaryButton 
                 color="ebony-clay"
                 text="See dates"
-                onClick={console.log}
+                onClick={identity}
               />
             </a>
           </Menu>
@@ -72,13 +72,14 @@ class PitchContainer extends React.Component {
             title={["The most personal", "meditation course", "ever"]}
             description="Master the skills to meditate on your own, with support from London's best teachers"
           >
-            <div className="pitch-container__button">
+            <a href="#classes" className="pitch-container__button">
               <PrimaryButton
                 size="huge"
                 text="See dates"
                 color="gallery"
+                onClick={identity}
               />
-            </div>
+            </a>
           </Header>
         </div>
 
@@ -87,6 +88,11 @@ class PitchContainer extends React.Component {
           <div id="about-us">
             <ThreePointSalesBanner
               title="What makes us different?"
+              smallPoints={[
+                "Free welcome pack sent by post",
+                "Intimate classes (8 people max) ",
+                "Multiple locations & start dates",
+              ]}
               points={[
                 { 
                   image: "/icons/in-person.svg", 

@@ -54,7 +54,7 @@ class LandingPageContainer extends React.Component {
                 blurt="Register your interest now"
                 title=""
                 description=""
-                src="/images/header_flow_2.png"
+                src="/images/meditation-horizon.jpeg"
               />
             </div>
             <ConversionContainer />
@@ -69,7 +69,7 @@ class LandingPageContainer extends React.Component {
                 blurt="Great"
                 title="Give us your contact details and we will be in touch."
                 description="After booking, you can select your teacher, agree on an exact time or go over any requirements if necessary."
-                src="/images/header_flow_2.png"
+                src="/images/meditation-horizon.jpeg"
               />
             </div>
             <div className="landing-page__card container">
