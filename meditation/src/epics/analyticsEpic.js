@@ -13,8 +13,6 @@ import actions, { analyticsTrackedAction } from './../appActions';
 // Analytics Events
 import identifyEventFactory from '../analyticsEvents/identifyEventFactory';
 import pageViewedEventFactory from '../analyticsEvents/pageViewedEventFactory';
-import startFormEventFactory from '../analyticsEvents/startFormEventFactory';
-import completeFormEventFactory from '../analyticsEvents/completeFormEventFactory';
 import conversionEventFactory from '../analyticsEvents/conversionEventFactory';
 
 const trackedActions = [
@@ -33,18 +31,18 @@ export default (action$, store) => {
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
           identifyEventFactory,
           pageViewedEventFactory('Meditation Test LP'),
-          startFormEventFactory
         ])
       ],
       [
         propEq('type', actions.CHOOSE_CLASS), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
-          startFormEventFactory
+          pageViewedEventFactory('Meditation Test Book Now'),
         ])
       ],
       [
         propEq('type', actions.SUBMIT), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
+          pageViewedEventFactory('Meditation Test Form Submitted'),
           conversionEventFactory,
         ])
       ],

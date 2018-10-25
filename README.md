@@ -4,12 +4,13 @@
 
 ### Setup & Play
 
-* Be on node `8.9.4` or greater
+* `git clone` the repo
+* Be on node `8.9.4` or greater `nvm install 8.9.4 && nvm use 8.9.4`
 * `yarn`
 * `yarn make-var-files`
-* `yarn start-lang` to run the languages app
-* `yarn start-med` to run the medidation app
-* Go to `localhost:5000`
+* Change `LEAD_GENERATION_EMAIL` email to your own in `.env`
+* `yarn start-lang` and go to `localhost:5000` for langauges app
+* `yarn start-med` and go to `localhost:3000` for meditation app
 
 ### Deployment
 

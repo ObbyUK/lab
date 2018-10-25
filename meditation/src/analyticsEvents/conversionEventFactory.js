@@ -7,10 +7,7 @@ export default ({ state }) => {
       userId: UserId__UserId(),
       event: 'Conversion',
       properties: {
-        selectedLanguage: state.selectedLanguage,
-        skillLevel: state.skillLevel,
-        time: state.time,
-        locations: state.locations,
+        chosenClass: state.chosenClass,
         name: state.name,
         email: state.email,
       },
