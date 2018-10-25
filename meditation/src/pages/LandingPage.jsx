@@ -66,19 +66,18 @@ class LandingPageContainer extends React.Component {
             <Menu/>
             <div className="landing-page__header">
               <ImageBanner
-                blurt="Great"
-                title="Give us your contact details and we will be in touch."
-                description="After booking, you can select your teacher, agree on an exact time or go over any requirements if necessary."
+                blurt="Thanks!"
+                title="We will be in touch once the class is live."
+                description=""
                 src="/images/meditation-horizon.jpeg"
               />
             </div>
             <div className="landing-page__card container">
               <BlankCard>
                 <h2 className="landing-page__card-title">
-                  Thank you!
+                  Speak soon :)
                 </h2>
                 <p className="landing-page__card-description landing-page__card-description--small">
-                  We’ll be in touch to match you with the right teacher and schedule your first class.
                 </p>
               </BlankCard>
             </div>
