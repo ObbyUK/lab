@@ -51,9 +51,9 @@ class LandingPageContainer extends React.Component {
             <Menu/>
             <div className="landing-page__header">
               <ImageBanner
-                blurt="Great"
-                title="Give us your contact details and we will be in touch."
-                description="After booking, you can select your teacher, agree on an exact time or go over any requirements if necessary."
+                blurt="Register your interest now"
+                title=""
+                description=""
                 src="/images/header_flow_2.png"
               />
             </div>
