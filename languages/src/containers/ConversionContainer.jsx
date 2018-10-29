@@ -80,10 +80,6 @@ class FormContainer extends React.Component {
               <h2 className="ready-to-learn-page__card-title">
                 Here’s what we have for you
               </h2>
-              <PriceSum 
-                calculation="8 classes x £20"
-                total="£160"
-              />
               <div className="ready-to-learn-page__summary">
               
                 <div className="ready-to-learn-page__summary-detail">
@@ -157,8 +153,14 @@ class FormContainer extends React.Component {
                 />
               </div>
               <p className="ready-to-learn-page__paragraph">
-                <span className="ready-to-learn-page__text-highlight">No commitments!</span> You'll only pay after we match you with a teacher
+                <span className="ready-to-learn-page__text-highlight">No commitments!</span> You'll only pay after we match you with a teacher:
               </p>
+              <div className="ready-to-learn-page__sum">
+                <PriceSum 
+                  calculation="8 classes x £20"
+                  total="£160"
+                />
+              </div>
             </BlankCard>
           </div>
           

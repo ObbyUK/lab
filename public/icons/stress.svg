@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="125" height="108" viewBox="0 0 125 108">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#BEF0DC" d="M86 54c0 17.672-14.327 32-32 32-17.673 0-32-14.328-32-32 0-17.673 14.327-32 32-32 17.673 0 32 14.327 32 32"/>
+        <path stroke="#28283C" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M86 54c0 17.672-14.327 32-32 32-17.673 0-32-14.328-32-32 0-17.673 14.327-32 32-32 17.673 0 32 14.327 32 32z"/>
+        <path stroke="#28283C" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M53.5 14V2M53.5 106V94M94 53.5h12M2 53.5h12M82 25l8-8M17 90l8-8M82 82l8 8M17 17l8 8"/>
+        <path stroke="#28283C" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M53.5 14V2M53.5 106V94M94 53.5h12M2 53.5h12M82 25l8-8M17 90l8-8"/>
+        <path stroke="#28283C" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M82 82l8 8"/>
+        <path stroke="#28283C" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 17l8 8"/>
+        <path fill="#28283C" d="M60.399 40.945c2.095-.72 4.366.431 5.072 2.575L68 42.65c-1.175-3.572-4.96-5.493-8.453-4.292-3.493 1.2-5.372 5.07-4.197 8.642l2.53-.87c-.705-2.143.423-4.464 2.519-5.185M40.399 47.945c2.095-.72 4.366.433 5.072 2.575L48 49.65c-1.175-3.572-4.96-5.493-8.453-4.292-3.492 1.202-5.372 5.07-4.197 8.642l2.53-.87c-.704-2.143.423-4.464 2.519-5.185"/>
+        <path stroke="#28283C" stroke-linecap="square" stroke-linejoin="round" stroke-width="2.5" d="M37 61.3s4.333 12.92 21.081 7.27C74.828 62.92 70.496 50 70.496 50"/>
+        <path fill="#FFF" d="M64 92h58.791s2.556-12.804-10.224-12.804c0 0-3.024-11.047-17.894-7.683 0 0-1.436-7.513-11.006-7.513-11.386 0-11.998 17.756-11.998 17.756S64 81.756 64 92"/>
+        <path stroke="#28283C" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M64 92h58.791s2.556-12.804-10.224-12.804c0 0-3.024-11.047-17.894-7.683 0 0-1.436-7.513-11.006-7.513-11.386 0-11.998 17.756-11.998 17.756S64 81.756 64 92z"/>
+    </g>
+</svg>

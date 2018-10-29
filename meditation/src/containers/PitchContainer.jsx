@@ -87,27 +87,20 @@ class PitchContainer extends React.Component {
           
           <div id="about-us">
             <ThreePointSalesBanner
-              title="What makes us different?"
-              smallPoints={[
-                "Free welcome pack sent by post",
-                "Intimate classes (8 people max) ",
-                "Multiple locations & start dates",
-              ]}
+              title="Live a happier life through meditation"
+              imageHeight="108px"
               points={[
                 { 
+                  image: "/icons/stress.svg",
+                  title: "Helping relieve stress, anxiety and other isses ",
+                },
+                { 
+                  image: "/icons/focus.svg",
+                  title: "Science shows that meditation helps you stay focused longer and better",
+                },
+                { 
                   image: "/icons/in-person.svg", 
-                  title: "Keeping it simple", 
-                  description: "Existing meditation courses are too confusing. We offer one beginners modern meditation course, and then tailor it to your needs"
-                },
-                { 
-                  image: "/icons/locations.svg",
-                  title: "Transparent pricing",
-                  description: "By using flexible venue spaces across London,  we can charge £25 per session (1/2 the market average) whilst delivering higher quality courses"
-                },
-                { 
-                  image: "/icons/in-person.svg",
-                  title: "In-person & online", 
-                  description: "In-person learning to help you get disconnect and learn from real people + online resources to make the most of your commitment to yourself"
+                  title: "London is a busy place. Learn how to be present and get to know yourself.",
                 }
               ]}
             />
@@ -117,6 +110,15 @@ class PitchContainer extends React.Component {
             <ReviewsBanner
               color="cruise"
               reviews={flow.reviews}
+            />
+          </div>
+
+          <div id="schedule">
+            <Schedule
+              title={flow.schedule.title}
+              description={flow.schedule.description}
+              note={flow.schedule.note}
+              weeks={flow.schedule.weeks}
             />
           </div>
 
@@ -148,15 +150,6 @@ class PitchContainer extends React.Component {
             text="When joining Obby, users get access to our personal platform to connect with their teacher on an ongoing basis and have access to support and learning materials."
             image="/icons/onlline-learning.svg"
           />
-
-          <div id="schedule">
-            <Schedule
-              title={flow.schedule.title}
-              description={flow.schedule.description}
-              note={flow.schedule.note}
-              weeks={flow.schedule.weeks}
-            />
-          </div>
           
           <div id="teachers">
             <ImageTextListBanner

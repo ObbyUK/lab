@@ -52,21 +52,6 @@ class FormContainer extends React.Component {
     this.props.viewReadyToLearnPageAction(getUrlParamaters());
   }
 
-  canLocationAddressesBeShown(location) {
-    return (
-      contains(location.value, this.props.locations) &&
-      isFullArray(location.addresses)
-    );
-  }
-
-  canShowAnyLocationAddress() {
-    return (
-      isFullArray(this.props.flow.locationOptions) && 
-      isFullArray(this.props.locations) &&
-      this.canLocationAddressesBeShown(find(propEq('value', this.props.locations[0]), this.props.flow.locationOptions))
-    );
-  }
-
   areAllQuestionsAnwsered() {
     return (
       isFullArray(this.props.skillLevel) &&
@@ -113,15 +98,6 @@ class FormContainer extends React.Component {
                 onChange={this.props.toggleLocation.bind(this)}
               />
             </div>
-
-            {/* ADDRESS PREVIEWS */}
-            {this.canShowAnyLocationAddress() &&
-              <LocationsPreview
-                title="We currently run classes at these locations:"
-                locationOptions={this.props.flow.locationOptions}
-                locations={this.props.locations}
-              />
-            }
           </BlankCard>
         </div>
 

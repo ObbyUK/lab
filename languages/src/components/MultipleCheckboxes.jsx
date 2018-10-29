@@ -24,6 +24,7 @@ export default class MultipleCheckboxes extends React.Component {
             className={'multiple-checkboxes__checkbox'}
             isChecked={this.isOptionChecked(option.value)}
             label={option.name}
+            description={option.description}
             onClick={() => this.checkOption(option.value)}
           />
         ))}

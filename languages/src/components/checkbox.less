@@ -5,9 +5,14 @@
 
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
   margin: 0;
   height: 22px;
   cursor: pointer;
+  
+  &__wrap {
+    display: flex;
+  }
 
   &__square {
     display: inline-flex;
@@ -43,8 +48,18 @@
     font-family: "Founders Grotesk", Arial, sans-serif;
     font-weight: 400;
     font-size: @l-paragraph;
-    line-height: @l-paragraph-lh;
     line-height: 1;
     color: @ebony-clay;
+  }
+
+  &__description {
+    display: flex; 
+    font-family: "Founders Grotesk", Arial, sans-serif;
+    font-weight: 400;
+    font-size: @sm-paragraph;
+    line-height: 1;
+    width: 100%;
+    margin-top: 5px;
+    margin-left: 30px;
   }
 }

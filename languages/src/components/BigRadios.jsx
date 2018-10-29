@@ -31,7 +31,7 @@ export default (props) => (
             <div className="big-radios__description">{radio.description}</div>
           </div>
         </div>
-        {(isFullArray(radio.sessionsPreview) && props.selected === radio.value) &&
+        {(isFullArray(radio.sessionsPreview) && props.selected === radio.value && props.showTextList) &&
           <TextList
             list={radio.sessionsPreview}
           />

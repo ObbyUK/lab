@@ -10,11 +10,16 @@ export default (props) => (
     className={`${props.className||'checkbox'}`}
     onClick={props.onClick}
   >
-    <span className={`checkbox__square ${props.isChecked ? 'checkbox__square--checked' : ''}`}>
-      <span className={`checkbox__tick ${props.isChecked ? 'checkbox__tick--showing' : ''}`}>
-        <Icon height={12} icon={Tick} />
+    <span className="checkbox__wrap">
+      <span className={`checkbox__square ${props.isChecked ? 'checkbox__square--checked' : ''}`}>
+        <span className={`checkbox__tick ${props.isChecked ? 'checkbox__tick--showing' : ''}`}>
+          <Icon height={12} icon={Tick} />
+        </span>
       </span>
+      <span className="checkbox__label">{props.label}</span>
     </span>
-    <span className="checkbox__label">{props.label}</span>
+    {props.description &&
+      <div className="checkbox__description">{props.description}</div>
+    }
   </div>
 );

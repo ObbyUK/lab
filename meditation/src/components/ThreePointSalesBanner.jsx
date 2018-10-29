@@ -17,7 +17,7 @@ export default (props) => (
         <div className="three-point-sales-banner__points">
           {props.points.map((point, index) => (
             <div key={index} className="three-point-sales-banner__item">
-              <div className="three-point-sales-banner__item-image">
+              <div style={{height: props.imageHeight||'auto'}} className="three-point-sales-banner__item-image">
                 <img alt={point.title} src={point.image}/>
               </div>
               <div className="three-point-sales-banner__item-title">{point.title}</div>
