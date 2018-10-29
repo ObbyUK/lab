@@ -18,6 +18,7 @@ import BlankCard from './../components/BlankCard.jsx';
 import BigRadios from '../components/BigRadios.jsx';
 import MultipleCheckboxes from '../components/MultipleCheckboxes.jsx';
 import PrimaryButton from '../components/PrimaryButton.jsx';
+import LocationsPreview from '../components/LocationsPreview.jsx';
 
 const mapStateToProps = (state) => ({
   selectedLanguage: state.app.selectedLanguage,
@@ -115,27 +116,11 @@ class FormContainer extends React.Component {
 
             {/* ADDRESS PREVIEWS */}
             {this.canShowAnyLocationAddress() &&
-              <div className="ready-to-learn-page__addresses">
-                <h3 className="ready-to-learn-page__sub-title ready-to-learn-page__sub-title--bold">
-                  We currently run classes at these locations: 
-                </h3>
-
-                {this.props.flow.locationOptions.map((location, index) => (
-                  <div 
-                    key={index} 
-                    className={`
-                      ready-to-learn-page__area-adresses 
-                      ${this.canLocationAddressesBeShown(location) && 'ready-to-learn-page__area-adresses--show'}
-                    `}
-                  >
-                    <div className="ready-to-learn-page__sub-title">{location.name}</div>
-                    {isFullArray(location.addresses) && location.addresses.map((address, index) => [
-                      <div key={`${index}_address`} className="ready-to-learn-page__address">{address}</div>,
-                      <div key={`${index}_dot`} className="ready-to-learn-page__dot">•</div>
-                    ])}
-                  </div>
-                ))}
-              </div>
+              <LocationsPreview
+                title="We currently run classes at these locations:"
+                locationOptions={this.props.flow.locationOptions}
+                locations={this.props.locations}
+              />
             }
           </BlankCard>
         </div>

@@ -26,7 +26,12 @@ export default (props) => (
             <Icon icon={point.icon} height={25} />
           </span>
         }
-        <div className="image-bullet-points__point-text">{point.text}</div>
+        <div className="image-bullet-points__point-text-wrap">
+          {point.title && 
+            <div className="image-bullet-points__point-title">{point.title}</div>
+          }
+          <div className="image-bullet-points__point-text">{point.text}</div>
+        </div>
       </div>
     ))}
   </div>

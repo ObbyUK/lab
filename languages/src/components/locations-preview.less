@@ -1,0 +1,53 @@
+@import './../styles/variables';
+
+.locations-preview {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 24px;
+  animation:popout 350ms, fadeIn 350ms;
+
+  &__sub-title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    
+    &--bold {
+      font-weight: 600;
+      margin: 0 0 10px;
+    }
+  }
+
+  &__area-adresses {
+    display: none;
+    width: 100%;
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    margin-top: 24px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+    
+    &--show {
+      display: block;
+      animation:popout 350ms, fadeIn 350ms;
+    }
+  }
+
+  &__address {
+    display: inline-flex;
+    color: @gray;
+    margin-bottom: 5px;
+  }
+
+  &__dot {
+    color: @gray;
+    display: inline-flex;
+    margin: 0 10px;
+    &:last-child {
+      display: none;
+    }
+  }  
+}
