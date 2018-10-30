@@ -50,11 +50,12 @@ class PitchContainer extends React.Component {
           <Menu mode="normal">
             <a href="#about-us" className="pitch-container__menu-link">About us</a>
             <a href="#reviews" className="pitch-container__menu-link">Reviews</a>
-            <a href="#what-you-need" className="pitch-container__menu-link">What you need</a>
             <a href="#schedule" className="pitch-container__menu-link">Schedule</a>
+            <a href="#learning-portal" className="pitch-container__menu-link">Portal</a>
+            <a href="#how-it-works" className="pitch-container__menu-link">How it works</a>
             <a href="#teachers" className="pitch-container__menu-link">Teachers</a>
             <a href="#venues" className="pitch-container__menu-link">Venues</a>
-            <a href="#faq" className="pitch-container__menu-link">FAQ's</a>
+            <a href="#faq" className="pitch-container__menu-link">FAQs</a>
             <a href="#classes" className="pitch-container__menu-button">
               <PrimaryButton 
                 color="ebony-clay"
@@ -150,7 +151,7 @@ class PitchContainer extends React.Component {
               />
           </div>
 
-          <div id="what-you-need">
+          <div id="how-it-works">
             <ThreePointSalesBanner
               title="Pay later, only if you like it"
               points={[
@@ -199,7 +200,6 @@ class PitchContainer extends React.Component {
               ]}
             />
           </div>
-
           
           <div id="venues">
             <CycleComponentsBanner
