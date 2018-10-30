@@ -10,13 +10,14 @@ import Header from './../components/Header.jsx';
 import Menu from './../components/Menu.jsx';
 import PrimaryButton from './../components/PrimaryButton.jsx';
 import ThreePointSalesBanner from './../components/ThreePointSalesBanner.jsx';
-import ReviewsBanner from './../components/ReviewsBanner.jsx';
+import CycleComponentsBanner from '../components/CycleComponentsBanner.jsx';
+import ReviewCard from '../components/ReviewCard.jsx';
 import ImageTextListBanner from './../components/ImageTextListBanner.jsx';
 import QuestionsBanner from '../components/QuestionsBanner.jsx';
 import StickyFollowWrap from '../components/StickyFollowWrap.jsx';
 import Schedule from '../components/Schedule.jsx';
-import BlurbBanner from '../components/BlurbBanner.jsx';
 import ClassesByLocationsContainer from './ClassesByLocationsContainer.jsx';
+import TeachersBanner from '../components/TeachersBanner.jsx';
 
 const mapStateToProps = (state) => ({
 
@@ -66,7 +67,7 @@ class PitchContainer extends React.Component {
 
         <div id="header">
           <Header
-            image="/images/meditation-header.png"
+            image="/images/header-2.jpeg"
             color="white"
             customBackgroundColor="rgb(33, 43, 62)"
             title={["The most personal", "meditation course", "ever"]}
@@ -107,9 +108,20 @@ class PitchContainer extends React.Component {
           </div>
 
           <div id="reviews">
-            <ReviewsBanner
+            <CycleComponentsBanner
               color="cruise"
-              reviews={flow.reviews}
+              title="Loved by over 10,000 Londoners"
+              description="Our classes are rated 5 ⭐️ by people all across London."
+              list={flow.reviews}
+              viewComponent={(review) => (
+                <ReviewCard
+                  image={review.image}
+                  name={review.name}
+                  language={review.language}
+                  languageName={review.languageName}
+                  text={review.text}
+                />
+              )}
             />
           </div>
 
@@ -120,6 +132,22 @@ class PitchContainer extends React.Component {
               note={flow.schedule.note}
               weeks={flow.schedule.weeks}
             />
+          </div>
+
+          <div id="learning-portal">
+            <ImageTextListBanner
+                color="polar"
+                title="Lifetime access to our learning portal"
+                description="When joining Obby, you get access to our personal platform to connect with their teacher on an ongoing basis and have access to support and learning materials."
+                image="/images/learning-portal@2x.png"
+                reverse={true}
+                imageClassName="pitch-container__learning-portal-image"
+                points={[
+                  { image: "/icons/tick.svg", text: "Personal learning with attentive teachers" },
+                  { image: "/icons/tick.svg", text: "Tried and tested curriculums" },
+                  { image: "/icons/tick.svg", text: "Learning community" },
+                ]}
+              />
           </div>
 
           <div id="what-you-need">
@@ -145,37 +173,67 @@ class PitchContainer extends React.Component {
             />
           </div>
 
-          <BlurbBanner
-            title="Online learning portal"
-            text="When joining Obby, users get access to our personal platform to connect with their teacher on an ongoing basis and have access to support and learning materials."
-            image="/icons/onlline-learning.svg"
-          />
-          
           <div id="teachers">
-            <ImageTextListBanner
+            <TeachersBanner
               color="azalea"
-              title="Great teachers, great vibes"
-              description="We have hand-selected some of the best meditation teachers in London, and with them and with feedback from our learner community, we built this unique course. We guarantee:"
-              image="/images/teachers.png"
-              points={[
-                { image: "/icons/small-class-icon.svg", text: "Personal learning with attentive teachers" },
-                { image: "/icons/study-groups.svg", text: "Tried and tested curriculums" },
-                { image: "/icons/learning-community.svg", text: "Learning community" },
+              title="Some of our teachers"
+              teachers={[
+                {
+                  name: "Louise",
+                  description: "Louise supports and encourages people to live healthily, happily and humanely. She does this through meditation, yoga, and mindful decision-making. Louise has been teaching meditation class on Obby since 2016.",
+                  image: "/images/teacher-louise.jpg",
+                  avatar: "/images/teacher-louise-avatar.jpg",
+                },
+                {
+                  name: "Sofia",
+                  description: "Sofia was initially drawn to meditation whilst studying at university and quickly fell in love with the sense of peace it brought. So she decided to make her passion her profession and hasn’t looked back since!",
+                  image: "/images/teacher-sofia-small.jpg",
+                  avatar: "/images/teacher-sofia-avatar.jpg",
+                },
+                {
+                  name: "James",
+                  description: "James has been practicing modern mindfulness for 10 years now and has been teaching it for 4, after transitioning from a job in the city, to following his dreams.",
+                  image: "/images/teacher-james-small.jpg",
+                  avatar: "/images/teacher-james-avatar.jpg",
+                }
               ]}
             />
           </div>
+
           
           <div id="venues">
-            <ImageTextListBanner
+            <CycleComponentsBanner
+              color="astra"
               title="All across London, in some of the nicest venues"
               description="All our mindfulness and meditation classes are in beautiful venues all across London, so you can learn in a calm and relaxing environment."
-              image="/images/venues.png"
-              reverse={true}
-              points={[
-                { image: "/icons/tick.svg", text: "Multiple locations" },
-                { image: "/icons/tick.svg", text: "Flexible timing" },
-                { image: "/icons/tick.svg", text: "Money back guarantee if you don’t enjoy your first class" },
+              list={[
+                {
+                  src: "/images/ReMind.jpg",
+                  text: "ReMind",
+                },
+                {
+                  src: "/images/place.jpg",
+                  text: "Crinan St",
+                },
+                {
+                  src: "/images/CuthbertCentre.png",
+                  text: "The Philbeach Hall",
+                },
+                {
+                  src: "/images/Benk_&_Bo.jpg",
+                  text: "Benk & Bo",
+                },
               ]}
+              viewComponent={(image) => (
+                <div className="pitch-container__location-image-wrap">
+                  <img
+                    className="pitch-container__location-image"
+                    src={image.src} 
+                    alt={image.text}
+                  />
+                  <p className="pitch-container__location-image-text">{image.text}</p>
+                </div>
+              )}
             />
           </div>
           

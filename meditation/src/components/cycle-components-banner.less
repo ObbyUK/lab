@@ -1,8 +1,12 @@
 @import './../styles/variables';
 
-.reviews-banner {
+.cycle-components-banner {
   width: 100%;
-  padding: 100px 10px 150px;
+  padding: 100px 10px 50px;
+
+  @media (min-width:@sm-width) { 
+    padding: 100px 10px 150px;
+  }
   
   &--azalea {
     background-color: @azalea;
@@ -10,6 +14,10 @@
   
   &--cruise {
     background-color: @cruise;
+  }
+  
+  &--astra {
+    background-color: @astra;
   }
 
   &__title {
@@ -37,15 +45,43 @@
     margin-bottom: 60px;
   }
 
-  &__review-wrap {
+  &__wrap {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+
+    @media (min-width:@sm-width) {
+      flex-wrap: nowrap;
+    }
   }
 
-  &__review-button {
+  &__component {
+    @media (min-width:@sm-width) {
+      margin: 0 15px
+    }
+  }
+
+  &__button {
     cursor: pointer;
+
+    &--desktop {
+      display: none;
+      @media (min-width:@sm-width) {
+        display: inline-block;
+      }
+    }
+
+    &--mobile {
+      margin-top: 25px;
+      padding: 0 20px;
+      display: inline-block;
+      @media (min-width:@sm-width) {
+        display: none;
+      }
+    }
+    
     &--azalea {
       path {
         stroke: #A2646F;
@@ -57,10 +93,6 @@
         stroke: #6d9484;
       }
     }
-  }
-
-  &__review {
-    margin: 0 15px
   }
 
 }

@@ -13,6 +13,10 @@
   &--azalea {
     background-color: @azalea;
   }
+  
+  &--polar {
+    background-color: @polar;
+  }
 
   @media (min-width:@md-width) {
     flex-wrap: nowrap;
@@ -32,7 +36,9 @@
 
   &__image-wrap {
     padding: 0;
-    // width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__image {

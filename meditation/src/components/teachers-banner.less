@@ -1,0 +1,106 @@
+@import './../styles/variables';
+
+.teachers-banner {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  
+  @media (min-width:@md-width) {
+    max-height: 600px;
+    flex-wrap: nowrap;
+  }
+
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+
+  &--white {
+    background-color: white;
+  }
+  
+  &--azalea {
+    background-color:@azalea;
+  }
+  
+
+  &__image-wrap {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    width: 100%;
+    float: left;
+  }
+
+  &__text {
+    padding: 40px;
+    @media (min-width:@md-width) {
+      padding: 120px 80px;
+    }
+  }
+
+  &__title {
+    display: none;
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    letter-spacing: 0.3px;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    @media (min-width:@md-width) {
+      display: block;
+    }
+  }
+  
+  &__name {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    letter-spacing: 0.3px;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0 0 20px;
+    text-align: center;
+    @media (min-width:@md-width) {
+      text-align-last: left;
+    }
+  }
+  
+  &__description {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    letter-spacing: 0.3px;
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    margin: 0 0 30px;
+  }
+
+  &__avatars {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    @media (min-width:@md-width) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    overflow: hidden;
+    cursor: pointer;
+    margin-right: 15px;
+    
+    &--selected {
+      border: 2px solid @camelot;
+    }
+  }
+
+  &__avatar-image {
+    height: 100%;
+  }
+
+}

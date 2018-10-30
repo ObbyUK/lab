@@ -12,7 +12,10 @@ export default (props) => (
     
     <div className="image-text-list-banner__image-wrap col-sm-12 col-md-6">
       <img 
-        className="image-text-list-banner__image" 
+        className={`
+          image-text-list-banner__image
+          ${props.imageClassName||''}
+        `}
         alt={props.title} 
         src={props.image}
       />

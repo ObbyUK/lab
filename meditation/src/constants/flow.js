@@ -168,6 +168,33 @@ export default {
           buttonText: "Pay £25 today"
         },
       ]
+    },
+    {
+      name: regionNames.CENTRAL_LONDON,
+      classes: [
+        {
+          title: "Sunday, 11 Nov",
+          location: "Staple Inn Buildings South, WC1V 7QH",
+          time: "12PM - 1PM",
+          dates: "Every Sunday for 4 weeks",
+          summary: "Starting on Sunday, 11 Nov for 4 weeks",
+          price: "£100",
+          priceLabel: "4 classes",
+          link: "",
+          buttonText: "Pay £25 today"
+        },
+        {
+          title: "Tuesday, 13 Nov",
+          location: "Staple Inn Buildings South, WC1V 7QH",
+          time: "6PM - 7PM",
+          dates: "Every Tuesday for 4 weeks",
+          summary: "Starting on Tuesday, 13 Nov for 4 weeks",
+          price: "£100",
+          priceLabel: "4 classes",
+          link: "",
+          buttonText: "Pay £25 today"
+        },
+      ]
     }
   ],
   faq: [

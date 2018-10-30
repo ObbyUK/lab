@@ -6,6 +6,15 @@
     z-index: 10;
   }
 
+  &__learning-portal-image {
+    width: 100%;
+    padding: 30px 20px 0;
+    @media (min-width:@md-width) {
+      height: 374px!important;
+      width: auto!important;
+    }
+  }
+
   &__menu-link {
     font-family: "Founders Grotesk", Arial, sans-serif;
     font-weight: 600;
@@ -28,5 +37,25 @@
     &:hover {
       text-decoration: none;
     }
+  }
+
+  &__location-image-wrap {
+    max-width: 700px;
+  }
+
+  &__location-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  &__location-image-text {
+    width: 100%;
+    text-align: center;
+    font-family: "Founders Grotesk", Arial, sans-serif;
+    font-size: @m-paragraph;
+    line-height: @m-paragraph-lh;
+    color: @camelot;
+    margin: 0;
   }
 }
