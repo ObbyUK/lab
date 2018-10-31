@@ -59,7 +59,7 @@ class PitchContainer extends React.Component {
             <a href="#classes" className="pitch-container__menu-button">
               <PrimaryButton 
                 color="ebony-clay"
-                text="See dates"
+                text="Book free taster"
                 onClick={identity}
               />
             </a>
@@ -77,7 +77,7 @@ class PitchContainer extends React.Component {
             <a href="#classes" className="pitch-container__button">
               <PrimaryButton
                 size="huge"
-                text="See dates"
+                text="Book free taster"
                 color="gallery"
                 onClick={identity}
               />
