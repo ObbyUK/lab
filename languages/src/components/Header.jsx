@@ -10,7 +10,12 @@ const formatTitle = (title) => {
 }
 
 export default (props) => (
-  <div className="header">
+  <div 
+    className="header"
+    style={{
+      backgroundColor: props.customBackgroundColor||''
+    }}
+  >
     <img 
       src={props.image}
       alt={formatTitle(props.title).join(' ')}
@@ -18,7 +23,7 @@ export default (props) => (
     />
     <div className="header__text">
       {props.title &&
-        <h1 className="header__title">
+        <h1 className={`header__title header__title--${props.color||'ebony-clay'}`}>
           {formatTitle(props.title).map((titlePart, index) => (
             <span key={index} className="header__title-part">
               {titlePart}
@@ -27,7 +32,7 @@ export default (props) => (
         </h1>
       }
       {props.description &&  
-        <h2 className="header__description">
+        <h2 className={`header__description header__description--${props.color||'ebony-clay'}`}>
           {props.description}
         </h2>
       }

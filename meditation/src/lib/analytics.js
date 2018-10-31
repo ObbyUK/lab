@@ -1,43 +1,18 @@
-import Analytics from 'analytics-node';
 import { analytics } from './../../settings';
 
-const segment = new Analytics(analytics.apiKey);
+window.analytics.load(analytics.apiKey);
 
-export const page = (event) => {
-  return new Promise((resolve, reject) => {
-    segment.page(event, (error) => {
-      if (error) {
-        reject({ ok: false, error: error });
-      } else {
-        resolve({ ok: true });
-      }
-    });
-  });
+export const page = (eventArguments) => {
+  window.analytics.page.apply(window.analytics, eventArguments);
+  return eventArguments;
 };
 
-export const track = (event) => {
-  return new Promise((resolve, reject) => {
-    segment.track(event, (error) => {
-      if (error) {
-        reject({ ok: false, error: error });
-      } else {
-        resolve({ ok: true });
-      }
-    });
-  });
+export const track = (eventArguments) => {
+  window.analytics.track.apply(window.analytics, eventArguments);
+  return eventArguments;
 };
 
-export const identify = (event) => {
-  return new Promise((resolve, reject) => {
-    segment.identify(
-      event,
-      (error) => {
-        if (error) {
-          reject({ ok: false, error: error });
-        } else {
-          resolve({ ok: true });
-        }
-      }
-    );
-  });  
+export const identify = (eventArguments) => {
+  window.analytics.identify.apply(window.analytics, eventArguments);
+  return eventArguments;
 };

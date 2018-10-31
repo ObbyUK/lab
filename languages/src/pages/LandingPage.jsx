@@ -16,7 +16,8 @@ import Menu from './../components/Menu.jsx';
 import ThreePointSalesBanner from './../components/ThreePointSalesBanner.jsx';
 import ImageTextListBanner from '../components/ImageTextListBanner.jsx';
 import LanguageButton from '../components/LanguageButton.jsx';
-import ReviewsBanner from '../components/ReviewsBanner.jsx';
+import ReviewCard from '../components/ReviewCard.jsx';
+import CycleComponentsBanner from '../components/CycleComponentsBanner.jsx';
 import Footer from '../components/Footer.jsx';
 import Header from '../components/Header.jsx';
 
@@ -49,13 +50,8 @@ class LandingPageContainer extends React.Component {
         <Menu/>
         <Header
           image="/images/header-image.jpg"
-          title={[
-            "The most personal",
-            "language course",
-            "ever.",
-          ]}
-          description={`Obby's language courses are designed to create the best learning experience for you. 
-            In-person learning, flexible locations, and ongoing support via our online platform & community.`}
+          title={["The most personal", "language course", "ever.", ]}
+          description={`Obby's language courses are designed to create the best learning experience for you. In-person learning, flexible locations, and ongoing support via our online platform & community.`}
         >
           {languagesValueAndName.map(({ value, name }) => (
             <LanguageButton 
@@ -86,8 +82,20 @@ class LandingPageContainer extends React.Component {
             }
           ]}
         />
-        <ReviewsBanner
-          reviews={reviews}
+        <CycleComponentsBanner
+          color="azalea"
+          title="Loved by over 10,000 Londoners"
+          description="Our classes are rated 5 ⭐️ by people all across London."
+          list={reviews}
+          viewComponent={(review) => (
+            <ReviewCard
+              image={review.image}
+              name={review.name}
+              language={review.language}
+              languageName={review.languageName}
+              text={review.text}
+            />
+          )}
         />
         <ImageTextListBanner
           title="Money back guarantee!"

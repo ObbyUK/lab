@@ -40,7 +40,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  viewReadyToLearnPageAction: (urlParamaters) => dispatch(viewReadyToLearnPageAction(urlParamaters)),
+  viewReadyToLearnPage: (urlParamaters) => dispatch(viewReadyToLearnPageAction(urlParamaters)),
   selectSkillLevel: (skillLevel) => dispatch(selectSkillLevelAction(skillLevel)),
   selectTime: (time) => dispatch(selectTimeAction(time)),
   toggleLocation: (location) => dispatch(toggleLocationAction(location)),
@@ -68,7 +68,7 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
 class HomePageContainer extends React.Component {
 
   componentDidMount() {
-    this.props.viewReadyToLearnPageAction(getUrlParamaters());
+    this.props.viewReadyToLearnPage(getUrlParamaters());
   }
 
   canLocationAddressesBeShown(location) {

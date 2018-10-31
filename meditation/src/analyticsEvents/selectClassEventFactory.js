@@ -2,8 +2,8 @@ export default ({ state }) => {
   return {
     type: 'track',
     payload: [
-      'Start Form',
-      { selectedLanguage: state.selectedLanguage },
+      'Meditation Select Class',
+      { chosenClass: state.chosenClass }
     ]
   }
 };

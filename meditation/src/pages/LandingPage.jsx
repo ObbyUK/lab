@@ -34,6 +34,8 @@ class LandingPageContainer extends React.Component {
 
   componentDidMount() {
     this.props.viewLandingPage();
+    console.log(window.analytics);
+    // console.log(analytics);
   }
 
   render () {

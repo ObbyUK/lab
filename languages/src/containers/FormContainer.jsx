@@ -7,7 +7,6 @@ import getUrlParamaters from './../lib/getUrlParamaters';
 import isFullArray from './../lib/isFullArray';
 // Actions & Style
 import { 
-  viewReadyToLearnPageAction,
   selectSkillLevelAction,
   selectTimeAction,
   toggleLocationAction,
@@ -33,7 +32,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  viewReadyToLearnPageAction: (urlParamaters) => dispatch(viewReadyToLearnPageAction(urlParamaters)),
   selectSkillLevel: (skillLevel) => dispatch(selectSkillLevelAction(skillLevel)),
   selectTime: (time) => dispatch(selectTimeAction(time)),
   toggleLocation: (location) => dispatch(toggleLocationAction(location)),
@@ -49,7 +47,6 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
 class FormContainer extends React.Component {
 
   componentDidMount() {
-    this.props.viewReadyToLearnPageAction(getUrlParamaters());
   }
 
   areAllQuestionsAnwsered() {

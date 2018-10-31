@@ -1,17 +1,14 @@
-import { __, contains, pipe, prop, cond, propEq } from 'ramda';
+import { __, contains, pipe, prop, cond, propEq, map } from 'ramda';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
 import 'rxjs/add/observable/fromPromise';
-import { Observable } from 'rxjs';
-import batchPromises from 'batch-promises';
 
 // Actions & Lib
-import Event__AnalyticsPromise from './../lib/Event__AnalyticsPromise';
+import sendAnalyticsEventToSegment from '../lib/sendAnalyticsEventToSegment';
 import EventFactoryArray__TypeAndAppState__EventObjectsArray from './../lib/EventFactoryArray__TypeAndAppState__EventObjectsArray';
 import actions, { analyticsTrackedAction } from './../appActions';
 // Analytics Events
-import identifyEventFactory from '../analyticsEvents/identifyEventFactory';
 import pageViewedEventFactory from '../analyticsEvents/pageViewedEventFactory';
 import startFormEventFactory from '../analyticsEvents/startFormEventFactory';
 import completeFormEventFactory from '../analyticsEvents/completeFormEventFactory';
@@ -32,9 +29,7 @@ export default (action$, store) => {
       [
         propEq('type', actions.VIEW_LANDING_PAGE), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
-          identifyEventFactory,
           pageViewedEventFactory('Languages Test LP'),
-          startFormEventFactory
         ])
       ],
       [
@@ -46,19 +41,20 @@ export default (action$, store) => {
       ],
       [
         propEq('type', actions.SUBMIT_QUESTIONS), 
-        EventFactoryArray__TypeAndAppState__EventObjectsArray([completeFormEventFactory])
+        EventFactoryArray__TypeAndAppState__EventObjectsArray([
+          completeFormEventFactory
+        ])
       ],
       [
         propEq('type', actions.SUBMIT), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
           conversionEventFactory,
-          identifyEventFactory,
         ])
       ],
     ]))
-    .mergeMap((eventObjectsArray) =>
-      Observable
-        .fromPromise(batchPromises(2, eventObjectsArray, Event__AnalyticsPromise))
-    )
+    .mergeMap((array) => {
+      console.log(array);
+      return map(sendAnalyticsEventToSegment, array);
+    })
     .map(analyticsTrackedAction);
 };

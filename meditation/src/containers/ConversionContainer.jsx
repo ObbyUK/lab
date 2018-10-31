@@ -8,8 +8,7 @@ import isFullArray from './../lib/isFullArray';
 import isValidEmail from './../lib/isValidEmail';
 import String__UpperCaseFirstLetter from './../lib/String__UpperCaseFirstLetter';
 // Actions & Style
-import { 
-  viewReadyToLearnPageAction,
+import {
   typeNameAction,
   typeEmailAction,
   submitAction
@@ -30,7 +29,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  viewReadyToLearnPageAction: (urlParamaters) => dispatch(viewReadyToLearnPageAction(urlParamaters)),
   typeName: (event) => dispatch(typeNameAction(event.target.value)),
   typeEmail: (event) => dispatch(typeEmailAction(event.target.value)),
   submit: (details) => dispatch(submitAction(details))
