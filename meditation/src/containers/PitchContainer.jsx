@@ -72,7 +72,7 @@ class PitchContainer extends React.Component {
             color="white"
             customBackgroundColor="rgb(33, 43, 62)"
             title={["The most personal", "meditation course", "ever"]}
-            description="Master the skills to meditate on your own, with support from London's best teachers"
+            description="Master the skills to meditate on your own, with support from London's best teachers. Your first class is on us."
           >
             <a href="#classes" className="pitch-container__button">
               <PrimaryButton
@@ -157,8 +157,8 @@ class PitchContainer extends React.Component {
               points={[
                 { 
                   image: "/icons/1.svg", 
-                  title: "Pay £25 now", 
-                  description: "Pay a fully-refundable deposit for the first class and get your money back if you don’t enjoy it"
+                  title: "Your first class is on us", 
+                  description: "Pay £0 today, and see how you like it before committing"
                 },
                 { 
                   image: "/icons/2.svg",
@@ -168,7 +168,7 @@ class PitchContainer extends React.Component {
                 { 
                   image: "/icons/3.svg", 
                   title: "Remaining balance charged", 
-                  description: "24h after your first class, the remaining £75 is charged if you are happy to continue. If not, no hard feelings!"
+                  description: "24h after your first class, the remaining balance is charged if you are happy to continue. If not, no hard feelings!"
                 }
               ]}
             />

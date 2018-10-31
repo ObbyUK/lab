@@ -70,10 +70,10 @@ export default {
           time: "12PM - 1PM",
           dates: "Every Sunday for 4 weeks",
           summary: "Starting on Sunday, 11 Nov for 4 weeks",
-          price: "£100",
-          priceLabel: "4 classes",
+          price: "£93",
+          priceLabel: "Taster + 3 classes",
           link: "",
-          buttonText: "Pay £25 today"
+          buttonText: "Book free taster"
         },
         {
           title: "Tuesday, 13 Nov",
@@ -81,10 +81,10 @@ export default {
           time: "6PM - 7PM",
           dates: "Every Tuesday for 4 weeks",
           summary: "Starting on Tuesday, 13 Nov for 4 weeks",
-          price: "£100",
-          priceLabel: "4 classes",
+          price: "£93",
+          priceLabel: "Taster + 3 classes",
           link: "",
-          buttonText: "Pay £25 today"
+          buttonText: "Book free taster"
         }
       ]
     },
@@ -97,10 +97,10 @@ export default {
           time: "12PM - 1PM",
           dates: "Every Sunday for 4 weeks",
           summary: "Starting on Sunday, 18 Nov for 4 weeks",
-          price: "£100",
-          priceLabel: "4 classes",
+          price: "£93",
+          priceLabel: "Taster + 3 classes",
           link: "",
-          buttonText: "Pay £25 today"
+          buttonText: "Book free taster"
         },
         {
           title: "Wednesday, 21 Nov",
@@ -108,10 +108,10 @@ export default {
           time: "6PM - 7PM",
           dates: "Every Wednesday for 4 weeks",
           summary: "Starting on Wednesday, 21 Nov for 4 weeks",
-          price: "£100",
-          priceLabel: "4 classes",
+          price: "£93",
+          priceLabel: "Taster + 3 classes",
           link: "",
-          buttonText: "Pay £25 today"
+          buttonText: "Book free taster"
         },
       ]
     },
@@ -124,10 +124,10 @@ export default {
           time: "12PM - 1PM",
           dates: "Every Sunday for 4 weeks",
           summary: "Starting on Sunday, 11 Nov for 4 weeks",
-          price: "£100",
-          priceLabel: "4 classes",
+          price: "£93",
+          priceLabel: "Taster + 3 classes",
           link: "",
-          buttonText: "Pay £25 today"
+          buttonText: "Book free taster"
         },
         {
           title: "Tuesday, 13 Nov",
@@ -135,10 +135,10 @@ export default {
           time: "6PM - 7PM",
           dates: "Every Tuesday for 4 weeks",
           summary: "Starting on Tuesday, 13 Nov for 4 weeks",
-          price: "£100",
-          priceLabel: "4 classes",
+          price: "£93",
+          priceLabel: "Taster + 3 classes",
           link: "",
-          buttonText: "Pay £25 today"
+          buttonText: "Book free taster"
         },
       ]
     },
@@ -151,10 +151,10 @@ export default {
           time: "12PM - 1PM",
           dates: "Every Sunday for 4 weeks",
           summary: "Starting on Sunday, 18 Nov for 4 weeks",
-          price: "£100",
-          priceLabel: "4 classes",
+          price: "£93",
+          priceLabel: "Taster + 3 classes",
           link: "",
-          buttonText: "Pay £25 today"
+          buttonText: "Book free taster"
         },
         {
           title: "Wednesday, 21 Nov",
@@ -162,10 +162,10 @@ export default {
           time: "6PM - 7PM",
           dates: "Every Wednesday for 4 weeks",
           summary: "Starting on Wednesday, 21 Nov for 4 weeks",
-          price: "£100",
-          priceLabel: "4 classes",
+          price: "£93",
+          priceLabel: "Taster + 3 classes",
           link: "",
-          buttonText: "Pay £25 today"
+          buttonText: "Book free taster"
         },
       ]
     },
@@ -178,10 +178,10 @@ export default {
           time: "12PM - 1PM",
           dates: "Every Sunday for 4 weeks",
           summary: "Starting on Sunday, 11 Nov for 4 weeks",
-          price: "£100",
-          priceLabel: "4 classes",
+          price: "£93",
+          priceLabel: "Taster + 3 classes",
           link: "",
-          buttonText: "Pay £25 today"
+          buttonText: "Book free taster"
         },
         {
           title: "Tuesday, 13 Nov",
@@ -189,10 +189,10 @@ export default {
           time: "6PM - 7PM",
           dates: "Every Tuesday for 4 weeks",
           summary: "Starting on Tuesday, 13 Nov for 4 weeks",
-          price: "£100",
-          priceLabel: "4 classes",
+          price: "£93",
+          priceLabel: "Taster + 3 classes",
           link: "",
-          buttonText: "Pay £25 today"
+          buttonText: "Book free taster"
         },
       ]
     }
