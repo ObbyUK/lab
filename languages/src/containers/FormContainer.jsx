@@ -17,7 +17,6 @@ import BlankCard from './../components/BlankCard.jsx';
 import BigRadios from '../components/BigRadios.jsx';
 import MultipleCheckboxes from '../components/MultipleCheckboxes.jsx';
 import PrimaryButton from '../components/PrimaryButton.jsx';
-import LocationsPreview from '../components/LocationsPreview.jsx';
 
 const mapStateToProps = (state) => ({
   selectedLanguage: state.app.selectedLanguage,

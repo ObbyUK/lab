@@ -6,6 +6,7 @@ import { mergeAll, propEq } from 'ramda';
 import isFullArray from './../lib/isFullArray';
 import isValidEmail from './../lib/isValidEmail';
 import String__UpperCaseFirstLetter from './../lib/String__UpperCaseFirstLetter';
+import { stripe } from './../../settings';
 // Actions & Style
 import { 
   typeNameAction,
@@ -22,6 +23,7 @@ import { Clock, BarChart, Location } from './../components/Icons.jsx'
 import Icon from './../components/Icon.jsx'
 import TextList from '../components/TextList.jsx';
 import LocationsPreview from '../components/LocationsPreview.jsx';
+import StripeCheckoutButton from '../components/StripeCheckoutButton.jsx';
 
 const mapStateToProps = (state) => ({
   selectedLanguage: state.app.selectedLanguage,
@@ -55,7 +57,18 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
       skillLevel: stateProps.skillLevel,
       locations: stateProps.locations,
       time: stateProps.time,
-    })
+    }),
+    submitPayment: (token) => {
+      console.log("SUBMIT PAYMENT", {
+        token,
+        language: stateProps.selectedLanguage,
+        name: stateProps.name,
+        email: stateProps.email,
+        skillLevel: stateProps.skillLevel,
+        locations: stateProps.locations,
+        time: stateProps.time,
+      })
+    }
   }
 ]);
 
@@ -195,12 +208,22 @@ class FormContainer extends React.Component {
               </div>
               <div className="ready-to-learn-page__continue-form">
                 <div className="ready-to-learn-page__button">
-                  <PrimaryButton
+                  <StripeCheckoutButton
+                    image="/images/favicon.png"
+                    name="Learn Languages"
+                    description="You will be charged only after you have taken your first class"
+                    amount={2500}
+                    stripeKey={stripe.key}
+                    buttonText="Buy Now"
+                    buttonSize="huge"
+                    callback={this.props.submitPayment.bind(this)}
+                  />
+                  {/* <PrimaryButton
                     size="huge"
                     text="Start learning"
                     disabled={!this.isContactInformationProvided()}
                     onClick={this.props.submit.bind(this)}
-                  />
+                  /> */}
                 </div>
               </div>
             </BlankCard>
