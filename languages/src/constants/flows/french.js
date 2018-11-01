@@ -29,7 +29,7 @@ export default {
     {
       title: levelNames.BEGGINER,
       value: skillLevels.BEGGINER,
-      description: "You know almoust nothing in French",
+      description: "You know almost nothing in French",
       sessionsPreview: [
         {
           title: "Pronunciation rules & Grammar",
@@ -41,7 +41,7 @@ export default {
         },
         {
           title: "Basic conversation",
-          text: "When you’re done, you’ll be able to have a basic conversation in fluent French.",
+          text: "When you’re done, you’ll be able to have a basic conversation in French.",
         },
       ]
     },

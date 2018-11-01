@@ -105,11 +105,11 @@ class FormContainer extends React.Component {
           <div className="conversion-container__card col-lg-4">
             <BlankCard>
               <h2 className="conversion-container__card-title">
-                4 classes
+                Free taster + 3 classes
               </h2>
               <PriceSum 
-                calculation="4 x £25"
-                total="£100"
+                calculation=""
+                total="£93"
               />
               <div className="conversion-container__summary-section">
                 <ImageBulletPoints

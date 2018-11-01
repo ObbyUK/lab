@@ -120,7 +120,7 @@ class LandingPageContainer extends React.Component {
             { 
               image: "/icons/2.svg",
               title: "Choose your options", 
-              description: "You can choose from a large variety of options, from single day classes to monthly subsctiptions"
+              description: "You can choose from a large variety of options, from single day classes to monthly subscriptions"
             },
             { 
               image: "/icons/3.svg", 
