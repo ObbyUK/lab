@@ -10,6 +10,8 @@ const actions = {
   TYPE_EMAIL: 'userTypesEmail',
   SUBMIT: 'userSubmitsEmailAndInformation',
   SUBMIT_COMPLETE: 'userSubmissionComplete',
+  SUBMIT_PAID_SUBSCRIPTION: 'userSubmitsPaidSubscription',
+  SUBMIT_PAID_SUBSCRIPTION_COMPLETE: 'userSubmitsPaidSubscriptionComplete',
   ANALYTICS_TRACKED: 'analyticsHasBeenTracked',
 };
 
@@ -75,6 +77,15 @@ export const submitAction = (details) => ({
 
 export const submitCompleteAction = () => ({
   type: actions.SUBMIT_COMPLETE
+});
+
+export const submitPaidSubscriptionAction = (details) => ({
+  type: actions.SUBMIT_PAID_SUBSCRIPTION,
+  payload: details
+});
+
+export const submitPaidSubscriptionCompleteAction = () => ({
+  type: actions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE,
 });
 
 export const analyticsTrackedAction = (details) => ({

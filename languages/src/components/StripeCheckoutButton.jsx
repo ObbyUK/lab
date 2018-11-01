@@ -29,7 +29,8 @@ export default class StripeCheckoutButton  extends React.Component {
       name: this.props.name,
       description: this.props.description,
       zipCode: true,
-      amount: this.props.amount
+      amount: this.props.amount,
+      panelLabel: this.props.buttonLabel||'Pay'
     });
 
     event.preventDefault();

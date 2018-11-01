@@ -11,7 +11,8 @@ import { stripe } from './../../settings';
 import { 
   typeNameAction,
   typeEmailAction,
-  submitAction
+  submitAction,
+  submitPaidSubscriptionAction
 } from '../appActions';
 // Components
 import BlankCard from './../components/BlankCard.jsx';
@@ -43,7 +44,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   typeName: (event) => dispatch(typeNameAction(event.target.value)),
   typeEmail: (event) => dispatch(typeEmailAction(event.target.value)),
-  submit: (details) => dispatch(submitAction(details))
+  submit: (details) => dispatch(submitAction(details)),
+  submitPaidSubscription: (details) => dispatch(submitPaidSubscriptionAction(details))
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
@@ -58,17 +60,15 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
       locations: stateProps.locations,
       time: stateProps.time,
     }),
-    submitPayment: (token) => {
-      console.log("SUBMIT PAYMENT", {
-        token,
-        language: stateProps.selectedLanguage,
-        name: stateProps.name,
-        email: stateProps.email,
-        skillLevel: stateProps.skillLevel,
-        locations: stateProps.locations,
-        time: stateProps.time,
-      })
-    }
+    submitPaidSubscription: (token) => dispatchProps.submitPaidSubscription({
+      token,
+      language: stateProps.selectedLanguage,
+      name: stateProps.name,
+      email: stateProps.email,
+      skillLevel: stateProps.skillLevel,
+      locations: stateProps.locations,
+      time: stateProps.time,
+    })
   }
 ]);
 
@@ -212,11 +212,12 @@ class FormContainer extends React.Component {
                     image="/images/favicon.png"
                     name="Learn Languages"
                     description="You will be charged only after you have taken your first class"
-                    amount={2500}
+                    amount={0}
                     stripeKey={stripe.key}
                     buttonText="Buy Now"
                     buttonSize="huge"
-                    callback={this.props.submitPayment.bind(this)}
+                    callback={this.props.submitPaidSubscription.bind(this)}
+                    buttonLabel="Subscribe for £0.00"
                   />
                   {/* <PrimaryButton
                     size="huge"

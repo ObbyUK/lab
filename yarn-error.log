@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/ciki/.nvm/versions/node/v8.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js start-med
+  /Users/ciki/.nvm/versions/node/v8.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js start-lang
 
 PATH: 
   /Users/ciki/.nvm/versions/node/v8.9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -27,7 +27,9 @@ npm manifest:
       "start-lang": "node languages/server/index.js",
       "build-lang": "cd languages && rimraf build && webpack --progress && cp -R ../public/. build",
       "prod-lang": "yarn build-lang && pm2 start languages/server/index.js",
-      "start-med": "node medidation/server/index.js",
+      "start-med": "node meditation/server/index.js",
+      "build-med": "cd meditation && rimraf build && webpack --progress && cp -R ../public/. build",
+      "prod-med": "yarn build-med && pm2 start meditation/server/index.js",
       "pm2": "pm2"
     },
     "dependencies": {
@@ -64,6 +66,7 @@ npm manifest:
       "rimraf": "^2.6.2",
       "rxjs": "^6.3.3",
       "rxjs-compat": "^6.3.3",
+      "stripe": "^6.13.0",
       "webpack": "^4.11.0",
       "webpack-merge": "^4.1.0"
     },
@@ -8626,6 +8629,14 @@ Lockfile:
     version "2.0.1"
     resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-2.0.1.tgz#3c531942e908c2697c0ec344858c286c7ca0a60a"
   
+  stripe@^6.13.0:
+    version "6.13.0"
+    resolved "https://registry.yarnpkg.com/stripe/-/stripe-6.13.0.tgz#10b073a09b5ba4b53a74e99063a29ce8e5a0c69e"
+    dependencies:
+      lodash.isplainobject "^4.0.6"
+      qs "~6.5.1"
+      safe-buffer "^5.1.1"
+  
   style-loader@^0.18.2:
     version "0.18.2"
     resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.18.2.tgz#cc31459afbcd6d80b7220ee54b291a9fd66ff5eb"
@@ -9526,7 +9537,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c node medidation/server/index.js
+  Arguments: -c node languages/server/index.js
   Directory: /Users/ciki/Obby/lab
   Output:
   
