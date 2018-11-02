@@ -7,6 +7,13 @@ export const ArrowRight = {
   )
 };
 
+export const ArrowRightThick = {
+  viewBox: '0 0 12 21',
+  body: () => (
+    <path fill="none" fillRule="evenodd" stroke="#fff" strokeWidth="3" d="M1.151.97l8.026 9.53-8.026 9.53"/>
+  )
+};
+
 export const ArrowLeft = {
   viewBox: '0 0 17 38',
   body: () => (

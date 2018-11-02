@@ -8,6 +8,7 @@ const actions = {
   SUBMIT_QUESTIONS: 'userSubmitsClassPereference',
   TYPE_NAME: 'userTypesName',
   TYPE_EMAIL: 'userTypesEmail',
+  CHOOSE_DATE: 'userSelectsAClassDate',
   SUBMIT: 'userSubmitsEmailAndInformation',
   SUBMIT_COMPLETE: 'userSubmissionComplete',
   SUBMIT_PAID_SUBSCRIPTION: 'userSubmitsPaidSubscription',
@@ -67,6 +68,13 @@ export const typeEmailAction = (email) => ({
   type: actions.TYPE_EMAIL,
   payload: {
     email
+  }
+});
+
+export const chooseDateAction = (date) => ({
+  type: actions.CHOOSE_DATE,
+  payload: {
+    date
   }
 });
 

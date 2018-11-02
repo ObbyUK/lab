@@ -25,6 +25,8 @@ const anwseringQuestionsReducer = cond([
 const enteringContactInformationReducer = cond([
   [isActionType(appActions.TYPE_NAME), typeName],
   [isActionType(appActions.TYPE_EMAIL), typeEmail],
+  [isActionType(appActions.CHOOSE_DATE), chooseDate],
+  [isActionType(appActions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE), submitedPaidSubscription],
   [isActionType(appActions.SUBMIT), submit],
   [T, identity]
 ]);
@@ -110,6 +112,14 @@ function typeEmail(state, { payload }) {
   );
 }
 
+function chooseDate(state, { payload }) {
+  return assoc(
+    'date',
+    payload.date,
+    state
+  );
+}
+
 function submit(state) {
   return assoc(
     'status',
@@ -118,3 +128,10 @@ function submit(state) {
   );
 }
 
+function submitedPaidSubscription(state) {
+  return assoc(
+    'status',
+    appStatuses.SUBMITTED,
+    state
+  );
+}

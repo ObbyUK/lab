@@ -18,7 +18,7 @@ const trackedActions = [
   actions.VIEW_LANDING_PAGE,
   actions.VIEW_READY_TO_LEARN_PAGE,
   actions.SUBMIT_QUESTIONS,
-  actions.SUBMIT,
+  actions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE,
 ];
 
 export default (action$, store) => {
@@ -46,14 +46,13 @@ export default (action$, store) => {
         ])
       ],
       [
-        propEq('type', actions.SUBMIT), 
+        propEq('type', actions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
           conversionEventFactory,
         ])
       ],
     ]))
     .mergeMap((array) => {
-      console.log(array);
       return map(sendAnalyticsEventToSegment, array);
     })
     .map(analyticsTrackedAction);

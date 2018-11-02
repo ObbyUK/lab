@@ -88,46 +88,108 @@ export default {
     {
       name: regionNames.CENTRAL_LONDON,
       value: regions.CENTRAL_LONDON,
-      addresses: [
-        'Covent Garden WC2',
-        'Westminster SW1',
-        'Blackfriars EC4',
-      ]
+      address: "Holborn, WC1V 7QH",
+      lessonsStart: "6:30PM",
+      lessonsEnd: "8PM",
+      options: [
+        {
+          starts: "08/01/2019",
+          lessonsStart: "6:30PM",
+          lessonsEnd: "8PM",
+          lessonDayName: "Tuesdays",
+        }, 
+        {
+          starts: "10/01/2019",
+          lessonsStart: "6:30PM",
+          lessonsEnd: "8PM",
+          lessonDayName: "Thursdays",
+        }
+      ],
     },
     {
       name: regionNames.WEST_LONDON,
       value: regions.WEST_LONDON,
-      addresses: [
-        'Hounslow W4',
-        'Acton W3',
-        'Notting Hill W8',
-        'Fulham SW6',
-      ]
-    },
-    {
-      name: regionNames.SOUTH_LONDON,
-      value: regions.SOUTH_LONDON,
-      addresses: [
-        'Putney SW15',
-        'Battersea SW8',
-        'Brixton SW4',
-      ]
-    },
-    {
-      name: regionNames.EAST_LONDON,
-      value: regions.EAST_LONDON,
-      addresses: [
-        'Whitechapel E1',
-      ]
+      address: "White City, W12 7FP",
+      lessonsStart: "6:30PM",
+      lessonsEnd: "8PM",
+      options: [
+        {
+          starts: "08/01/2019",
+          lessonsStart: "6:30PM",
+          lessonsEnd: "8PM",
+          lessonDayName: "Tuesdays",
+        }, 
+        {
+          starts: "10/01/2019",
+          lessonsStart: "6:30PM",
+          lessonsEnd: "8PM",
+          lessonDayName: "Thursdays",
+        }
+      ],
     },
     {
       name: regionNames.NORTH_LONDON,
       value: regions.NORTH_LONDON,
-      addresses: [
-        'Hoxton N1',
-        'Camden Town NW1',
-      ]
+      address: "Kings Cross, N1 9SQ",
+      lessonsStart: "6:30PM",
+      lessonsEnd: "8PM",
+      options: [
+        {
+          starts: "08/01/2019",
+          lessonsStart: "6:30PM",
+          lessonsEnd: "8PM",
+          lessonDayName: "Tuesdays",
+        }, 
+        {
+          starts: "10/01/2019",
+          lessonsStart: "6:30PM",
+          lessonsEnd: "8PM",
+          lessonDayName: "Thursdays",
+        }
+      ],
     },
+    {
+      name: regionNames.EAST_LONDON,
+      value: regions.EAST_LONDON,
+      address: "Shoreditch, EC2A 4HT",
+      lessonsStart: "6:30PM",
+      lessonsEnd: "8PM",
+      options: [
+        {
+          starts: "08/01/2019",
+          lessonsStart: "6:30PM",
+          lessonsEnd: "8PM",
+          lessonDayName: "Tuesdays",
+        }, 
+        {
+          starts: "10/01/2019",
+          lessonsStart: "6:30PM",
+          lessonsEnd: "8PM",
+          lessonDayName: "Thursdays",
+        }
+      ],
+    },
+    {
+      name: regionNames.SOUTH_LONDON,
+      value: regions.SOUTH_LONDON,
+      address: "Brixton, SW9 8BQ",
+      lessonsStart: "6:30PM",
+      lessonsEnd: "8PM",
+      options: [
+        {
+          starts: "08/01/2019",
+          lessonsStart: "6:30PM",
+          lessonsEnd: "8PM",
+          lessonDayName: "Tuesdays",
+        }, 
+        {
+          starts: "10/01/2019",
+          lessonsStart: "6:30PM",
+          lessonsEnd: "8PM",
+          lessonDayName: "Thursdays",
+        }
+      ],
+    }
   ],
   timeOptions: [
     {

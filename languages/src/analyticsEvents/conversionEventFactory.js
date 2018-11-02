@@ -8,8 +8,7 @@ export default ({ state }) => {
         skillLevel: state.skillLevel,
         time: state.time,
         locations: state.locations,
-        name: state.name,
-        email: state.email,
+        date: state.date
       },
     ]
   }
