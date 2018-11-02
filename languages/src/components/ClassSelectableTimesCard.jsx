@@ -50,7 +50,7 @@ export default (props) => (
           >
             <div className="class-selectable-times-card__day-text-wrap">
               <div className="class-selectable-times-card__day-text">{moment(classSession.starts, 'DD/MM/YYYY').format('dddd')}</div>
-              <div className="class-selectable-times-card__day-note">Stars on {moment(classSession.starts, 'DD/MM/YYYY').format('Do MMM ')}</div>
+              <div className="class-selectable-times-card__day-note">Starts on {moment(classSession.starts, 'DD/MM/YYYY').format('Do MMM ')}</div>
             </div>
             <div className="class-selectable-times-card__day-icon">
               <Icon icon={ArrowRightThick} height={22} />
