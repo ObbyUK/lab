@@ -10,7 +10,7 @@
   flex-wrap: wrap;
   padding: 32px;
   
-  @media (@sm-width) {
+  @media (min-width: @sm-width) {
     padding: 0 32px;
     flex-wrap: nowrap;
   }
@@ -22,19 +22,21 @@
     position: relative;
     z-index: 1;
     
-    @media (@sm-width) {
+    @media (min-width: @sm-width) {
       width: 33%;
       letter-spacing: 0.5px;
       padding: 32px 20px 32px 0;
+      margin-bottom: 0;
     }
 
     &--superior {
       border-top: 1px solid @camelot;
       padding-top: 30px;
-      @media (@sm-width) {
+      @media (min-width: @sm-width) {
         width: 40%;
         padding-left: 45px;
         border-left: 1px solid @camelot;
+        border-top: none;
       }
     }
     
@@ -84,7 +86,7 @@
     right: -150px;
     bottom: -180px;
 
-    @media (@sm-width) {
+    @media (min-width: @sm-width) {
       right: -100px;
       bottom: -150px;
     }
