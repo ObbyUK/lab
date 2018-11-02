@@ -35,15 +35,37 @@ const getProductPlan = async (productId) => {
   return plan;
 }
 
+const getCustomer = async (customerDetails) => {
+  var customers = await stripe.customers.list({ email: customerDetails.token.email });
+  if (customers.data.length > 0) {
+    return customers.data[0];
+  }
+  return await stripe.customers.create({
+    email: customerDetails.token.email,
+    source: customerDetails.token.id,
+    metadata: {
+      language: customerDetails.language,
+      name: customerDetails.name,
+      skillLevel: customerDetails.skillLevel,
+      locations: customerDetails.locations.join(', '),
+      time: customerDetails.time.join(', '),
+    }
+  });
+}
+
 module.exports = app => 
   app.post('/submit-paid-subscription', async (req, res) => {
     try {
-
       var product = await getProduct();
       var plan = await getProductPlan(product.id);
-      
-      res.status(200).json({ product, plan });
-
+      var customer = await getCustomer(req.body);
+      var subscription = stripe.subscriptions.create({
+        customer: customer.id,
+        items: [{plan: plan.id}],
+        // has to be a unix timestamp 
+        trial_end: req.body.trialEnd
+      });
+      res.status(200).json({ product, plan, customer, subscription });
     } catch (error) {
 
       res.status(500).json({
