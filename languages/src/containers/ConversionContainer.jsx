@@ -15,6 +15,7 @@ import {
 import BlankCard from './../components/BlankCard.jsx';
 import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
 import ClassSelectableTimesCard from '../components/ClassSelectableTimesCard.jsx';
+import DiscountCard from '../components/DiscountCard.jsx';
 
 const mapStateToProps = (state) => ({
   selectedLanguage: state.app.selectedLanguage,
@@ -124,6 +125,9 @@ class FormContainer extends React.Component {
                     }
                   ]}
                 />
+                <div className="ready-to-learn-page__discount-card">
+                  <DiscountCard />
+                </div>
               </div>
             </BlankCard>
           </div>

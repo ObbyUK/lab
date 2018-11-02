@@ -1,5 +1,93 @@
 @import './../styles/variables';
 
 .discount-card {
+  display: flex;
+  background-color: #ffdce2;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  flex-wrap: wrap;
+  padding: 32px;
   
+  @media (@sm-width) {
+    padding: 0 32px;
+    flex-wrap: nowrap;
+  }
+  
+  &__column {
+
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    
+    @media (@sm-width) {
+      width: 33%;
+      letter-spacing: 0.5px;
+      padding: 32px 20px 32px 0;
+    }
+
+    &--superior {
+      border-top: 1px solid @camelot;
+      padding-top: 30px;
+      @media (@sm-width) {
+        width: 40%;
+        padding-left: 45px;
+        border-left: 1px solid @camelot;
+      }
+    }
+    
+  }
+  
+  &__title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    width: 100%;
+    color: rgba(0,0,0,0.6);
+
+    &--superior {
+      color: @camelot;
+    }
+  }
+  
+  &__price {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: 28px;
+    font-weight: 600;
+    line-height: @m-paragraph-lh;
+    width: 100%;
+    color: rgba(0,0,0,0.6);
+
+    &--superior {
+      color: @camelot;
+    }
+  }
+  
+  &__text {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    width: 100%;
+    color: rgba(0,0,0,0.6);
+
+    &--superior {
+      color: @ebony-clay;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: 0px;
+    position: absolute;
+    right: -150px;
+    bottom: -180px;
+
+    @media (@sm-width) {
+      right: -100px;
+      bottom: -150px;
+    }
+  }
+
 }
