@@ -13,11 +13,13 @@ import pageViewedEventFactory from '../analyticsEvents/pageViewedEventFactory';
 import startFormEventFactory from '../analyticsEvents/startFormEventFactory';
 import completeFormEventFactory from '../analyticsEvents/completeFormEventFactory';
 import conversionEventFactory from '../analyticsEvents/conversionEventFactory';
+import bookNowEvent from '../analyticsEvents/bookNowEvent';
 
 const trackedActions = [
   actions.VIEW_LANDING_PAGE,
   actions.VIEW_READY_TO_LEARN_PAGE,
   actions.SUBMIT_QUESTIONS,
+  actions.CHOOSE_DATE,
   actions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE,
 ];
 
@@ -43,6 +45,12 @@ export default (action$, store) => {
         propEq('type', actions.SUBMIT_QUESTIONS), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
           completeFormEventFactory
+        ])
+      ],
+      [
+        propEq('type', actions.CHOOSE_DATE), 
+        EventFactoryArray__TypeAndAppState__EventObjectsArray([
+          bookNowEvent
         ])
       ],
       [
