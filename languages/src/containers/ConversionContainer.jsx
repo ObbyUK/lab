@@ -103,7 +103,7 @@ class FormContainer extends React.Component {
           <div className="ready-to-learn-page__card">
             <BlankCard>
               <h2 className="ready-to-learn-page__card-title">
-                First class is free. If you like it after that, its £24 per week, for 7 weeks
+                Your first class is free. After that, if you like it, it's £24 per week for 7 weeks.
               </h2>
               <div className="ready-to-learn-page__card-section">
                 <ImageBulletPoints

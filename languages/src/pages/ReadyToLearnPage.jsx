@@ -131,10 +131,10 @@ class HomePageContainer extends React.Component {
             <div className="ready-to-learn-page__card">
               <BlankCard>
                 <h2 className="ready-to-learn-page__card-title">
-                  Thank you!
+                  You are all set!
                 </h2>
                 <p className="ready-to-learn-page__card-description ready-to-learn-page__card-description--small">
-                  We’ll be in touch to match you with the right teacher and schedule your first class.
+                  You will receive an receipt shortly and we will be in touch with all class information by email in the next few days!
                 </p>
               </BlankCard>
             </div>

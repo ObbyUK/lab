@@ -13,7 +13,7 @@ headers[appStatuses.ANWSERING_QUESTIONS] = {
 headers[appStatuses.ENTERING_CONTACT_INFORMATION] = {
   blurt: 'Buono.',
   title: 'Here’s what we have for you',
-  description: "After booking, you can select your teacher, agree on an exact time or go over any requirements if necessary.",
+  // description: "After booking, you can select your teacher, agree on an exact time or go over any requirements if necessary.",
   src: "/images/header_flow_2.png",
 };
 headers[appStatuses.SUBMITTED] = {
