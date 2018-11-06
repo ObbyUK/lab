@@ -26,7 +26,13 @@ export default (props) => (
         title={props.title}
         description={props.description}
         points={props.points}
+        size={props.size}
       />
+      {props.children &&
+        <div className="image-text-list-banner__children">
+          {props.children}
+        </div>
+      }
     </div>
 
   </div>

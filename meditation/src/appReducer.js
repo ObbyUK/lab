@@ -8,11 +8,13 @@ import appActions from './appActions';
 
 
 const viewingReducer = cond([
-  [isActionType(appActions.CHOOSE_CLASS), chooseClass],
+  [isActionType(appActions.SEE_CLASS_OPTIONS), seeClassOptions],
   [T, identity]
 ]);
 
 const enteringContactInformationReducer = cond([
+  [isActionType(appActions.CHOOSE_DATE), chooseDate],
+  [isActionType(appActions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE), submitedPaidSubscription],
   [isActionType(appActions.TYPE_NAME), typeName],
   [isActionType(appActions.TYPE_EMAIL), typeEmail],
   [isActionType(appActions.SUBMIT), submit],
@@ -31,16 +33,29 @@ export default (state = new AppState(), action) =>
 function viewLandingPage(state) {
   return assoc(
     'status',
-    appStatuses.VIEWING,
+    appStatuses.ENTERING_CONTACT_INFORMATION,
     state
   );
 }
 
 function chooseClass(state, action) {
-  console.log('choose class');
   return pipe(
     assoc('status', appStatuses.ENTERING_CONTACT_INFORMATION),
     assoc('chosenClass', action.payload.chosenClass)
+  )(state);
+}
+
+function chooseDate(state, { payload }) {
+  return assoc(
+    'date',
+    payload.date,
+    state
+  );
+}
+
+function seeClassOptions(state, action) {
+  return pipe(
+    assoc('status', appStatuses.ENTERING_CONTACT_INFORMATION),
   )(state);
 }
 
@@ -61,6 +76,14 @@ function typeEmail(state, { payload }) {
 }
 
 function submit(state) {
+  return assoc(
+    'status',
+    appStatuses.SUBMITTED,
+    state
+  );
+}
+
+function submitedPaidSubscription(state) {
   return assoc(
     'status',
     appStatuses.SUBMITTED,

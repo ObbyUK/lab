@@ -1,14 +1,14 @@
 Arguments: 
-  /Users/ciki/.nvm/versions/node/v8.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js start-lang
+  /Users/ciki/.nvm/versions/node/v6.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js start-lang
 
 PATH: 
-  /Users/ciki/.nvm/versions/node/v8.9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+  /Users/ciki/.nvm/versions/node/v6.9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 Yarn version: 
   1.5.1
 
 Node version: 
-  8.9.4
+  6.9.4
 
 Platform: 
   darwin x64
@@ -44,6 +44,7 @@ npm manifest:
       "less": "^3.8.1",
       "less-loader": "^4.1.0",
       "mandrill-api": "^1.0.45",
+      "moment": "^2.22.2",
       "morgan": "^1.8.2",
       "node-mandrill": "^1.0.1",
       "normalize-css": "^2.3.1",
@@ -9541,10 +9542,11 @@ Trace:
   Directory: /Users/ciki/Obby/lab
   Output:
   
+      at ProcessTermError.Error (native)
       at ProcessTermError.MessageError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:186:110)
       at new ProcessTermError (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:226:113)
       at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1/libexec/lib/cli.js:30281:17)
-      at emitTwo (events.js:126:13)
-      at ChildProcess.emit (events.js:214:7)
-      at maybeClose (internal/child_process.js:925:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)
+      at emitTwo (events.js:106:13)
+      at ChildProcess.emit (events.js:191:7)
+      at maybeClose (internal/child_process.js:877:16)
+      at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)

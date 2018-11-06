@@ -11,7 +11,7 @@ import actions, { analyticsTrackedAction } from './../appActions';
 // Analytics Events
 import pageViewedEventFactory from '../analyticsEvents/pageViewedEventFactory';
 import conversionEventFactory from '../analyticsEvents/conversionEventFactory';
-import selectClassEventFactory from '../analyticsEvents/selectClassEventFactory';
+import bookNowEvent from '../analyticsEvents/bookNowEvent';
 
 const trackedActions = [
   actions.VIEW_LANDING_PAGE,
@@ -31,13 +31,13 @@ export default (action$, store) => {
         ])
       ],
       [
-        propEq('type', actions.CHOOSE_CLASS), 
+        propEq('type', actions.CHOOSE_DATE), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
-          selectClassEventFactory,
+          bookNowEvent
         ])
       ],
       [
-        propEq('type', actions.SUBMIT), 
+        propEq('type', actions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
           conversionEventFactory,
         ])

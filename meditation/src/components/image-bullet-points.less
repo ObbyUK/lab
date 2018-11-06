@@ -7,7 +7,7 @@
   
   &__point {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
 
     &:last-child {
@@ -37,9 +37,24 @@
       stroke: @gray;
     }
   }
+
+  &__point-text-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__point-title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: 1;
+    margin-bottom: 5px;
+    width: 100%;
+  }
   
   &__point-text {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
     font-size: @m-paragraph;
     line-height: @m-paragraph-lh;
+    width: 100%;
   }
 }

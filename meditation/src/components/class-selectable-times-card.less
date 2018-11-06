@@ -1,0 +1,187 @@
+@import './../styles/variables';
+
+.icon-label {
+  display: flex;
+  margin-right: 30px;
+
+  &__icon {
+    margin-right: 8px;
+    margin-top: 1px;
+    g {
+      stroke: @gray;
+    }
+  }
+
+  &__text {
+    font-family: "Founders Grotesk", Arial, sans-serif;
+    font-weight: 400;
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    color: @ebony-clay;
+  }
+}
+
+.class-selectable-times-card {
+
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 0px;
+  background-color: white;
+  
+  @media (min-width:@md-width) {
+    padding: 20px 30px;
+    box-shadow: 0 2px 4px 0 rgba(191, 191, 191, 0.5);
+    border: 1px solid @mercury;
+    border-radius: 3px;
+  }
+
+  &__top-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 10px;
+
+    @media (min-width:@lg-width) {
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__title {
+    font-family: "Founders Grotesk", sans-serif;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 600;
+    color: @ebony-clay;
+    margin: 0 0 10px;
+    @media (min-width:@lg-width) {
+      margin: 0;
+    }
+  }
+
+  &__price {
+
+  }
+
+  &__bottom-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+
+    // @media (min-width:@lg-width) {
+    //   justify-content: space-between;
+    //   flex-wrap: nowrap;
+    // }
+  }
+
+  &__location-name {
+    width: 100%;
+    font-family: "Founders Grotesk", sans-serif;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 400;
+    color: @ebony-clay;
+    margin: 0 0 30px;
+  }
+
+  &__label {
+    width: 100%;
+    font-family: "Founders Grotesk", sans-serif;
+    font-size: @l-paragraph;
+    line-height: 1;
+    font-weight: 600;
+    color: @ebony-clay;
+    margin-bottom: 15px;
+  }
+
+  &__days {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    @media (min-width:@md-width) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__day {
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: space-between;
+    flex-wrap: no-wrap;
+    font-family: "Founders Grotesk", sans-serif;
+    font-weight: 400;
+    margin: 0;
+    border-radius: 3px;
+    cursor: pointer;
+    border: 1px solid @camelot;
+    background-color: @camelot;
+    color: @gallery;
+    outline: none !important;
+    transition: all 350ms;
+    padding: 14px 20px;
+    margin: 0 0 20px;
+    width: 100%;
+
+    @media (min-width:@md-width) {
+      max-width: 260px;
+      margin: 0 15px 0 0;
+    }
+  }
+
+  &__day-text-wrap {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__day-text {
+    width: 100%;
+    font-size: @m-paragraph;
+    line-height: 1;
+    margin-bottom: 5px;
+    @media (min-width:@md-width) {
+      font-size: @l-paragraph;
+    }
+  }
+
+  &__day-note {
+    width: 100%;
+    font-size: @sm-paragraph;
+    line-height: 1;
+    @media (min-width:@md-width) {
+      font-size: @m-paragraph;
+    }
+  }
+
+  &__day-icon {
+    display: flex;
+    align-items: center;
+  }
+
+
+  &__details {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    @media (min-width:@lg-width) {
+      flex-wrap: nowrap;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__detail {
+    margin-bottom: 5px;
+    @media (min-width:@lg-width) {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    width: 100%;
+    @media (min-width:@lg-width) {
+      width: auto;
+    }
+  }
+
+}

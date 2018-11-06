@@ -5,8 +5,8 @@ import { mergeAll, identity } from 'ramda';
 import './pitch-container.less';
 // Constants
 import flow from './../constants/flow';
+import { seeClassOptionsAction } from './../appActions.js';
 // Components
-import Header from './../components/Header.jsx';
 import Menu from './../components/Menu.jsx';
 import PrimaryButton from './../components/PrimaryButton.jsx';
 import ThreePointSalesBanner from './../components/ThreePointSalesBanner.jsx';
@@ -16,15 +16,15 @@ import ImageTextListBanner from './../components/ImageTextListBanner.jsx';
 import QuestionsBanner from '../components/QuestionsBanner.jsx';
 import StickyFollowWrap from '../components/StickyFollowWrap.jsx';
 import Schedule from '../components/Schedule.jsx';
-import ClassesByLocationsContainer from './ClassesByLocationsContainer.jsx';
 import TeachersBanner from '../components/TeachersBanner.jsx';
+import ButtonBanner from '../components/ButtonBanner.jsx';
 
 const mapStateToProps = (state) => ({
 
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
-
+  seeClassOptions: () => dispatch(seeClassOptionsAction())
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
@@ -67,22 +67,31 @@ class PitchContainer extends React.Component {
         </StickyFollowWrap>
 
         <div id="header">
-          <Header
-            image="/images/header-2.jpeg"
-            color="white"
-            customBackgroundColor="rgb(33, 43, 62)"
-            title={["The most personal", "meditation course", "ever"]}
-            description="Master the skills to meditate on your own, with support from London's best teachers. Your first class is on us."
+          <ImageTextListBanner
+            color="azalea"
+            title="Learn meditation with London's top teachers"
+            size="large"
+            image="/images/meditation-2.png"
+            reverse={true}
+            points={[
+              { image: "/icons/red-tick.svg", text: "Personal learning with attentive teachers" },
+              { image: "/icons/red-tick.svg", text: "Tried and tested curriculums" },
+              { image: "/icons/red-tick.svg", text: "Learning community" },
+            ]}
           >
-            <a href="#classes" className="pitch-container__button">
-              <PrimaryButton
-                size="huge"
-                text="Book free taster"
-                color="gallery"
-                onClick={identity}
-              />
-            </a>
-          </Header>
+            <div className="pitch-container__button-wrap">
+              <div className="pitch-container__button">
+                <PrimaryButton
+                  size="huge"
+                  text="Book a course"
+                  onClick={this.props.seeClassOptions.bind(this)}
+                />
+              </div>
+              <div className="pitch-container__button-label">
+                First class on us!
+              </div>
+            </div>
+          </ImageTextListBanner> 
         </div>
 
         <div id="body">
@@ -236,9 +245,28 @@ class PitchContainer extends React.Component {
               )}
             />
           </div>
-          
-          <div id="classes">
-            <ClassesByLocationsContainer/>
+
+          <div id="ready-to-have-a-better-life">
+            <ButtonBanner 
+              title="Ready to have a better life?"
+              buttonText="Book a course"
+              onClick={this.props.seeClassOptions.bind(this)}
+              label="First class on us!"
+              points={[
+                { 
+                  image: "/icons/red-tick.svg",
+                  text: "Small class size - Maximum 10 people",
+                },
+                { 
+                  image: "/icons/red-tick.svg",
+                  text: "Locations all across London",
+                },
+                { 
+                  image: "/icons/red-tick.svg",
+                  text: "Trusted teachers",
+                }
+              ]}
+            />
           </div>
 
           <div id="faq">

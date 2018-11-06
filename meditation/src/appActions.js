@@ -1,10 +1,14 @@
 const actions = {
   VIEW_LANDING_PAGE: 'landingPageHasBeenViewed',
   CHOOSE_CLASS: 'userSelectsClass',
+  CHOOSE_DATE: 'userSelectsDate',
+  SEE_CLASS_OPTIONS: 'userWishesToSeeClassOptions',
   TYPE_NAME: 'userTypesName',
   TYPE_EMAIL: 'userTypesEmail',
   SUBMIT: 'userSubmitsEmailAndInformation',
   SUBMIT_COMPLETE: 'userSubmissionComplete',
+  SUBMIT_PAID_SUBSCRIPTION: 'userSubmitsPaidSubscription',
+  SUBMIT_PAID_SUBSCRIPTION_COMPLETE: 'userSubmitsPaidSubscriptionComplete',
   ANALYTICS_TRACKED: 'analyticsHasBeenTracked',
 };
 
@@ -16,6 +20,13 @@ export const chooseClassAction = (chosenClass) => ({
   type: actions.CHOOSE_CLASS,
   payload: {
     chosenClass
+  }
+});
+
+export const chooseDateAction = (date) => ({
+  type: actions.CHOOSE_DATE,
+  payload: {
+    date
   }
 });
 
@@ -40,6 +51,19 @@ export const submitAction = (details) => ({
 
 export const submitCompleteAction = () => ({
   type: actions.SUBMIT_COMPLETE
+});
+
+export const seeClassOptionsAction = () => ({
+  type: actions.SEE_CLASS_OPTIONS
+});
+
+export const submitPaidSubscriptionAction = (details) => ({
+  type: actions.SUBMIT_PAID_SUBSCRIPTION,
+  payload: details
+});
+
+export const submitPaidSubscriptionCompleteAction = () => ({
+  type: actions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE,
 });
 
 export const analyticsTrackedAction = (details) => ({

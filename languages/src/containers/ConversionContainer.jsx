@@ -126,7 +126,18 @@ class FormContainer extends React.Component {
                   ]}
                 />
                 <div className="ready-to-learn-page__discount-card">
-                  <DiscountCard />
+                  <DiscountCard
+                    original={{
+                      title: "London average",
+                      price: "£30+ / class",
+                      text: "Most language classes in London are £30+ per class",
+                    }}
+                    discount={{
+                      title: "Obby",
+                      price: "£24 / class (20% less)",
+                      text: "We keep prices low by making use of flexible venue spaces across London",
+                    }}
+                  />
                 </div>
               </div>
             </BlankCard>

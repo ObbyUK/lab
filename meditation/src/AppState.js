@@ -9,6 +9,7 @@ export default class AppState {
     this.status = appStatuses.VIEWING;
     this.name = "";
     this.email = "";
+    this.date = "";
     this.chosenClass = {};
   }
 }
