@@ -33,7 +33,7 @@ export default (state = new AppState(), action) =>
 function viewLandingPage(state) {
   return assoc(
     'status',
-    appStatuses.ENTERING_CONTACT_INFORMATION,
+    appStatuses.VIEWING,
     state
   );
 }
