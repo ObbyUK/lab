@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/ciki/.nvm/versions/node/v6.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js start-lang
+  /Users/ciki/.nvm/versions/node/v6.9.4/bin/node /usr/local/Cellar/yarn/1.5.1/libexec/bin/yarn.js start-med
 
 PATH: 
   /Users/ciki/.nvm/versions/node/v6.9.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -9538,7 +9538,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c node languages/server/index.js
+  Arguments: -c node meditation/server/index.js
   Directory: /Users/ciki/Obby/lab
   Output:
   

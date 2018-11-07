@@ -71,7 +71,7 @@ class PitchContainer extends React.Component {
             color="azalea"
             title="Learn meditation with London's top teachers"
             size="large"
-            image="/images/meditation-2.png"
+            image="/images/meditation-3.png"
             reverse={true}
             points={[
               { image: "/icons/red-tick.svg", text: "Personal learning with attentive teachers" },
