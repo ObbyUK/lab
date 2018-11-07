@@ -64,19 +64,19 @@ export default {
     {
       name: regionNames.CENTRAL_LONDON,
       value: regions.CENTRAL_LONDON,
-      address: "Holborn, WC1V 7QH",
-      lessonsStart: "6:30PM",
+      address: "Staple Inn Buildings South, WC1V 7QH",
+      lessonsStart: "7:00PM",
       lessonsEnd: "8PM",
       options: [
         {
-          starts: "08/01/2019",
-          lessonsStart: "6:30PM",
+          starts: "20/11/2018",
+          lessonsStart: "7:00PM",
           lessonsEnd: "8PM",
           lessonDayName: "Tuesdays",
         }, 
         {
           starts: "10/01/2019",
-          lessonsStart: "6:30PM",
+          lessonsStart: "7:00PM",
           lessonsEnd: "8PM",
           lessonDayName: "Thursdays",
         }
@@ -85,20 +85,20 @@ export default {
     {
       name: regionNames.WEST_LONDON,
       value: regions.WEST_LONDON,
-      address: "White City, W12 7FP",
+      address: "The Philbeach Hall, SW5 9EB",
       lessonsStart: "6:30PM",
-      lessonsEnd: "8PM",
+      lessonsEnd: "7:30PM",
       options: [
         {
-          starts: "08/01/2019",
+          starts: "25/11/2018",
           lessonsStart: "6:30PM",
-          lessonsEnd: "8PM",
+          lessonsEnd: "7:30PM",
           lessonDayName: "Tuesdays",
         }, 
         {
           starts: "10/01/2019",
           lessonsStart: "6:30PM",
-          lessonsEnd: "8PM",
+          lessonsEnd: "7:30PM",
           lessonDayName: "Thursdays",
         }
       ],
@@ -106,19 +106,19 @@ export default {
     {
       name: regionNames.NORTH_LONDON,
       value: regions.NORTH_LONDON,
-      address: "Kings Cross, N1 9SQ",
-      lessonsStart: "6:30PM",
+      address: "15 Crinan St, N1 9SQ",
+      lessonsStart: "7:00PM",
       lessonsEnd: "8PM",
       options: [
         {
-          starts: "08/01/2019",
-          lessonsStart: "6:30PM",
+          starts: "20/11/2018",
+          lessonsStart: "7:00PM",
           lessonsEnd: "8PM",
           lessonDayName: "Tuesdays",
         }, 
         {
           starts: "10/01/2019",
-          lessonsStart: "6:30PM",
+          lessonsStart: "7:00PM",
           lessonsEnd: "8PM",
           lessonDayName: "Thursdays",
         }
@@ -127,20 +127,20 @@ export default {
     {
       name: regionNames.EAST_LONDON,
       value: regions.EAST_LONDON,
-      address: "Shoreditch, EC2A 4HT",
+      address: "66 Leonard St, EC2A 4LW",
       lessonsStart: "6:30PM",
-      lessonsEnd: "8PM",
+      lessonsEnd: "7:30PM",
       options: [
-        {
-          starts: "08/01/2019",
+                {
+          starts: "25/11/2018",
           lessonsStart: "6:30PM",
-          lessonsEnd: "8PM",
+          lessonsEnd: "7:30PM",
           lessonDayName: "Tuesdays",
         }, 
         {
           starts: "10/01/2019",
           lessonsStart: "6:30PM",
-          lessonsEnd: "8PM",
+          lessonsEnd: "7:30PM",
           lessonDayName: "Thursdays",
         }
       ],
@@ -148,19 +148,19 @@ export default {
     {
       name: regionNames.SOUTH_LONDON,
       value: regions.SOUTH_LONDON,
-      address: "Brixton, SW9 8BQ",
-      lessonsStart: "6:30PM",
+      address: "44-46 Newington Causeway, SE1 6DR",
+      lessonsStart: "7:00PM",
       lessonsEnd: "8PM",
       options: [
         {
-          starts: "08/01/2019",
-          lessonsStart: "6:30PM",
+          starts: "20/11/2018",
+          lessonsStart: "7:00PM",
           lessonsEnd: "8PM",
           lessonDayName: "Tuesdays",
         }, 
         {
           starts: "10/01/2019",
-          lessonsStart: "6:30PM",
+          lessonsStart: "7:00PM",
           lessonsEnd: "8PM",
           lessonDayName: "Thursdays",
         }

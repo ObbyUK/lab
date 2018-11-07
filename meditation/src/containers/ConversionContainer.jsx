@@ -89,7 +89,7 @@ class ConversionContainer extends React.Component {
           <div className="conversion-container__card">
             <BlankCard>
               <h2 className="conversion-container__card-title">
-                First class is free. If you like it after that, it’s £31 per week, for 3 weeks
+                Your first class is free. If you like it after that, it’s £27 per week, for 3 weeks
               </h2>
               <div className="conversion-container__card-section">
                 <ImageBulletPoints
@@ -102,7 +102,7 @@ class ConversionContainer extends React.Component {
                     {
                       image: "/icons/tick.svg",
                       title: "Remaining balance charged 24h later",
-                      text: "24h after your first class, the remaining £75 is charged if you are happy to continue. If not, no hard feelings!",
+                      text: "24h after your first class, the remaining £81 is charged if you are happy to continue. If not, no hard feelings!",
                     },
                     {
                       image: "/icons/installments.svg",
@@ -120,7 +120,7 @@ class ConversionContainer extends React.Component {
                     }}
                     discount={{
                       title: "Obby",
-                      price: "£31 / class (20% less)",
+                      price: "£27 / class (37% less)",
                       text: "On Obby we keep the prices low by offering flexible locations and timings",
                     }}
                   />
@@ -142,7 +142,7 @@ class ConversionContainer extends React.Component {
                     lessonsStart={location.lessonsStart}
                     lessonsEnd={location.lessonsEnd}
                     priceLabel="Taster + 3 classes"
-                    price="£93"
+                    price="£81"
                     options={location.options}
                     onClick={this.selectClassDate.bind(this)}
                   />
