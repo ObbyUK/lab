@@ -69,7 +69,7 @@ class LandingPageContainer extends React.Component {
             <div className="landing-page__header">
               <ImageBanner
                 blurt="Thanks!"
-                title="We will be in touch once the class is live."
+                title="You are all set"
                 description=""
                 src="/images/meditation-horizon.jpeg"
               />
@@ -77,7 +77,7 @@ class LandingPageContainer extends React.Component {
             <div className="landing-page__card container">
               <BlankCard>
                 <h2 className="landing-page__card-title">
-                  Speak soon :)
+                  You will receive an receipt shortly and we will be in touch with all class information by email in the next few days!
                 </h2>
                 <p className="landing-page__card-description landing-page__card-description--small">
                 </p>
