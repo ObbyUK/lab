@@ -4,11 +4,9 @@ export default ({ state }) => {
   return {
     type: 'track',
     payload: [
-      'Conversion',
+      'Order Completed',
       {
-        chosenClass: state.chosenClass,
-        name: state.name,
-        email: state.email,
+        date: state.date,
       },
     ]
   }

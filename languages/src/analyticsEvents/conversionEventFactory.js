@@ -2,7 +2,7 @@ export default ({ state }) => {
   return {
     type: 'track',
     payload: [
-      'Conversion',
+      'Order Completed',
       {
         selectedLanguage: state.selectedLanguage,
         skillLevel: state.skillLevel,
