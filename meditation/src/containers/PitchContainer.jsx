@@ -59,7 +59,7 @@ class PitchContainer extends React.Component {
             <a href="#classes" className="pitch-container__menu-button">
               <PrimaryButton 
                 color="ebony-clay"
-                text="Book free taster"
+                text="Sign up for free"
                 onClick={identity}
               />
             </a>
@@ -74,16 +74,16 @@ class PitchContainer extends React.Component {
             image="/images/meditation-2.png"
             reverse={true}
             points={[
-              { image: "/icons/red-tick.svg", text: "Personal learning with attentive teachers" },
-              { image: "/icons/red-tick.svg", text: "Tried and tested curriculums" },
-              { image: "/icons/red-tick.svg", text: "Learning community" },
+              { image: "/icons/red-tick.svg", text: "Small class sizes - 10 people max" },
+              { image: "/icons/red-tick.svg", text: "Locations all across London" },
+              { image: "/icons/red-tick.svg", text: "Top reviewed teachers" },
             ]}
           >
             <div className="pitch-container__button-wrap">
               <div className="pitch-container__button">
                 <PrimaryButton
                   size="huge"
-                  text="Book a course"
+                  text="Sign up for free"
                   onClick={this.props.seeClassOptions.bind(this)}
                 />
               </div>
@@ -98,7 +98,7 @@ class PitchContainer extends React.Component {
           
           <div id="about-us">
             <ThreePointSalesBanner
-              title="Live a happier life through meditation"
+              title="Learn to meditate and live mindfully"
               imageHeight="108px"
               points={[
                 { 
@@ -111,7 +111,7 @@ class PitchContainer extends React.Component {
                 },
                 { 
                   image: "/icons/in-person.svg", 
-                  title: "London is a busy place. Learn how to be present and get to know yourself.",
+                  title: "London is a busy place. Learn how to disconnect and be more present",
                 }
               ]}
             />
@@ -148,14 +148,14 @@ class PitchContainer extends React.Component {
             <ImageTextListBanner
                 color="polar"
                 title="Lifetime access to our learning portal"
-                description="When joining Obby, you get access to our personal platform to connect with their teacher on an ongoing basis and have access to support and learning materials."
+                description="When joining Obby, you get access to our online platform to connect with your teacher on an ongoing basis with access to support and learning materials."
                 image="/images/learning-portal@2x.png"
                 reverse={true}
                 imageClassName="pitch-container__learning-portal-image"
                 points={[
-                  { image: "/icons/tick.svg", text: "Personal learning with attentive teachers" },
-                  { image: "/icons/tick.svg", text: "Tried and tested curriculums" },
-                  { image: "/icons/tick.svg", text: "Learning community" },
+                  { image: "/icons/tick.svg", text: "Connect with a community of learners" },
+                  { image: "/icons/tick.svg", text: "Get access to tips, videos and content to support you on your journey" },
+                  { image: "/icons/tick.svg", text: "Stay in touch with your teacher before, during and after your course" },
                 ]}
               />
           </div>
@@ -248,14 +248,14 @@ class PitchContainer extends React.Component {
 
           <div id="ready-to-have-a-better-life">
             <ButtonBanner 
-              title="Ready to have a better life?"
-              buttonText="Book a course"
+              title="Learn to meditate and live mindfully"
+              buttonText="Sign up for free"
               onClick={this.props.seeClassOptions.bind(this)}
               label="First class on us!"
               points={[
                 { 
                   image: "/icons/red-tick.svg",
-                  text: "Small class size - Maximum 10 people",
+                  text: "Small class sizes - 10 people max",
                 },
                 { 
                   image: "/icons/red-tick.svg",
@@ -263,7 +263,7 @@ class PitchContainer extends React.Component {
                 },
                 { 
                   image: "/icons/red-tick.svg",
-                  text: "Trusted teachers",
+                  text: "Top reviewed  teachers",
                 }
               ]}
             />
