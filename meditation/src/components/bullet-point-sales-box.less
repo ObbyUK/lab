@@ -14,9 +14,15 @@
     }
 
     &--large {
-      font-size: @l-heading;
+      font-size: @l-heading-mobile;
       line-height: 1.2;
-    } 
+
+      @media (min-width:@lg-width) {
+        font-size: @l-heading;
+        line-height: 1.2;
+      }
+    }
+
   }
   
   &__description {

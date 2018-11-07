@@ -25,10 +25,15 @@
     cursor: pointer;
     border-top: 3px solid transparent;
     border-bottom: 3px solid transparent;
+    display: none;
     &:hover {
       color: @ebony-clay;
       text-decoration: none;
       border-bottom: 3px solid @ebony-clay;
+    }
+
+    @media (min-width:@lg-width) {
+      display: block;
     }
   }
   

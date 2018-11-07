@@ -60,7 +60,7 @@ class PitchContainer extends React.Component {
               <PrimaryButton 
                 color="ebony-clay"
                 text="Book free taster"
-                onClick={identity}
+                onClick={this.props.seeClassOptions.bind(this)}
               />
             </a>
           </Menu>

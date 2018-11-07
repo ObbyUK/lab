@@ -39,6 +39,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    max-height: 300px;
+    overflow: hidden;
+    @media (min-width:@sm-width) {
+      max-height: none;
+    }
   }
 
   &__image {
