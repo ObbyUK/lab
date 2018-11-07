@@ -29,7 +29,7 @@ const getProductPlan = async (productId) => {
       interval: 'week',
       product: productId,
       nickname: planNickname,
-      amount: 3100,
+      amount: 2700,
     });
   }
   return plan;

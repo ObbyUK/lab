@@ -49,7 +49,7 @@ export default (props) => (
             onClick={() => props.onClick(classSession)}
           >
             <div className="class-selectable-times-card__day-text-wrap">
-              <div className="class-selectable-times-card__day-text">{moment(classSession.starts, 'DD/MM/YYYY').format('dddd')}</div>
+              <div className="class-selectable-times-card__day-text">{moment(classSession.starts, 'DD/MM/YYYY').format('dddd')}s</div>
               <div className="class-selectable-times-card__day-note">Starts on {moment(classSession.starts, 'DD/MM/YYYY').format('Do MMM ')}</div>
             </div>
             <div className="class-selectable-times-card__day-icon">

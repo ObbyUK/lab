@@ -11,12 +11,16 @@ import actions, { analyticsTrackedAction } from './../appActions';
 // Analytics Events
 import pageViewedEventFactory from '../analyticsEvents/pageViewedEventFactory';
 import conversionEventFactory from '../analyticsEvents/conversionEventFactory';
-import bookNowEvent from '../analyticsEvents/bookNowEvent';
+import bookNowEventFactory from '../analyticsEvents/bookNowEventFactory';
+import signUpForFreeEventFactory from '../analyticsEvents/signUpForFreeEventFactory';
 
 const trackedActions = [
   actions.VIEW_LANDING_PAGE,
   actions.CHOOSE_CLASS,
   actions.SUBMIT,
+  actions.CHOOSE_DATE,
+  actions.SEE_CLASS_OPTIONS,
+  actions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE,
 ];
 
 export default (action$, store) => {
@@ -31,9 +35,15 @@ export default (action$, store) => {
         ])
       ],
       [
+        propEq('type', actions.SEE_CLASS_OPTIONS), 
+        EventFactoryArray__TypeAndAppState__EventObjectsArray([
+          signUpForFreeEventFactory
+        ])
+      ],
+      [
         propEq('type', actions.CHOOSE_DATE), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
-          bookNowEvent
+          bookNowEventFactory
         ])
       ],
       [
