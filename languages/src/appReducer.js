@@ -22,12 +22,16 @@ const anwseringQuestionsReducer = cond([
   [T, identity]
 ]);
 
-const enteringContactInformationReducer = cond([
-  [isActionType(appActions.TYPE_NAME), typeName],
-  [isActionType(appActions.TYPE_EMAIL), typeEmail],
+const viewingClassOptionsReducer = cond([
   [isActionType(appActions.CHOOSE_DATE), chooseDate],
-  [isActionType(appActions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE), submitedPaidSubscription],
-  [isActionType(appActions.SUBMIT), submit],
+  [T, identity]
+]);
+
+const checkingOutReducer = cond([
+  [isActionType(appActions.TYPE_FIRST_NAME), typeName],
+  [isActionType(appActions.TYPE_LAST_NAME), chooseDate],
+  [isActionType(appActions.TYPE_EMAIL), typeEmail],
+  [isActionType(appActions.TYPE_PHONE_NUMBER), typeEmail],
   [T, identity]
 ]);
 
@@ -38,7 +42,8 @@ export default (state = new AppState(), action) =>
 
     [propEq('status', appStatuses.VIEWING), viewingReducer],
     [propEq('status', appStatuses.ANWSERING_QUESTIONS), anwseringQuestionsReducer],
-    [propEq('status', appStatuses.ENTERING_CONTACT_INFORMATION), enteringContactInformationReducer],
+    [propEq('status', appStatuses.VIEWING_CLASS_OPTIONS), viewingClassOptionsReducer],
+    [propEq('status', appStatuses.CHECKING_OUT), checkingOutReducer],
 
     [T, viewingReducer]
   ])(state, action);
@@ -91,9 +96,16 @@ function toggleLocation(state, { payload }) {
 function submitQuestions(state) {
   return assoc(
     'status', 
-    appStatuses.ENTERING_CONTACT_INFORMATION, 
+    appStatuses.VIEWING_CLASS_OPTIONS, 
     state
   );
+}
+
+function chooseDate(state, { payload }) {
+  return pipe(
+    assoc('status', appStatuses.CHECKING_OUT),
+    assoc('date', payload.date),
+  )(state);
 }
 
 function typeName(state, { payload }) {
@@ -112,26 +124,10 @@ function typeEmail(state, { payload }) {
   );
 }
 
-function chooseDate(state, { payload }) {
-  return assoc(
-    'date',
-    payload.date,
-    state
-  );
-}
-
-function submit(state) {
-  return assoc(
-    'status',
-    appStatuses.SUBMITTED,
-    state
-  );
-}
-
 function submitedPaidSubscription(state) {
   return assoc(
     'status',
-    appStatuses.SUBMITTED,
+    appStatuses.TRANSACTION_COMPLETE,
     state
   );
 }

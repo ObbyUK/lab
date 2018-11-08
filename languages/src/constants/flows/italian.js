@@ -10,13 +10,18 @@ headers[appStatuses.ANWSERING_QUESTIONS] = {
   description: "Tell us a bit more about what you're looking for?",
   src: "/images/header_flow.png",
 };
-headers[appStatuses.ENTERING_CONTACT_INFORMATION] = {
+headers[appStatuses.VIEWING_CLASS_OPTIONS] = {
   blurt: 'Buono.',
   title: 'Here’s what we have for you',
   // description: "After booking, you can select your teacher, agree on an exact time or go over any requirements if necessary.",
   src: "/images/header_flow_2.png",
 };
-headers[appStatuses.SUBMITTED] = {
+headers[appStatuses.CHECKING_OUT] = {
+  blurt: 'È tutto pronto.',
+  title: 'Let’s get to work.',
+  src: "/images/header_flow_3.png",
+};
+headers[appStatuses.TRANSACTION_COMPLETE] = {
   blurt: 'È tutto pronto.',
   title: 'Let’s get to work.',
   src: "/images/header_flow_3.png",

@@ -26,6 +26,7 @@ import BlankCard from './../components/BlankCard.jsx';
 import ImageBanner from '../components/ImageBanner.jsx';
 import FormContainer from '../containers/FormContainer.jsx';
 import ConversionContainer from '../containers/ConversionContainer.jsx';
+import CheckoutContainer from '../containers/CheckoutContainer.jsx';
 
 const mapStateToProps = (state) => ({
   selectedLanguage: state.app.selectedLanguage,
@@ -122,11 +123,15 @@ class HomePageContainer extends React.Component {
           <FormContainer />
         }
 
-        {this.props.status === appStatuses.ENTERING_CONTACT_INFORMATION &&
+        {this.props.status === appStatuses.VIEWING_CLASS_OPTIONS &&
           <ConversionContainer />
         }
 
-        {this.props.status === appStatuses.SUBMITTED &&
+        {this.props.status === appStatuses.CHECKING_OUT &&
+          <CheckoutContainer />
+        }
+
+        {this.props.status === appStatuses.TRANSACTION_COMPLETE &&
           <div className="ready-to-learn-page__body container">
             <div className="ready-to-learn-page__card">
               <BlankCard>

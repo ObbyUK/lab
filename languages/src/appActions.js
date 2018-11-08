@@ -6,7 +6,9 @@ const actions = {
   SELECT_TIME: 'userSelectsTime',
   TOGGLE_LOCATION: 'userTogglesLocation',
   SUBMIT_QUESTIONS: 'userSubmitsClassPereference',
-  TYPE_NAME: 'userTypesName',
+  TYPE_FIRST_NAME: 'userTypesFirstName',
+  TYPE_LAST_NAME: 'userTypesLastName',
+  TYPE_PHONE_NUMBER: 'userTypesPhoneNumber',
   TYPE_EMAIL: 'userTypesEmail',
   CHOOSE_DATE: 'userSelectsAClassDate',
   SUBMIT: 'userSubmitsEmailAndInformation',
@@ -58,9 +60,23 @@ export const submitQuestionsAction = () => ({
 });
 
 export const typeNameAction = (name) => ({
-  type: actions.TYPE_NAME,
+  type: actions.TYPE_FIRST_NAME,
   payload: {
     name
+  }
+});
+
+export const typeSurnameAction = (surname) => ({
+  type: actions.TYPE_LAST_NAME,
+  payload: {
+    surname
+  }
+});
+
+export const typePhoneNumberAction = (phoneNumber) => ({
+  type: actions.TYPE_PHONE_NUMBER,
+  payload: {
+    phoneNumber
   }
 });
 
