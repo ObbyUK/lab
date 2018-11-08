@@ -59,7 +59,7 @@ module.exports = app =>
       var product = await getProduct();
       var plan = await getProductPlan(product.id);
       var customer = await getCustomer(req.body);
-      var subscription = stripe.subscriptions.create({
+      var subscription = await stripe.subscriptions.create({
         customer: customer.id,
         items: [{plan: plan.id}],
         // has to be a unix timestamp 
