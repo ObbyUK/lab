@@ -18,7 +18,7 @@ const createStyleOptions = (fontSize) => {
         fontSize,
         fontFamily: 'Founders Grotesk", "Arial", sans-serif',
         '::placeholder': {
-          color: '#898989',
+          color: '#d8d8d8',
         },
       },
       invalid: {
@@ -56,7 +56,7 @@ class _CardFormBody extends React.Component {
         
         <div className="stripe-form__card-details">
           <div className="stripe-form__card-detail">
-            <label className="stripe-form__stripe-label">Expiration date</label>
+            <label className="stripe-form__stripe-label">Exp. date</label>
             <CardExpiryElement {...createStyleOptions("18px")}/>
           </div>
 
@@ -66,7 +66,7 @@ class _CardFormBody extends React.Component {
           </div>
 
           <div className="stripe-form__card-detail">
-            <label className="stripe-form__stripe-label">Postal code</label>
+            <label className="stripe-form__stripe-label">Post code</label>
             <PostalCodeElement {...createStyleOptions("18px")}/>
           </div>
         </div>

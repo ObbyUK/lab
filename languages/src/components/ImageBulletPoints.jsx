@@ -4,6 +4,8 @@ import Icon from './Icon.jsx';
 
 import './image-bullet-points.less';
 
+const shouldCenterPoint = (point) => (point.title && !point.text) || (!point.title && point.text)
+
 export default (props) => (
   <div className="image-bullet-points">
     {props.points.map((point, index) => (
@@ -12,6 +14,7 @@ export default (props) => (
         className={`
           image-bullet-points__point
           image-bullet-points__point--${props.size||'large'}
+          image-bullet-points__point--${shouldCenterPoint(point) ? 'center' : 'start'}
         `}
       > 
         {point.image &&

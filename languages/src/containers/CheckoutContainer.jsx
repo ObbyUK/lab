@@ -75,9 +75,33 @@ class CheckoutContainer extends React.Component {
     };
   }
 
+  renderReviewsCard() {
+    return (
+      <BlankCard>
+        <div className="checkout-container__sidebar">
+          <div className="checkout-container__sidebar-text-row">
+            <div className="checkout-container__sidebar-text checkout-container__sidebar-text--large">Our customers love us</div>
+          </div>
+          <div className="checkout-container__reviews">
+            <MiniReviews reviews={checkoutReviews} />
+          </div>
+        </div>
+      </BlankCard>
+    );
+  }
+
   render () {
     return (
       <div className="checkout-container container">
+
+        {/* REVIEWS - MOBILE */}
+        <div className="checkout-container__column col-12 d-block d-sm-none">
+          <div className="checkout-container__card">
+            {this.renderReviewsCard()}
+          </div>
+        </div>
+
+        {/* FORM */}
         <div className="checkout-container__column col-12 col-lg-7">
           <div className="checkout-container__column checkout-container__card">
             <BlankCard>
@@ -133,7 +157,7 @@ class CheckoutContainer extends React.Component {
                   onPreSubmit={console.log}
                   isSubmitting={this.props.status === appStatuses.SUBMITTING}
                   stripeKey={stripe.key}
-                  payText={'Pay £0'}
+                  payText={'Pay £0 now'}
                   submittingText={'Processing...'}
                   payLabel="And £24 per class after the first class if you enjoy it"
                 />
@@ -142,7 +166,10 @@ class CheckoutContainer extends React.Component {
             </BlankCard>
           </div>
         </div>
-        <div className="col-12 col-lg-5">
+
+        {/* SIDEBAR */}
+        <div className="checkout-container__column col-12 col-lg-5">
+          {/* MAIN SUMMARY */}
           <div className="checkout-container__card">
             <BlankCard>
               <div className="checkout-container__sidebar">
@@ -177,8 +204,9 @@ class CheckoutContainer extends React.Component {
                   <div className="checkout-container__sidebar-text">Every {moment(this.props.date, 'DD/MM/YYYY').format('dddd')} at {this.props.chosenSession.lessonsStart}</div>
                 </div>
               </div>
+              {/* BULLET POINTS */}
               <div className="">
-                <ImageBulletPoints 
+                <ImageBulletPoints
                   points={[
                     { 
                       image: "/icons/pay_0.svg", 
@@ -187,7 +215,7 @@ class CheckoutContainer extends React.Component {
                     },
                     { 
                       image: "/icons/tick.svg", 
-                      text: "Money-back guarantee" 
+                      title: "Money-back guarantee" 
                     },
                     { 
                       image: "/icons/pay-in-installments.svg", 
@@ -199,17 +227,10 @@ class CheckoutContainer extends React.Component {
               </div>
             </BlankCard>
           </div>
-          <div className="checkout-container__card">
-            <BlankCard>
-              <div className="checkout-container__sidebar">
-                <div className="checkout-container__sidebar-text-row">
-                  <div className="checkout-container__sidebar-text checkout-container__sidebar-text--large">Our customers love us</div>
-                </div>
-                <div className="checkout-container__reviews">
-                  <MiniReviews reviews={checkoutReviews} />
-                </div>
-              </div>
-            </BlankCard>
+
+          {/* REVIEWS - DESKTOP */}
+          <div className="checkout-container__card d-none d-sm-block">
+            {this.renderReviewsCard()}
           </div>
         </div>
       </div>

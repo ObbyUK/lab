@@ -6,6 +6,11 @@ import './text-list.less';
 
 export default (props) => (
   <div className="text-list">
+    {props.title &&
+      <div className="text-list__big-title">
+        {props.title}
+      </div>
+    }
     {isFullArray(props.list) && props.list.map((item, index) => (
       <div key={index} className="text-list__item">
         <h4 className="text-list__title">

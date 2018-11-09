@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { mergeAll, contains } from 'ramda';
+import { propEq, mergeAll, contains } from 'ramda';
 
 // Actions & Style
 import { 
@@ -11,8 +11,10 @@ import BlankCard from './../components/BlankCard.jsx';
 import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
 import ClassSelectableTimesCard from '../components/ClassSelectableTimesCard.jsx';
 import ThreePointSalesBanner from '../components/ThreePointSalesBanner.jsx';
+import TextList from '../components/TextList.jsx';
 
 const mapStateToProps = (state) => ({
+  skillLevelSessionPreview: state.app.flow.levelOptions.find(propEq('value', state.app.skillLevel)).sessionsPreview,
   selectedLocationsOptions: state.app.flow.locationOptions.filter((location) => contains(location.name, state.app.locations)),
 });
 
@@ -38,20 +40,24 @@ class FormContainer extends React.Component {
             <h2 className="ready-to-learn-page__card-title">
               Here's what we have for you
             </h2>
-              {this.props.selectedLocationsOptions.map((location, index) => (
-                <div key={index} className="ready-to-learn-page__card-section">
-                  <ClassSelectableTimesCard 
-                    title={location.name}
-                    address={location.address}
-                    lessonsStart={location.lessonsStart}
-                    lessonsEnd={location.lessonsEnd}
-                    priceLabel="Free taster + 7 classes"
-                    price="£168"
-                    options={location.options}
-                    onClick={(session) => this.props.chooseDate({ session, location })}
-                  />
-                </div>
-              ))}
+            <TextList
+              title="You'll learn"
+              list={this.props.skillLevelSessionPreview}
+            />
+            {this.props.selectedLocationsOptions.map((location, index) => (
+              <div key={index} className="ready-to-learn-page__card-section">
+                <ClassSelectableTimesCard 
+                  title={location.name}
+                  address={location.address}
+                  lessonsStart={location.lessonsStart}
+                  lessonsEnd={location.lessonsEnd}
+                  priceLabel="Free taster + 7 classes"
+                  price="£168"
+                  options={location.options}
+                  onClick={(session) => this.props.chooseDate({ session, location })}
+                />
+              </div>
+            ))}
           </BlankCard>
         </div>
             
@@ -95,17 +101,17 @@ class FormContainer extends React.Component {
                 size="small"
                 points={[
                   { 
-                    image: "/icons/tick.svg", 
+                    image: "/icons/trusted.svg", 
                     title: "Trusted techers", 
                     description: "We vet all our teachers personally, to ensure the highest quality teaching so you don't have to worry."
                   },
                   { 
-                    image: "/icons/tick.svg",
+                    image: "/icons/loved.svg",
                     title: "Loved by 10,000 Londoners", 
                     description: "Consistent 5 ⭐️ reviews by our community"
                   },
                   { 
-                    image: "/icons/tick.svg", 
+                    image: "/icons/small_class.svg", 
                     title: "Small class sizes", 
                     description: "Our students are given the attention they neeed. That's why we only have a maximum of 10 students per class"
                   }
