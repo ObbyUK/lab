@@ -66,10 +66,10 @@ export const typeNameAction = (name) => ({
   }
 });
 
-export const typeSurnameAction = (surname) => ({
+export const typeLastNameAction = (lastName) => ({
   type: actions.TYPE_LAST_NAME,
   payload: {
-    surname
+    lastName
   }
 });
 

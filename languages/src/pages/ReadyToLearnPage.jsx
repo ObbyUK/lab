@@ -127,7 +127,7 @@ class HomePageContainer extends React.Component {
           <ConversionContainer />
         }
 
-        {this.props.status === appStatuses.CHECKING_OUT &&
+        {(this.props.status === appStatuses.CHECKING_OUT || this.props.status === appStatuses.SUBMITTING) &&
           <CheckoutContainer />
         }
 

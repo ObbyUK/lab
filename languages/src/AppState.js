@@ -6,6 +6,7 @@ export const appStatuses = {
   ANWSERING_QUESTIONS: 'userIsAnwseringQuestions',
   VIEWING_CLASS_OPTIONS: 'userIsViewingClassOptions',
   CHECKING_OUT: 'userIsCheckingOut',
+  SUBMITTING: 'userIsSubmitting',
   TRANSACTION_COMPLETE: 'userHasCompletedTransaction',
 };
 
@@ -22,7 +23,7 @@ export default class AppState {
     this.date = null;
 
     this.name = "";
-    this.surname = "";
+    this.lastName = "";
     this.phoneNumber = ""
     this.email = "";
   }

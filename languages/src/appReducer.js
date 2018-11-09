@@ -29,9 +29,15 @@ const viewingClassOptionsReducer = cond([
 
 const checkingOutReducer = cond([
   [isActionType(appActions.TYPE_FIRST_NAME), typeName],
-  [isActionType(appActions.TYPE_LAST_NAME), chooseDate],
+  [isActionType(appActions.TYPE_LAST_NAME), typeLastName],
   [isActionType(appActions.TYPE_EMAIL), typeEmail],
-  [isActionType(appActions.TYPE_PHONE_NUMBER), typeEmail],
+  [isActionType(appActions.TYPE_PHONE_NUMBER), typePhoneNumber],
+  [isActionType(appActions.SUBMIT_PAID_SUBSCRIPTION), submitPaidSubscription],
+  [T, identity]
+]);
+
+const submittingReducer = cond([
+  [isActionType(appActions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE), submitedPaidSubscription],
   [T, identity]
 ]);
 
@@ -44,6 +50,7 @@ export default (state = new AppState(), action) =>
     [propEq('status', appStatuses.ANWSERING_QUESTIONS), anwseringQuestionsReducer],
     [propEq('status', appStatuses.VIEWING_CLASS_OPTIONS), viewingClassOptionsReducer],
     [propEq('status', appStatuses.CHECKING_OUT), checkingOutReducer],
+    [propEq('status', appStatuses.SUBMITTING), submittingReducer],
 
     [T, viewingReducer]
   ])(state, action);
@@ -61,7 +68,9 @@ function viewReadyToLearnPage(state, { payload }) {
   return pipe(
     assoc('selectedLanguage', payload.language),
     assoc('flow', flows[payload.language]),
-    assoc('status', appStatuses.ANWSERING_QUESTIONS)
+    assoc('status', appStatuses.ANWSERING_QUESTIONS),
+
+    // assoc('date', "10/12/2018"),
   )(state);
 }
 
@@ -116,12 +125,34 @@ function typeName(state, { payload }) {
   );
 }
 
+function typeLastName(state, { payload }) {
+  return assoc(
+    'lastName', 
+    payload.lastName, 
+    state
+  );
+}
+
+function typePhoneNumber(state, { payload }) {
+  return assoc(
+    'phoneNumber', 
+    payload.phoneNumber, 
+    state
+  );
+}
+
 function typeEmail(state, { payload }) {
   return assoc(
     'email',
     payload.email,
     state
   );
+}
+
+function submitPaidSubscription(state, { payload }) {
+  return pipe(
+    assoc('status', appStatuses.SUBMITTING)
+  )(state);
 }
 
 function submitedPaidSubscription(state) {

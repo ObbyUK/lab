@@ -1,0 +1,40 @@
+@import './../styles/variables';
+
+.label-input {
+  
+  display: flex;
+  flex-wrap: wrap;
+
+  &__label {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: @l-paragraph;
+    line-height: 1;
+    font-weight: 400;
+    color: @ebony-clay;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  &__input-wrap {
+    width: 100%;
+  }
+
+  &__input {
+    width: 100%;
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: @l-paragraph;
+    line-height: 1;
+    font-weight: 400;
+    border: 1px solid @gallery;
+    border-radius: 5px;
+    background-color: transparent;
+    margin: 0;
+    padding: 10px 20px;
+    outline: none;
+
+    &::placeholder {
+      color: @gray;
+    }
+  }
+
+}

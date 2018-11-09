@@ -12,7 +12,7 @@ headers[appStatuses.ANWSERING_QUESTIONS] = {
 };
 headers[appStatuses.VIEWING_CLASS_OPTIONS] = {
   blurt: 'Bueno.',
-  title: 'Here’s what we have for you',
+  title: 'Now select your desired class.',
   src: "/images/header_flow_2.png",
 };
 headers[appStatuses.CHECKING_OUT] = {

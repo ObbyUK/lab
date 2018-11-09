@@ -29,26 +29,30 @@ const getProductPlan = async (productId) => {
       interval: 'week',
       product: productId,
       nickname: planNickname,
-      amount: 2000,
+      amount: 2400,
     });
   }
   return plan;
 }
 
 const getCustomer = async (customerDetails) => {
-  var customers = await stripe.customers.list({ email: customerDetails.token.email });
+  var customers = await stripe.customers.list({ email: customerDetails.email });
   if (customers.data.length > 0) {
     return customers.data[0];
   }
   return await stripe.customers.create({
-    email: customerDetails.token.email,
+    email: customerDetails.email,
     source: customerDetails.token.id,
     metadata: {
+      firstName: customerDetails.name,
+      lastName: customerDetails.lastName,
+      phoneNumber: customerDetails.phoneNumber,
+      email: customerDetails.email,
       language: customerDetails.language,
-      name: customerDetails.name,
       skillLevel: customerDetails.skillLevel,
       locations: customerDetails.locations.join(', '),
       time: customerDetails.time.join(', '),
+      firstBookedDate: customerDetails.date,
     }
   });
 }

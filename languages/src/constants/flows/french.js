@@ -12,8 +12,7 @@ headers[appStatuses.ANWSERING_QUESTIONS] = {
 };
 headers[appStatuses.VIEWING_CLASS_OPTIONS] = {
   blurt: 'Bien.',
-  title: 'Here’s what we have for you',
-  // description: "After booking, you can select your teacher, agree on an exact time or go over any requirements if necessary.",
+  title: 'Now select your desired class.',
   src: "/images/header_flow_2.png",
 };
 headers[appStatuses.CHECKING_OUT] = {

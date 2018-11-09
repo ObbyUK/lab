@@ -2,4 +2,38 @@
 
 .checkout-container {
   display: flex;
+
+  &__card-title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: 28px;
+    line-height: 1.25;   
+    margin: 0 0 30px;
+    font-weight: 600;
+  }
+
+  &__form-details {
+
+  }
+
+  &__form-row {
+    display: flex;
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__form-column {
+    width: 50%;
+    &:fist-child {
+      margin-right: 20px;
+    }
+    &:last-child {
+      margin-left: 20px;
+    }
+  }
+
+  &__card-details {
+
+  }
 }
