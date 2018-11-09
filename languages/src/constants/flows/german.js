@@ -11,14 +11,14 @@ headers[appStatuses.ANWSERING_QUESTIONS] = {
   src: "/images/header_flow_2.png",
 };
 headers[appStatuses.VIEWING_CLASS_OPTIONS] = {
-  blurt: 'Gut.',
+  blurt: 'Sehr gut.',
   title: 'Now select your desired class.',
   // description: "After booking, you can select your teacher, agree on an exact time or go over any requirements if necessary.",
   src: "/images/header_flow_2.png",
 };
 headers[appStatuses.CHECKING_OUT] = {
-  blurt: 'Alles ist bereit.',
-  title: 'Let’s get to work.',
+  blurt: 'Fast da.',
+  title: 'Almost there!',
   src: "/images/header_flow_2.png",
 };
 headers[appStatuses.TRANSACTION_COMPLETE] = {

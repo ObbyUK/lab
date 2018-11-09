@@ -16,8 +16,8 @@ headers[appStatuses.VIEWING_CLASS_OPTIONS] = {
   src: "/images/header_flow_2.png",
 };
 headers[appStatuses.CHECKING_OUT] = {
-  blurt: 'C\'est tout bon.',
-  title: 'Let’s get to work.',
+  blurt: 'Presque là.',
+  title: 'Almost there.',
   src: "/images/header_flow_2.png",
 };
 headers[appStatuses.TRANSACTION_COMPLETE] = {
