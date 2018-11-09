@@ -1,6 +1,7 @@
 @import './../styles/variables';
 
 .stripe-form {
+
   &__stripe-label {
     font-family: "Founders Grotesk", 'Arial', sans-serif;
     font-size: @l-paragraph;
@@ -17,12 +18,20 @@
 
   &__card-details {
     display: flex;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    @media (min-width:@sm-width) {
+      margin-bottom: 30px;
+      flex-wrap: nowrap;
+    }
   }
 
   &__card-detail {
-    @media (min-width:@md-width) {
+    width: 50%;
+    padding-right: 15px;
+    @media (min-width:@sm-width) {
       width: 33%;
+      padding-right: 0;
       margin-right: 15px;
     }
   }
@@ -30,14 +39,21 @@
   &__pay {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    
+    @media (min-width:@sm-width) {
+      justify-content: flex-end;
+    }
   }
 
   &__button-wrap {
-    width: 50%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    
+    @media (min-width:@sm-width) {
+      width: 50%;
+      justify-content: flex-end;
+    }
   }
 
   &__button {
@@ -56,6 +72,10 @@
     font-size: @l-paragraph;
     padding: 0 42px;
     height: 54px;
+
+    @media (min-width:@sm-width) {
+      max-width: none;
+    }
   }
 
   &__pay-label {
@@ -64,7 +84,12 @@
     font-size: @m-paragraph;
     line-height: 1;
     margin-top: 25px;
-    text-align: right;
+    text-align-last: left;
+    
+    @media (min-width:@sm-width) {
+      text-align: right;
+      
+    }
   }
 }
 
@@ -86,37 +111,3 @@
 .StripeElement--focus {
   border: 1px solid @camelot;
 }
-
-// .StripeElement.PaymentRequestButton {
-//   padding: 0;
-// }
-
-// .StripePayButton {
-//   white-space: nowrap;
-//   border: 0;
-//   outline: 0;
-//   display: inline-block;
-//   height: 40px;
-//   line-height: 40px;
-//   padding: 0 14px;
-//   box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
-//   color: #fff;
-//   border-radius: 4px;
-//   font-size: 15px;
-//   font-weight: 600;
-//   text-transform: uppercase;
-//   letter-spacing: 0.025em;
-//   background-color: #6772e5;
-//   text-decoration: none;
-//   -webkit-transition: all 150ms ease;
-//   transition: all 150ms ease;
-//   margin-top: 10px;
-// }
-
-// .StripePayButton:hover {
-//   color: #fff;
-//   cursor: pointer;
-//   background-color: #7795f8;
-//   transform: translateY(-1px);
-//   box-shadow: 0 7px 14px rgba(50, 50, 93, .10), 0 3px 6px rgba(0, 0, 0, .08);
-// }

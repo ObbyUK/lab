@@ -7,6 +7,8 @@ import appActions from '../appActions';
 var pageChangingActions = [
   appActions.CHOOSE_LANGUAGE,
   appActions.SUBMIT_QUESTIONS,
+  appActions.CHOOSE_DATE,
+  appActions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE,
   appActions.SUBMIT,
 ];
 

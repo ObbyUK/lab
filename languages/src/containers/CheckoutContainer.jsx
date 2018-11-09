@@ -78,8 +78,8 @@ class CheckoutContainer extends React.Component {
   render () {
     return (
       <div className="checkout-container container">
-        <div className="col-lg-7">
-          <div className="checkout-container__card">
+        <div className="checkout-container__column col-12 col-lg-7">
+          <div className="checkout-container__column checkout-container__card">
             <BlankCard>
               <h2 className="checkout-container__card-title">
                 Your details
@@ -142,7 +142,7 @@ class CheckoutContainer extends React.Component {
             </BlankCard>
           </div>
         </div>
-        <div className="col-lg-5">
+        <div className="col-12 col-lg-5">
           <div className="checkout-container__card">
             <BlankCard>
               <div className="checkout-container__sidebar">
