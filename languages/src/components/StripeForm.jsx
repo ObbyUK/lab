@@ -71,20 +71,17 @@ class _CardFormBody extends React.Component {
           </div>
         </div>
 
-        {!this.props.isSubmitting &&
+        <div className="stripe-form__pay">
           <div className="stripe-form__button-wrap">
             <button type="submit" className="stripe-form__button">
-              {this.props.payText}
+              {this.props.isSubmitting ? this.props.submittingText : this.props.payText }
             </button>
+            {this.props.payLabel && 
+              <div className="stripe-form__pay-label">{this.props.payLabel}</div>
+            }
           </div>
-        }
-        {this.props.isSubmitting &&
-          <div className="stripe-form__button-wrap">
-            <div className="stripe-form__button">
-              {this.props.submittingText}
-            </div>
-          </div>
-        }
+        </div>
+
       </form>
     );
   }

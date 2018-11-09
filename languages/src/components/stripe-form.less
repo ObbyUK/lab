@@ -27,13 +27,22 @@
     }
   }
 
-  &__button-wrap {
+  &__pay {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  &__button-wrap {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: flex-end;
   }
 
   &__button {
     font-family: "Founders Grotesk", sans-serif;
+    max-width: 200px;
     font-weight: 600;
     line-height: 1;
     margin: 0;
@@ -47,6 +56,15 @@
     font-size: @l-paragraph;
     padding: 0 42px;
     height: 54px;
+  }
+
+  &__pay-label {
+    font-family: "Founders Grotesk", sans-serif;
+    font-weight: 400;
+    font-size: @m-paragraph;
+    line-height: 1;
+    margin-top: 25px;
+    text-align: right;
   }
 }
 
