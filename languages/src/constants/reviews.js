@@ -28,16 +28,19 @@ export const checkoutReviews = [
   {
     image: '/images/astrid-avatar.jpg',
     name: 'Astrid',
+    rating: 10,
     text: 'Learning on Obby felt natural. I would recommend this to anyone!',
   },
   {
     image: '/images/florien-avatar.png',
     name: 'Florien',
+    rating: 10,
     text: 'Really happy with Obby’s classes. Great teachers and prices!',
   },
   {
     image: '/images/alex-avatar.png',
     name: 'Alex',
+    rating: 10,
     text: 'I never thought I would end up becoming near fluent in German but somehow I did. Dankeschoen Obby!',
   }
 ];

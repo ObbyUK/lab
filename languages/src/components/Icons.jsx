@@ -75,3 +75,13 @@ export const BarChart = {
     </g>
   )
 };
+
+
+export const Star = {
+  viewBox: '0 0 15 15',
+  body: () => (
+    <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+      <polygon id="Star" fill="#822D50" points="7.5 11.82895 2.86474508 14.2658477 3.75 9.10441554 1.11022302e-16 5.44906896 5.18237254 4.69602615 7.5 0 9.81762746 4.69602615 15 5.44906896 11.25 9.10441554 12.1352549 14.2658477"></polygon>
+    </g>
+  )
+};
