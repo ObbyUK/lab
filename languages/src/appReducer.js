@@ -69,8 +69,6 @@ function viewReadyToLearnPage(state, { payload }) {
     assoc('selectedLanguage', payload.language),
     assoc('flow', flows[payload.language]),
     assoc('status', appStatuses.ANWSERING_QUESTIONS),
-
-    // assoc('date', "10/12/2018"),
   )(state);
 }
 
@@ -113,7 +111,9 @@ function submitQuestions(state) {
 function chooseDate(state, { payload }) {
   return pipe(
     assoc('status', appStatuses.CHECKING_OUT),
-    assoc('date', payload.date),
+    assoc('chosenSession', payload.session),
+    assoc('chosenLocation', payload.location),
+    assoc('date', payload.session.starts),
   )(state);
 }
 

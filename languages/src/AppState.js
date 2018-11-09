@@ -20,6 +20,8 @@ export default class AppState {
     this.skillLevel = null;
     this.time = [];
     this.locations = [];
+    this.chosenSession = {};
+    this.chosenLocation = {};
     this.date = null;
 
     this.name = "";

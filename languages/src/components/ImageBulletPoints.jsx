@@ -30,7 +30,9 @@ export default (props) => (
           {point.title && 
             <div className="image-bullet-points__point-title">{point.title}</div>
           }
-          <div className="image-bullet-points__point-text">{point.text}</div>
+          {point.text && 
+            <div className="image-bullet-points__point-text">{point.text}</div>
+          }
         </div>
       </div>
     ))}

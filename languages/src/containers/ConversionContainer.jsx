@@ -48,7 +48,7 @@ class FormContainer extends React.Component {
                     priceLabel="Free taster + 7 classes"
                     price="£168"
                     options={location.options}
-                    onClick={(session) => this.props.chooseDate(session.starts)}
+                    onClick={(session) => this.props.chooseDate({ session, location })}
                   />
                 </div>
               ))}

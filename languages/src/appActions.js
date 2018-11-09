@@ -87,11 +87,9 @@ export const typeEmailAction = (email) => ({
   }
 });
 
-export const chooseDateAction = (date) => ({
+export const chooseDateAction = (details) => ({
   type: actions.CHOOSE_DATE,
-  payload: {
-    date
-  }
+  payload: details
 });
 
 export const submitAction = (details) => ({
@@ -106,6 +104,7 @@ export const submitCompleteAction = () => ({
 export const submitPaidSubscriptionAction = (details) => ({
   type: actions.SUBMIT_PAID_SUBSCRIPTION,
   payload: details
+
 });
 
 export const submitPaidSubscriptionCompleteAction = () => ({

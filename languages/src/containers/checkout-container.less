@@ -34,6 +34,44 @@
   }
 
   &__card-details {
-
+    
   }
+
+  &__sidebar {
+    
+  }
+
+  &__sidebar-section {
+    padding-bottom: 30px;
+    border-bottom: 1px solid @mercury;
+    margin-bottom: 30px;
+  }
+
+  &__sidebar-text-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    align-items: center;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__sidebar-text {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @m-paragraph;
+    line-height: 1.2;
+    color: @ebony-clay;
+    
+    &--large {
+      font-size: @l-paragraph;
+      font-weight: 600;
+    }
+    
+    &--price {
+      font-weight: 600;
+      color: @robbins-egg-blue;
+    }
+  }
+
 }

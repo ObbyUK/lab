@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { mergeAll } from 'ramda';
 
 // Lib & Constants
+import String__UpperCaseFirstLetter from './../lib/String__UpperCaseFirstLetter';
 import { stripe } from './../../settings';
 import { appStatuses } from '../AppState';
 // Actions & Components
@@ -18,10 +19,13 @@ import {
 import BlankCard from '../components/BlankCard.jsx';
 import StripeForm from '../components/StripeForm.jsx';
 import LabelInput from '../components/LabelInput.jsx';
+import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
 
 const mapStateToProps = (state) => ({
   status: state.app.status,
   selectedLanguage: state.app.selectedLanguage,
+  chosenLocation: state.app.chosenLocation,
+  chosenSession: state.app.chosenSession,
   skillLevel: state.app.skillLevel,
   time: state.app.time,
   locations: state.app.locations,
@@ -44,19 +48,6 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
   stateProps,
   dispatchProps,
   {
-    // submitPaidSubscription: (token) => console.log({
-    //   token,
-    //   language: stateProps.selectedLanguage,
-    //   skillLevel: stateProps.skillLevel,
-    //   time: stateProps.time,
-    //   locations: stateProps.locations,
-    //   date: stateProps.date,
-    //   name: stateProps.name,
-    //   lastName: stateProps.lastName,
-    //   email: stateProps.email,
-    //   phoneNumber: stateProps.phoneNumber,
-    //   trialEnd: moment(stateProps.date, 'DD/MM/YYYY').add(2, 'd').unix(),
-    // })
     submitPaidSubscription: (token) => dispatchProps.submitPaidSubscription({
       token,
       language: stateProps.selectedLanguage,
@@ -148,6 +139,58 @@ class CheckoutContainer extends React.Component {
         </div>
         <div className="col-lg-5">
           <BlankCard>
+            <div className="checkout-container__sidebar">
+              {/* PAYMENT SUMMARY */}
+              <div className="checkout-container__sidebar-section">
+                <div className="checkout-container__sidebar-text-row">
+                  <div className="checkout-container__sidebar-text checkout-container__sidebar-text--large">Free taster + 7 classes</div>
+                  <div className="checkout-container__sidebar-text checkout-container__sidebar-text--price">£168</div>
+                </div>
+                <div className="checkout-container__sidebar-text-row">
+                  <div className="checkout-container__sidebar-text">Pay today</div>
+                  <div className="checkout-container__sidebar-text checkout-container__sidebar-text--large">£0</div>
+                </div>
+                <div className="checkout-container__sidebar-text-row">
+                  <div className="checkout-container__sidebar-text">After the first class</div>
+                  <div className="checkout-container__sidebar-text checkout-container__sidebar-text--large">£24/class</div>
+                </div>
+              </div>
+            </div>
+            {/* CLASS SUMMARY */}
+            <div className="checkout-container__sidebar-section">
+              <div className="checkout-container__sidebar-text-row">
+                <div className="checkout-container__sidebar-text">{String__UpperCaseFirstLetter(this.props.selectedLanguage)}</div>
+              </div>
+              <div className="checkout-container__sidebar-text-row">
+                <div className="checkout-container__sidebar-text">{String__UpperCaseFirstLetter(this.props.skillLevel)}</div>
+              </div>
+              <div className="checkout-container__sidebar-text-row">
+                <div className="checkout-container__sidebar-text">{this.props.chosenLocation.name} - {this.props.chosenLocation.address}</div>
+              </div>
+              <div className="checkout-container__sidebar-text-row">
+                <div className="checkout-container__sidebar-text">Every {moment(this.props.date, 'DD/MM/YYYY').format('dddd')} at {this.props.chosenSession.lessonsStart}</div>
+              </div>
+            </div>
+            <div className="">
+              <ImageBulletPoints 
+                points={[
+                  { 
+                    image: "/icons/pay_0.svg", 
+                    title: "Your first class is on us" ,
+                    text: "Pay £0 today see if you like it before committing"
+                  },
+                  { 
+                    image: "/icons/tick.svg", 
+                    text: "Money-back guarantee" 
+                  },
+                  { 
+                    image: "/icons/pay-in-installments.svg", 
+                    title: "Pay in instalments",
+                    text: "Instead of paying the full amount up front, you'll pay in weekly installments."
+                  },
+                ]}
+              />
+            </div>
           </BlankCard>
         </div>
       </div>
