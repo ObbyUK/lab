@@ -8,7 +8,7 @@ headers[appStatuses.ANWSERING_QUESTIONS] = {
   blurt: "Incredibile!",
   title: "Ready to Learn Italian",
   description: "Tell us a bit more about what you're looking for?",
-  src: "/images/header_flow.png",
+  src: "/images/header_flow_2.png",
 };
 headers[appStatuses.VIEWING_CLASS_OPTIONS] = {
   blurt: 'Buono.',
@@ -19,12 +19,12 @@ headers[appStatuses.VIEWING_CLASS_OPTIONS] = {
 headers[appStatuses.CHECKING_OUT] = {
   blurt: 'È tutto pronto.',
   title: 'Let’s get to work.',
-  src: "/images/header_flow_3.png",
+  src: "/images/header_flow_2.png",
 };
 headers[appStatuses.TRANSACTION_COMPLETE] = {
   blurt: 'È tutto pronto.',
   title: 'Let’s get to work.',
-  src: "/images/header_flow_3.png",
+  src: "/images/header_flow_2.png",
 };
 
 export default {

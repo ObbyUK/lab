@@ -8,7 +8,7 @@ headers[appStatuses.ANWSERING_QUESTIONS] = {
   blurt: "Incroyable!",
   title: "Ready to Learn French",
   description: "Tell us a bit more about what you're looking for?",
-  src: "/images/header_flow.png",
+  src: "/images/header_flow_2.png",
 };
 headers[appStatuses.VIEWING_CLASS_OPTIONS] = {
   blurt: 'Bien.',
@@ -18,12 +18,12 @@ headers[appStatuses.VIEWING_CLASS_OPTIONS] = {
 headers[appStatuses.CHECKING_OUT] = {
   blurt: 'C\'est tout bon.',
   title: 'Let’s get to work.',
-  src: "/images/header_flow_3.png",
+  src: "/images/header_flow_2.png",
 };
 headers[appStatuses.TRANSACTION_COMPLETE] = {
   blurt: 'C\'est tout bon.',
   title: 'Let’s get to work.',
-  src: "/images/header_flow_3.png",
+  src: "/images/header_flow_2.png",
 };
 
 export default {
