@@ -1,7 +1,9 @@
-import { pipe, assoc, identity, T, cond, propEq } from 'ramda';
+import { isEmpty, pipe, assoc, identity, T, cond, propEq } from 'ramda';
 
 // Lib & Constants
 import isActionType from './lib/isActionType';
+import isFullArray from './lib/isFullArray';
+import isValidEmail from './lib/isValidEmail';
 import toggleValueFromCheckboxArray from './lib/toggleValueFromCheckboxArray';
 import flows from './constants/flows';
 // Actions & State
@@ -37,7 +39,7 @@ const checkingOutReducer = cond([
 ]);
 
 const submittingReducer = cond([
-  [isActionType(appActions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE), submitedPaidSubscription],
+  [isActionType(appActions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE), paidSubscriptionSubmitted],
   [T, identity]
 ]);
 
@@ -149,16 +151,62 @@ function typeEmail(state, { payload }) {
   );
 }
 
-function submitPaidSubscription(state, { payload }) {
-  return pipe(
-    assoc('status', appStatuses.SUBMITTING)
-  )(state);
+function StateUserDetails__FormErrorObject(state) {
+  if (!isFullArray(state.name)) {
+    return {
+      message: "Please enter your first name.",
+      type: "validation_error"
+    }
+  }
+  if (!isFullArray(state.lastName)) {
+    return {
+      message: "Please enter your last name",
+      type: "validation_error"
+    }
+  }
+  if (!isValidEmail(state.email)) {
+    return {
+      message: "Please enter a valid email.",
+      type: "validation_error"
+    }
+  }
+  if (!isFullArray(state.phoneNumber)) {
+    return {
+      message: "Please enter your phone number.",
+      type: "validation_error"
+    }
+  }
+  return {};
 }
 
-function submitedPaidSubscription(state) {
-  return assoc(
-    'status',
-    appStatuses.TRANSACTION_COMPLETE,
-    state
-  );
+function submitPaidSubscription(state, { payload }) {
+
+  var userDetailsFormError = StateUserDetails__FormErrorObject(state);
+
+  if (!isEmpty(userDetailsFormError)) {
+    return pipe(
+      assoc('status', appStatuses.SUBMITTING),
+      assoc('formError', userDetailsFormError)
+    )(state);
+  }
+
+  if (payload.token.error) {
+    return pipe(
+      assoc('status', appStatuses.SUBMITTING),
+      assoc('formError', payload.token.error)
+    )(state);
+  }
+
+  return pipe(
+    assoc('status', appStatuses.SUBMITTING),
+    assoc('formError', {})
+  )(state);
+
+}
+
+function paidSubscriptionSubmitted(state, action) {
+  return pipe(
+    assoc('status', ( action.error ? appStatuses.CHECKING_OUT : appStatuses.TRANSACTION_COMPLETE )),
+    assoc('formError', ( action.error ? action.payload : {})),
+  )(state);
 }

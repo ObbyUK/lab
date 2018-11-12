@@ -25,6 +25,7 @@ import MiniReviews from '../components/MiniReviews.jsx';
 
 const mapStateToProps = (state) => ({
   status: state.app.status,
+  errorMessage: state.app.formError.message,
   selectedLanguage: state.app.selectedLanguage,
   chosenLocation: state.app.chosenLocation,
   chosenSession: state.app.chosenSession,
@@ -105,6 +106,11 @@ class CheckoutContainer extends React.Component {
         <div className="checkout-container__column col-12 col-lg-7">
           <div className="checkout-container__column checkout-container__card">
             <BlankCard>
+              {this.props.errorMessage &&
+                <div className="checkout-container__error-message">
+                  {this.props.errorMessage}
+                </div>
+              }
               <h2 className="checkout-container__card-title">
                 Your details
               </h2>

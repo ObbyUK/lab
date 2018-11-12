@@ -107,8 +107,10 @@ export const submitPaidSubscriptionAction = (details) => ({
 
 });
 
-export const submitPaidSubscriptionCompleteAction = () => ({
+export const submitPaidSubscriptionCompleteAction = (details) => ({
   type: actions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE,
+  payload: details,
+  error: !!details.type
 });
 
 export const analyticsTrackedAction = (details) => ({

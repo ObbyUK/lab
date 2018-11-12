@@ -1,4 +1,4 @@
-import { __, contains, pipe, prop, cond, propEq, map } from 'ramda';
+import { not, __, contains, pipe, prop, cond, propEq, map } from 'ramda';
 import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
@@ -25,6 +25,7 @@ const trackedActions = [
 
 export default (action$, store) => {
   return action$
+    .filter(pipe(propEq('error', true), not))
     .filter(pipe(prop('type'), contains(__, trackedActions)))
     .map((action) => ({ type: action.type, state: store.value.app}))
     .map(cond([

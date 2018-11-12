@@ -1,4 +1,6 @@
 @import './../styles/variables';
+@import './../styles/animations/popout';
+@import './../styles/animations/fadeIn';
 
 .checkout-container {
   
@@ -109,6 +111,16 @@
 
   &__reviews {
     margin-top: 30px;
+  }
+
+  &__error-message {
+    display: inline-flex;
+    margin-bottom: 20px;
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: 1.2;
+    color: @camelot;
+    animation:popout 250ms, fadeIn 250ms;
   }
 
 }

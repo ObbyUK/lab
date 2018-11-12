@@ -28,5 +28,10 @@ export default class AppState {
     this.lastName = "";
     this.phoneNumber = ""
     this.email = "";
+    this.formError = {
+      // code: "",
+      // message: "",
+      // type: "",
+    };
   }
 }

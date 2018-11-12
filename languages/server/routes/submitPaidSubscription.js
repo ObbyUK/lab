@@ -69,12 +69,16 @@ module.exports = app =>
         // has to be a unix timestamp 
         trial_end: req.body.trialEnd
       });
-      res.status(200).json({ product, plan, customer, subscription });
+      res
+        .status(200)
+        .json({ product, plan, customer, subscription });
     } catch (error) {
-
-      res.status(500).json({
-        status: 500,
-        error: error.toString()
-      });
+      res
+        .status(500)
+        .json({
+          status: 500,
+          message: error.toString(),
+          type: "server_error"
+        });
     }
   });
