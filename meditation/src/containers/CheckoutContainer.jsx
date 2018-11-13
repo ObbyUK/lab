@@ -178,7 +178,7 @@ class CheckoutContainer extends React.Component {
                     <div className="checkout-container__sidebar-text checkout-container__sidebar-text--large">£0</div>
                   </div>
                   <div className="checkout-container__sidebar-text-row">
-                    <div className="checkout-container__sidebar-text">After the first class</div>
+                    <div className="checkout-container__sidebar-text">After the free taster</div>
                     <div className="checkout-container__sidebar-text checkout-container__sidebar-text--large">£27/class</div>
                   </div>
                 </div>

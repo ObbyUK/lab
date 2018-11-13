@@ -79,7 +79,7 @@ class ConversionContainer extends React.Component {
                     {
                       image: "/icons/tick.svg",
                       title: "Pay in instalments",
-                      text: "Instead of paying the full amount up front, you'll pay in weekly installments 24 hour after you taster.",
+                      text: "Instead of paying the full amount up front, you'll pay in weekly instalments 24 hours after your taster."
                     },
                     {
                       image: "/icons/installments.svg",
