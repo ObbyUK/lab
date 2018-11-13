@@ -104,7 +104,7 @@ class ConversionContainer extends React.Component {
                   points={[
                     { 
                       image: "/icons/trusted.svg", 
-                      title: "Trusted techers", 
+                      title: "Trusted teachers", 
                       description: "We vet all our teachers personally, to ensure the highest quality teaching so you don't have to worry."
                     },
                     { 
