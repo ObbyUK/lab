@@ -13,6 +13,7 @@ import ImageBanner from './../components/ImageBanner.jsx';
 import BlankCard from './../components/BlankCard.jsx';
 import ConversionContainer from '../containers/ConversionContainer.jsx';
 import PitchContainer from '../containers/PitchContainer.jsx';
+import CheckoutContainer from '../containers/CheckoutContainer.jsx';
 
 const mapStateToProps = (state) => ({
   status: state.app.status
@@ -62,8 +63,23 @@ class LandingPageContainer extends React.Component {
             <ConversionContainer />
           </div>
         }
+        
+        {(this.props.status === appStatuses.CHECKING_OUT || this.props.status === appStatuses.SUBMITTING) &&
+          <div>
+            <Menu/>
+            <div className="landing-page__header">
+              <ImageBanner
+                blurt="Register your interest now"
+                title=""
+                description=""
+                src="/images/meditation-horizon.jpeg"
+              />
+            </div>
+            <CheckoutContainer />
+          </div>
+        }
 
-        {this.props.status === appStatuses.SUBMITTED &&
+        {this.props.status === appStatuses.TRANSACTION_COMPLETE &&
           <div className="">
             <Menu/>
             <div className="landing-page__header">

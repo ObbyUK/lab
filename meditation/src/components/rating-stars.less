@@ -1,0 +1,76 @@
+@import './../styles/variables';
+
+.rating-stars {
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+
+  &__star {
+    
+    display: flex;
+
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &--small {
+      margin: 0 1px;
+      height: 12px;
+    }
+
+    &--large {
+      margin: 0 3px;
+      padding-top: 3px;
+      height: 20px;
+    }
+
+    &--camelot {
+      polygon {
+        fill: @camelot;
+      }
+    }
+
+    &--sun {
+      polygon {
+        fill: @sun;
+      }
+    }
+    
+    &--robbins-egg-blue {
+      polygon {
+        fill: @robbins-egg-blue;
+      }
+    }
+  }
+
+  &__label {
+    font-family: "Founders Grotesk", sans-serif;
+    font-weight: 400;
+    font-size: @sm-paragraph;
+    line-height: @sm-paragraph-lh;
+    color: @ebony-clay;
+    margin-left: 3px;
+    letter-spacing: 0.3px;
+
+    &--large {
+      font-size: @sm-paragraph;
+      line-height: @sm-paragraph-lh;
+    }
+
+    &--small {
+      font-size: @xxsm-paragraph;
+      line-height: @xxsm-paragraph-lh;
+    }
+
+    &--camelot {
+      color:@camelot;
+    }
+
+    &--sun {
+      color:@sun;
+    }
+  }
+}

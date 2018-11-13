@@ -1,15 +1,27 @@
 export const appStatuses = {
   VIEWING: 'userIsViewingApp',
   ENTERING_CONTACT_INFORMATION: 'userIsEnteringContactInformation',
-  SUBMITTED: 'userHasSubmittedInformation',
+  CHECKING_OUT: 'userIsCheckingOut',
+  SUBMITTING: 'userIsSubmitting',
+  TRANSACTION_COMPLETE: 'userHasCompletedTransaction',
 };
 
 export default class AppState {
   constructor() {
     this.status = appStatuses.VIEWING;
-    this.name = "";
-    this.email = "";
+
+    this.chosenSession = {};
+    this.chosenLocation = {};
     this.date = "";
-    this.chosenClass = {};
+
+    this.name = "";
+    this.lastName = "";
+    this.phoneNumber = ""
+    this.email = "";
+    this.formError = {
+      // code: "",
+      // message: "",
+      // type: "",
+    };
   }
 }

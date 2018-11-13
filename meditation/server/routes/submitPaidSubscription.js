@@ -36,14 +36,18 @@ const getProductPlan = async (productId) => {
 }
 
 const getCustomer = async (customerDetails) => {
-  var customers = await stripe.customers.list({ email: customerDetails.token.email });
+  var customers = await stripe.customers.list({ email: customerDetails.email });
   if (customers.data.length > 0) {
     return customers.data[0];
   }
   return await stripe.customers.create({
-    email: customerDetails.token.email,
+    email: customerDetails.email,
     source: customerDetails.token.id,
     metadata: {
+      firstName: customerDetails.name,
+      lastName: customerDetails.lastName,
+      phoneNumber: customerDetails.phoneNumber,
+      email: customerDetails.email,
       date: customerDetails.date
     }
   });
@@ -61,12 +65,17 @@ module.exports = app =>
         // has to be a unix timestamp 
         trial_end: req.body.trialEnd
       });
-      res.status(200).json({ product, plan, customer, subscription });
+      res
+        .status(200)
+        .json({ product, plan, customer, subscription });
     } catch (error) {
 
-      res.status(500).json({
-        status: 500,
-        error: error.toString()
-      });
+      res
+        .status(500)
+        .json({
+          status: 500,
+          message: error.toString(),
+          type: "server_error"
+        });
     }
   });

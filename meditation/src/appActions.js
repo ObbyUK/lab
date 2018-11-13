@@ -1,5 +1,9 @@
 const actions = {
   VIEW_LANDING_PAGE: 'landingPageHasBeenViewed',
+  TYPE_FIRST_NAME: 'userTypesFirstName',
+  TYPE_LAST_NAME: 'userTypesLastName',
+  TYPE_PHONE_NUMBER: 'userTypesPhoneNumber',
+  TYPE_EMAIL: 'userTypesEmail',
   CHOOSE_CLASS: 'userSelectsClass',
   CHOOSE_DATE: 'userSelectsDate',
   SEE_CLASS_OPTIONS: 'userWishesToSeeClassOptions',
@@ -23,25 +27,9 @@ export const chooseClassAction = (chosenClass) => ({
   }
 });
 
-export const chooseDateAction = (date) => ({
+export const chooseDateAction = (details) => ({
   type: actions.CHOOSE_DATE,
-  payload: {
-    date
-  }
-});
-
-export const typeNameAction = (name) => ({
-  type: actions.TYPE_NAME,
-  payload: {
-    name
-  }
-});
-
-export const typeEmailAction = (email) => ({
-  type: actions.TYPE_EMAIL,
-  payload: {
-    email
-  }
+  payload: details
 });
 
 export const submitAction = (details) => ({
@@ -62,13 +50,43 @@ export const submitPaidSubscriptionAction = (details) => ({
   payload: details
 });
 
-export const submitPaidSubscriptionCompleteAction = () => ({
+export const submitPaidSubscriptionCompleteAction = (details) => ({
   type: actions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE,
+  payload: details,
+  error: !!details.type
 });
 
 export const analyticsTrackedAction = (details) => ({
   type: actions.ANALYTICS_TRACKED,
   payload: details
+});
+
+export const typeNameAction = (name) => ({
+  type: actions.TYPE_FIRST_NAME,
+  payload: {
+    name
+  }
+});
+
+export const typeLastNameAction = (lastName) => ({
+  type: actions.TYPE_LAST_NAME,
+  payload: {
+    lastName
+  }
+});
+
+export const typePhoneNumberAction = (phoneNumber) => ({
+  type: actions.TYPE_PHONE_NUMBER,
+  payload: {
+    phoneNumber
+  }
+});
+
+export const typeEmailAction = (email) => ({
+  type: actions.TYPE_EMAIL,
+  payload: {
+    email
+  }
 });
 
 export default actions;

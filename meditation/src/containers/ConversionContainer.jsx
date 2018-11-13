@@ -1,11 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { mergeAll } from 'ramda';
-import moment from 'moment';
 
 import './conversion-container.less';
 // Lib & Constants
-import { stripe } from './../../settings';
 import flow from './../constants/flow';
 // Actions & Style
 import {
@@ -15,8 +13,8 @@ import {
 // Components
 import BlankCard from './../components/BlankCard.jsx';
 import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
-import DiscountCard from '../components/DiscountCard.jsx';
 import ClassSelectableTimesCard from '../components/ClassSelectableTimesCard.jsx';
+import ThreePointSalesBanner from '../components/ThreePointSalesBanner.jsx';
 
 const mapStateToProps = (state) => ({
   status: state.app.status,
@@ -25,67 +23,46 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   chooseDate: (date) => dispatch(chooseDateAction(date)),
-  submitPaidSubscription: (details) => dispatch(submitPaidSubscriptionAction(details))
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
   stateProps,
   dispatchProps,
-  {
-    submit: () => dispatchProps.submit({
-      name: stateProps.name,
-      email: stateProps.email,
-      chosenClass: stateProps.chosenClass,
-    }),
-    submitPaidSubscription: (token) => dispatchProps.submitPaidSubscription({
-      token,
-      date: stateProps.date,
-      trialEnd: moment(stateProps.date, 'DD/MM/YYYY').add(2, 'd').unix(),
-    })
-  }
+  {}
 ]);
 
 class ConversionContainer extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      stripeHandler: null,
-    };
-  }
-
-  componentDidMount() {
-    this.state.stripeHandler = window.StripeCheckout.configure({
-      key: stripe.key,
-      image: "/images/favicon.png",
-      locale: "en",
-      currency: "GBP",
-      token: (token) => this.props.submitPaidSubscription(token)
-    });
-  }
-
-  selectClassDate(classSession) {
-    this.props.chooseDate(classSession.starts);
-    // necessary because we wont have access to this.props.date if we dont put this 
-    // at the end of the event queue
-    window.setTimeout(() => {
-      this.openStripeCheckoutPopup();
-    }, 0)
-  }
-
-  openStripeCheckoutPopup() {
-    this.state.stripeHandler.open({
-      name: "Book your spot",
-      description: "No charge until after 1st class",
-      zipCode: true,
-      amount: 0,
-      panelLabel: "Sign up for £0"
-    });
-  }
-
   render () {
     return (
       <div className="conversion-container__body container">
+          {/* OPTIONS */}
+          <div className="conversion-container__card">
+            <BlankCard>
+              <h2 className="conversion-container__card-title">
+                Here's what we have for you
+              </h2>
+            {flow.locationOptionsTest.map((location, index) => (
+                <div key={index} className="conversion-container__card-section">
+                  <ClassSelectableTimesCard
+                    title={location.name}
+                    address={location.address}
+                    lessonsStart={location.lessonsStart}
+                    lessonsEnd={location.lessonsEnd}
+                    priceLabel="Taster + 3 classes"
+                    price="£81"
+                    options={location.options}
+                    onClick={(session) => this.props.chooseDate({
+                      date: session.starts,
+                      location,
+                      session
+                    })}
+                  />
+                </div>
+              ))}
+            </BlankCard>
+          </div>
+
           <div className="conversion-container__card">
             <BlankCard>
               <h2 className="conversion-container__card-title">
@@ -111,43 +88,38 @@ class ConversionContainer extends React.Component {
                     }
                   ]}
                 />
-                <div className="conversion-container__discount-card">
-                  <DiscountCard
-                    original={{
-                      title: "Average meditation class",
-                      price: "£43 / class",
-                      text: "Most meditation classes in London are £43",
-                    }}
-                    discount={{
-                      title: "Obby",
-                      price: "£27 / class (37% less)",
-                      text: "On Obby we keep the prices low by offering flexible locations and timings",
-                    }}
-                  />
-                </div>
               </div>
             </BlankCard>
           </div>
-          {/* OPTIONS */}
+          
           <div className="conversion-container__card">
             <BlankCard>
               <h2 className="conversion-container__card-title">
-                Here's what we have for you
+                More about Obby
               </h2>
-            {flow.locationOptionsTest.map((location, index) => (
-                <div key={index} className="conversion-container__card-section">
-                  <ClassSelectableTimesCard
-                    title={location.name}
-                    address={location.address}
-                    lessonsStart={location.lessonsStart}
-                    lessonsEnd={location.lessonsEnd}
-                    priceLabel="Taster + 3 classes"
-                    price="£81"
-                    options={location.options}
-                    onClick={this.selectClassDate.bind(this)}
-                  />
-                </div>
-              ))}
+              <div className="conversion-container__card-section conversion-container__card-section--three-point-sales-banner">
+                <ThreePointSalesBanner
+                  color="white"
+                  size="small"
+                  points={[
+                    { 
+                      image: "/icons/trusted.svg", 
+                      title: "Trusted techers", 
+                      description: "We vet all our teachers personally, to ensure the highest quality teaching so you don't have to worry."
+                    },
+                    { 
+                      image: "/icons/loved.svg",
+                      title: "Loved by 10,000 Londoners", 
+                      description: "Consistent 5 ⭐️ reviews by our community"
+                    },
+                    { 
+                      image: "/icons/small_class.svg", 
+                      title: "Small class sizes", 
+                      description: "Our students are given the attention they neeed. That's why we only have a maximum of 10 students per class"
+                    }
+                  ]}
+                />
+              </div>
             </BlankCard>
           </div>
       </div>

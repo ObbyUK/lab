@@ -4,9 +4,12 @@ import isFullArray from './../lib/isFullArray';
 import './three-point-sales-banner.less';
 
 export default (props) => (
-  <div className={`three-point-sales-banner three-point-sales-banner--${props.color||'white'}`}>
+  <div className={`
+    three-point-sales-banner 
+    three-point-sales-banner--${props.size||'normal'}
+    three-point-sales-banner--${props.color||'white'}
+  `}>
     <div className="three-point-sales-banner__section">
-
       {props.title &&
         <h2 className="three-point-sales-banner__title">
           {props.title}
