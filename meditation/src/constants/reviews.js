@@ -41,6 +41,6 @@ export const checkoutReviews = [
     image: '/images/alex-avatar.png',
     name: 'Alex',
     rating: 10,
-    text: 'I never thought I would end up becoming near fluent in German but somehow I did. Dankeschoen Obby!',
+    text: 'I never thought I would end up regularly meditating but somehow I did. Thank you Obby!',
   }
 ];

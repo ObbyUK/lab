@@ -78,8 +78,8 @@ class ConversionContainer extends React.Component {
                     },
                     {
                       image: "/icons/tick.svg",
-                      title: "Remaining balance charged 24h later",
-                      text: "24h after your first class, the remaining £81 is charged if you are happy to continue. If not, no hard feelings!",
+                      title: "Pay in instalments",
+                      text: "Instead of paying the full amount up front, you'll pay in weekly installments 24 hour after you taster.",
                     },
                     {
                       image: "/icons/installments.svg",
