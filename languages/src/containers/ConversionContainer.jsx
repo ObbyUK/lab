@@ -8,8 +8,8 @@ import {
 } from '../appActions';
 // Components
 import BlankCard from './../components/BlankCard.jsx';
-import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
 import ClassSelectableTimesCard from '../components/ClassSelectableTimesCard.jsx';
+import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
 import ThreePointSalesBanner from '../components/ThreePointSalesBanner.jsx';
 import TextList from '../components/TextList.jsx';
 

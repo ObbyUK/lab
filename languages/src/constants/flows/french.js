@@ -35,21 +35,21 @@ export default {
   famousPerson: 'Jean Reno',
   levelOptions: [
     {
-      title: levelNames.BEGGINER,
+      title: levelNames[skillLevels.BEGGINER],
       value: skillLevels.BEGGINER,
       description: "You know almost nothing in French",
       sessionsPreview: levelDescriptions[skillLevels.BEGGINER].sessionsPreview,
       content: levelDescriptions[skillLevels.BEGGINER].content
     },
     {
-      title: levelNames.INTERMEDIATE,
+      title: levelNames[skillLevels.INTERMEDIATE],
       value: skillLevels.INTERMEDIATE,
       description: "You can have a decent conversation in French",
       sessionsPreview: levelDescriptions[skillLevels.INTERMEDIATE].sessionsPreview,
       content: levelDescriptions[skillLevels.INTERMEDIATE].content
     },
     {
-      title: levelNames.ADVANCED,
+      title: levelNames[skillLevels.ADVANCED],
       value: skillLevels.ADVANCED,
       description: "You’re almost there, but want to get perfect.",
       sessionsPreview: levelDescriptions[skillLevels.ADVANCED].sessionsPreview,

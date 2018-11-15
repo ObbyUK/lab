@@ -1,5 +1,7 @@
 import skillLevels, { levelNames, levelDescriptions } from './../skillLevels';
+import languages from './../languages';
 import { locations, times } from './../locationsAndTimes';
+import teachers from './../teachers';
 import { appStatuses } from './../../AppState';
 
 var headers = {};
@@ -33,23 +35,24 @@ headers[appStatuses.TRANSACTION_COMPLETE] = {
 export default {
   headers: headers,
   famousPerson: 'Antonio Banderas',
+  teacher: teachers[languages.SPANISH],
   levelOptions: [
     {
-      title: levelNames.BEGGINER,
+      title: levelNames[skillLevels.BEGGINER],
       value: skillLevels.BEGGINER,
       description: "You know almost nothing in Spanish",
       sessionsPreview: levelDescriptions[skillLevels.BEGGINER].sessionsPreview,
       content: levelDescriptions[skillLevels.BEGGINER].content
     },
     {
-      title: levelNames.INTERMEDIATE,
+      title: levelNames[skillLevels.INTERMEDIATE],
       value: skillLevels.INTERMEDIATE,
       description: "You can have a decent conversation in Spanish",
       sessionsPreview: levelDescriptions[skillLevels.INTERMEDIATE].sessionsPreview,
       content: levelDescriptions[skillLevels.INTERMEDIATE].content
     },
     {
-      title: levelNames.ADVANCED,
+      title: levelNames[skillLevels.ADVANCED],
       value: skillLevels.ADVANCED,
       description: "You’re almost there, but want to get perfect.",
       sessionsPreview: levelDescriptions[skillLevels.ADVANCED].sessionsPreview,

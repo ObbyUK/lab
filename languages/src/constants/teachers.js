@@ -3,7 +3,7 @@ import languages from './languages';
 const teachers = {};
 teachers[languages.SPANISH] = {
   name: "Louise Fernández",
-  nationality: "spanish",
+  nationality: "Spanish",
   description: "Louise has been teaching Spanish since 2008 when she moved from Barcelona to London. Since then, she helped hundreds of people transition from zero Spanish to fluent. Her teaching style is simple, organised and fun.",
   avatar: "/images/teacher-1.png",
   // 10 = 5 starts

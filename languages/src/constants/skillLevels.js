@@ -5,11 +5,11 @@ const levelValues = {
 };
 
 
-const levelNames = {
-  BEGGINER: 'Beginner',
-  INTERMEDIATE: 'Intermediate',
-  ADVANCED: 'Advanced',
-};
+const levelNames = {};
+levelNames[levelValues.BEGGINER] = 'Beginner';
+levelNames[levelValues.INTERMEDIATE] = 'Intermediate';
+levelNames[levelValues.ADVANCED] = 'Advanced';
+
 
 const levelDescriptions = {};
 levelDescriptions[levelValues.BEGGINER] = {

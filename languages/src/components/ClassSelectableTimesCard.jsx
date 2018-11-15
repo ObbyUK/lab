@@ -6,17 +6,7 @@ import './class-selectable-times-card.less';
 import PriceSum from './PriceSum.jsx';
 import { Location, Clock, ArrowRightThick } from './../components/Icons.jsx';
 import Icon from './../components/Icon.jsx';
-
-const IconLabel = (props) => (
-  <div className="icon-label">
-    <div className="icon-label__icon">
-      <Icon icon={props.icon} height={18}/>
-    </div>
-    <div className="icon-label__text">
-      {props.text}
-    </div>
-  </div>
-);
+import IconLabel from './../components/IconLabel.jsx';
 
 export default (props) => (
   <div className="class-selectable-times-card">
