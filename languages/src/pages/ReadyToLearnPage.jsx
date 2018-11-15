@@ -27,6 +27,7 @@ import ImageBanner from '../components/ImageBanner.jsx';
 import FormContainer from '../containers/FormContainer.jsx';
 import ConversionContainer from '../containers/ConversionContainer.jsx';
 import CheckoutContainer from '../containers/CheckoutContainer.jsx';
+import ClassSummaryContainer from '../containers/ClassSummaryContainer.jsx';
 
 const mapStateToProps = (state) => ({
   selectedLanguage: state.app.selectedLanguage,
@@ -125,6 +126,10 @@ class HomePageContainer extends React.Component {
 
         {this.props.status === appStatuses.VIEWING_CLASS_OPTIONS &&
           <ConversionContainer />
+        }
+        
+        {this.props.status === appStatuses.VIEWING_CLASS_SUMMARY &&
+          <ClassSummaryContainer />
         }
 
         {(this.props.status === appStatuses.CHECKING_OUT || this.props.status === appStatuses.SUBMITTING) &&

@@ -4,14 +4,20 @@
 
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
 
-  @media (min-width:@md-width) {
-    flex-wrap: nowrap;
-  }
-
-  &--reverse {
-    flex-direction: row-reverse;
+  &__body {
+    max-width: 1500px;
+    display: flex;
+    flex-wrap: wrap;
+  
+    @media (min-width:@md-width) {
+      flex-wrap: nowrap;
+    }
+  
+    &--reverse {
+      flex-direction: row-reverse;
+    }
   }
 
   &__text {

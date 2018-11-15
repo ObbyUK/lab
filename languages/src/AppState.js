@@ -5,6 +5,7 @@ export const appStatuses = {
   VIEWING: 'userIsViewingApp',
   ANWSERING_QUESTIONS: 'userIsAnwseringQuestions',
   VIEWING_CLASS_OPTIONS: 'userIsViewingClassOptions',
+  VIEWING_CLASS_SUMMARY: 'userIsViewingChosenClassSummary',
   CHECKING_OUT: 'userIsCheckingOut',
   SUBMITTING: 'userIsSubmitting',
   TRANSACTION_COMPLETE: 'userHasCompletedTransaction',

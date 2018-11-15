@@ -112,7 +112,7 @@ function submitQuestions(state) {
 
 function chooseDate(state, { payload }) {
   return pipe(
-    assoc('status', appStatuses.CHECKING_OUT),
+    assoc('status', appStatuses.VIEWING_CLASS_SUMMARY),
     assoc('chosenSession', payload.session),
     assoc('chosenLocation', payload.location),
     assoc('date', payload.session.starts),
