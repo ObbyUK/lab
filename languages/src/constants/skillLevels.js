@@ -48,7 +48,6 @@ levelDescriptions[levelValues.BEGGINER] = {
 };
 
 levelDescriptions[levelValues.INTERMEDIATE] = {
-  description: "",
   sessionsPreview: [
     {
       title: 'Improving conversations',
@@ -67,7 +66,6 @@ levelDescriptions[levelValues.INTERMEDIATE] = {
 };
 
 levelDescriptions[levelValues.ADVANCED] = {
-  description: "",
   sessionsPreview: [
     {
       title: 'Almost fluent',

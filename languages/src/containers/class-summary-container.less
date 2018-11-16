@@ -19,6 +19,10 @@
     margin: 0 0 30px;
     font-weight: 600;
 
+    &--center {
+      text-align: center;
+    }
+
     &--tight {
       margin-bottom: 10px;
     }
@@ -43,7 +47,7 @@
     margin-top: 20px;
 
     &--three-point-sales-banner {
-      margin-top: 40px;
+      margin-top: 60px;
     }
   }
 
@@ -55,7 +59,16 @@
   &__previous-choice-details {
   }
 
-  &__button {}
+  &__button-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 30px;
+  }
+  
+  &__button {
+    display: inline-flex;
+  }
 
   &__icon-labels {
     display: flex;

@@ -11,6 +11,7 @@ const actions = {
   TYPE_PHONE_NUMBER: 'userTypesPhoneNumber',
   TYPE_EMAIL: 'userTypesEmail',
   CHOOSE_DATE: 'userSelectsAClassDate',
+  BOOK_YOUR_SPOT: 'userClicksBookYourSpot',
   SUBMIT: 'userSubmitsEmailAndInformation',
   SUBMIT_COMPLETE: 'userSubmissionComplete',
   SUBMIT_PAID_SUBSCRIPTION: 'userSubmitsPaidSubscription',
@@ -90,6 +91,10 @@ export const typeEmailAction = (email) => ({
 export const chooseDateAction = (details) => ({
   type: actions.CHOOSE_DATE,
   payload: details
+});
+
+export const bookYourSpotAction = () => ({
+  type: actions.BOOK_YOUR_SPOT,
 });
 
 export const submitAction = (details) => ({

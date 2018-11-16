@@ -1,0 +1,31 @@
+@import './../styles/variables';
+
+.tick-list {
+
+  display: flex;
+  justify-content: space-between;
+
+  &__column {
+    width: 50%;
+    min-width: 50%;
+  }
+  
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  &__item-icon {
+    margin-right: 25px;
+  }
+
+  &__item-text {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    font-weight: 400;
+    color: @ebony-clay;
+  } 
+
+}

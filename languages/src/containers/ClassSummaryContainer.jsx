@@ -1,11 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { mergeAll } from 'ramda';
+import { mergeAll, propEq } from 'ramda';
 import moment from 'moment';
 
 import './class-summary-container.less';
-// Constants
+// Constants & Actions
 import { levelNames as skillLevelNames } from './../constants/skillLevels';
+import { bookYourSpotAction } from './../appActions';
 // Components
 import BlankCard from './../components/BlankCard.jsx';
 import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
@@ -16,19 +17,21 @@ import PrimaryButton from '../components/PrimaryButton.jsx';
 import RatingStars from '../components/RatingStars.jsx';
 import ReviewCard from '../components/ReviewCard.jsx';
 import CycleComponentsBanner from '../components/CycleComponentsBanner.jsx';
+import TickList from '../components/TickList.jsx';
 
 const mapStateToProps = (state) => ({
   skillLevel: state.app.skillLevel,
   address: state.app.chosenLocation.address,
   teacher: state.app.flow.teacher,
   skillLevelDescription: state.app.flow.skillLevelDescriptions[state.app.skillLevel],
+  skillLevelContent: state.app.flow.levelOptions.find(propEq('value', state.app.skillLevel)).content,
   teachingMethodDescription: state.app.flow.teachingMethodDescription,
   feedbackSessionsDescription: state.app.flow.feedbackSessionsDescription,
   lessonDayAndTime: `${moment(state.app.chosenSession.starts, 'DD/MM/YYYY').format('dddd')}s, ${state.app.chosenSession.lessonsStart} - ${state.app.chosenSession.lessonsEnd}`
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
-
+  bookYourSpot: () => dispatch(bookYourSpotAction())
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
@@ -61,7 +64,7 @@ class ClassSummaryContainer extends React.Component {
                 <PrimaryButton 
                   text="Book your spot"
                   size="huge"
-                  onClick={console.log} 
+                  onClick={this.props.bookYourSpot.bind(this)} 
                 />
               </div>
             </div>
@@ -152,6 +155,22 @@ class ClassSummaryContainer extends React.Component {
             </div>
 
             <div className="class-summary-container__content">
+              <h2 className="class-summary-container__card-title">
+                Here is what is covered
+              </h2>
+              <TickList
+                columns={2}
+                list={this.props.skillLevelContent} 
+              />
+              <div className="class-summary-container__button-wrap">
+                <div className="class-summary-container__button">
+                  <PrimaryButton 
+                    text="Book your spot"
+                    size="huge"
+                    onClick={this.props.bookYourSpot.bind(this)} 
+                  />
+                </div>
+              </div>
             </div>
           </BlankCard>
         </div>
@@ -187,11 +206,12 @@ class ClassSummaryContainer extends React.Component {
 
         <div className="class-summary-container__card">
           <BlankCard>
-            <h2 className="class-summary-container__card-title">
+            <h2 className="class-summary-container__card-title class-summary-container__card-title--center">
               More about Obby
             </h2>
-            <div className="class-summary-container__card-section ready-to-learn-page__card-section--three-point-sales-banner">
+            <div className="class-summary-container__card-section class-summary-container__card-section--three-point-sales-banner">
               <ThreePointSalesBanner
+                size="small"
                 color="white"
                 points={[
                   { 

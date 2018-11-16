@@ -41,21 +41,21 @@ export default {
       value: skillLevels.BEGGINER,
       description: "You know almost nothing in German",
       sessionsPreview: levelDescriptions[skillLevels.BEGGINER].sessionsPreview,
-      content: levelDescriptions[skillLevels.BEGGINER].content
+      content: levelDescriptions[skillLevels.BEGGINER].contentList
     },
     {
       title: levelNames[skillLevels.INTERMEDIATE],
       value: skillLevels.INTERMEDIATE,
       description: "You can have a decent conversation in German",
       sessionsPreview: levelDescriptions[skillLevels.INTERMEDIATE].sessionsPreview,
-      content: levelDescriptions[skillLevels.INTERMEDIATE].content
+      content: levelDescriptions[skillLevels.INTERMEDIATE].contentList
     },
     {
       title: levelNames[skillLevels.ADVANCED],
       value: skillLevels.ADVANCED,
       description: "You’re almost there, but want to get perfect.",
       sessionsPreview: levelDescriptions[skillLevels.ADVANCED].sessionsPreview,
-      content: levelDescriptions[skillLevels.ADVANCED].content
+      content: levelDescriptions[skillLevels.ADVANCED].contentList
     }
   ],
   locationOptions: locations,
