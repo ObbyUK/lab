@@ -54,7 +54,16 @@ levelDescriptions[levelValues.INTERMEDIATE] = {
       text: 'Understand and write descriptions of events, feelings and wishes in emails, notes and messages.',
     },
   ],
-  contentList: [],
+  contentList: [
+    "Greetings and farewells",
+    "Introduce yourself and other people",
+    "Ordering at the bar or at a restaurant",
+    "Talking about habits and hobbies",
+    "Describing your room/house",
+    "Understanding and giving directions",
+    "Describe and introduce your family",
+    "Review and consolidation",
+  ],
 };
 
 levelDescriptions[levelValues.ADVANCED] = {
@@ -72,7 +81,16 @@ levelDescriptions[levelValues.ADVANCED] = {
       text: 'Learn to express yourself clearly in well-written text, such as a work report or a essay.',
     },
   ],
-  contentList: [],
+  contentList: [
+    "Greetings and farewells",
+    "Introduce yourself and other people",
+    "Ordering at the bar or at a restaurant",
+    "Talking about habits and hobbies",
+    "Describing your room/house",
+    "Understanding and giving directions",
+    "Describe and introduce your family",
+    "Review and consolidation",
+  ],
 };
 
 export { levelNames, levelDescriptions };
