@@ -13,7 +13,6 @@ levelNames[levelValues.ADVANCED] = 'Advanced';
 
 const levelDescriptions = {};
 levelDescriptions[levelValues.BEGGINER] = {
-  description: "Spanish Beginners 1 aims to provide students with a basic knowledge of Spanish and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in Spanish on a limited range of topics relating to everyday situations.",
   sessionsPreview: [
     {
       title: "Pronunciation rules & Grammar",

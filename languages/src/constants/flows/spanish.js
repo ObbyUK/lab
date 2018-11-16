@@ -32,6 +32,11 @@ headers[appStatuses.TRANSACTION_COMPLETE] = {
   src: "/images/header_flow_2.png",
 };
 
+var skillLevelDescriptions = {};
+skillLevelDescriptions[skillLevels.BEGGINER] = "Spanish Beginners 1 aims to provide students with a basic knowledge of Spanish and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in Spanish on a limited range of topics relating to everyday situations.";
+skillLevelDescriptions[skillLevels.INTERMEDIATE] = "Spanish Beginners 1 aims to provide students with a basic knowledge of Spanish and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in Spanish on a limited range of topics relating to everyday situations.";
+skillLevelDescriptions[skillLevels.ADVANCED] = "Spanish Beginners 1 aims to provide students with a basic knowledge of Spanish and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in Spanish on a limited range of topics relating to everyday situations.";
+
 export default {
   headers: headers,
   famousPerson: 'Antonio Banderas',
@@ -60,5 +65,8 @@ export default {
     }
   ],
   locationOptions: locations,
-  timeOptions: times
+  timeOptions: times,
+  skillLevelDescriptions,
+  teachingMethodDescription: "The course is taught mainly in Spanish and works on the four skills of listening, speaking, reading and writing, with the main emphasis on speaking. Students engage in interactive language activities, participating in group and pair work to practice vocabulary, expressions and grammar structures.",
+  feedbackSessionsDescription: "There is an overview, consolidation and feedback session in the final week, concentrating on the material covered in the term. By the end of the first term, the student is able to read, understand and communicate using Spanish in very basic situations. Students should be able to understand simple oral and written texts and understand specific information on simple topics."
 };

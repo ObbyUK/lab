@@ -14,11 +14,16 @@ import { Clock, Location, BarChart} from '../components/Icons.jsx';
 import IconLabel from '../components/IconLabel.jsx';
 import PrimaryButton from '../components/PrimaryButton.jsx';
 import RatingStars from '../components/RatingStars.jsx';
+import ReviewCard from '../components/ReviewCard.jsx';
+import CycleComponentsBanner from '../components/CycleComponentsBanner.jsx';
 
 const mapStateToProps = (state) => ({
   skillLevel: state.app.skillLevel,
   address: state.app.chosenLocation.address,
   teacher: state.app.flow.teacher,
+  skillLevelDescription: state.app.flow.skillLevelDescriptions[state.app.skillLevel],
+  teachingMethodDescription: state.app.flow.teachingMethodDescription,
+  feedbackSessionsDescription: state.app.flow.feedbackSessionsDescription,
   lessonDayAndTime: `${moment(state.app.chosenSession.starts, 'DD/MM/YYYY').format('dddd')}s, ${state.app.chosenSession.lessonsStart} - ${state.app.chosenSession.lessonsEnd}`
 });
 
@@ -67,6 +72,7 @@ class ClassSummaryContainer extends React.Component {
             <h2 className="class-summary-container__card-title class-summary-container__card-title--tight">
               Meet your teacher.
             </h2>
+            
             <div className="class-summary-container__teacher">
               <div className="class-summary-container__teacher-details">
                 <h2 className="class-summary-container__card-title class-summary-container__card-title--normal-weight class-summary-container__card-title--tight">
@@ -91,6 +97,61 @@ class ClassSummaryContainer extends React.Component {
               <div className="class-summary-container__teacher-avatar-wrap">
                 <img src={this.props.teacher.avatar} alt={this.props.teacher.name} className="class-summary-container__teacher-avatar"/>
               </div>
+            </div>
+
+            <div className="class-summary-container__reviews">
+              <CycleComponentsBanner
+                size="small"
+                color="white"
+                list={this.props.teacher.reviews}
+                viewComponent={(review) => (
+                  <ReviewCard
+                    image={review.image}
+                    name={review.name}
+                    language={review.language}
+                    languageName={review.languageName}
+                    text={review.text}
+                  />
+                )}
+              />
+            </div>
+
+            <div className="class-summary-container__schedule">
+              <h2 className="class-summary-container__card-title">
+                What you'll learn
+              </h2>
+              
+              <div className="class-summary-container__schedule-section">
+                <h2 className="class-summary-container__schedule-section-title class-summary-container__schedule-section-title--robbins-egg-blue">
+                  Learn the basics
+                </h2>
+                <div className="class-summary-container__schedule-section-text">
+                  {this.props.skillLevelDescription}
+                </div>
+              </div>
+              
+              <div className="class-summary-container__schedule-section">
+                <h2 className="class-summary-container__schedule-section-title class-summary-container__schedule-section-title--emerald">
+                  Taught in Spanish 
+                </h2>
+                <div className="class-summary-container__schedule-section-text">
+                  {this.props.teachingMethodDescription}
+                </div>
+              </div>
+              
+              <div className="class-summary-container__schedule-section">
+                <h2 className="class-summary-container__schedule-section-title class-summary-container__schedule-section-title--sun">
+                  Feedback sessions & Online community
+                </h2>
+                <div className="class-summary-container__schedule-section-text">
+                  {this.props.feedbackSessionsDescription}
+                </div>
+              </div>
+
+
+            </div>
+
+            <div className="class-summary-container__content">
             </div>
           </BlankCard>
         </div>
@@ -132,7 +193,6 @@ class ClassSummaryContainer extends React.Component {
             <div className="class-summary-container__card-section ready-to-learn-page__card-section--three-point-sales-banner">
               <ThreePointSalesBanner
                 color="white"
-                size="small"
                 points={[
                   { 
                     image: "/icons/trusted.svg", 

@@ -63,6 +63,7 @@
 
   &__teacher {
     display: flex;
+    margin-bottom: 40px;
   }
 
   &__teacher-details {
@@ -71,6 +72,7 @@
   &__teacher-meta {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
   }
 
   &__teacher-nationality {
@@ -80,6 +82,7 @@
     color: @camelot;
     text-transform: uppercase;
     font-weight: 600;
+    margin-right: 10px;
   }
 
   &__teacher-rating {
@@ -87,15 +90,62 @@
   }
 
   &__teacher-description {
-
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    color: @ebony-clay;
+    padding-right: 60px;
   }
 
   &__teacher-avatar-wrap {
-
+    border-radius: 100px;
+    height: 150px;
+    width: 150px;
+    min-width: 150px;
+    overflow: hidden;
   }
 
   &__teacher-avatar {
 
+  }
+
+  &__reviews {
+    margin-bottom: 50px;
+  }
+
+  &__schedule {
+  }
+
+  &__schedule-section {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  &__schedule-section-title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1;
+    color: @ebony-clay;
+
+    &--robbins-egg-blue {
+      color: @robbins-egg-blue;
+    }
+
+    &--emerald {
+      color: @emerald;
+    }
+
+    &--sun {
+      color: @sun;
+    }
+  }
+
+  &__schedule-section-text {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    color: @ebony-clay;
   }
 
 }

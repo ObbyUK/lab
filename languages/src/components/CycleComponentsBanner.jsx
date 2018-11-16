@@ -52,10 +52,18 @@ export default class extends React.Component {
 
   render () {
     return (
-      <div className={`cycle-components-banner cycle-components-banner--${this.props.color||'azalea'}`}>
-        <div className="cycle-components-banner__title">{this.props.title}</div>
-        <div className="cycle-components-banner__description">{this.props.description}</div>
-
+      <div 
+        className={`
+          cycle-components-banner cycle-components-banner--${this.props.color||'azalea'}
+          cycle-components-banner cycle-components-banner--${this.props.size||'normal'}
+        `}
+      >
+        {this.props.title &&
+          <div className="cycle-components-banner__title">{this.props.title}</div>
+        }
+        {this.props.description &&
+          <div className="cycle-components-banner__description">{this.props.description}</div>
+        }
         <div className="cycle-components-banner__wrap container">
           {this.renderButton(ArrowLeft, this.previous.bind(this), 'desktop')}
           <div className="cycle-components-banner__component">

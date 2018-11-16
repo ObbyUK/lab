@@ -67,282 +67,290 @@ function viewLandingPage(state) {
 }
 
 function viewReadyToLearnPage(state, { payload }) {
-  return {
-    "status":"userIsViewingChosenClassSummary",
-    "selectedLanguage":"spanish",
-    "flow":{
-       "headers":{
-          "userIsAnwseringQuestions":{
-             "blurt":"¡Increíble!",
-             "title":"Ready to Learn Spanish",
-             "description":"Tell us a bit more about what you're looking for?",
-             "src":"/images/header_flow_2.png"
-          },
-          "userIsViewingClassOptions":{
-             "blurt":"Bueno.",
-             "title":"Now select your desired class.",
-             "src":"/images/header_flow_2.png"
-          },
-          "userIsViewingChosenClassSummary":{
-             "blurt":"Bueno.",
-             "title":"Now select your desired class.",
-             "src":"/images/header_flow_2.png"
-          },
-          "userIsCheckingOut":{
-             "blurt":"Casi allí.",
-             "title":"Almost there.",
-             "src":"/images/header_flow_2.png"
-          },
-          "userHasCompletedTransaction":{
-             "blurt":"Todo bien.",
-             "title":"Let’s get to work.",
-             "src":"/images/header_flow_2.png"
-          }
-       },
-       "famousPerson":"Antonio Banderas",
-       "teacher":{
-          "name":"Louise Fernández",
-          "nationality":"spanish",
-          "description":"Louise has been teaching Spanish since 2008 when she moved from Barcelona to London. Since then, she helped hundreds of people transition from zero Spanish to fluent. Her teaching style is simple, organised and fun.",
-          "avatar":"/images/teacher-1.png",
-          "rating":10,
-          "reviews":[
-             {
-                "image":"/images/astrid-avatar.jpg",
-                "name":"Astrid",
-                "label":"moved to spain",
-                "text":"The company I work for just opened an office in Italy, and it felt natural to learn a bit of italian to better communicate with my italian colleagues. Doing this on Obby felt natural, and Vicenzo is definitely one of the nicest and most patient teachers ever. I would recommend this to anyone!"
-             }
-          ]
-       },
-       "levelOptions":[
-          {
-             "title":"Beginner",
-             "value":"beginner",
-             "description":"You know almost nothing in Spanish",
-             "sessionsPreview":[
-                {
-                   "title":"Pronunciation rules & Grammar",
-                   "text":"You’ll learn how the Italian alphabet is different than the English one, and how to apply those rules."
-                },
-                {
-                   "title":"Greetings & Farewells",
-                   "text":"You’ll learn how to meet & greet people and how to introduce yourself."
-                },
-                {
-                   "title":"Basic conversation",
-                   "text":"When you’re done, you’ll be able to have a basic conversation in Italian."
-                }
-             ]
-          },
-          {
-             "title":"Intermediate",
-             "value":"intermediate",
-             "description":"You can have a decent conversation in Spanish",
-             "sessionsPreview":[
-                {
-                   "title":"Improving conversations",
-                   "text":"Get comfortable with spontaneous conversations, such as what you do in your free time or your summer plans."
-                },
-                {
-                   "title":"Getting around when travelling",
-                   "text":"Learn to navigate your way around a new place, ask for sightseeing places and discuss restaurant tips with locals."
-                },
-                {
-                   "title":"Basic writing",
-                   "text":"Understand and write descriptions of events, feelings and wishes in emails, notes and messages."
-                }
-             ]
-          },
-          {
-             "title":"Advanced",
-             "value":"advanced",
-             "description":"You’re almost there, but want to get perfect.",
-             "sessionsPreview":[
-                {
-                   "title":"Almost fluent",
-                   "text":"Express yourself fluently and spontaneously on a wide range of topics of increasingly complex nature."
-                },
-                {
-                   "title":"Express yourself clearly",
-                   "text":"Present clear, in-depth descriptions of subjects, developing particular points and concluding appropriately."
-                },
-                {
-                   "title":"Advanced writing",
-                   "text":"Learn to express yourself clearly in well-written text, such as a work report or a essay."
-                }
-             ]
-          }
-       ],
-       "locationOptions":[
-          {
-             "name":"Central London",
-             "value":"Central London",
-             "address":"Holborn, WC1V 7QH",
-             "lessonsStart":"6:30PM",
-             "lessonsEnd":"8PM",
-             "options":[
-                {
-                   "starts":"08/01/2019",
-                   "lessonsStart":"6:30PM",
-                   "lessonsEnd":"8PM",
-                   "lessonDayName":"Tuesdays"
-                },
-                {
-                   "starts":"10/01/2019",
-                   "lessonsStart":"6:30PM",
-                   "lessonsEnd":"8PM",
-                   "lessonDayName":"Thursdays"
-                }
-             ]
-          },
-          {
-             "name":"West London",
-             "value":"West London",
-             "address":"White City, W12 7FP",
-             "lessonsStart":"6:30PM",
-             "lessonsEnd":"8PM",
-             "options":[
-                {
-                   "starts":"08/01/2019",
-                   "lessonsStart":"6:30PM",
-                   "lessonsEnd":"8PM",
-                   "lessonDayName":"Tuesdays"
-                },
-                {
-                   "starts":"10/01/2019",
-                   "lessonsStart":"6:30PM",
-                   "lessonsEnd":"8PM",
-                   "lessonDayName":"Thursdays"
-                }
-             ]
-          },
-          {
-             "name":"North London",
-             "value":"North London",
-             "address":"Kings Cross, N1 9SQ",
-             "lessonsStart":"6:30PM",
-             "lessonsEnd":"8PM",
-             "options":[
-                {
-                   "starts":"08/01/2019",
-                   "lessonsStart":"6:30PM",
-                   "lessonsEnd":"8PM",
-                   "lessonDayName":"Tuesdays"
-                },
-                {
-                   "starts":"10/01/2019",
-                   "lessonsStart":"6:30PM",
-                   "lessonsEnd":"8PM",
-                   "lessonDayName":"Thursdays"
-                }
-             ]
-          },
-          {
-             "name":"East London",
-             "value":"East London",
-             "address":"Shoreditch, EC2A 4HT",
-             "lessonsStart":"6:30PM",
-             "lessonsEnd":"8PM",
-             "options":[
-                {
-                   "starts":"08/01/2019",
-                   "lessonsStart":"6:30PM",
-                   "lessonsEnd":"8PM",
-                   "lessonDayName":"Tuesdays"
-                },
-                {
-                   "starts":"10/01/2019",
-                   "lessonsStart":"6:30PM",
-                   "lessonsEnd":"8PM",
-                   "lessonDayName":"Thursdays"
-                }
-             ]
-          },
-          {
-             "name":"South London",
-             "value":"South London",
-             "address":"Brixton, SW9 8BQ",
-             "lessonsStart":"6:30PM",
-             "lessonsEnd":"8PM",
-             "options":[
-                {
-                   "starts":"08/01/2019",
-                   "lessonsStart":"6:30PM",
-                   "lessonsEnd":"8PM",
-                   "lessonDayName":"Tuesdays"
-                },
-                {
-                   "starts":"10/01/2019",
-                   "lessonsStart":"6:30PM",
-                   "lessonsEnd":"8PM",
-                   "lessonDayName":"Thursdays"
-                }
-             ]
-          }
-       ],
-       "timeOptions":[
-          {
-             "name":"Daytime",
-             "value":"daytime",
-             "description":"9AM - 5PM"
-          },
-          {
-             "name":"Evening",
-             "value":"evening",
-             "description":"5PM onwards"
-          },
-          {
-             "name":"Weekends",
-             "value":"weekends"
-          }
-       ]
-    },
-    "skillLevel":"beginner",
-    "time":[
-       "weekends"
-    ],
-    "locations":[
-       "Central London",
-       "West London"
-    ],
-    "chosenSession":{
-       "starts":"10/01/2019",
-       "lessonsStart":"6:30PM",
-       "lessonsEnd":"8PM",
-       "lessonDayName":"Thursdays"
-    },
-    "chosenLocation":{
-       "name":"Central London",
-       "value":"Central London",
-       "address":"Holborn, WC1V 7QH",
-       "lessonsStart":"6:30PM",
-       "lessonsEnd":"8PM",
-       "options":[
-          {
-             "starts":"08/01/2019",
-             "lessonsStart":"6:30PM",
-             "lessonsEnd":"8PM",
-             "lessonDayName":"Tuesdays"
-          },
-          {
-             "starts":"10/01/2019",
-             "lessonsStart":"6:30PM",
-             "lessonsEnd":"8PM",
-             "lessonDayName":"Thursdays"
-          }
-       ]
-    },
-    "date":"10/01/2019",
-    "name":"",
-    "lastName":"",
-    "phoneNumber":"",
-    "email":"",
-    "formError":{
- 
-    }
- };
-  return pipe(
+   return {
+      "status":"userIsViewingChosenClassSummary",
+      "selectedLanguage":"spanish",
+      "flow":{
+         "headers":{
+            "userIsAnwseringQuestions":{
+               "blurt":"¡Increíble!",
+               "title":"Ready to Learn Spanish",
+               "description":"Tell us a bit more about what you're looking for?",
+               "src":"/images/header_flow_2.png"
+            },
+            "userIsViewingClassOptions":{
+               "blurt":"Bueno.",
+               "title":"Now select your desired class.",
+               "src":"/images/header_flow_2.png"
+            },
+            "userIsViewingChosenClassSummary":{
+               "blurt":"Bueno.",
+               "title":"Now select your desired class.",
+               "src":"/images/header_flow_2.png"
+            },
+            "userIsCheckingOut":{
+               "blurt":"Casi allí.",
+               "title":"Almost there.",
+               "src":"/images/header_flow_2.png"
+            },
+            "userHasCompletedTransaction":{
+               "blurt":"Todo bien.",
+               "title":"Let’s get to work.",
+               "src":"/images/header_flow_2.png"
+            }
+         },
+         "famousPerson":"Antonio Banderas",
+         "teacher":{
+            "name":"Louise Fernández",
+            "nationality":"Spanish",
+            "description":"Louise has been teaching Spanish since 2008 when she moved from Barcelona to London. Since then, she helped hundreds of people transition from zero Spanish to fluent. Her teaching style is simple, organised and fun.",
+            "avatar":"/images/teacher-1.png",
+            "rating":10,
+            "reviews":[
+               {
+                  "image":"/images/astrid-avatar.jpg",
+                  "name":"Astrid",
+                  "label":"moved to spain",
+                  "text":"The company I work for just opened an office in Italy, and it felt natural to learn a bit of italian to better communicate with my italian colleagues. Doing this on Obby felt natural, and Vicenzo is definitely one of the nicest and most patient teachers ever. I would recommend this to anyone!"
+               }
+            ]
+         },
+         "levelOptions":[
+            {
+               "title":"Beginner",
+               "value":"beginner",
+               "description":"You know almost nothing in Spanish",
+               "sessionsPreview":[
+                  {
+                     "title":"Pronunciation rules & Grammar",
+                     "text":"You’ll learn how the Italian alphabet is different than the English one, and how to apply those rules."
+                  },
+                  {
+                     "title":"Greetings & Farewells",
+                     "text":"You’ll learn how to meet & greet people and how to introduce yourself."
+                  },
+                  {
+                     "title":"Basic conversation",
+                     "text":"When you’re done, you’ll be able to have a basic conversation in Italian."
+                  }
+               ]
+            },
+            {
+               "title":"Intermediate",
+               "value":"intermediate",
+               "description":"You can have a decent conversation in Spanish",
+               "sessionsPreview":[
+                  {
+                     "title":"Improving conversations",
+                     "text":"Get comfortable with spontaneous conversations, such as what you do in your free time or your summer plans."
+                  },
+                  {
+                     "title":"Getting around when travelling",
+                     "text":"Learn to navigate your way around a new place, ask for sightseeing places and discuss restaurant tips with locals."
+                  },
+                  {
+                     "title":"Basic writing",
+                     "text":"Understand and write descriptions of events, feelings and wishes in emails, notes and messages."
+                  }
+               ]
+            },
+            {
+               "title":"Advanced",
+               "value":"advanced",
+               "description":"You’re almost there, but want to get perfect.",
+               "sessionsPreview":[
+                  {
+                     "title":"Almost fluent",
+                     "text":"Express yourself fluently and spontaneously on a wide range of topics of increasingly complex nature."
+                  },
+                  {
+                     "title":"Express yourself clearly",
+                     "text":"Present clear, in-depth descriptions of subjects, developing particular points and concluding appropriately."
+                  },
+                  {
+                     "title":"Advanced writing",
+                     "text":"Learn to express yourself clearly in well-written text, such as a work report or a essay."
+                  }
+               ]
+            }
+         ],
+         "locationOptions":[
+            {
+               "name":"Central London",
+               "value":"Central London",
+               "address":"Holborn, WC1V 7QH",
+               "lessonsStart":"6:30PM",
+               "lessonsEnd":"8PM",
+               "options":[
+                  {
+                     "starts":"08/01/2019",
+                     "lessonsStart":"6:30PM",
+                     "lessonsEnd":"8PM",
+                     "lessonDayName":"Tuesdays"
+                  },
+                  {
+                     "starts":"10/01/2019",
+                     "lessonsStart":"6:30PM",
+                     "lessonsEnd":"8PM",
+                     "lessonDayName":"Thursdays"
+                  }
+               ]
+            },
+            {
+               "name":"West London",
+               "value":"West London",
+               "address":"White City, W12 7FP",
+               "lessonsStart":"6:30PM",
+               "lessonsEnd":"8PM",
+               "options":[
+                  {
+                     "starts":"08/01/2019",
+                     "lessonsStart":"6:30PM",
+                     "lessonsEnd":"8PM",
+                     "lessonDayName":"Tuesdays"
+                  },
+                  {
+                     "starts":"10/01/2019",
+                     "lessonsStart":"6:30PM",
+                     "lessonsEnd":"8PM",
+                     "lessonDayName":"Thursdays"
+                  }
+               ]
+            },
+            {
+               "name":"North London",
+               "value":"North London",
+               "address":"Kings Cross, N1 9SQ",
+               "lessonsStart":"6:30PM",
+               "lessonsEnd":"8PM",
+               "options":[
+                  {
+                     "starts":"08/01/2019",
+                     "lessonsStart":"6:30PM",
+                     "lessonsEnd":"8PM",
+                     "lessonDayName":"Tuesdays"
+                  },
+                  {
+                     "starts":"10/01/2019",
+                     "lessonsStart":"6:30PM",
+                     "lessonsEnd":"8PM",
+                     "lessonDayName":"Thursdays"
+                  }
+               ]
+            },
+            {
+               "name":"East London",
+               "value":"East London",
+               "address":"Shoreditch, EC2A 4HT",
+               "lessonsStart":"6:30PM",
+               "lessonsEnd":"8PM",
+               "options":[
+                  {
+                     "starts":"08/01/2019",
+                     "lessonsStart":"6:30PM",
+                     "lessonsEnd":"8PM",
+                     "lessonDayName":"Tuesdays"
+                  },
+                  {
+                     "starts":"10/01/2019",
+                     "lessonsStart":"6:30PM",
+                     "lessonsEnd":"8PM",
+                     "lessonDayName":"Thursdays"
+                  }
+               ]
+            },
+            {
+               "name":"South London",
+               "value":"South London",
+               "address":"Brixton, SW9 8BQ",
+               "lessonsStart":"6:30PM",
+               "lessonsEnd":"8PM",
+               "options":[
+                  {
+                     "starts":"08/01/2019",
+                     "lessonsStart":"6:30PM",
+                     "lessonsEnd":"8PM",
+                     "lessonDayName":"Tuesdays"
+                  },
+                  {
+                     "starts":"10/01/2019",
+                     "lessonsStart":"6:30PM",
+                     "lessonsEnd":"8PM",
+                     "lessonDayName":"Thursdays"
+                  }
+               ]
+            }
+         ],
+         "timeOptions":[
+            {
+               "name":"Daytime",
+               "value":"daytime",
+               "description":"9AM - 5PM"
+            },
+            {
+               "name":"Evening",
+               "value":"evening",
+               "description":"5PM onwards"
+            },
+            {
+               "name":"Weekends",
+               "value":"weekends"
+            }
+         ],
+         "skillLevelDescriptions":{
+            "beginner":"Spanish Beginners 1 aims to provide students with a basic knowledge of Spanish and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in Spanish on a limited range of topics relating to everyday situations.",
+            "intermediate":"Spanish Beginners 1 aims to provide students with a basic knowledge of Spanish and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in Spanish on a limited range of topics relating to everyday situations.",
+            "advanced":"Spanish Beginners 1 aims to provide students with a basic knowledge of Spanish and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in Spanish on a limited range of topics relating to everyday situations."
+         },
+         "teachingMethodDescription":"The course is taught mainly in Spanish and works on the four skills of listening, speaking, reading and writing, with the main emphasis on speaking. Students engage in interactive language activities, participating in group and pair work to practice vocabulary, expressions and grammar structures.",
+         "feedbackSessionsDescription":"There is an overview, consolidation and feedback session in the final week, concentrating on the material covered in the term. By the end of the first term, the student is able to read, understand and communicate using Spanish in very basic situations. Students should be able to understand simple oral and written texts and understand specific information on simple topics."
+      },
+      "skillLevel":"beginner",
+      "time":[
+         "evening",
+         "weekends"
+      ],
+      "locations":[
+         "Central London",
+         "West London"
+      ],
+      "chosenSession":{
+         "starts":"10/01/2019",
+         "lessonsStart":"6:30PM",
+         "lessonsEnd":"8PM",
+         "lessonDayName":"Thursdays"
+      },
+      "chosenLocation":{
+         "name":"Central London",
+         "value":"Central London",
+         "address":"Holborn, WC1V 7QH",
+         "lessonsStart":"6:30PM",
+         "lessonsEnd":"8PM",
+         "options":[
+            {
+               "starts":"08/01/2019",
+               "lessonsStart":"6:30PM",
+               "lessonsEnd":"8PM",
+               "lessonDayName":"Tuesdays"
+            },
+            {
+               "starts":"10/01/2019",
+               "lessonsStart":"6:30PM",
+               "lessonsEnd":"8PM",
+               "lessonDayName":"Thursdays"
+            }
+         ]
+      },
+      "date":"10/01/2019",
+      "name":"",
+      "lastName":"",
+      "phoneNumber":"",
+      "email":"",
+      "formError":{
+   
+      }
+   };
+   return pipe(
     assoc('selectedLanguage', payload.language),
     assoc('flow', flows[payload.language]),
     assoc('status', appStatuses.ANWSERING_QUESTIONS),

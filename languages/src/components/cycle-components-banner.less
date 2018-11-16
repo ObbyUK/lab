@@ -2,11 +2,6 @@
 
 .cycle-components-banner {
   width: 100%;
-  padding: 100px 10px 50px;
-
-  @media (min-width:@sm-width) { 
-    padding: 100px 10px 100px;
-  }
   
   &--azalea {
     background-color: @azalea;
@@ -18,6 +13,21 @@
   
   &--astra {
     background-color: @astra;
+  }
+  
+  &--white {
+    background-color: white;
+  }
+
+  &--normal {
+    padding: 100px 10px 50px;
+    @media (min-width:@sm-width) { 
+      padding: 100px 10px 100px;
+    }
+  }
+
+  &--small {
+    padding: 0;
   }
 
   &__title {
