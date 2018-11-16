@@ -59,7 +59,7 @@ class PitchContainer extends React.Component {
             <a href="#classes" className="pitch-container__menu-button">
               <PrimaryButton 
                 color="ebony-clay"
-                text="Sign up for free"
+                text="See dates"
                 onClick={this.props.seeClassOptions.bind(this)}
               />
             </a>
@@ -74,7 +74,7 @@ class PitchContainer extends React.Component {
             image="/images/meditation-3.png"
             reverse={true}
             points={[
-              { image: "/icons/red-tick.svg", text: "Small class sizes - 10 people max" },
+              { image: "/icons/red-tick.svg", text: "Small class sizes - 12 people max" },
               { image: "/icons/red-tick.svg", text: "Locations all across London" },
               { image: "/icons/red-tick.svg", text: "Top reviewed teachers" },
             ]}
@@ -83,7 +83,7 @@ class PitchContainer extends React.Component {
               <div className="pitch-container__button">
                 <PrimaryButton
                   size="huge"
-                  text="Sign up for free"
+                  text="See dates"
                   onClick={this.props.seeClassOptions.bind(this)}
                 />
               </div>
@@ -218,19 +218,19 @@ class PitchContainer extends React.Component {
               list={[
                 {
                   src: "/images/ReMind.jpg",
-                  text: "ReMind",
+                  text: "ReMind, Victoria",
                 },
                 {
                   src: "/images/place.jpg",
-                  text: "Crinan St",
-                },
-                {
-                  src: "/images/CuthbertCentre.png",
-                  text: "The Philbeach Hall",
+                  text: "Crinan St, Kings Cross",
                 },
                 {
                   src: "/images/Benk_&_Bo.jpg",
-                  text: "Benk & Bo",
+                  text: "Benk & Bo, Shoreditch",
+                },
+                {
+                  src: "/images/CuthbertCentre.png",
+                  text: "The Philbeach Hall, Kensington",
                 },
               ]}
               viewComponent={(image) => (
@@ -249,13 +249,13 @@ class PitchContainer extends React.Component {
           <div id="ready-to-have-a-better-life">
             <ButtonBanner 
               title="Learn to meditate and live mindfully"
-              buttonText="Sign up for free"
+              buttonText="See dates"
               onClick={this.props.seeClassOptions.bind(this)}
               label="First class on us!"
               points={[
                 { 
                   image: "/icons/red-tick.svg",
-                  text: "Small class sizes - 10 people max",
+                  text: "Small class sizes - 12 people max",
                 },
                 { 
                   image: "/icons/red-tick.svg",

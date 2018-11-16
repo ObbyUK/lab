@@ -170,16 +170,20 @@ class CheckoutContainer extends React.Component {
                 {/* PAYMENT SUMMARY */}
                 <div className="checkout-container__sidebar-section">
                   <div className="checkout-container__sidebar-text-row">
-                    <div className="checkout-container__sidebar-text checkout-container__sidebar-text--large">Taster + 3 classes</div>
-                    <div className="checkout-container__sidebar-text checkout-container__sidebar-text--price">£81</div>
+                    <div className="checkout-container__sidebar-text checkout-container__sidebar-text--large">Free taster + 3 classes</div>
+                    <div className="checkout-container__sidebar-text checkout-container__sidebar-text--price"></div>
+                  </div>
+                  <div className="checkout-container__sidebar-text-row">
+                    <div className="checkout-container__sidebar-text">+ free welcome pack</div>
+                    <div className="checkout-container__sidebar-text checkout-container__sidebar-text--price"></div>
+                  </div>
+                  <div className="checkout-container__sidebar-text-row">
+                    <div className="checkout-container__sidebar-text">+ lifetime access to online platform</div>
+                    <div className="checkout-container__sidebar-text checkout-container__sidebar-text--price">= £81</div>
                   </div>
                   <div className="checkout-container__sidebar-text-row">
                     <div className="checkout-container__sidebar-text">Pay today</div>
-                    <div className="checkout-container__sidebar-text checkout-container__sidebar-text--large">£0</div>
-                  </div>
-                  <div className="checkout-container__sidebar-text-row">
-                    <div className="checkout-container__sidebar-text">After the free taster</div>
-                    <div className="checkout-container__sidebar-text checkout-container__sidebar-text--large">£27/class</div>
+                    <div className="checkout-container__sidebar-text checkout-container__sidebar-text--large">= £0</div>
                   </div>
                 </div>
               </div>

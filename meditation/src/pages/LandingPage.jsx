@@ -54,7 +54,7 @@ class LandingPageContainer extends React.Component {
             <Menu/>
             <div className="landing-page__header">
               <ImageBanner
-                blurt="Register your interest now"
+                blurt="What class works best for you?"
                 title=""
                 description=""
                 src="/images/meditation-horizon.jpeg"
@@ -69,7 +69,7 @@ class LandingPageContainer extends React.Component {
             <Menu/>
             <div className="landing-page__header">
               <ImageBanner
-                blurt="Register your interest now"
+                blurt="Book your free taster"
                 title=""
                 description=""
                 src="/images/meditation-horizon.jpeg"
