@@ -18,7 +18,8 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    align-items: center;
 
     @media (min-width:@lg-width) {
       justify-content: space-between;
@@ -26,15 +27,20 @@
     }
   }
 
+  &__title-wrap {
+    display: flex;
+    align-items: center;
+  }
+
   &__title {
     font-family: "Founders Grotesk", sans-serif;
-    font-size: 28px;
+    font-size: @l-paragraph;
     line-height: 1;
     font-weight: 600;
     color: @ebony-clay;
     margin: 0 0 10px;
     @media (min-width:@lg-width) {
-      margin: 0;
+      margin: 0 10px 0 0;
     }
   }
 
@@ -74,6 +80,37 @@
     margin-bottom: 15px;
   }
 
+  &__dates-row {
+    width: 100%;
+    margin-bottom: 40px;
+    &:last-child { 
+      margin-bottom: 0px;
+    }
+  }
+
+  &__dates-title-wrap {
+    display: flex;
+  }
+
+  &__dates-title {
+    font-family: "Founders Grotesk", sans-serif;
+    font-size: @l-paragraph;
+    line-height: 1;
+    font-weight: 600;
+    color: @camelot;
+    margin-right: 5px;
+    margin-bottom: 15px;
+  }
+  
+  &__dates-label {
+    font-family: "Founders Grotesk", sans-serif;
+    font-size: @l-paragraph;
+    line-height: 1;
+    font-weight: 400;
+    color: @camelot;
+    margin-bottom: 15px;
+  }
+
   &__days {
     width: 100%;
     display: flex;
@@ -98,12 +135,12 @@
     color: @gallery;
     outline: none !important;
     transition: all 350ms;
-    padding: 14px 20px;
+    padding: 10px 15px;
     margin: 0 0 20px;
     width: 100%;
 
     @media (min-width:@md-width) {
-      max-width: 260px;
+      max-width: 150px;
       margin: 0 15px 0 0;
     }
   }
@@ -118,41 +155,12 @@
     font-size: @m-paragraph;
     line-height: 1;
     margin-bottom: 5px;
-    @media (min-width:@md-width) {
-      font-size: @l-paragraph;
-    }
   }
 
   &__day-note {
     width: 100%;
     font-size: @sm-paragraph;
     line-height: 1;
-    @media (min-width:@md-width) {
-      font-size: @m-paragraph;
-    }
-  }
-
-  &__day-icon {
-    display: flex;
-    align-items: center;
-  }
-
-
-  &__details {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-    @media (min-width:@lg-width) {
-      flex-wrap: nowrap;
-      margin-bottom: 20px;
-    }
-  }
-
-  &__detail {
-    margin-bottom: 5px;
-    @media (min-width:@lg-width) {
-      margin-bottom: 0px;
-    }
   }
 
   &__button {

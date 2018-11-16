@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { propEq, mergeAll, contains } from 'ramda';
+import { propEq, __, pipe, prop, mergeAll, contains } from 'ramda';
 
 // Actions & Style
 import { 
@@ -14,6 +14,7 @@ import ThreePointSalesBanner from '../components/ThreePointSalesBanner.jsx';
 
 const mapStateToProps = (state) => ({
   selectedLocationsOptions: state.app.flow.locationOptions.filter((location) => contains(location.name, state.app.locations)),
+  selectedTimes: state.app.time
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -47,7 +48,7 @@ class FormContainer extends React.Component {
                   lessonsEnd={location.lessonsEnd}
                   priceLabel="Free taster + 7 classes"
                   price="£168"
-                  options={location.options}
+                  dates={location.dates.filter(pipe(prop('type'), contains(__, this.props.selectedTimes)))}
                   onClick={(session) => this.props.chooseDate({ session, location })}
                 />
               </div>

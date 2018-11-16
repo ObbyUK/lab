@@ -8,19 +8,58 @@ export const locations = [
     address: "Holborn, WC1V 7QH",
     lessonsStart: "6:30PM",
     lessonsEnd: "8PM",
-    options: [
+    dates: [
       {
-        starts: "08/01/2019",
-        lessonsStart: "6:30PM",
-        lessonsEnd: "8PM",
-        lessonDayName: "Tuesdays",
-      }, 
+        type: timeOfDay.DAYTIME,
+        title: "Daytime",
+        label: "(12:30PM - 1:30PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
       {
-        starts: "10/01/2019",
-        lessonsStart: "6:30PM",
-        lessonsEnd: "8PM",
-        lessonDayName: "Thursdays",
-      }
+        type: timeOfDay.EVENING,
+        title: "Evening",
+        label: "(6:30PM - 8PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.WEEKENDS,
+        title: "Weekends",
+        label: "(11AM- 12:30PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          }
+        ]
+      },
     ],
   },
   {
@@ -29,19 +68,58 @@ export const locations = [
     address: "White City, W12 7FP",
     lessonsStart: "6:30PM",
     lessonsEnd: "8PM",
-    options: [
+    dates: [
       {
-        starts: "08/01/2019",
-        lessonsStart: "6:30PM",
-        lessonsEnd: "8PM",
-        lessonDayName: "Tuesdays",
-      }, 
+        type: timeOfDay.DAYTIME,
+        title: "Daytime",
+        label: "(12:30PM - 1:30PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
       {
-        starts: "10/01/2019",
-        lessonsStart: "6:30PM",
-        lessonsEnd: "8PM",
-        lessonDayName: "Thursdays",
-      }
+        type: timeOfDay.EVENING,
+        title: "Evening",
+        label: "(6:30PM - 8PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.WEEKENDS,
+        title: "Weekends",
+        label: "(11AM- 12:30PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          }
+        ]
+      },
     ],
   },
   {
@@ -50,19 +128,58 @@ export const locations = [
     address: "Kings Cross, N1 9SQ",
     lessonsStart: "6:30PM",
     lessonsEnd: "8PM",
-    options: [
+    dates: [
       {
-        starts: "08/01/2019",
-        lessonsStart: "6:30PM",
-        lessonsEnd: "8PM",
-        lessonDayName: "Tuesdays",
-      }, 
+        type: timeOfDay.DAYTIME,
+        title: "Daytime",
+        label: "(12:30PM - 1:30PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
       {
-        starts: "10/01/2019",
-        lessonsStart: "6:30PM",
-        lessonsEnd: "8PM",
-        lessonDayName: "Thursdays",
-      }
+        type: timeOfDay.EVENING,
+        title: "Evening",
+        label: "(6:30PM - 8PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.WEEKENDS,
+        title: "Weekends",
+        label: "(11AM- 12:30PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          }
+        ]
+      },
     ],
   },
   {
@@ -71,19 +188,58 @@ export const locations = [
     address: "Shoreditch, EC2A 4HT",
     lessonsStart: "6:30PM",
     lessonsEnd: "8PM",
-    options: [
+    dates: [
       {
-        starts: "08/01/2019",
-        lessonsStart: "6:30PM",
-        lessonsEnd: "8PM",
-        lessonDayName: "Tuesdays",
-      }, 
+        type: timeOfDay.DAYTIME,
+        title: "Daytime",
+        label: "(12:30PM - 1:30PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
       {
-        starts: "10/01/2019",
-        lessonsStart: "6:30PM",
-        lessonsEnd: "8PM",
-        lessonDayName: "Thursdays",
-      }
+        type: timeOfDay.EVENING,
+        title: "Evening",
+        label: "(6:30PM - 8PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.WEEKENDS,
+        title: "Weekends",
+        label: "(11AM- 12:30PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          }
+        ]
+      },
     ],
   },
   {
@@ -92,19 +248,58 @@ export const locations = [
     address: "Brixton, SW9 8BQ",
     lessonsStart: "6:30PM",
     lessonsEnd: "8PM",
-    options: [
+    dates: [
       {
-        starts: "08/01/2019",
-        lessonsStart: "6:30PM",
-        lessonsEnd: "8PM",
-        lessonDayName: "Tuesdays",
-      }, 
+        type: timeOfDay.DAYTIME,
+        title: "Daytime",
+        label: "(12:30PM - 1:30PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
       {
-        starts: "10/01/2019",
-        lessonsStart: "6:30PM",
-        lessonsEnd: "8PM",
-        lessonDayName: "Thursdays",
-      }
+        type: timeOfDay.EVENING,
+        title: "Evening",
+        label: "(6:30PM - 8PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.WEEKENDS,
+        title: "Weekends",
+        label: "(11AM- 12:30PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          }
+        ]
+      },
     ],
   }
 ];

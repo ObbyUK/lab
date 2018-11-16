@@ -3,7 +3,12 @@ import React from 'react';
 import './price-sum.less';
 
 export default (props) => (
-  <div className="price-sum">
+  <div 
+    className={`
+      price-sum
+      price-sum--${props.size||'normal'}
+    `}
+  >
     <span className="price-sum__calculation">
       {props.calculation} =
     </span>
