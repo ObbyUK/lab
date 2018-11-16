@@ -32,13 +32,13 @@ teachers[languages.FRENCH] = {
   rating: 10,
   reviews: [
     {
-      image: '/images/User_French_Nick.png',
+      image: '/images/user_french_nick.png',
       name: 'Nick',
       label: "Learned French as a hobby",
       text: 'As a pastry maker, French cuisine is incredibly important to me - so I decided to follow my dream of living in France by taking a course. Anais was perfect! Merci Anais!',
     },
     {
-      image: '/images/User_French_Katie.png',
+      image: '/images/user_french_katie.png',
       name: 'Katie',
       label: "Learned French before a summer in Fance",
       text: 'I have been learning French with Anaïs now for 4 months. I started from scratch, as an absolute beginner, and during that time I learnt the structure of the language, how to form sentences, pronunciation, masculine/feminine, verbs, nouns, phrases, and more. As with learning anything new, the teacher is 90% of the motivation. In this, I have found Anaïs to be friendly, personable and patient. I can highly recommend her to you.',

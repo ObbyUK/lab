@@ -4,10 +4,11 @@ import { mergeAll, propEq } from 'ramda';
 import moment from 'moment';
 
 import './class-summary-container.less';
-// Constants & Actions
+// Constants & Actions & Lib
 import { levelNames as skillLevelNames } from './../constants/skillLevels';
 import { bookYourSpotAction } from './../appActions';
-// Components
+import String__UpperCaseFirstLetter from './../lib/String__UpperCaseFirstLetter';
+// Component
 import BlankCard from './../components/BlankCard.jsx';
 import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
 import ThreePointSalesBanner from '../components/ThreePointSalesBanner.jsx';
@@ -23,6 +24,7 @@ const mapStateToProps = (state) => ({
   skillLevel: state.app.skillLevel,
   address: state.app.chosenLocation.address,
   teacher: state.app.flow.teacher,
+  chosenLanguageName: String__UpperCaseFirstLetter(state.app.selectedLanguage),
   skillLevelDescription: state.app.flow.skillLevelDescriptions[state.app.skillLevel],
   skillLevelContent: state.app.flow.levelOptions.find(propEq('value', state.app.skillLevel)).content,
   teachingMethodDescription: state.app.flow.teachingMethodDescription,
@@ -135,7 +137,7 @@ class ClassSummaryContainer extends React.Component {
               
               <div className="class-summary-container__schedule-section">
                 <h2 className="class-summary-container__schedule-section-title class-summary-container__schedule-section-title--emerald">
-                  Taught in Spanish 
+                  Taught in {this.props.chosenLanguageName}
                 </h2>
                 <div className="class-summary-container__schedule-section-text">
                   {this.props.teachingMethodDescription}

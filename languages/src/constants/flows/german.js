@@ -1,6 +1,8 @@
 import skillLevels, { levelNames, levelDescriptions } from './../skillLevels';
 import { locations, times } from './../locationsAndTimes';
 import { appStatuses } from './../../AppState';
+import languages from './../languages';
+import teachers from './../teachers';
 
 var headers = {};
 headers[appStatuses.ANWSERING_QUESTIONS] = {
@@ -40,6 +42,7 @@ skillLevelDescriptions[skillLevels.ADVANCED] = "German Beginners 1 aims to provi
 export default {
   headers,
   famousPerson: 'Ludwig van Beethoven',
+  teacher: teachers[languages.GERMAN],
   levelOptions: [
     {
       title: levelNames[skillLevels.BEGGINER],
@@ -64,5 +67,8 @@ export default {
     }
   ],
   locationOptions: locations,
-  timeOptions: times
+  timeOptions: times,
+  skillLevelDescriptions,
+  teachingMethodDescription: "The course is taught mainly in German and works on the four skills of listening, speaking, reading and writing, with the main emphasis on speaking. Students engage in interactive language activities, participating in group and pair work to practice vocabulary, expressions and grammar structures.",
+  feedbackSessionsDescription: "There is an overview, consolidation and feedback session in the final week, concentrating on the material covered in the term. By the end of the first term, the student is able to read, understand and communicate using German in very basic situations. Students should be able to understand simple oral and written texts and understand specific information on simple topics."
 };
