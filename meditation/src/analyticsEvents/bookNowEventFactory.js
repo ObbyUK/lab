@@ -4,7 +4,9 @@ export default ({ state }) => {
     payload: [
       'Book Now',
       {
-        date: state.date
+        date: state.date,
+        locations: state.locations,
+        chosenLocation: state.chosenLocation
       },
     ]
   }
