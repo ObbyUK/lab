@@ -66,7 +66,7 @@ class ClassSummaryContainer extends React.Component {
                     <IconLabel icon={Location} text={this.props.address}/>
                   </div>
                   <div className="class-summary-container__icon-label">
-                    <IconLabel icon={Calendar} text={this.props.lessonDate}/>
+                    <IconLabel icon={Calendar} text={`Starts ${this.props.lessonDate}`}/>
                   </div>
                   <div className="class-summary-container__icon-label">
                     <IconLabel icon={Clock} text={this.props.lessonDayAndTime}/>
@@ -105,7 +105,7 @@ class ClassSummaryContainer extends React.Component {
                     <RatingStars
                       rating={10}
                       color={'sun'}
-                      label={this.props.teacher.reviews.length}
+                      label={`23`}
                     />
                   </div>
                 </div>
