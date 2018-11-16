@@ -32,6 +32,11 @@ headers[appStatuses.TRANSACTION_COMPLETE] = {
   src: "/images/header_flow_2.png",
 };
 
+var skillLevelDescriptions = {};
+skillLevelDescriptions[skillLevels.BEGGINER] = "German Beginners 1 aims to provide students with a basic knowledge of German and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in German on a range of topics relating to everyday situations.";
+skillLevelDescriptions[skillLevels.INTERMEDIATE] = "German Beginners 1 aims to provide students with a basic knowledge of German and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in German on a range of topics relating to everyday situations.";
+skillLevelDescriptions[skillLevels.ADVANCED] = "German Beginners 1 aims to provide students with a basic knowledge of German and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in German on a range of topics relating to everyday situations.";
+
 export default {
   headers,
   famousPerson: 'Ludwig van Beethoven',
