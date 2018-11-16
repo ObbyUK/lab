@@ -4,7 +4,7 @@ import moment from 'moment';
 import './class-selectable-times-card.less';
 // Components
 import PriceSum from './PriceSum.jsx';
-import { Location, Clock, ArrowRightThick } from './../components/Icons.jsx';
+import { Location, ArrowRightThick } from './../components/Icons.jsx';
 import Icon from './../components/Icon.jsx';
 import IconLabel from './../components/IconLabel.jsx';
 
@@ -16,6 +16,9 @@ const DateButton = (props) => (
     <div className="class-selectable-times-card__day-text-wrap">
       <div className="class-selectable-times-card__day-text">{moment(props.classSession.starts, 'DD/MM/YYYY').format('dddd')}s</div>
       <div className="class-selectable-times-card__day-note">Starts on {moment(props.classSession.starts, 'DD/MM/YYYY').format('Do MMM ')}</div>
+    </div>
+    <div className="class-selectable-times-card__day-icon">
+      <Icon icon={ArrowRightThick} height={22} />
     </div>
   </div>
 );
