@@ -7,6 +7,8 @@ export default ({ state }) => {
       'Order Completed',
       {
         date: state.date,
+        locations: state.locations,
+        chosenLocation: state.chosenLocation
       },
     ]
   }
