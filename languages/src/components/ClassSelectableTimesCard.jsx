@@ -30,7 +30,9 @@ export default (props) => (
     <div className="class-selectable-times-card__top-row">
       <div className="class-selectable-times-card__title-wrap">
         <h3 className="class-selectable-times-card__title">{props.title}</h3>
-        <IconLabel icon={Location} text={props.address}/>
+        <div className="class-selectable-times-card__address">
+          <IconLabel icon={Location} text={props.address}/>
+        </div>
       </div>
       <div className="class-selectable-times-card__price">
         <PriceSum 
