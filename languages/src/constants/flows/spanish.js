@@ -33,9 +33,9 @@ headers[appStatuses.TRANSACTION_COMPLETE] = {
 };
 
 var skillLevelDescriptions = {};
-skillLevelDescriptions[skillLevels.BEGGINER] = "Spanish Beginners 1 aims to provide students with a basic knowledge of Spanish and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in Spanish on a limited range of topics relating to everyday situations.";
-skillLevelDescriptions[skillLevels.INTERMEDIATE] = "Spanish Beginners 1 aims to provide students with a basic knowledge of Spanish and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in Spanish on a limited range of topics relating to everyday situations.";
-skillLevelDescriptions[skillLevels.ADVANCED] = "Spanish Beginners 1 aims to provide students with a basic knowledge of Spanish and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in Spanish on a limited range of topics relating to everyday situations.";
+skillLevelDescriptions[skillLevels.BEGGINER] = "Spanish Beginners 1 aims to provide students with a basic knowledge of Spanish and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in Spanish on a range of topics relating to everyday situations.";
+skillLevelDescriptions[skillLevels.INTERMEDIATE] = "Spanish Beginners 1 aims to provide students with a basic knowledge of Spanish and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in Spanish on a range of topics relating to everyday situations.";
+skillLevelDescriptions[skillLevels.ADVANCED] = "Spanish Beginners 1 aims to provide students with a basic knowledge of Spanish and focuses on the acquisition of practical communicative skills. It covers basic grammar and essential vocabulary, allowing participants to communicate effectively and with confidence in Spanish on a range of topics relating to everyday situations.";
 
 export default {
   headers: headers,
