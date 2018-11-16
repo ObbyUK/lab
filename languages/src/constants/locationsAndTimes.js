@@ -12,17 +12,27 @@ export const locations = [
       {
         type: timeOfDay.DAYTIME,
         title: "Daytime",
-        label: "(12:30PM - 1:30PM)",
+        label: "(12:00PM - 1:30PM)",
         options: [
           {
             starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
           },
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "09/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "10/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "11/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
           },
         ]
       },
@@ -37,7 +47,12 @@ export const locations = [
             lessonsEnd: "8PM",
           },
           {
-            starts: "08/01/2019",
+            starts: "09/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "10/01/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
@@ -49,14 +64,14 @@ export const locations = [
         label: "(11AM- 12:30PM)",
         options: [
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "12/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
           },
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "13/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
           }
         ]
       },
@@ -72,17 +87,27 @@ export const locations = [
       {
         type: timeOfDay.DAYTIME,
         title: "Daytime",
-        label: "(12:30PM - 1:30PM)",
+        label: "(12:00PM - 1:30PM)",
         options: [
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "15/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
           },
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "16/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "18/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
           },
         ]
       },
@@ -92,12 +117,17 @@ export const locations = [
         label: "(6:30PM - 8PM)",
         options: [
           {
-            starts: "08/01/2019",
+            starts: "15/01/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
           {
-            starts: "08/01/2019",
+            starts: "16/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "17/01/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
@@ -109,14 +139,14 @@ export const locations = [
         label: "(11AM- 12:30PM)",
         options: [
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "19/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
           },
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "20/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
           }
         ]
       },
@@ -132,17 +162,27 @@ export const locations = [
       {
         type: timeOfDay.DAYTIME,
         title: "Daytime",
-        label: "(12:30PM - 1:30PM)",
+        label: "(12:00PM - 1:30PM)",
         options: [
           {
             starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
           },
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "09/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "10/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "11/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
           },
         ]
       },
@@ -157,7 +197,12 @@ export const locations = [
             lessonsEnd: "8PM",
           },
           {
-            starts: "08/01/2019",
+            starts: "09/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "10/01/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
@@ -169,14 +214,14 @@ export const locations = [
         label: "(11AM- 12:30PM)",
         options: [
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "12/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
           },
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "13/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
           }
         ]
       },
@@ -192,17 +237,27 @@ export const locations = [
       {
         type: timeOfDay.DAYTIME,
         title: "Daytime",
-        label: "(12:30PM - 1:30PM)",
+        label: "(12:00PM - 1:30PM)",
         options: [
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "15/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
           },
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "16/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "18/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
           },
         ]
       },
@@ -212,12 +267,17 @@ export const locations = [
         label: "(6:30PM - 8PM)",
         options: [
           {
-            starts: "08/01/2019",
+            starts: "15/01/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
           {
-            starts: "08/01/2019",
+            starts: "16/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "17/01/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
@@ -229,14 +289,14 @@ export const locations = [
         label: "(11AM- 12:30PM)",
         options: [
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "19/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
           },
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "20/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
           }
         ]
       },
@@ -252,17 +312,27 @@ export const locations = [
       {
         type: timeOfDay.DAYTIME,
         title: "Daytime",
-        label: "(12:30PM - 1:30PM)",
+        label: "(12:00PM - 1:30PM)",
         options: [
           {
             starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
           },
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "09/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "10/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "11/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
           },
         ]
       },
@@ -277,7 +347,12 @@ export const locations = [
             lessonsEnd: "8PM",
           },
           {
-            starts: "08/01/2019",
+            starts: "09/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "10/01/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
@@ -289,14 +364,14 @@ export const locations = [
         label: "(11AM- 12:30PM)",
         options: [
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "12/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
           },
           {
-            starts: "08/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
+            starts: "13/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
           }
         ]
       },
