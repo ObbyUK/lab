@@ -92,7 +92,7 @@ class LandingPageContainer extends React.Component {
               image={review.image}
               name={review.name}
               language={review.language}
-              languageName={review.languageName}
+              label={`Learning ${review.languageName}`}
               text={review.text}
             />
           )}

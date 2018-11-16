@@ -12,7 +12,7 @@ import String__UpperCaseFirstLetter from './../lib/String__UpperCaseFirstLetter'
 import BlankCard from './../components/BlankCard.jsx';
 import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
 import ThreePointSalesBanner from '../components/ThreePointSalesBanner.jsx';
-import { Clock, Location, BarChart} from '../components/Icons.jsx';
+import { Clock, Location, BarChart, Calendar} from '../components/Icons.jsx';
 import IconLabel from '../components/IconLabel.jsx';
 import PrimaryButton from '../components/PrimaryButton.jsx';
 import RatingStars from '../components/RatingStars.jsx';
@@ -24,12 +24,14 @@ const mapStateToProps = (state) => ({
   skillLevel: state.app.skillLevel,
   address: state.app.chosenLocation.address,
   teacher: state.app.flow.teacher,
+  chosenLanguage: state.app.selectedLanguage,
   chosenLanguageName: String__UpperCaseFirstLetter(state.app.selectedLanguage),
   skillLevelDescription: state.app.flow.skillLevelDescriptions[state.app.skillLevel],
   skillLevelContent: state.app.flow.levelOptions.find(propEq('value', state.app.skillLevel)).content,
   teachingMethodDescription: state.app.flow.teachingMethodDescription,
   feedbackSessionsDescription: state.app.flow.feedbackSessionsDescription,
-  lessonDayAndTime: `${moment(state.app.chosenSession.starts, 'DD/MM/YYYY').format('dddd')}s, ${state.app.chosenSession.lessonsStart} - ${state.app.chosenSession.lessonsEnd}`
+  lessonDayAndTime: `${moment(state.app.chosenSession.starts, 'DD/MM/YYYY').format('dddd')}s, ${state.app.chosenSession.lessonsStart} - ${state.app.chosenSession.lessonsEnd}`,
+  lessonDate: moment(state.app.chosenSession.starts, 'DD/MM/YYYY').format('Do MMM')
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
@@ -57,9 +59,18 @@ class ClassSummaryContainer extends React.Component {
                   You’ve selected
                 </h2>
                 <div className="class-summary-container__icon-labels">
-                  <IconLabel icon={BarChart} text={skillLevelNames[this.props.skillLevel]}/>
-                  <IconLabel icon={Location} text={this.props.address}/>
-                  <IconLabel icon={Clock} text={this.props.lessonDayAndTime}/>
+                  <div className="class-summary-container__icon-label">
+                    <IconLabel icon={BarChart} text={skillLevelNames[this.props.skillLevel]}/>
+                  </div>
+                  <div className="class-summary-container__icon-label">
+                    <IconLabel icon={Location} text={this.props.address}/>
+                  </div>
+                  <div className="class-summary-container__icon-label">
+                    <IconLabel icon={Calendar} text={this.props.lessonDate}/>
+                  </div>
+                  <div className="class-summary-container__icon-label">
+                    <IconLabel icon={Clock} text={this.props.lessonDayAndTime}/>
+                  </div>
                 </div>
               </div>
               <div className="class-summary-container__button">
@@ -79,6 +90,9 @@ class ClassSummaryContainer extends React.Component {
             </h2>
             
             <div className="class-summary-container__teacher">
+              <div className="class-summary-container__teacher-avatar-wrap">
+                <img src={this.props.teacher.avatar} alt={this.props.teacher.name} className="class-summary-container__teacher-avatar"/>
+              </div>
               <div className="class-summary-container__teacher-details">
                 <h2 className="class-summary-container__card-title class-summary-container__card-title--normal-weight class-summary-container__card-title--tight">
                   {this.props.teacher.name}
@@ -99,10 +113,11 @@ class ClassSummaryContainer extends React.Component {
                   {this.props.teacher.description}
                 </p>
               </div>
-              <div className="class-summary-container__teacher-avatar-wrap">
-                <img src={this.props.teacher.avatar} alt={this.props.teacher.name} className="class-summary-container__teacher-avatar"/>
-              </div>
             </div>
+            
+            <h2 className="class-summary-container__card-title">
+              See what learners have to say about {this.props.teacher.name}
+            </h2>
 
             <div className="class-summary-container__reviews">
               <CycleComponentsBanner
@@ -113,8 +128,8 @@ class ClassSummaryContainer extends React.Component {
                   <ReviewCard
                     image={review.image}
                     name={review.name}
-                    language={review.language}
-                    languageName={review.languageName}
+                    language={this.props.chosenLanguage}
+                    label={review.label}
                     text={review.text}
                   />
                 )}

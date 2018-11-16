@@ -18,7 +18,7 @@ headers[appStatuses.VIEWING_CLASS_OPTIONS] = {
 };
 headers[appStatuses.VIEWING_CLASS_SUMMARY] = {
   blurt: 'Bueno.',
-  title: 'Now select your desired class.',
+  title: "Let's meet your teacher",
   src: "/images/header_flow_2.png",
 };
 headers[appStatuses.CHECKING_OUT] = {

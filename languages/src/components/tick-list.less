@@ -3,11 +3,19 @@
 .tick-list {
 
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 
+  @media (min-width:@sm-width) {
+    flex-wrap: nowrap;
+  }
+
   &__column {
-    width: 50%;
-    min-width: 50%;
+    width: 100%;
+    @media (min-width:@sm-width) {
+      width: 50%;
+      min-width: 50%;
+    }
   }
   
   &__item {

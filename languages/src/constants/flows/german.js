@@ -19,7 +19,7 @@ headers[appStatuses.VIEWING_CLASS_OPTIONS] = {
 };
 headers[appStatuses.VIEWING_CLASS_SUMMARY] = {
   blurt: 'Sehr gut.',
-  title: 'Now select your desired class.',
+  title: "Let's meet your teacher",
   // description: "After booking, you can select your teacher, agree on an exact time or go over any requirements if necessary.",
   src: "/images/header_flow_2.png",
 };

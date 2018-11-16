@@ -8,7 +8,9 @@ export default ({ state }) => {
         skillLevel: state.skillLevel,
         time: state.time,
         locations: state.locations,
-        date: state.date
+        date: state.date,
+        chosenSession: state.chosenSession,
+        chosenLocation: state.chosenLocation
       },
     ]
   }

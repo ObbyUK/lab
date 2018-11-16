@@ -23,7 +23,9 @@ export default (props) => (
     <div className="review-card__text-wrap">
       <div className="review-card__name-wrap">
         <div className="review-card__name">{props.name}</div>
-        <div className="review-card__learning">- Learning {props.languageName}</div>
+        {props.label &&
+          <div className="review-card__learning">- {props.label}</div>
+        }
       </div>
       <div className="review-card__review-text">
         {props.text}

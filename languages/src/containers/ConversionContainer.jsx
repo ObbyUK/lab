@@ -11,10 +11,8 @@ import BlankCard from './../components/BlankCard.jsx';
 import ClassSelectableTimesCard from '../components/ClassSelectableTimesCard.jsx';
 import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
 import ThreePointSalesBanner from '../components/ThreePointSalesBanner.jsx';
-import TextList from '../components/TextList.jsx';
 
 const mapStateToProps = (state) => ({
-  skillLevelSessionPreview: state.app.flow.levelOptions.find(propEq('value', state.app.skillLevel)).sessionsPreview,
   selectedLocationsOptions: state.app.flow.locationOptions.filter((location) => contains(location.name, state.app.locations)),
 });
 
@@ -40,10 +38,6 @@ class FormContainer extends React.Component {
             <h2 className="ready-to-learn-page__card-title">
               Here's what we have for you
             </h2>
-            <TextList
-              title="You'll learn"
-              list={this.props.skillLevelSessionPreview}
-            />
             {this.props.selectedLocationsOptions.map((location, index) => (
               <div key={index} className="ready-to-learn-page__card-section">
                 <ClassSelectableTimesCard 
