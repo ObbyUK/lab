@@ -181,7 +181,6 @@ class CheckoutContainer extends React.Component {
                   stripeKey={stripe.key}
                   payText={'Confirm and pay'}
                   submittingText={'Processing...'}
-                  payLabel="And £24 per class after the first class if you enjoy it"
                 />
               </div>            
 
