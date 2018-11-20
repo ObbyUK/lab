@@ -33,6 +33,7 @@ export const locations = [
             starts: "11/01/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
+            soldOut: true,
           },
         ]
       },
@@ -73,6 +74,7 @@ export const locations = [
             starts: "12/01/2019",
             lessonsStart: "11:00PM",
             lessonsEnd: "12:30PM",
+            soldOut: true,
           },
           {
             starts: "13/01/2019",
@@ -114,6 +116,7 @@ export const locations = [
             starts: "18/01/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
+            soldOut: true,
           },
         ]
       },
@@ -148,6 +151,7 @@ export const locations = [
             starts: "19/01/2019",
             lessonsStart: "11:00PM",
             lessonsEnd: "12:30PM",
+            soldOut: true,
           },
           {
             starts: "20/01/2019",
@@ -189,6 +193,7 @@ export const locations = [
             starts: "11/01/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
+            soldOut: true,
           },
         ]
       },
@@ -223,6 +228,7 @@ export const locations = [
             starts: "12/01/2019",
             lessonsStart: "11:00PM",
             lessonsEnd: "12:30PM",
+            soldOut: true,
           },
           {
             starts: "13/01/2019",
@@ -264,6 +270,7 @@ export const locations = [
             starts: "18/01/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
+            soldOut: true,
           },
         ]
       },
@@ -298,6 +305,7 @@ export const locations = [
             starts: "19/01/2019",
             lessonsStart: "11:00PM",
             lessonsEnd: "12:30PM",
+            soldOut: true,
           },
           {
             starts: "20/01/2019",
@@ -339,6 +347,7 @@ export const locations = [
             starts: "11/01/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
+            soldOut: true,
           },
         ]
       },
@@ -373,6 +382,7 @@ export const locations = [
             starts: "12/01/2019",
             lessonsStart: "11:00PM",
             lessonsEnd: "12:30PM",
+            soldOut: true,
           },
           {
             starts: "13/01/2019",
