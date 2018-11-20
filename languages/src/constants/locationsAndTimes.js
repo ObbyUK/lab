@@ -56,6 +56,12 @@ export const locations = [
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
+          {
+            starts: "11/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+            soldOut: true,
+          },
         ]
       },
       {

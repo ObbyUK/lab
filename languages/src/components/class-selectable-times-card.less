@@ -124,6 +124,7 @@
   }
 
   &__day {
+    position: relative;
     cursor: pointer;
     display: inline-flex;
     justify-content: space-between;
@@ -145,6 +146,11 @@
     @media (min-width:@md-width) {
       max-width: 200px;
       margin: 0 15px 0 0;
+    }
+
+    &--sold-out {
+      background-color: @gray;
+      border: 1px solid @dolphin;
     }
   }
 
@@ -177,5 +183,19 @@
   &__day-icon {
     display: flex;
     align-items: center;
+  }
+
+  &__day-sold-out-label {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    padding: 0 5px;
+    color: white;
+    font-weight: 600;
+    background-color: @ebony-clay;
+    font-size: @xsm-paragraph;
+    text-transform: uppercase;
+    transform: rotate(10deg);
+
   }
 }

@@ -2,7 +2,17 @@
 
 .landing-page {
 
-  letter-spacing: 0.3px;
+  display: flex;
+
+  &__body {
+    position: relative;
+    letter-spacing: 0.3px;
+    margin-top: 93px;
+    @media (min-width:@sm-width) {
+      margin-top: 58px;
+    }
+  }
+
 
   &__here-to-learn {
     background-color: @astra;

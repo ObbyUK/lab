@@ -194,27 +194,23 @@ class ClassSummaryContainer extends React.Component {
 
         <div className="class-summary-container__card">
           <BlankCard>
-            <h2 className="class-summary-container__card-title">
-              Your first class is free. After that, if you like it, it's £24 per week for 7 weeks.
+            <h2 className="ready-to-learn-page__card-title">
+              100% Moneyback guarantee
             </h2>
-            <div className="class-summary-container__card-section">
+            <p className="ready-to-learn-page__card-description">
+              We promise all of our learners a great experience. If you’re unhappy after your first class, we’ll refund you in full.
+            </p>
+            <div className="ready-to-learn-page__card-section">
               <ImageBulletPoints
                 points={[
                   {
-                    image: "/icons/pay_0.svg",
-                    title: "Your first class is on us",
-                    text: "Pay £0 today, see if you like it before committing",
+                    image: "/icons/tick.svg",
+                    title: "Full refund",
                   },
                   {
                     image: "/icons/tick.svg",
-                    title: "Money-back guarantee",
-                    text: "We ensure quality. If the class doesn't reach your expectations, we'll give your money back.",
+                    title: "No hard feelings",
                   },
-                  {
-                    image: "/icons/installments.svg",
-                    title: "Pay in instalments",
-                    text: "Instead of paying the full amount up front, you'll pay in weekly installments",
-                  }
                 ]}
               />
             </div>

@@ -10,9 +10,21 @@ import IconLabel from './../components/IconLabel.jsx';
 
 const DateButton = (props) => (
   <div 
-    className="class-selectable-times-card__day"
-    onClick={() => props.onClick(props.classSession)}
+    className={`
+      class-selectable-times-card__day
+      ${props.classSession.soldOut ? 'class-selectable-times-card__day--sold-out' : ''}
+    `}
+    onClick={() => {
+      if (!props.classSession.soldOut) {
+        props.onClick(props.classSession)
+      }
+    }}
   >
+    {props.classSession.soldOut &&
+      <div className="class-selectable-times-card__day-sold-out-label">
+        Sold out
+      </div>
+    }
     <div className="class-selectable-times-card__day-text-wrap">
       <div className="class-selectable-times-card__day-text">{moment(props.classSession.starts, 'DD/MM/YYYY').format('dddd')}s</div>
       <div className="class-selectable-times-card__day-note">Starts on {moment(props.classSession.starts, 'DD/MM/YYYY').format('Do MMM ')}</div>
@@ -38,20 +50,11 @@ export default (props) => (
         <PriceSum 
           size="small"
           calculation={props.priceLabel} 
+          previousTotal={props.previousPrice}
           total={props.price}
         />
       </div>
     </div>
-
-    {/* ADDRESS & TIME */}
-    {/* <div className="class-selectable-times-card__details">
-      <div className="class-selectable-times-card__detail">
-        <IconLabel icon={Location} text={props.address}/>
-      </div>
-      <div className="class-selectable-times-card__detail">
-        <IconLabel icon={Clock} text={`${props.lessonsStart} - ${props.lessonsEnd}`}/>
-      </div>
-    </div> */}
 
     {/* DATE CHOICE */}
     <div className="class-selectable-times-card__bottom-row">

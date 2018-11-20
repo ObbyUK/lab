@@ -20,12 +20,28 @@ import {
 import BlankCard from '../components/BlankCard.jsx';
 import StripeForm from '../components/StripeForm.jsx';
 import LabelInput from '../components/LabelInput.jsx';
-import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
 import MiniReviews from '../components/MiniReviews.jsx';
+import PriceSum from '../components/PriceSum.jsx';
+import RatingStars from '../components/RatingStars.jsx';
+
+const ImageTitleText = (props) => (
+  <div className="image-title-text">
+    <img src={props.image} className="image-title-text__image" />
+    <div className="image-title-text__body">
+      {props.title &&
+        <div className="image-title-text__title">{props.title}</div>
+      }
+      {props.description &&
+        <div className="image-title-text__description">{props.description}</div>
+      }
+    </div>
+  </div>
+);
 
 const mapStateToProps = (state) => ({
   status: state.app.status,
   errorMessage: state.app.formError.message,
+  teacher: state.app.flow.teacher,
   selectedLanguage: state.app.selectedLanguage,
   chosenLocation: state.app.chosenLocation,
   chosenSession: state.app.chosenSession,
@@ -175,33 +191,44 @@ class CheckoutContainer extends React.Component {
 
         {/* SIDEBAR */}
         <div className="checkout-container__column col-12 col-lg-5">
-          {/* MAIN SUMMARY */}
           <div className="checkout-container__card">
             <BlankCard>
               <div className="checkout-container__sidebar">
-                {/* PAYMENT SUMMARY */}
                 <div className="checkout-container__sidebar-section">
-                  <div className="checkout-container__sidebar-text-row">
-                    <div className="checkout-container__sidebar-text checkout-container__sidebar-text--large">Free taster + 7 classes</div>
-                    <div className="checkout-container__sidebar-text checkout-container__sidebar-text--price">£168</div>
+                  <div className="checkout-container__sidebar-sale">
+                    Book in the next 24h to get £20 off
                   </div>
-                  <div className="checkout-container__sidebar-text-row">
-                    <div className="checkout-container__sidebar-text">Pay today</div>
-                    <div className="checkout-container__sidebar-text checkout-container__sidebar-text--large">£0</div>
-                  </div>
-                  <div className="checkout-container__sidebar-text-row">
-                    <div className="checkout-container__sidebar-text">After the first class</div>
-                    <div className="checkout-container__sidebar-text checkout-container__sidebar-text--large">£24/class</div>
-                  </div>
+                  <PriceSum
+                    calculation="8 classes"
+                    previousTotal="£200"
+                    total="£180"
+                  />
+                </div>
+                <div className="checkout-container__sidebar-text">
+                  Obby classes are <strong>20% cheaper</strong> than most London language classes.
                 </div>
               </div>
-              {/* CLASS SUMMARY */}
+            </BlankCard>
+          </div>
+
+          <div className="checkout-container__card">
+            <BlankCard>
+              {/* CHOICE SUMMARY */}
               <div className="checkout-container__sidebar-section">
                 <div className="checkout-container__sidebar-text-row">
-                  <div className="checkout-container__sidebar-text">{String__UpperCaseFirstLetter(this.props.selectedLanguage)}</div>
+                  <div className="checkout-container__sidebar-text">
+                    {String__UpperCaseFirstLetter(this.props.selectedLanguage)} {String__UpperCaseFirstLetter(this.props.skillLevel)}
+                  </div>
                 </div>
-                <div className="checkout-container__sidebar-text-row">
-                  <div className="checkout-container__sidebar-text">{String__UpperCaseFirstLetter(this.props.skillLevel)}</div>
+                <div className="checkout-container__sidebar-text-row checkout-container__sidebar-text-row--left-aligned-row">
+                  <div className="checkout-container__sidebar-text">With {this.props.teacher.name}</div>
+                  <div className="checkout-container__sidebar-rating">
+                    <RatingStars
+                      rating={10}
+                      color={'sun'}
+                      label={`23`}
+                    />
+                  </div>
                 </div>
                 <div className="checkout-container__sidebar-text-row">
                   <div className="checkout-container__sidebar-text">{this.props.chosenLocation.name} - {this.props.chosenLocation.address}</div>
@@ -210,27 +237,25 @@ class CheckoutContainer extends React.Component {
                   <div className="checkout-container__sidebar-text">Every {moment(this.props.date, 'DD/MM/YYYY').format('dddd')} at {this.props.chosenSession.lessonsStart}</div>
                 </div>
               </div>
-              {/* BULLET POINTS */}
-              <div className="">
-                <ImageBulletPoints
-                  points={[
-                    { 
-                      image: "/icons/pay_0.svg", 
-                      title: "Your first class is on us" ,
-                      text: "Pay £0 today see if you like it before committing"
-                    },
-                    { 
-                      image: "/icons/tick.svg", 
-                      title: "Money-back guarantee" 
-                    },
-                    { 
-                      image: "/icons/pay-in-installments.svg", 
-                      title: "Pay in instalments",
-                      text: "Instead of paying the full amount up front, you'll pay in weekly installments."
-                    },
-                  ]}
+              {/* MONEY BACK */}
+              <div className="checkout-container__sidebar-section">
+                <ImageTitleText
+                  image="/icons/thumbs-up.svg"
+                  title="100% Money back"
+                  description="If you don’t love your first class we’ll refund you in full"
                 />
               </div>
+              {/* LIFETIME ACCESS */}
+              <div className="">
+                <ImageTitleText
+                  image="/icons/university-hat.svg"
+                  title="Lifetime access"
+                  description="All classes are recorded & made available online in case you miss a class or want a recap"
+                />
+              </div>
+              <div className="">
+              </div>
+              {/* LIFETIME ACCESS */}
             </BlankCard>
           </div>
 

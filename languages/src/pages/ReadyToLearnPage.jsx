@@ -24,6 +24,7 @@ import Menu from '../components/Menu.jsx';
 import Footer from '../components/Footer.jsx';
 import BlankCard from './../components/BlankCard.jsx';
 import ImageBanner from '../components/ImageBanner.jsx';
+import SalesBar from '../components/SalesBar.jsx';
 import FormContainer from '../containers/FormContainer.jsx';
 import ConversionContainer from '../containers/ConversionContainer.jsx';
 import CheckoutContainer from '../containers/CheckoutContainer.jsx';
@@ -105,53 +106,59 @@ class HomePageContainer extends React.Component {
 
   render () {
     return (
+      
       <div className="ready-to-learn-page">
-        
-        <Menu />
-
-        {/* HEADER */}
-        <div className="ready-to-learn-page__header">
-          <ImageBanner
-            blurt={this.props.header.blurt}
-            title={this.props.header.title}
-            description={this.props.header.description}
-            src={this.props.header.src}
-          />
+        <div className="ready-to-learn-page__sales-banner">
+          <SalesBar text="SALE! Book in the next 24h to get £20 off" />
         </div>
-        
-        {/* SCREEN 1: ANWSERING QUESTIONS */}
-        {this.props.status === appStatuses.ANWSERING_QUESTIONS &&
-          <FormContainer />
-        }
+        <div className="ready-to-learn-page__body">
+          
+          <Menu />
 
-        {this.props.status === appStatuses.VIEWING_CLASS_OPTIONS &&
-          <ConversionContainer />
-        }
-        
-        {this.props.status === appStatuses.VIEWING_CLASS_SUMMARY &&
-          <ClassSummaryContainer />
-        }
-
-        {(this.props.status === appStatuses.CHECKING_OUT || this.props.status === appStatuses.SUBMITTING) &&
-          <CheckoutContainer />
-        }
-
-        {this.props.status === appStatuses.TRANSACTION_COMPLETE &&
-          <div className="ready-to-learn-page__body container">
-            <div className="ready-to-learn-page__card">
-              <BlankCard>
-                <h2 className="ready-to-learn-page__card-title">
-                  You are all set!
-                </h2>
-                <p className="ready-to-learn-page__card-description ready-to-learn-page__card-description--small">
-                  You will receive an receipt shortly and we will be in touch with all class information by email in the next few days!
-                </p>
-              </BlankCard>
-            </div>
+          {/* HEADER */}
+          <div className="ready-to-learn-page__header">
+            <ImageBanner
+              blurt={this.props.header.blurt}
+              title={this.props.header.title}
+              description={this.props.header.description}
+              src={this.props.header.src}
+            />
           </div>
-        }
+          
+          {/* SCREEN 1: ANWSERING QUESTIONS */}
+          {this.props.status === appStatuses.ANWSERING_QUESTIONS &&
+            <FormContainer />
+          }
 
-        <Footer />
+          {this.props.status === appStatuses.VIEWING_CLASS_OPTIONS &&
+            <ConversionContainer />
+          }
+          
+          {this.props.status === appStatuses.VIEWING_CLASS_SUMMARY &&
+            <ClassSummaryContainer />
+          }
+
+          {(this.props.status === appStatuses.CHECKING_OUT || this.props.status === appStatuses.SUBMITTING) &&
+            <CheckoutContainer />
+          }
+
+          {this.props.status === appStatuses.TRANSACTION_COMPLETE &&
+            <div className="ready-to-learn-page__body container">
+              <div className="ready-to-learn-page__card">
+                <BlankCard>
+                  <h2 className="ready-to-learn-page__card-title">
+                    You are all set!
+                  </h2>
+                  <p className="ready-to-learn-page__card-description ready-to-learn-page__card-description--small">
+                    You will receive an receipt shortly and we will be in touch with all class information by email in the next few days!
+                  </p>
+                </BlankCard>
+              </div>
+            </div>
+          }
+
+          <Footer />
+        </div>
       </div>
     );
   }

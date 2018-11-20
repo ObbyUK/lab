@@ -1,0 +1,47 @@
+@import './../styles/variables';
+
+.sales-bar {
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: @azalea;
+  padding: 15px 10px;
+  width: 100%;
+  text-align: center;
+
+  @media (min-width:@sm-width) {
+    flex-wrap: nowrap;
+    text-align: left;
+    justify-content: center;
+  } 
+
+  &__text {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: 1;
+    font-weight: 600;
+    color: @camelot;
+    margin-bottom: 15px;;
+    width: 100%;
+    @media (min-width:@sm-width) {
+      width: auto;
+      margin-right: 15px;
+      margin-bottom: 0px;
+    }
+  }
+
+  &__timer {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @m-paragraph;
+    line-height: 1;
+    font-weight: 600;
+    background-color: @camelot;
+    color: white;
+    padding: 5px 25px;
+    border-radius: 2px;
+  }
+
+}

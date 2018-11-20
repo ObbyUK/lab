@@ -2,6 +2,38 @@
 @import './../styles/animations/popout';
 @import './../styles/animations/fadeIn';
 
+.image-title-text {
+  display: flex;
+  align-items: center;
+  
+  &__image {
+    max-height: 71px;
+    margin-right: 20px;
+  }
+  
+  &__body {
+  }
+  
+  &__title {
+    align-self: flex-start;
+    width: 100%;
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @m-paragraph;
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  
+  &__description {
+    align-self: flex-start;
+    width: 100%;
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @m-paragraph;
+    line-height: 1.2;
+  }
+
+}
+
 .checkout-container {
   
   display: flex;
@@ -81,6 +113,17 @@
     margin-bottom: 30px;
   }
 
+  &__sidebar-sale {
+    display: inline-flex;
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    background-color: @azalea;
+    color: @camelot;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-bottom: 15px;
+  }
+
   &__sidebar-text-row {
     display: flex;
     justify-content: space-between;
@@ -89,10 +132,19 @@
     &:last-child {
       margin-bottom: 0;
     }
+
+    &--left-aligned-row {
+      align-items: center;
+      justify-content: flex-start;
+    }
+  }
+
+  &__sidebar-rating {
+    margin-left: 10px;
   }
 
   &__sidebar-text {
-    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
     font-size: @m-paragraph;
     line-height: 1.2;
     color: @ebony-clay;
