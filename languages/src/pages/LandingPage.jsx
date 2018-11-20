@@ -49,7 +49,7 @@ class LandingPageContainer extends React.Component {
     return (
       <div className="landing-page">
         <div className="landing-page__sales-bar">
-          <SalesBar text="SALE! Book in the next 24h to get £20 off" />
+          <SalesBar text="SALE! Book today to get £20 off, ends in" />
         </div>
         <div className="landing-page__body">
           <Menu/>

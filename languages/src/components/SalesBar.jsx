@@ -33,16 +33,29 @@ export default class SalesBar extends React.Component {
   }
 
   MinutesInt__HourMinutesObject(minutes) {
+    if (minutes < 60) {
+      return {
+        hours: 0,
+        minutes: minutes,
+        seconds: 59
+      };
+    }
+
     var hoursAndMinutesPercentageDecimal = minutes/60;
     var hoursAndMinutesPercentageTuple = hoursAndMinutesPercentageDecimal
       .toString()
       .split('.');
     var hours = hoursAndMinutesPercentageTuple[0];
-    var minutes = Math
-      .floor(60*(hoursAndMinutesPercentageTuple[1]/100))
-      .toString()
-      .slice(0,2);
-
+    if (hoursAndMinutesPercentageTuple.length > 1) {
+      var twoPointMinutePercantage = parseInt(hoursAndMinutesPercentageTuple[1].toString().slice(0,2))
+      var minutes = Math
+        .floor(60*(twoPointMinutePercantage/100))
+        .toString()
+        .slice(0,2);
+    } else {
+      var minutes = "00";
+    }
+  
     return {
       hours: parseInt(hours),
       minutes: parseInt(minutes),

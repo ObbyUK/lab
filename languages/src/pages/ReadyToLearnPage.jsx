@@ -109,7 +109,7 @@ class HomePageContainer extends React.Component {
       
       <div className="ready-to-learn-page">
         <div className="ready-to-learn-page__sales-banner">
-          <SalesBar text="SALE! Book in the next 24h to get £20 off" />
+          <SalesBar text="SALE! Book today to get £20 off, ends in" />
         </div>
         <div className="ready-to-learn-page__body">
           

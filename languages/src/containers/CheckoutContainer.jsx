@@ -179,7 +179,7 @@ class CheckoutContainer extends React.Component {
                   onPreSubmit={console.log}
                   isSubmitting={this.props.status === appStatuses.SUBMITTING}
                   stripeKey={stripe.key}
-                  payText={'Pay £0 now'}
+                  payText={'Confirm and pay'}
                   submittingText={'Processing...'}
                   payLabel="And £24 per class after the first class if you enjoy it"
                 />
@@ -196,7 +196,7 @@ class CheckoutContainer extends React.Component {
               <div className="checkout-container__sidebar">
                 <div className="checkout-container__sidebar-section">
                   <div className="checkout-container__sidebar-sale">
-                    Book in the next 24h to get £20 off
+                    Sale! Book today to get £20 off
                   </div>
                   <PriceSum
                     calculation="8 classes"
