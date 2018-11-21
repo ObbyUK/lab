@@ -41,7 +41,11 @@ const mapDispatchToProps = (dispatch) => ({
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
   stateProps,
   dispatchProps,
-  {}
+  {
+    submitQuestions: () => {
+      dispatchProps.submitQuestions();
+    }
+  }
 ]);
 
 class FormContainer extends React.Component {
