@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { propEq, find, mergeAll, contains } from 'ramda';
 
 // Lib & Constants
-import getUrlParamaters from './../lib/getUrlParamaters';
 import isFullArray from './../lib/isFullArray';
+import uniqObjectArray from '../lib/uniqObjectArray';
 // Actions & Style
 import { 
   selectSkillLevelAction,
@@ -21,6 +21,7 @@ import PrimaryButton from '../components/PrimaryButton.jsx';
 const mapStateToProps = (state) => ({
   selectedLanguage: state.app.selectedLanguage,
   flow: state.app.flow,
+  locationOptions: uniqObjectArray('value', state.app.flow.locationOptions),
   skillLevel: state.app.skillLevel,
   time: state.app.time,
   locations: state.app.locations,
@@ -90,7 +91,7 @@ class FormContainer extends React.Component {
             <div className="ready-to-learn-page__checkboxes">
               <MultipleCheckboxes
                 checked={this.props.locations}
-                options={this.props.flow.locationOptions}
+                options={this.props.locationOptions}
                 onChange={this.props.toggleLocation.bind(this)}
               />
             </div>
