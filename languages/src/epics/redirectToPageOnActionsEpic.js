@@ -20,24 +20,26 @@ export default (action$, store) =>
     .map(({ type }) => {
       
       if (type === appActions.CHOOSE_LANGUAGE) {
-        var urlString = queryString.stringify({
+        var urlData = {
           language: store.value.app.selectedLanguage,
-        });
-        window.location.href = "/learn?"+urlString;
+        };
+        var urlString = queryString.stringify(urlData);
+        window.history.pushState(urlData, 'learn', "/learn?"+urlString);
       }
 
       if (type === appActions.SUBMIT_QUESTIONS) {
-        var urlString = queryString.stringify({
+        var urlData = {
           language: store.value.app.selectedLanguage,
           skillLevel: store.value.app.skillLevel,
           time: store.value.app.time,
           locations: store.value.app.locations,
-        });
-        window.location.href = "/choose?"+urlString;
+        };
+        var urlString = queryString.stringify(urlData);
+        window.history.pushState(urlData, 'choose', "/choose?"+urlString);
       }
 
       if (type === appActions.CHOOSE_DATE) {
-        var urlString = queryString.stringify({
+        var urlData = {
           language: store.value.app.selectedLanguage,
           skillLevel: store.value.app.skillLevel,
           region: store.value.app.region,
@@ -45,12 +47,13 @@ export default (action$, store) =>
           date: store.value.app.date,
           startTime: store.value.app.startTime,
           endTime: store.value.app.endTime
-        });
-        window.location.href = "/summary?"+urlString;
+        };
+        var urlString = queryString.stringify(urlData);
+        window.history.pushState(urlData, 'summary', "/summary?"+urlString);
       }
       
       if (type === appActions.BOOK_YOUR_SPOT) {
-        var urlString = queryString.stringify({
+        var urlData = {
           language: store.value.app.selectedLanguage,
           skillLevel: store.value.app.skillLevel,
           region: store.value.app.region,
@@ -58,8 +61,9 @@ export default (action$, store) =>
           date: store.value.app.date,
           startTime: store.value.app.startTime,
           endTime: store.value.app.endTime
-        });
-        window.location.href = "/checkout?"+urlString;
+        };
+        var urlString = queryString.stringify(urlData);
+        window.history.pushState(urlData, 'checkout', "/checkout?"+urlString);
       }
 
     })

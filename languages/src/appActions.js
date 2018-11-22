@@ -1,5 +1,5 @@
 const actions = {
-  
+  VIEW_PAGE: 'userViewsAnyPage',
   VIEW_LANDING_PAGE: 'landingPageHasBeenViewed',
   VIEW_READY_TO_LEARN_PAGE: 'readyToLearnPageHasBeenViewed',
   VIEW_CHOOSE_DATE_PAGE: 'chooseDatePageHasBeenViewed',
@@ -25,6 +25,11 @@ const actions = {
 };
 
 // VIEW PAGE
+export const viewAnyPageAction = (urlParamaters) => ({
+  type: actions.VIEW_PAGE,
+  payload: urlParamaters
+});
+
 export const viewLandingPageAction = () => ({
   type: actions.VIEW_LANDING_PAGE
 });

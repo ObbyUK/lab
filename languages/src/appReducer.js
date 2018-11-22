@@ -50,6 +50,8 @@ const submittingReducer = cond([
 
 export default (state = new AppState(), action) =>
   cond([
+    [isActionType(appActions.VIEW_PAGE), viewAnyPage],
+    
     [isActionType(appActions.VIEW_LANDING_PAGE), viewLandingPage],
     [isActionType(appActions.VIEW_READY_TO_LEARN_PAGE), viewReadyToLearnPage],
     [isActionType(appActions.VIEW_CHOOSE_DATE_PAGE), viewChooseDatePage],
@@ -68,6 +70,31 @@ export default (state = new AppState(), action) =>
 
 
 // VIEW PAGES
+function viewAnyPage(state, { payload }) {
+  var language = payload.language||state.language;
+  console.log(payload)
+  var pathNameToStatus = {
+    "": appStatuses.VIEWING,
+    learn: appStatuses.ANWSERING_QUESTIONS,
+    choose: appStatuses.VIEWING_CLASS_OPTIONS,
+    summary: appStatuses.VIEWING_CLASS_SUMMARY,
+    checkout: appStatuses.CHECKING_OUT
+  }
+  return pipe(
+    assoc('status', pathNameToStatus[payload.pathName]),
+    assoc('flow', flows[language]),
+    assoc('selectedLanguage', language),
+    assoc('skillLevel', payload.skillLevel||state.skillLevel),
+    assoc('time', payload.time || state.time),
+    assoc('locations', payload.locations || state.locations),
+    assoc('region', payload.region||state.region),
+    assoc('address', payload.address||state.address),
+    assoc('date', payload.date||state.date),
+    assoc('startTime', payload.startTime||state.startTime),
+    assoc('endTime', payload.endTime||state.endTime),
+  )(state);
+}
+
 function viewLandingPage(state) {
   return assoc(
     'status',

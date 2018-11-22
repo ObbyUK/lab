@@ -2,11 +2,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { mergeAll } from 'ramda';
 
-import './landing-page.less';
+import './landing-container.less';
 // Actions
 import { 
   chooseLanguageAction,
-  viewLandingPageAction 
 } from './../appActions.js';
 // Constants
 import reviews from './../constants/reviews';
@@ -27,7 +26,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
-  viewLandingPage: () => dispatch(viewLandingPageAction()),
   chooseLanguage: (language) => dispatch(chooseLanguageAction(language))
 });
 
@@ -39,19 +37,15 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
   }
 ]);
 
-class LandingPageContainer extends React.Component {
-
-  componentDidMount() {
-    this.props.viewLandingPage();
-  }
+class LandingContainer extends React.Component {
 
   render () {
     return (
-      <div className="landing-page">
-        <div className="landing-page__sales-bar">
+      <div className="landing-container">
+        <div className="landing-container__sales-bar">
           <SalesBar text="SALE! Book today to get £20 off, ends in" />
         </div>
-        <div className="landing-page__body">
+        <div className="landing-container__body">
           <Menu/>
           <Header
             image="/images/header-image.jpg"
@@ -143,8 +137,8 @@ class LandingPageContainer extends React.Component {
               { image: "/icons/learning-community.svg", text: "Learning community" },
             ]}
           />
-          <div className="landing-page__here-to-learn">
-            <h2 className="landing-page__sub-title">What are you here to learn?</h2>
+          <div className="landing-container__here-to-learn">
+            <h2 className="landing-container__sub-title">What are you here to learn?</h2>
             {languagesValueAndName.map(({ value, name }) => (
               <LanguageButton 
                 key={value}
@@ -165,4 +159,4 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps,
   mergeProps
-)(LandingPageContainer);
+)(LandingContainer);
