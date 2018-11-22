@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import mergeAll from 'ramda/src/mergeAll';
+import contains from 'ramda/src/contains';
 import queryString from 'query-string';
 
 import './ready-to-learn-page.less';
@@ -46,21 +47,38 @@ class AppContainer extends React.Component {
     );
   }
 
+  isShowingFormHeader() {
+    return contains(
+      this.props.status, 
+      [
+        appStatuses.ANWSERING_QUESTIONS,
+        appStatuses.VIEWING_CLASS_OPTIONS,
+        appStatuses.VIEWING_CLASS_SUMMARY,
+        appStatuses.CHECKING_OUT,
+        appStatuses.SUBMITTING,
+        appStatuses.TRANSACTION_COMPLETE
+      ]
+    );
+  }
+
   render () {
     return (
       <div>
-        {this.props.status === appStatuses.VIEWING &&
-          <LandingContainer/>
-        }
-        {this.props.status !== appStatuses.VIEWING &&
           <div className="ready-to-learn-page">
             <div className="ready-to-learn-page__sales-banner">
               <SalesBar text="SALE! Book today to get £20 off, ends in" />
             </div>
             <div className="ready-to-learn-page__body">
               
-              <Menu />
-              <HeaderContainer/>
+              <Menu/>
+
+              {this.isShowingFormHeader() &&
+                <HeaderContainer/>
+              }
+              
+              {this.props.status === appStatuses.VIEWING &&
+                <LandingContainer/>
+              }
   
               {this.props.status === appStatuses.ANWSERING_QUESTIONS &&
                 <FormContainer />
@@ -96,7 +114,6 @@ class AppContainer extends React.Component {
               <Footer />
             </div>
           </div>
-        }
       </div>
     );
   }
