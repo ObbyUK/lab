@@ -1,30 +1,21 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { propEq, find, mergeAll, contains } from 'ramda';
+import mergeAll from 'ramda/src/mergeAll';
 import queryString from 'query-string';
 
+import './ready-to-learn-page.less';
 // Actions & Style
 import {
   viewChooseDatePageAction
 } from '../appActions';
-import './ready-to-learn-page.less';
 // Components
 import Menu from '../components/Menu.jsx';
 import Footer from '../components/Footer.jsx';
-import ImageBanner from '../components/ImageBanner.jsx';
 import SalesBar from '../components/SalesBar.jsx';
 import ConversionContainer from '../containers/ConversionContainer.jsx';
+import HeaderContainer from '../containers/HeaderContainer.jsx';
 
 const mapStateToProps = (state) => ({
-  selectedLanguage: state.app.selectedLanguage,
-  flow: state.app.flow,
-  skillLevel: state.app.skillLevel,
-  time: state.app.time,
-  locations: state.app.locations,
-  status: state.app.status,
-  name: state.app.name,
-  email: state.app.email,
-  header: state.app.flow.headers[state.app.status]||{}
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -54,14 +45,7 @@ class ChooseDatesPage extends React.Component {
         
         <div className="ready-to-learn-page__body">    
           <Menu/>
-          <div className="ready-to-learn-page__header">
-            <ImageBanner
-              blurt={this.props.header.blurt}
-              title={this.props.header.title}
-              description={this.props.header.description}
-              src={this.props.header.src}
-            />
-          </div>
+          <HeaderContainer/>
           <ConversionContainer/>
           <Footer/>
         </div>

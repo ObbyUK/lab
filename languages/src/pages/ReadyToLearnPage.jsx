@@ -1,30 +1,23 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { mergeAll } from 'ramda';
+import mergeAll from 'ramda/src/mergeAll';
 import queryString from 'query-string';
 
+import './ready-to-learn-page.less';
 // Actions & Style
 import { 
   viewReadyToLearnPageAction,
 } from '../appActions';
 import { appStatuses } from './../AppState';
-import './ready-to-learn-page.less';
 // Components
 import Menu from '../components/Menu.jsx';
 import Footer from '../components/Footer.jsx';
-import ImageBanner from '../components/ImageBanner.jsx';
 import SalesBar from '../components/SalesBar.jsx';
 import FormContainer from '../containers/FormContainer.jsx';
+import HeaderContainer from '../containers/HeaderContainer.jsx';
 
 const mapStateToProps = (state) => ({
-  selectedLanguage: state.app.selectedLanguage,
-  flow: state.app.flow,
-  skillLevel: state.app.skillLevel,
-  time: state.app.time,
-  locations: state.app.locations,
   status: state.app.status,
-  name: state.app.name,
-  email: state.app.email,
   header: state.app.flow.headers[state.app.status]||{}
 });
 
@@ -54,18 +47,8 @@ class HomePageContainer extends React.Component {
         <div className="ready-to-learn-page__body">
           
           <Menu />
+          <HeaderContainer/>
 
-          {/* HEADER */}
-          <div className="ready-to-learn-page__header">
-            <ImageBanner
-              blurt={this.props.header.blurt}
-              title={this.props.header.title}
-              description={this.props.header.description}
-              src={this.props.header.src}
-            />
-          </div>
-          
-          {/* SCREEN 1: ANWSERING QUESTIONS */}
           {this.props.status === appStatuses.ANWSERING_QUESTIONS &&
             <FormContainer />
           }

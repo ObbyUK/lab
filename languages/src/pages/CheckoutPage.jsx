@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { mergeAll } from 'ramda';
+import mergeAll from 'ramda/src/mergeAll';
 import queryString from 'query-string';
 
 import './ready-to-learn-page.less';
@@ -12,13 +12,12 @@ import { appStatuses } from './../AppState';
 // Components
 import Menu from '../components/Menu.jsx';
 import Footer from '../components/Footer.jsx';
-import ImageBanner from '../components/ImageBanner.jsx';
 import SalesBar from '../components/SalesBar.jsx';
 import BlankCard from '../components/BlankCard.jsx';
 import CheckoutContainer from '../containers/CheckoutContainer.jsx';
+import HeaderContainer from '../containers/HeaderContainer.jsx';
 
 const mapStateToProps = (state) => ({
-  header: state.app.flow.headers[state.app.status]||{},
   status: state.app.status
 });
 
@@ -49,14 +48,7 @@ class HomePageContainer extends React.Component {
         <div className="ready-to-learn-page__body">
           
           <Menu />
-          <div className="ready-to-learn-page__header">
-            <ImageBanner
-              blurt={this.props.header.blurt}
-              title={this.props.header.title}
-              description={this.props.header.description}
-              src={this.props.header.src}
-            />
-          </div>
+          <HeaderContainer/>
           
           {(this.props.status === appStatuses.CHECKING_OUT || this.props.status === appStatuses.SUBMITTING) &&
             <CheckoutContainer />
