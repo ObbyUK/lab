@@ -29,7 +29,7 @@ export default (action$, store) => {
   return action$
     .filter(pipe(propEq('error', true), not))
     .filter(pipe(prop('type'), contains(__, trackedActions)))
-    .map((action) => ({ type: action.type, state: store.value.app}))
+    .map((action) => ({ type: action.type, payload: action.payload, state: store.value.app}))
     .map(cond([
       [
         propEq('type', actions.VIEW_LANDING_PAGE), 

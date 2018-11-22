@@ -1,20 +1,26 @@
-export default ({ state }) => {
+export default ({ state, payload }) => {
+  console.log(payload);
   return {
     type: 'track',
     payload: [
       'Order Completed',
       {
-        selectedLanguage: state.selectedLanguage,
-        skillLevel: state.skillLevel,
-        time: state.time,
-        locations: state.locations,
-        date: state.date,
-        email: state.email,
-        name: state.name,
-        lastName: state.lastName,
-        phoneNumber: state.phoneNumber,
-        chosenSession: state.chosenSession,
-        chosenLocation: state.chosenLocation
+        order_id: payload.subscription.id,
+        affiliation: 'Obby',
+        total: 200,
+        revenue: 180,
+        discount: 20,
+        currency: 'GBP',
+        products: [
+          {
+            product_id: payload.product.id,
+            name: payload.product.name,
+            price: 200,
+            quantity: 1,
+            category: 'Learning',
+            url: window.location.href
+          }
+        ]
       },
     ]
   }
