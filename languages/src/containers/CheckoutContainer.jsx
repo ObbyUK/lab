@@ -43,12 +43,18 @@ const mapStateToProps = (state) => ({
   errorMessage: state.app.formError.message,
   teacher: state.app.flow.teacher,
   selectedLanguage: state.app.selectedLanguage,
-  chosenLocation: state.app.chosenLocation,
-  chosenSession: state.app.chosenSession,
+
+  // chosenLocation: state.app.chosenLocation,
+  // chosenSession: state.app.chosenSession,
+  date: state.app.date,
+  region: state.app.region,
+  address: state.app.address,
+  startTime: state.app.startTime,
+  endTime: state.app.endTime,
+
   skillLevel: state.app.skillLevel,
   time: state.app.time,
   locations: state.app.locations,
-  date: state.app.date,
   name: state.app.name,
   lastName: state.app.lastName,
   email: state.app.email,
@@ -230,10 +236,10 @@ class CheckoutContainer extends React.Component {
                   </div>
                 </div>
                 <div className="checkout-container__sidebar-text-row">
-                  <div className="checkout-container__sidebar-text">{this.props.chosenLocation.name} - {this.props.chosenLocation.address}</div>
+                  <div className="checkout-container__sidebar-text">{this.props.region} - {this.props.address}</div>
                 </div>
                 <div className="checkout-container__sidebar-text-row">
-                  <div className="checkout-container__sidebar-text">Every {moment(this.props.date, 'DD/MM/YYYY').format('dddd')} at {this.props.chosenSession.lessonsStart}</div>
+                  <div className="checkout-container__sidebar-text">Every {moment(this.props.date, 'DD/MM/YYYY').format('dddd')} at {this.props.startTime}</div>
                 </div>
               </div>
               {/* MONEY BACK */}

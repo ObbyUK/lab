@@ -68,7 +68,7 @@ export const locations = [
       },
     ],
   },
-    {
+  {
     name: regionNames.CENTRAL_LONDON,
     value: regions.CENTRAL_LONDON,
     address: "Covent Garden, WC2E 7LL",

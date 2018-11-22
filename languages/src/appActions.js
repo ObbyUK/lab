@@ -1,6 +1,11 @@
 const actions = {
+  
   VIEW_LANDING_PAGE: 'landingPageHasBeenViewed',
   VIEW_READY_TO_LEARN_PAGE: 'readyToLearnPageHasBeenViewed',
+  VIEW_CHOOSE_DATE_PAGE: 'chooseDatePageHasBeenViewed',
+  VIEW_CLASS_SUMMARY_PAGE: 'classSummaryPageHasBeenViewed',
+  VIEW_CHECKOUT_PAGE: 'checkoutPageHasBeenViewed',
+
   CHOOSE_LANGUAGE: 'userSelectsLanguageToLearn',
   SELECT_SKILL_LEVEL: 'userSelectsSkillLevel',
   SELECT_TIME: 'userSelectsTime',
@@ -19,6 +24,7 @@ const actions = {
   ANALYTICS_TRACKED: 'analyticsHasBeenTracked',
 };
 
+// VIEW PAGE
 export const viewLandingPageAction = () => ({
   type: actions.VIEW_LANDING_PAGE
 });
@@ -28,6 +34,22 @@ export const viewReadyToLearnPageAction = (urlParamaters) => ({
   payload: urlParamaters
 });
 
+export const viewChooseDatePageAction = (urlParamaters) => ({
+  type: actions.VIEW_CHOOSE_DATE_PAGE,
+  payload: urlParamaters
+});
+
+export const viewClassSummaryPageAction = (urlParamaters) => ({
+  type: actions.VIEW_CLASS_SUMMARY_PAGE,
+  payload: urlParamaters
+});
+
+export const viewCheckoutPageAction = (urlParamaters) => ({
+  type: actions.VIEW_CHECKOUT_PAGE,
+  payload: urlParamaters
+});
+
+// INTERACTIONS
 export const chooseLanguageAction = (language) => ({
   type: actions.CHOOSE_LANGUAGE,
   payload: {

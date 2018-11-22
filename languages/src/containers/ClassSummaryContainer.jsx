@@ -21,17 +21,19 @@ import CycleComponentsBanner from '../components/CycleComponentsBanner.jsx';
 import TickList from '../components/TickList.jsx';
 
 const mapStateToProps = (state) => ({
-  skillLevel: state.app.skillLevel,
-  address: state.app.chosenLocation.address,
+  
   teacher: state.app.flow.teacher,
-  chosenLanguage: state.app.selectedLanguage,
-  chosenLanguageName: String__UpperCaseFirstLetter(state.app.selectedLanguage),
-  skillLevelDescription: state.app.flow.skillLevelDescriptions[state.app.skillLevel],
-  skillLevelContent: state.app.flow.levelOptions.find(propEq('value', state.app.skillLevel)).content,
   teachingMethodDescription: state.app.flow.teachingMethodDescription,
   feedbackSessionsDescription: state.app.flow.feedbackSessionsDescription,
-  lessonDayAndTime: `${moment(state.app.chosenSession.starts, 'DD/MM/YYYY').format('dddd')}s, ${state.app.chosenSession.lessonsStart} - ${state.app.chosenSession.lessonsEnd}`,
-  lessonDate: moment(state.app.chosenSession.starts, 'DD/MM/YYYY').format('Do MMM')
+  skillLevelDescription: state.app.flow.skillLevelDescriptions[state.app.skillLevel],
+  skillLevelContent: state.app.flow.levelOptions.find(propEq('value', state.app.skillLevel)).content,
+
+  skillLevel: state.app.skillLevel,
+  address: state.app.address,
+  chosenLanguage: state.app.selectedLanguage,
+  chosenLanguageName: String__UpperCaseFirstLetter(state.app.selectedLanguage),
+  lessonDayAndTime: `${moment(state.app.date, 'DD/MM/YYYY').format('dddd')}s, ${state.app.startTime} - ${state.app.endTime}`,
+  lessonDate: moment(state.app.date, 'DD/MM/YYYY').format('Do MMM')
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
@@ -41,9 +43,7 @@ const mapDispatchToProps = (dispatch, state) => ({
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
   stateProps,
   dispatchProps,
-  {
-    
-  }
+  {}
 ]);
 
 class ClassSummaryContainer extends React.Component {

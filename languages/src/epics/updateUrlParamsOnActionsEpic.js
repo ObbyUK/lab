@@ -16,9 +16,9 @@ export default (action$, store) =>
   action$
     .filter(pipe(prop('type'), contains(__, pageChangingActions)))
     .map(prop('payload'))
-    .map(() => {
-
+    .map((payload) => {
       var urlData = {
+        language: store.value.app.selectedLanguage,
         skillLevel: store.value.app.skillLevel,
         time: store.value.app.time,
         locations: store.value.app.locations,

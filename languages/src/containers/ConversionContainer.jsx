@@ -50,7 +50,17 @@ class FormContainer extends React.Component {
                   previousPrice="£200"
                   price="£180"
                   dates={location.dates.filter(pipe(prop('type'), contains(__, this.props.selectedTimes)))}
-                  onClick={(session) => this.props.chooseDate({ session, location })}
+                  onClick={(session) => {
+                    this.props.chooseDate({ 
+                      session, 
+                      location,
+                      region: location.value,
+                      address: location.address,
+                      date: session.starts,
+                      startTime: session.lessonsStart,
+                      endTime: session.lessonsEnd
+                    });
+                  }}
                 />
               </div>
             ))}

@@ -52,6 +52,9 @@ export default (state = new AppState(), action) =>
   cond([
     [isActionType(appActions.VIEW_LANDING_PAGE), viewLandingPage],
     [isActionType(appActions.VIEW_READY_TO_LEARN_PAGE), viewReadyToLearnPage],
+    [isActionType(appActions.VIEW_CHOOSE_DATE_PAGE), viewChooseDatePage],
+    [isActionType(appActions.VIEW_CLASS_SUMMARY_PAGE), viewClassSummaryPage],
+    [isActionType(appActions.VIEW_CHECKOUT_PAGE), viewCheckoutPage],
 
     [propEq('status', appStatuses.VIEWING), viewingReducer],
     [propEq('status', appStatuses.ANWSERING_QUESTIONS), anwseringQuestionsReducer],
@@ -64,6 +67,7 @@ export default (state = new AppState(), action) =>
   ])(state, action);
 
 
+// VIEW PAGES
 function viewLandingPage(state) {
   return assoc(
     'status',
@@ -74,12 +78,55 @@ function viewLandingPage(state) {
 
 function viewReadyToLearnPage(state, { payload }) {
    return pipe(
-    assoc('selectedLanguage', payload.language),
-    assoc('flow', flows[payload.language]),
-    assoc('status', appStatuses.ANWSERING_QUESTIONS),
+      assoc('status', appStatuses.ANWSERING_QUESTIONS),
+      assoc('selectedLanguage', payload.language),
+      assoc('flow', flows[payload.language]),
+      assoc('skillLevel', payload.skillLevel || null),
+      assoc('time', payload.time || []),
+      assoc('locations', payload.locations || []),
   )(state);
 }
 
+function viewChooseDatePage(state, { payload }) {
+   return pipe(
+      assoc('status', appStatuses.VIEWING_CLASS_OPTIONS),
+      assoc('selectedLanguage', payload.language),
+      assoc('flow', flows[payload.language]),
+      assoc('skillLevel', payload.skillLevel || null),
+      assoc('time', payload.time || []),
+      assoc('locations', payload.locations || []),
+  )(state);
+}
+
+function viewClassSummaryPage(state, { payload }) {
+   return pipe(
+      assoc('status', appStatuses.VIEWING_CLASS_SUMMARY),
+      assoc('selectedLanguage', payload.language),
+      assoc('flow', flows[payload.language]),
+      assoc('skillLevel', payload.skillLevel),
+      assoc('region', payload.region),
+      assoc('address', payload.address),
+      assoc('date', payload.date),
+      assoc('startTime', payload.startTime),
+      assoc('endTime', payload.endTime),
+  )(state);
+}
+
+function viewCheckoutPage(state, { payload }) {
+   return pipe(
+      assoc('status', appStatuses.CHECKING_OUT),
+      assoc('selectedLanguage', payload.language),
+      assoc('flow', flows[payload.language]),
+      assoc('skillLevel', payload.skillLevel),
+      assoc('region', payload.region),
+      assoc('address', payload.address),
+      assoc('date', payload.date),
+      assoc('startTime', payload.startTime),
+      assoc('endTime', payload.endTime),
+  )(state);
+}
+
+// INTERACRTIONS
 function chooseLanguage(state, { payload }) {
   return pipe(
     assoc('selectedLanguage', payload.language),
@@ -119,9 +166,14 @@ function submitQuestions(state) {
 function chooseDate(state, { payload }) {
   return pipe(
     assoc('status', appStatuses.VIEWING_CLASS_SUMMARY),
+    assoc('date', payload.date ),
+    assoc('region', payload.region ),
+    assoc('address', payload.address ),
+    assoc('startTime', payload.startTime ),
+    assoc('endTime', payload.endTime ),
+
     assoc('chosenSession', payload.session),
     assoc('chosenLocation', payload.location),
-    assoc('date', payload.session.starts),
   )(state);
 }
 

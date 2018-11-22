@@ -13,18 +13,27 @@ export const appStatuses = {
 
 export default class AppState {
   constructor() {
-    
+    // Display data
     this.status = appStatuses.VIEWING;
-    this.selectedLanguage = languages.SPANISH;
     this.flow = flows[languages.SPANISH];
-
+  
+    // Questionare
+    this.selectedLanguage = languages.SPANISH;
     this.skillLevel = null;
     this.time = [];
     this.locations = [];
+    
+    // Selected date data
+    this.date = null;
+    this.region = null;
+    this.address = null;
+    this.startTime = null;
+    this.endTime = null;
+    
     this.chosenSession = {};
     this.chosenLocation = {};
-    this.date = null;
 
+    // Checkout info
     this.name = "";
     this.lastName = "";
     this.phoneNumber = ""

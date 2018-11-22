@@ -1,34 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { propEq, find, mergeAll, contains } from 'ramda';
+import queryString from 'query-string';
 
-// Lib & Constants
-import getUrlParamaters from './../lib/getUrlParamaters';
-import isFullArray from './../lib/isFullArray';
-import isValidEmail from './../lib/isValidEmail';
 // Actions & Style
-import { 
-  viewReadyToLearnPageAction,
-  selectSkillLevelAction,
-  selectTimeAction,
-  toggleLocationAction,
-  submitQuestionsAction,
-  typeNameAction,
-  typeEmailAction,
-  submitAction
+import {
+  viewChooseDatePageAction
 } from '../appActions';
-import { appStatuses } from './../AppState';
 import './ready-to-learn-page.less';
 // Components
 import Menu from '../components/Menu.jsx';
 import Footer from '../components/Footer.jsx';
-import BlankCard from './../components/BlankCard.jsx';
 import ImageBanner from '../components/ImageBanner.jsx';
 import SalesBar from '../components/SalesBar.jsx';
-import FormContainer from '../containers/FormContainer.jsx';
 import ConversionContainer from '../containers/ConversionContainer.jsx';
-import CheckoutContainer from '../containers/CheckoutContainer.jsx';
-import ClassSummaryContainer from '../containers/ClassSummaryContainer.jsx';
 
 const mapStateToProps = (state) => ({
   selectedLanguage: state.app.selectedLanguage,
@@ -43,65 +28,19 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  viewReadyToLearnPage: (urlParamaters) => dispatch(viewReadyToLearnPageAction(urlParamaters)),
-  selectSkillLevel: (skillLevel) => dispatch(selectSkillLevelAction(skillLevel)),
-  selectTime: (time) => dispatch(selectTimeAction(time)),
-  toggleLocation: (location) => dispatch(toggleLocationAction(location)),
-  submitQuestions: () => dispatch(submitQuestionsAction()),
-  typeName: (event) => dispatch(typeNameAction(event.target.value)),
-  typeEmail: (event) => dispatch(typeEmailAction(event.target.value)),
-  submit: (details) => dispatch(submitAction(details))
+  viewChooseDatePage: (urlParamaters) => dispatch(viewChooseDatePageAction(urlParamaters))
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
   stateProps,
   dispatchProps,
-  {
-    submit: () => dispatchProps.submit({
-      language: stateProps.selectedLanguage,
-      name: stateProps.name,
-      email: stateProps.email,
-      skillLevel: stateProps.skillLevel,
-      locations: stateProps.locations,
-      time: stateProps.time,
-    })
-  }
+  {}
 ]);
 
 class ChooseDatesPage extends React.Component {
 
   componentDidMount() {
-    this.props.viewReadyToLearnPage(getUrlParamaters());
-  }
-
-  canLocationAddressesBeShown(location) {
-    return (
-      contains(location.value, this.props.locations) &&
-      isFullArray(location.addresses)
-    );
-  }
-
-  canShowAnyLocationAddress() {
-    return (
-      isFullArray(this.props.flow.locationOptions) && 
-      isFullArray(this.props.locations) &&
-      this.canLocationAddressesBeShown(find(propEq('value', this.props.locations[0]), this.props.flow.locationOptions))
-    );
-  }
-
-  areAllQuestionsAnwsered() {
-    return (
-      isFullArray(this.props.skillLevel) &&
-      isFullArray(this.props.time) &&
-      isFullArray(this.props.locations)
-    );
-  }
-
-  isContactInformationProvided() {
-    return (
-      isFullArray(this.props.name) &&
-      isValidEmail(this.props.email)
-    );
+    this.props.viewChooseDatePage(queryString.parse(window.location.search));
   }
 
   render () {
