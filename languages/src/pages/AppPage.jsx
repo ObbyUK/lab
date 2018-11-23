@@ -13,12 +13,12 @@ import SalesBar from './../components/SalesBar.jsx';
 import Menu from './../components/Menu.jsx';
 import BlankCard from './../components/BlankCard.jsx';
 import Footer from './../components/Footer.jsx';
-import FormContainer from './FormContainer.jsx';
-import HeaderContainer from './HeaderContainer.jsx';
-import ConversionContainer from './ConversionContainer.jsx';
-import ClassSummaryContainer from './ClassSummaryContainer.jsx';
-import CheckoutContainer from './CheckoutContainer.jsx';
-import LandingContainer from './LandingContainer.jsx';
+import FormContainer from './../containers/FormContainer.jsx';
+import HeaderContainer from './../containers/HeaderContainer.jsx';
+import ConversionContainer from './../containers/ConversionContainer.jsx';
+import ClassSummaryContainer from './../containers/ClassSummaryContainer.jsx';
+import CheckoutContainer from './../containers/CheckoutContainer.jsx';
+import LandingContainer from './../containers/LandingContainer.jsx';
 
 const mapStateToProps = (state) => ({
   status: state.app.status,
@@ -36,7 +36,7 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
   }
 ]);
 
-class AppContainer extends React.Component {
+class AppPageContainer extends React.Component {
 
   componentDidMount() {
     this.props.viewAnyPage(
@@ -123,4 +123,4 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps,
   mergeProps
-)(AppContainer);
+)(AppPageContainer);
