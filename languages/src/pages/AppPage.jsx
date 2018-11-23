@@ -4,14 +4,13 @@ import mergeAll from 'ramda/src/mergeAll';
 import contains from 'ramda/src/contains';
 import queryString from 'query-string';
 
-import './ready-to-learn-page.less';
+import './app-page.less';
 // Lib & Const
 import { viewAnyPageAction } from './../appActions';
 import { appStatuses } from './../AppState';
 // Components & Containers
 import SalesBar from './../components/SalesBar.jsx';
 import Menu from './../components/Menu.jsx';
-import BlankCard from './../components/BlankCard.jsx';
 import Footer from './../components/Footer.jsx';
 import FormContainer from './../containers/FormContainer.jsx';
 import HeaderContainer from './../containers/HeaderContainer.jsx';
@@ -19,6 +18,7 @@ import ConversionContainer from './../containers/ConversionContainer.jsx';
 import ClassSummaryContainer from './../containers/ClassSummaryContainer.jsx';
 import CheckoutContainer from './../containers/CheckoutContainer.jsx';
 import LandingContainer from './../containers/LandingContainer.jsx';
+import TransactionCompleteContainer from '../containers/TransactionCompleteContainer.jsx';
 
 const mapStateToProps = (state) => ({
   status: state.app.status,
@@ -31,8 +31,7 @@ const mapDispatchToProps = (dispatch, state) => ({
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
   stateProps,
   dispatchProps,
-  {
-    
+  { 
   }
 ]);
 
@@ -64,11 +63,13 @@ class AppPageContainer extends React.Component {
   render () {
     return (
       <div>
-          <div className="ready-to-learn-page">
-            <div className="ready-to-learn-page__sales-banner">
+          <div className="app-page">
+
+            <div className="app-page__sales-banner">
               <SalesBar text="SALE! Book today to get £20 off, ends in" />
             </div>
-            <div className="ready-to-learn-page__body">
+
+            <div className="app-page__body">
               
               <Menu/>
 
@@ -81,37 +82,27 @@ class AppPageContainer extends React.Component {
               }
   
               {this.props.status === appStatuses.ANWSERING_QUESTIONS &&
-                <FormContainer />
+                <FormContainer/>
               }
   
               {this.props.status === appStatuses.VIEWING_CLASS_OPTIONS &&
-                <ConversionContainer />
+                <ConversionContainer/>
               }
               
               {this.props.status === appStatuses.VIEWING_CLASS_SUMMARY &&
-                <ClassSummaryContainer />
+                <ClassSummaryContainer/>
               }
   
               {(this.props.status === appStatuses.CHECKING_OUT || this.props.status === appStatuses.SUBMITTING) &&
-                <CheckoutContainer />
+                <CheckoutContainer/>
               }
   
               {this.props.status === appStatuses.TRANSACTION_COMPLETE &&
-                <div className="ready-to-learn-page__body container">
-                  <div className="ready-to-learn-page__card">
-                    <BlankCard>
-                      <h2 className="ready-to-learn-page__card-title">
-                        You are all set!
-                      </h2>
-                      <p className="ready-to-learn-page__card-description ready-to-learn-page__card-description--small">
-                        You will receive an receipt shortly and we will be in touch with all class information by email in the next few days!
-                      </p>
-                    </BlankCard>
-                  </div>
-                </div>
+                <TransactionCompleteContainer/>
               }
   
-              <Footer />
+              <Footer/>
+
             </div>
           </div>
       </div>

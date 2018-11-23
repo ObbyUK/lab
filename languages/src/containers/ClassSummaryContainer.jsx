@@ -194,13 +194,13 @@ class ClassSummaryContainer extends React.Component {
 
         <div className="class-summary-container__card">
           <BlankCard>
-            <h2 className="ready-to-learn-page__card-title">
+            <h2 className="class-summary-container__card-title">
               100% Moneyback guarantee
             </h2>
-            <p className="ready-to-learn-page__card-description">
+            <p className="class-summary-container__card-description">
               We promise all of our learners a great experience. If you’re unhappy after your first class, we’ll refund you in full.
             </p>
-            <div className="ready-to-learn-page__card-section">
+            <div className="class-summary-container__card-section">
               <ImageBulletPoints
                 points={[
                   {

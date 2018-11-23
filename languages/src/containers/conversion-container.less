@@ -1,0 +1,42 @@
+@import './../styles/variables';
+
+.conversion-container {
+
+  &__body {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    letter-spacing: 0.3px;
+    position: relative;
+    width: 100%;
+  }
+
+  &__card {
+    margin-bottom: 20px;
+  }
+
+  &__card-title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: 28px;
+    line-height: 1.25;   
+    margin: 0 0 30px;
+    font-weight: 600;
+  }
+
+  &__card-description {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    margin: 0 0 23px;
+
+    &--small {
+      max-width: 400px;
+    }
+  }
+
+  &__card-section {
+    margin-top: 20px;
+
+    &--three-point-sales-banner {
+      margin-top: 40px;
+    }
+  }
+}

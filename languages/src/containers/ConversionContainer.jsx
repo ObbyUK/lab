@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { propEq, __, pipe, prop, mergeAll, contains } from 'ramda';
+import { __, pipe, prop, mergeAll, contains } from 'ramda';
 
+import './conversion-container.less';
 // Actions & Style
 import { 
   chooseDateAction,
@@ -31,16 +32,16 @@ class FormContainer extends React.Component {
 
   render () {
     return (
-      <div className="ready-to-learn-page__body container">
+      <div className="conversion-container__body container">
 
         {/* OPTIONS */}
-        <div className="ready-to-learn-page__card">
+        <div className="conversion-container__card">
           <BlankCard>
-            <h2 className="ready-to-learn-page__card-title">
+            <h2 className="conversion-container__card-title">
               Here's what we have for you
             </h2>
             {this.props.selectedLocationsOptions.map((location, index) => (
-              <div key={index} className="ready-to-learn-page__card-section">
+              <div key={index} className="conversion-container__card-section">
                 <ClassSelectableTimesCard 
                   title={location.name}
                   address={location.address}
@@ -67,15 +68,15 @@ class FormContainer extends React.Component {
           </BlankCard>
         </div>
             
-        <div className="ready-to-learn-page__card">
+        <div className="conversion-container__card">
           <BlankCard>
-            <h2 className="ready-to-learn-page__card-title">
+            <h2 className="conversion-container__card-title">
               100% Moneyback guarantee
             </h2>
-            <p className="ready-to-learn-page__card-description">
+            <p className="conversion-container__card-description">
               We promise all of our learners a great experience. If you’re unhappy after your first class, we’ll refund you in full.
             </p>
-            <div className="ready-to-learn-page__card-section">
+            <div className="conversion-container__card-section">
               <ImageBulletPoints
                 points={[
                   {
@@ -92,12 +93,12 @@ class FormContainer extends React.Component {
           </BlankCard>
         </div>
 
-        <div className="ready-to-learn-page__card">
+        <div className="conversion-container__card">
           <BlankCard>
-            <h2 className="ready-to-learn-page__card-title">
+            <h2 className="conversion-container__card-title">
               More about Obby
             </h2>
-            <div className="ready-to-learn-page__card-section ready-to-learn-page__card-section--three-point-sales-banner">
+            <div className="conversion-container__card-section conversion-container__card-section--three-point-sales-banner">
               <ThreePointSalesBanner
                 color="white"
                 size="small"

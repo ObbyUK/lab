@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { propEq, find, mergeAll, contains } from 'ramda';
 
+import './form-container.less';
 // Lib & Constants
 import isFullArray from './../lib/isFullArray';
 import uniqObjectArray from '../lib/uniqObjectArray';
@@ -63,15 +64,15 @@ class FormContainer extends React.Component {
 
   render () {
     return (  
-      <div className="ready-to-learn-page__body container">
+      <div className="form-container__body container">
         
         {/* SKILL LEVEL CARD */}
-        <div className="ready-to-learn-page__card">
+        <div className="form-container__card">
           <BlankCard>
-            <h2 className="ready-to-learn-page__card-title">
+            <h2 className="form-container__card-title">
               What's your level of expertise?
             </h2>
-            <p className="ready-to-learn-page__card-description">
+            <p className="form-container__card-description">
               On a scale from 1 to {this.props.flow.famousPerson}, how good are you?
             </p>
             <BigRadios
@@ -83,16 +84,16 @@ class FormContainer extends React.Component {
         </div>
 
         {/* LOCATION CARD */}
-        <div className="ready-to-learn-page__card">
+        <div className="form-container__card">
           <BlankCard>
-            <h2 className="ready-to-learn-page__card-title">
+            <h2 className="form-container__card-title">
               Where would you like to learn?
             </h2>
-            <p className="ready-to-learn-page__card-description">
+            <p className="form-container__card-description">
               We’re offering classes from east to west, north to south. Select as many as you want.
             </p>
             
-            <div className="ready-to-learn-page__checkboxes">
+            <div className="form-container__checkboxes">
               <MultipleCheckboxes
                 checked={this.props.locations}
                 options={this.props.locationOptions}
@@ -103,15 +104,15 @@ class FormContainer extends React.Component {
         </div>
 
         {/* TIME CARD */}
-        <div className="ready-to-learn-page__card">
+        <div className="form-container__card">
           <BlankCard>
-            <h2 className="ready-to-learn-page__card-title">
+            <h2 className="form-container__card-title">
               When are you available?
             </h2>
-            <p className="ready-to-learn-page__card-description">
+            <p className="form-container__card-description">
               We know your time is important, so let us know your availability.
             </p>
-            <div className="ready-to-learn-page__checkboxes">
+            <div className="form-container__checkboxes">
               <MultipleCheckboxes
                 checked={this.props.time}
                 options={this.props.flow.timeOptions}
@@ -122,8 +123,8 @@ class FormContainer extends React.Component {
         </div>
 
         {/* CONTINUE */}
-        <div className="ready-to-learn-page__continue-row">
-          <div className="ready-to-learn-page__button">
+        <div className="form-container__continue-row">
+          <div className="form-container__button">
             <PrimaryButton 
               size="huge"
               text="Continue"

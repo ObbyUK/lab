@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import mergeAll from 'ramda/src/mergeAll';
 
+import './header-container.less';
 // Components
 import ImageBanner from '../components/ImageBanner.jsx';
 
@@ -21,7 +22,7 @@ class HeaderContainer extends React.Component {
 
   render () {
     return (
-      <div className="ready-to-learn-page__header">
+      <div className="header-container">
         <ImageBanner
           blurt={this.props.header.blurt}
           title={this.props.header.title}
