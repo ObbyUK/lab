@@ -12,6 +12,17 @@
     }
   }
 
+  &__card-overide {
+    padding: 0px;
+    @media (min-width:@sm-width) {
+      padding: 35px;
+    }
+  }
+
+  &__card-inside {
+    padding-bottom: 20px;
+  }
+
   &__card-title {
     font-family: "Founders Grotesk", 'Arial', sans-serif; 
     font-size: 28px;
@@ -51,6 +62,22 @@
 
   &__card-section {
     margin-top: 20px;
+
+    &--summary-border {
+      padding: 0 22px;
+      border-bottom: 1px solid @alto;
+      @media (min-width:@sm-width) {
+        padding: 0;
+        border-bottom: none;
+      }
+    }
+    
+    &--summary {
+      padding: 0 22px;
+      @media (min-width:@sm-width) {
+        padding: 0;
+      }
+    }
 
     &--three-point-sales-banner {
       margin-top: 60px;

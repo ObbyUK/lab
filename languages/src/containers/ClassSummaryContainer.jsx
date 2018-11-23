@@ -84,110 +84,122 @@ class ClassSummaryContainer extends React.Component {
           </BlankCard>
         </div>
         <div className="class-summary-container__card">
-          <BlankCard>
-            <h2 className="class-summary-container__card-title class-summary-container__card-title--tight">
-              Meet your teacher.
-            </h2>
-            
-            <div className="class-summary-container__teacher">
-              <div className="class-summary-container__teacher-avatar-wrap">
-                <img src={this.props.teacher.avatar} alt={this.props.teacher.name} className="class-summary-container__teacher-avatar"/>
-              </div>
-              <div className="class-summary-container__teacher-details">
-                <h2 className="class-summary-container__card-title class-summary-container__card-title--normal-weight class-summary-container__card-title--tight">
-                  {this.props.teacher.name}
+          <BlankCard className="class-summary-container__card-overide">
+            <div className="class-summary-container__card-inside">
+
+              <div className="class-summary-container__card-section class-summary-container__card-section--summary-border">
+                <h2 className="class-summary-container__card-title class-summary-container__card-title--tight">
+                  Meet your teacher.
                 </h2>
-                <div className="class-summary-container__teacher-meta">
-                  <div className="class-summary-container__teacher-nationality">
-                    Nationality: {this.props.teacher.nationality}
+                
+                <div className="class-summary-container__teacher">
+                  <div className="class-summary-container__teacher-avatar-wrap">
+                    <img src={this.props.teacher.avatar} alt={this.props.teacher.name} className="class-summary-container__teacher-avatar"/>
                   </div>
-                  <div className="class-summary-container__teacher-rating">
-                    <RatingStars
-                      rating={10}
-                      color={'sun'}
-                      label={`23`}
-                    />
+                  <div className="class-summary-container__teacher-details">
+                    <h2 className="class-summary-container__card-title class-summary-container__card-title--normal-weight class-summary-container__card-title--tight">
+                      {this.props.teacher.name}
+                    </h2>
+                    <div className="class-summary-container__teacher-meta">
+                      <div className="class-summary-container__teacher-nationality">
+                        Nationality: {this.props.teacher.nationality}
+                      </div>
+                      <div className="class-summary-container__teacher-rating">
+                        <RatingStars
+                          rating={10}
+                          color={'sun'}
+                          label={`23`}
+                        />
+                      </div>
+                    </div>
+                    <p className="class-summary-container__teacher-description">
+                      {this.props.teacher.description}
+                    </p>
                   </div>
                 </div>
-                <p className="class-summary-container__teacher-description">
-                  {this.props.teacher.description}
-                </p>
               </div>
-            </div>
-            
-            <h2 className="class-summary-container__card-title">
-              See what learners have to say about {this.props.teacher.name}
-            </h2>
 
-            <div className="class-summary-container__reviews">
-              <CycleComponentsBanner
-                size="small"
-                color="white"
-                list={this.props.teacher.reviews}
-                viewComponent={(review) => (
-                  <ReviewCard
-                    image={review.image}
-                    name={review.name}
-                    language={this.props.chosenLanguage}
-                    label={review.label}
-                    text={review.text}
-                  />
-                )}
-              />
-            </div>
-
-            <div className="class-summary-container__schedule">
-              <h2 className="class-summary-container__card-title">
-                What you'll learn
-              </h2>
-              
-              <div className="class-summary-container__schedule-section">
-                <h2 className="class-summary-container__schedule-section-title class-summary-container__schedule-section-title--robbins-egg-blue">
-                  Learn the basics
+              <div className="class-summary-container__card-section class-summary-container__card-section--summary class-summary-container__card-section--summary-border">
+                <h2 className="class-summary-container__card-title">
+                  See what learners have to say about {this.props.teacher.name}
                 </h2>
-                <div className="class-summary-container__schedule-section-text">
-                  {this.props.skillLevelDescription}
-                </div>
-              </div>
-              
-              <div className="class-summary-container__schedule-section">
-                <h2 className="class-summary-container__schedule-section-title class-summary-container__schedule-section-title--emerald">
-                  Taught in {this.props.chosenLanguageName}
-                </h2>
-                <div className="class-summary-container__schedule-section-text">
-                  {this.props.teachingMethodDescription}
-                </div>
-              </div>
-              
-              <div className="class-summary-container__schedule-section">
-                <h2 className="class-summary-container__schedule-section-title class-summary-container__schedule-section-title--sun">
-                  Feedback sessions & Online community
-                </h2>
-                <div className="class-summary-container__schedule-section-text">
-                  {this.props.feedbackSessionsDescription}
-                </div>
-              </div>
 
-
-            </div>
-
-            <div className="class-summary-container__content">
-              <h2 className="class-summary-container__card-title">
-                Here is what is covered
-              </h2>
-              <TickList
-                columns={2}
-                list={this.props.skillLevelContent} 
-              />
-              <div className="class-summary-container__button-wrap">
-                <div className="class-summary-container__button">
-                  <PrimaryButton 
-                    text="Book your spot"
-                    size="huge"
-                    onClick={this.props.bookYourSpot.bind(this)} 
+                <div className="class-summary-container__reviews">
+                  <CycleComponentsBanner
+                    size="small"
+                    color="white"
+                    list={this.props.teacher.reviews}
+                    viewComponent={(review) => (
+                      <ReviewCard
+                        image={review.image}
+                        name={review.name}
+                        language={this.props.chosenLanguage}
+                        label={review.label}
+                        text={review.text}
+                      />
+                    )}
                   />
                 </div>
               </div>
+              
+              <div className="class-summary-container__card-section class-summary-container__card-section--summary">
+                <div className="class-summary-container__schedule">
+                  <h2 className="class-summary-container__card-title">
+                    What you'll learn
+                  </h2>
+                  
+                  <div className="class-summary-container__schedule-section">
+                    <h2 className="class-summary-container__schedule-section-title class-summary-container__schedule-section-title--robbins-egg-blue">
+                      Learn the basics
+                    </h2>
+                    <div className="class-summary-container__schedule-section-text">
+                      {this.props.skillLevelDescription}
+                    </div>
+                  </div>
+                  
+                  <div className="class-summary-container__schedule-section">
+                    <h2 className="class-summary-container__schedule-section-title class-summary-container__schedule-section-title--emerald">
+                      Taught in {this.props.chosenLanguageName}
+                    </h2>
+                    <div className="class-summary-container__schedule-section-text">
+                      {this.props.teachingMethodDescription}
+                    </div>
+                  </div>
+                  
+                  <div className="class-summary-container__schedule-section">
+                    <h2 className="class-summary-container__schedule-section-title class-summary-container__schedule-section-title--sun">
+                      Feedback sessions & Online community
+                    </h2>
+                    <div className="class-summary-container__schedule-section-text">
+                      {this.props.feedbackSessionsDescription}
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+
+              <div className="class-summary-container__card-section class-summary-container__card-section--summary">
+                <div className="class-summary-container__content">
+                  <h2 className="class-summary-container__card-title">
+                    Here is what is covered
+                  </h2>
+                  <TickList
+                    columns={2}
+                    list={this.props.skillLevelContent} 
+                  />
+                  <div className="class-summary-container__button-wrap">
+                    <div className="class-summary-container__button">
+                      <PrimaryButton 
+                        text="Book your spot"
+                        size="huge"
+                        onClick={this.props.bookYourSpot.bind(this)} 
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </BlankCard>
         </div>

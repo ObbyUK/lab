@@ -64,7 +64,7 @@ export default class extends React.Component {
         {this.props.description &&
           <div className="cycle-components-banner__description">{this.props.description}</div>
         }
-        <div className="cycle-components-banner__wrap container">
+        <div className={`cycle-components-banner__wrap cycle-components-banner__wrap--${this.props.size||'normal'} container`}>
           {this.renderButton(ArrowLeft, this.previous.bind(this), 'desktop')}
           <div className="cycle-components-banner__component">
             {this.props.viewComponent(this.state.list[this.state.onItemIndex])}            
