@@ -44,11 +44,9 @@ const mapStateToProps = (state) => ({
   teacher: state.app.flow.teacher,
   selectedLanguage: state.app.selectedLanguage,
 
-  // chosenLocation: state.app.chosenLocation,
-  // chosenSession: state.app.chosenSession,
   date: state.app.date,
-  region: state.app.region,
   address: state.app.address,
+  region: state.app.region,
   startTime: state.app.startTime,
   endTime: state.app.endTime,
 
@@ -75,6 +73,8 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
   {
     submitPaidSubscription: (token) => dispatchProps.submitPaidSubscription({
       token,
+      date: stateProps.date,
+      address: stateProps.address,
       language: stateProps.selectedLanguage,
       skillLevel: stateProps.skillLevel,
       time: stateProps.time,

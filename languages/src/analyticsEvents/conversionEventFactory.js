@@ -5,7 +5,7 @@ export default ({ state, payload }) => {
     payload: [
       'Order Completed',
       {
-        order_id: payload.subscription.id,
+        order_id: payload.charge.id,
         affiliation: 'Obby',
         total: 200,
         revenue: 180,
