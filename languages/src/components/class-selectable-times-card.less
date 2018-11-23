@@ -4,7 +4,7 @@
 
   display: flex;
   flex-wrap: wrap;
-  padding: 10px 0px;
+  padding: 0;
   background-color: white;
   
   @media (min-width:@md-width) {
@@ -43,12 +43,19 @@
     font-weight: 600;
     color: @ebony-clay;
     margin: 0 10px 5px 0;
-    @media (min-width:@lg-width) {
-    }
   }
 
   &__price {
 
+  }
+
+  &__address {
+    width: 100%;
+    margin-bottom: 5px;
+    @media (min-width:@sm-width) {
+      width: auto;
+      margin-bottom: 0;
+    }
   }
 
   &__bottom-row {

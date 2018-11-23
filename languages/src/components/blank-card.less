@@ -1,9 +1,13 @@
 @import './../styles/variables';
 
 .blank-card {
-  padding: 35px;
+  padding: 30px 22px;
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(191, 191, 191, 0.5);
   border: 1px solid @mercury;
   border-radius: 3px;
+  
+  @media (min-width:@sm-width) {
+    padding: 35px;
+  }
 }

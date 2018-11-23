@@ -5,10 +5,15 @@
   margin-right: 30px;
 
   &__icon {
+    display: none;
     margin-right: 8px;
     margin-top: 1px;
     g {
       stroke: @gray;
+    }
+
+    @media (min-width:@sm-width) {
+      display: block;
     }
   }
 

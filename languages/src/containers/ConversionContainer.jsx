@@ -34,14 +34,15 @@ class FormContainer extends React.Component {
     return (
       <div className="conversion-container__body container">
 
-        {/* OPTIONS */}
         <div className="conversion-container__card">
-          <BlankCard>
-            <h2 className="conversion-container__card-title">
-              Here's what we have for you
-            </h2>
+          <BlankCard className="conversion-container__card-overide">
+            <div className="conversion-container__card-section conversion-container__card-section--dates">
+              <h2 className="conversion-container__card-title">
+                Here's what we have for you
+              </h2>
+            </div>
             {this.props.selectedLocationsOptions.map((location, index) => (
-              <div key={index} className="conversion-container__card-section">
+              <div key={index} className="conversion-container__card-section conversion-container__card-section--dates">
                 <ClassSelectableTimesCard 
                   title={location.name}
                   address={location.address}
@@ -67,7 +68,8 @@ class FormContainer extends React.Component {
             ))}
           </BlankCard>
         </div>
-            
+        
+        {/* MONEY BACK GURANTEE */}
         <div className="conversion-container__card">
           <BlankCard>
             <h2 className="conversion-container__card-title">
@@ -92,7 +94,8 @@ class FormContainer extends React.Component {
             </div>
           </BlankCard>
         </div>
-
+        
+        {/* MORE ABOUT OBBY */}
         <div className="conversion-container__card">
           <BlankCard>
             <h2 className="conversion-container__card-title">

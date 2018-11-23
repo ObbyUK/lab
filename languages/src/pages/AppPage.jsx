@@ -62,49 +62,47 @@ class AppPageContainer extends React.Component {
 
   render () {
     return (
-      <div>
-          <div className="app-page">
+      <div className="app-page">
 
-            <div className="app-page__sales-banner">
-              <SalesBar text="SALE! Book today to get £20 off, ends in" />
-            </div>
+        <div className="app-page__sales-banner">
+          <SalesBar text="SALE! Book today to get £20 off, ends in" />
+        </div>
 
-            <div className="app-page__body">
-              
-              <Menu/>
+        <div className="app-page__body">
+          
+          <Menu/>
 
-              {this.isShowingFormHeader() &&
-                <HeaderContainer/>
-              }
-              
-              {this.props.status === appStatuses.VIEWING &&
-                <LandingContainer/>
-              }
-  
-              {this.props.status === appStatuses.ANWSERING_QUESTIONS &&
-                <FormContainer/>
-              }
-  
-              {this.props.status === appStatuses.VIEWING_CLASS_OPTIONS &&
-                <ConversionContainer/>
-              }
-              
-              {this.props.status === appStatuses.VIEWING_CLASS_SUMMARY &&
-                <ClassSummaryContainer/>
-              }
-  
-              {(this.props.status === appStatuses.CHECKING_OUT || this.props.status === appStatuses.SUBMITTING) &&
-                <CheckoutContainer/>
-              }
-  
-              {this.props.status === appStatuses.TRANSACTION_COMPLETE &&
-                <TransactionCompleteContainer/>
-              }
-  
-              <Footer/>
+          {this.isShowingFormHeader() &&
+            <HeaderContainer/>
+          }
+          
+          {this.props.status === appStatuses.VIEWING &&
+            <LandingContainer/>
+          }
 
-            </div>
-          </div>
+          {this.props.status === appStatuses.ANWSERING_QUESTIONS &&
+            <FormContainer/>
+          }
+
+          {this.props.status === appStatuses.VIEWING_CLASS_OPTIONS &&
+            <ConversionContainer/>
+          }
+          
+          {this.props.status === appStatuses.VIEWING_CLASS_SUMMARY &&
+            <ClassSummaryContainer/>
+          }
+
+          {(this.props.status === appStatuses.CHECKING_OUT || this.props.status === appStatuses.SUBMITTING) &&
+            <CheckoutContainer/>
+          }
+
+          {this.props.status === appStatuses.TRANSACTION_COMPLETE &&
+            <TransactionCompleteContainer/>
+          }
+
+          <Footer/>
+
+        </div>
       </div>
     );
   }

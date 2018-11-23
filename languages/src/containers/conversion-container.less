@@ -11,6 +11,20 @@
 
   &__card {
     margin-bottom: 20px;
+    &--joined {
+      margin-bottom: -1px;
+    }
+  }
+
+  &__card-overide {
+    padding: 0px;
+    @media (min-width:@sm-width) {
+      padding: 35px;
+    }
+  }
+
+  &__card-inside {
+
   }
 
   &__card-title {
@@ -19,6 +33,10 @@
     line-height: 1.25;   
     margin: 0 0 30px;
     font-weight: 600;
+    
+    &--flat {
+      margin-bottom: 0px;
+    }
   }
 
   &__card-description {
@@ -34,9 +52,19 @@
 
   &__card-section {
     margin-top: 20px;
+    
+    &--dates {
+      padding: 0 22px;
+      border-bottom: 1px solid @alto;
+      @media (min-width:@sm-width) {
+        padding: 0;
+        border-bottom: none;
+      }
+    }
 
     &--three-point-sales-banner {
       margin-top: 40px;
     }
+
   }
 }
