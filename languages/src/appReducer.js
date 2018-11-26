@@ -39,12 +39,12 @@ const checkingOutReducer = cond([
   [isActionType(appActions.TYPE_LAST_NAME), typeLastName],
   [isActionType(appActions.TYPE_EMAIL), typeEmail],
   [isActionType(appActions.TYPE_PHONE_NUMBER), typePhoneNumber],
-  [isActionType(appActions.SUBMIT_PAID_SUBSCRIPTION), submitPaidSubscription],
+  [isActionType(appActions.SUBMIT_PAYMENT), submitPaidSubscription],
   [T, identity]
 ]);
 
 const submittingReducer = cond([
-  [isActionType(appActions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE), paidSubscriptionSubmitted],
+  [isActionType(appActions.SUBMIT_PAYMENT_COMPLETE), paidSubscriptionSubmitted],
   [T, identity]
 ]);
 

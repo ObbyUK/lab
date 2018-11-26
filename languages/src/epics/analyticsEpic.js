@@ -22,7 +22,7 @@ const trackedActions = [
   actions.SUBMIT_QUESTIONS,
   actions.CHOOSE_DATE,
   actions.BOOK_YOUR_SPOT,
-  actions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE,
+  actions.SUBMIT_PAYMENT_COMPLETE,
 ];
 
 export default (action$, store) => {
@@ -63,7 +63,7 @@ export default (action$, store) => {
         ])
       ],
       [
-        propEq('type', actions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE), 
+        propEq('type', actions.SUBMIT_PAYMENT_COMPLETE), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
           conversionEventFactory,
         ])

@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/observable/from';
 
 import wrappedFetch from './../lib/wrappedFetch';
-import appActions, { submitPaidSubscriptionCompleteAction } from '../appActions';
+import appActions, { submitPaymentCompleteAction } from '../appActions';
 
 export default (action$, store) =>
   action$
-    .filter(propEq('type', appActions.SUBMIT_PAID_SUBSCRIPTION))
+    .filter(propEq('type', appActions.SUBMIT_PAYMENT))
     .map(prop('payload'))
     .mergeMap((payload) => {
       if (isEmpty(store.value.app.formError)) {
@@ -24,4 +24,4 @@ export default (action$, store) =>
       }
       return [store.value.app.formError];
     })
-    .map(submitPaidSubscriptionCompleteAction);
+    .map(submitPaymentCompleteAction);

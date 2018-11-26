@@ -19,8 +19,8 @@ const actions = {
   BOOK_YOUR_SPOT: 'userClicksBookYourSpot',
   SUBMIT: 'userSubmitsEmailAndInformation',
   SUBMIT_COMPLETE: 'userSubmissionComplete',
-  SUBMIT_PAID_SUBSCRIPTION: 'userSubmitsPaidSubscription',
-  SUBMIT_PAID_SUBSCRIPTION_COMPLETE: 'userSubmitsPaidSubscriptionComplete',
+  SUBMIT_PAYMENT: 'userSubmitsPaidSubscription',
+  SUBMIT_PAYMENT_COMPLETE: 'userSubmitsPaidSubscriptionComplete',
   ANALYTICS_TRACKED: 'analyticsHasBeenTracked',
 };
 
@@ -133,14 +133,13 @@ export const submitCompleteAction = () => ({
   type: actions.SUBMIT_COMPLETE
 });
 
-export const submitPaidSubscriptionAction = (details) => ({
-  type: actions.SUBMIT_PAID_SUBSCRIPTION,
+export const submitPaymentAction = (details) => ({
+  type: actions.SUBMIT_PAYMENT,
   payload: details
-
 });
 
-export const submitPaidSubscriptionCompleteAction = (details) => ({
-  type: actions.SUBMIT_PAID_SUBSCRIPTION_COMPLETE,
+export const submitPaymentCompleteAction = (details) => ({
+  type: actions.SUBMIT_PAYMENT_COMPLETE,
   payload: details,
   error: !!details.type
 });

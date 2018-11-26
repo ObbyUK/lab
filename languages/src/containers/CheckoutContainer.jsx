@@ -11,7 +11,7 @@ import { checkoutReviews } from './../constants/reviews';
 // Actions & Components
 import "./checkout-container.less";
 import {
-  submitPaidSubscriptionAction,
+  submitPaymentAction,
   typeNameAction,
   typeLastNameAction,
   typeEmailAction,
@@ -60,7 +60,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
-  submitPaidSubscription: (details) => dispatch(submitPaidSubscriptionAction(details)),
+  submitPaidSubscription: (details) => dispatch(submitPaymentAction(details)),
   typeName: (value) => dispatch(typeNameAction(value)),
   typeLastName: (value) => dispatch(typeLastNameAction(value)),
   typeEmail: (value) => dispatch(typeEmailAction(value)),
