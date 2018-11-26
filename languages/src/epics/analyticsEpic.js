@@ -19,9 +19,9 @@ import choseDateEventFactory from '../analyticsEvents/choseDateEventFactory';
 const trackedActions = [
   actions.VIEW_LANDING_PAGE,
   actions.VIEW_READY_TO_LEARN_PAGE,
-  actions.SUBMIT_QUESTIONS,
-  actions.CHOOSE_DATE,
-  actions.BOOK_YOUR_SPOT,
+  actions.VIEW_CHOOSE_DATE_PAGE,
+  actions.VIEW_CLASS_SUMMARY_PAGE,
+  actions.VIEW_CHECKOUT_PAGE,
   actions.SUBMIT_PAYMENT_COMPLETE,
 ];
 
@@ -45,19 +45,19 @@ export default (action$, store) => {
         ])
       ],
       [
-        propEq('type', actions.SUBMIT_QUESTIONS), 
+        propEq('type', actions.VIEW_CHOOSE_DATE_PAGE), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
           completeFormEventFactory
         ])
       ],
       [
-        propEq('type', actions.CHOOSE_DATE), 
+        propEq('type', actions.VIEW_CLASS_SUMMARY_PAGE), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
           choseDateEventFactory
         ])
       ],
       [
-        propEq('type', actions.BOOK_YOUR_SPOT), 
+        propEq('type', actions.VIEW_CHECKOUT_PAGE), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
           bookNowEventFactory
         ])

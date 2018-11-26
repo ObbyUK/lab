@@ -6,6 +6,7 @@ import './conversion-container.less';
 // Actions & Style
 import { 
   chooseDateAction,
+  viewChooseDatePageAction
 } from '../appActions';
 // Components
 import BlankCard from './../components/BlankCard.jsx';
@@ -20,6 +21,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   chooseDate: (date) => dispatch(chooseDateAction(date)),
+  viewChooseDatePage: () => dispatch(viewChooseDatePageAction()),
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
@@ -29,6 +31,10 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
 ]);
 
 class FormContainer extends React.Component {
+
+  componentDidMount() {
+    this.props.viewChooseDatePage();
+  }
 
   render () {
     return (

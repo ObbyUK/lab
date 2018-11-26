@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
-import { mergeAll } from 'ramda';
+import mergeAll from 'ramda/src/mergeAll';
 
 // Lib & Constants
 import String__UpperCaseFirstLetter from './../lib/String__UpperCaseFirstLetter';
@@ -15,7 +15,8 @@ import {
   typeNameAction,
   typeLastNameAction,
   typeEmailAction,
-  typePhoneNumberAction
+  typePhoneNumberAction,
+  viewCheckoutPageAction
 } from './../appActions';
 import BlankCard from '../components/BlankCard.jsx';
 import StripeForm from '../components/StripeForm.jsx';
@@ -60,42 +61,40 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
-  submitPaidSubscription: (details) => dispatch(submitPaymentAction(details)),
+  submitPayment: (details) => dispatch(submitPaymentAction(details)),
   typeName: (value) => dispatch(typeNameAction(value)),
   typeLastName: (value) => dispatch(typeLastNameAction(value)),
   typeEmail: (value) => dispatch(typeEmailAction(value)),
   typePhoneNumber: (value) => dispatch(typePhoneNumberAction(value)),
+  viewCheckoutPage: () => dispatch(viewCheckoutPageAction())
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
   stateProps,
   dispatchProps,
   {
-    submitPaidSubscription: (token) => dispatchProps.submitPaidSubscription({
-      token,
+    submitPayment: (token) => dispatchProps.submitPayment({
+      token: token.token,
       date: stateProps.date,
       address: stateProps.address,
-      language: stateProps.selectedLanguage,
       skillLevel: stateProps.skillLevel,
-      time: stateProps.time,
-      locations: stateProps.locations,
-      date: stateProps.date,
+      language: stateProps.selectedLanguage,
+      region: stateProps.region,
+      startTime: stateProps.startTime,
+      endTime: stateProps.endTime,
+      region: stateProps.region,
       name: stateProps.name,
       lastName: stateProps.lastName,
       email: stateProps.email,
       phoneNumber: stateProps.phoneNumber,
-      trialEnd: moment(stateProps.date, 'DD/MM/YYYY').add(2, 'd').unix(),
     })
   }
 ]);
 
 class CheckoutContainer extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      stripeHandler: null,
-    };
+  componentDidMount() {
+    this.props.viewCheckoutPage();
   }
 
   renderReviewsCard() {
@@ -181,7 +180,7 @@ class CheckoutContainer extends React.Component {
                   Payment details
                 </h2>
                 <StripeForm
-                  onSubmit={(token) => this.props.submitPaidSubscription(token)}
+                  onSubmit={(token) => this.props.submitPayment(token)}
                   onPreSubmit={console.log}
                   isSubmitting={this.props.status === appStatuses.SUBMITTING}
                   stripeKey={stripe.key}

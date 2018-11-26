@@ -6,38 +6,39 @@ import './landing-container.less';
 // Actions
 import { 
   chooseLanguageAction,
+  viewLandingPageAction
 } from './../appActions.js';
 // Constants
 import reviews from './../constants/reviews';
 import { languagesValueAndName } from './../constants/languages';
 // Components
-import Menu from './../components/Menu.jsx';
 import ThreePointSalesBanner from './../components/ThreePointSalesBanner.jsx';
 import ImageTextListBanner from '../components/ImageTextListBanner.jsx';
 import LanguageButton from '../components/LanguageButton.jsx';
 import ReviewCard from '../components/ReviewCard.jsx';
 import CycleComponentsBanner from '../components/CycleComponentsBanner.jsx';
-import Footer from '../components/Footer.jsx';
 import Header from '../components/Header.jsx';
-import SalesBar from '../components/SalesBar.jsx';
 
 const mapStateToProps = (state) => ({
 
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
-  chooseLanguage: (language) => dispatch(chooseLanguageAction(language))
+  chooseLanguage: (language) => dispatch(chooseLanguageAction(language)),
+  viewLandingPage: () => dispatch(viewLandingPageAction())
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
   stateProps,
   dispatchProps,
-  {
-    
-  }
+  {}
 ]);
 
 class LandingContainer extends React.Component {
+
+  componentDidMount() {
+    this.props.viewLandingPage();
+  }
 
   render () {
     return (

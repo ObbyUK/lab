@@ -34,24 +34,20 @@ export const viewLandingPageAction = () => ({
   type: actions.VIEW_LANDING_PAGE
 });
 
-export const viewReadyToLearnPageAction = (urlParamaters) => ({
+export const viewReadyToLearnPageAction = () => ({
   type: actions.VIEW_READY_TO_LEARN_PAGE,
-  payload: urlParamaters
 });
 
-export const viewChooseDatePageAction = (urlParamaters) => ({
+export const viewChooseDatePageAction = () => ({
   type: actions.VIEW_CHOOSE_DATE_PAGE,
-  payload: urlParamaters
 });
 
-export const viewClassSummaryPageAction = (urlParamaters) => ({
+export const viewClassSummaryPageAction = () => ({
   type: actions.VIEW_CLASS_SUMMARY_PAGE,
-  payload: urlParamaters
 });
 
-export const viewCheckoutPageAction = (urlParamaters) => ({
+export const viewCheckoutPageAction = () => ({
   type: actions.VIEW_CHECKOUT_PAGE,
-  payload: urlParamaters
 });
 
 // INTERACTIONS

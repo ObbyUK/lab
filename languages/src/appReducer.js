@@ -51,12 +51,6 @@ const submittingReducer = cond([
 export default (state = new AppState(), action) =>
   cond([
     [isActionType(appActions.VIEW_PAGE), viewAnyPage],
-    
-    [isActionType(appActions.VIEW_LANDING_PAGE), viewLandingPage],
-    [isActionType(appActions.VIEW_READY_TO_LEARN_PAGE), viewReadyToLearnPage],
-    [isActionType(appActions.VIEW_CHOOSE_DATE_PAGE), viewChooseDatePage],
-    [isActionType(appActions.VIEW_CLASS_SUMMARY_PAGE), viewClassSummaryPage],
-    [isActionType(appActions.VIEW_CHECKOUT_PAGE), viewCheckoutPage],
 
     [propEq('status', appStatuses.VIEWING), viewingReducer],
     [propEq('status', appStatuses.ANWSERING_QUESTIONS), anwseringQuestionsReducer],
@@ -92,64 +86,6 @@ function viewAnyPage(state, { payload }) {
     assoc('date', payload.date||state.date),
     assoc('startTime', payload.startTime||state.startTime),
     assoc('endTime', payload.endTime||state.endTime),
-  )(state);
-}
-
-function viewLandingPage(state) {
-  return assoc(
-    'status',
-    appStatuses.VIEWING,
-    state
-  );
-}
-
-function viewReadyToLearnPage(state, { payload }) {
-   return pipe(
-      assoc('status', appStatuses.ANWSERING_QUESTIONS),
-      assoc('selectedLanguage', payload.language),
-      assoc('flow', flows[payload.language]),
-      assoc('skillLevel', payload.skillLevel || null),
-      assoc('time', payload.time || []),
-      assoc('locations', payload.locations || []),
-  )(state);
-}
-
-function viewChooseDatePage(state, { payload }) {
-   return pipe(
-      assoc('status', appStatuses.VIEWING_CLASS_OPTIONS),
-      assoc('selectedLanguage', payload.language),
-      assoc('flow', flows[payload.language]),
-      assoc('skillLevel', payload.skillLevel || null),
-      assoc('time', payload.time || []),
-      assoc('locations', payload.locations || []),
-  )(state);
-}
-
-function viewClassSummaryPage(state, { payload }) {
-   return pipe(
-      assoc('status', appStatuses.VIEWING_CLASS_SUMMARY),
-      assoc('selectedLanguage', payload.language),
-      assoc('flow', flows[payload.language]),
-      assoc('skillLevel', payload.skillLevel),
-      assoc('region', payload.region),
-      assoc('address', payload.address),
-      assoc('date', payload.date),
-      assoc('startTime', payload.startTime),
-      assoc('endTime', payload.endTime),
-  )(state);
-}
-
-function viewCheckoutPage(state, { payload }) {
-   return pipe(
-      assoc('status', appStatuses.CHECKING_OUT),
-      assoc('selectedLanguage', payload.language),
-      assoc('flow', flows[payload.language]),
-      assoc('skillLevel', payload.skillLevel),
-      assoc('region', payload.region),
-      assoc('address', payload.address),
-      assoc('date', payload.date),
-      assoc('startTime', payload.startTime),
-      assoc('endTime', payload.endTime),
   )(state);
 }
 

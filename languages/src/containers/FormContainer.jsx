@@ -12,6 +12,7 @@ import {
   selectTimeAction,
   toggleLocationAction,
   submitQuestionsAction,
+  viewReadyToLearnPageAction
 } from '../appActions';
 // Components
 import BlankCard from './../components/BlankCard.jsx';
@@ -37,6 +38,7 @@ const mapDispatchToProps = (dispatch) => ({
   selectTime: (time) => dispatch(selectTimeAction(time)),
   toggleLocation: (location) => dispatch(toggleLocationAction(location)),
   submitQuestions: () => dispatch(submitQuestionsAction()),
+  viewReadyToLearnPage: () => dispatch(viewReadyToLearnPageAction())
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
@@ -52,6 +54,7 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
 class FormContainer extends React.Component {
 
   componentDidMount() {
+    this.props.viewReadyToLearnPage();
   }
 
   areAllQuestionsAnwsered() {

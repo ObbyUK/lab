@@ -6,8 +6,11 @@ import moment from 'moment';
 import './class-summary-container.less';
 // Constants & Actions & Lib
 import { levelNames as skillLevelNames } from './../constants/skillLevels';
-import { bookYourSpotAction } from './../appActions';
 import String__UpperCaseFirstLetter from './../lib/String__UpperCaseFirstLetter';
+import { 
+  bookYourSpotAction,
+  viewClassSummaryPageAction
+} from './../appActions';
 // Component
 import BlankCard from './../components/BlankCard.jsx';
 import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
@@ -37,7 +40,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
-  bookYourSpot: () => dispatch(bookYourSpotAction())
+  bookYourSpot: () => dispatch(bookYourSpotAction()),
+  viewClassSummaryPage: () => dispatch(viewClassSummaryPageAction())
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
@@ -47,6 +51,11 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
 ]);
 
 class ClassSummaryContainer extends React.Component {
+
+  componentDidMount() {
+    this.props.viewClassSummaryPage();
+  }
+
   render () {
     return (
       <div className="class-summary-container__body container">

@@ -4,6 +4,21 @@ var stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const productName = "Obby Language Course";
 const planNickname = "Language Course Plan";
 
+const RequestBoy__Metadata = (body) => ({
+  date: body.date,
+  address: body.address,
+  skillLevel: body.skillLevel,
+  language: body.language,
+  region: body.region,
+  startTime: body.startTime,
+  endTime: body.endTime,
+  region: body.region,
+  name: body.name,
+  lastName: body.lastName,
+  email: body.email,
+  phoneNumber: body.phoneNumber,
+})
+
 const getProduct = async () => {
   var products =  await stripe.products.list({
     type: "service"
@@ -35,45 +50,22 @@ const getProductPlan = async (productId) => {
   return plan;
 }
 
-const getCustomer = async (customerDetails) => {
-  var customers = await stripe.customers.list({ email: customerDetails.email });
-  if (customers.data.length > 0) {
-    return customers.data[0];
-  }
-  return await stripe.customers.create({
-    email: customerDetails.email,
-    source: customerDetails.token.id,
-    metadata: {
-      firstName: customerDetails.name,
-      lastName: customerDetails.lastName,
-      phoneNumber: customerDetails.phoneNumber,
-      email: customerDetails.email,
-      language: customerDetails.language,
-      skillLevel: customerDetails.skillLevel,
-      locations: customerDetails.locations.join(', '),
-      time: customerDetails.time.join(', '),
-      firstBookedDate: customerDetails.date,
-    }
-  });
-}
-
 module.exports = app => 
   app.post('/submit-charge', async (req, res) => {
     try {
       var product = await getProduct();
       var plan = await getProductPlan(product.id);
-      var customer = await getCustomer(req.body);
       var charge = await stripe.charges.create({
         amount: 18000,
         currency: 'gbp',
         source: req.body.token.id,
-        customer: customer.id,
         receipt_email: req.body.email,
-        description: `Obby language course: ${req.body.language}, ${req.body.skillLevel} starts on ${req.body.date} at ${req.body.address}.`
+        description: `Obby language course: ${req.body.language}, ${req.body.skillLevel} starts on ${req.body.date} at ${req.body.address}.`,
+        metadata: RequestBoy__Metadata(req.body)
       });
       res
         .status(200)
-        .json({ product, plan, customer, charge });
+        .json({ product, plan, customer: {}, charge });
     } catch (error) {
       res
         .status(500)
