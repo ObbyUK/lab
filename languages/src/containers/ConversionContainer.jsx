@@ -34,10 +34,10 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
   {
     openEmailPopup: () => {
       dispatchProps.openEmailPopup({
-        title: "Tell us where to find you",
-        description: `We’d love to know more about how to better suit your schedule. We’ll reach out with additional details.`,
+        title: "Tell us what you want",
+        description: `We are constantly adding new classes and locations so if you would like to make a request, just add your details and we will get in touch`,
         submittedTitle: "Thank you",
-        submittedDescription: `We’re still defining our curriculums, thank you for your details and we’ll reach soon.`,
+        submittedDescription: `We will be in touch shortly!`,
         emailText: `None of the dates for ${stateProps.selectedLanguage} in ${stateProps.locations} work.`
       });
     }
