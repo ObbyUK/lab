@@ -1,6 +1,12 @@
 import languages from './constants/languages';
 import flows from './constants/flows';
 
+export const emailPopupStatuses = {
+  OPEN: 'emailPopupIsOpen',
+  CLOSED: 'emailPopupIsClosed',
+  SUBMITTED: 'emailPopupIsSubmitted',
+};
+
 export const appStatuses = {
   VIEWING: 'userIsViewingApp',
   ANWSERING_QUESTIONS: 'userIsAnwseringQuestions',
@@ -16,6 +22,14 @@ export default class AppState {
     // Display data
     this.status = appStatuses.VIEWING;
     this.flow = flows[languages.SPANISH];
+    this.emailPopupStatus = emailPopupStatuses.CLOSED;
+    this.emailPopup = {
+      title: "",
+      description: "",
+      submittedTitle: "",
+      submittedDescription: "",
+      emailText: ""
+    };
   
     // Questionare
     this.selectedLanguage = languages.SPANISH;

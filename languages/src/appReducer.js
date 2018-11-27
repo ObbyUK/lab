@@ -7,7 +7,7 @@ import isValidEmail from './lib/isValidEmail';
 import toggleValueFromCheckboxArray from './lib/toggleValueFromCheckboxArray';
 import flows from './constants/flows';
 // Actions & State
-import AppState, { appStatuses } from './AppState';
+import AppState, { appStatuses, emailPopupStatuses } from './AppState';
 import appActions from './appActions';
 
 
@@ -21,6 +21,11 @@ const anwseringQuestionsReducer = cond([
   [isActionType(appActions.SELECT_TIME), toggleTime],
   [isActionType(appActions.TOGGLE_LOCATION), toggleLocation],
   [isActionType(appActions.SUBMIT_QUESTIONS), submitQuestions],
+  [isActionType(appActions.OPEN_EMAIL_POPUP), openEmailPopup],
+  [isActionType(appActions.CLOSE_EMAIL_POPUP), closeEmailPopup],
+  [isActionType(appActions.TYPE_FIRST_NAME), typeName],
+  [isActionType(appActions.TYPE_EMAIL), typeEmail],
+  [isActionType(appActions.SUBMIT_EMAIL_COMPLETE), submitEmailComplete],
   [T, identity]
 ]);
 
@@ -178,6 +183,29 @@ function typeEmail(state, { payload }) {
   );
 }
 
+// SUBMIT EMAIL
+function openEmailPopup(state, { payload }) {
+  return pipe(
+    assoc('emailPopupStatus', emailPopupStatuses.OPEN),
+    assoc('emailPopup', payload),
+  )(state);
+}
+
+function closeEmailPopup(state) {
+  return pipe(
+    assoc('emailPopupStatus', emailPopupStatuses.CLOSED),
+    assoc('emailPopup', {}),
+  )(state);
+}
+
+function submitEmailComplete(state) {
+  return pipe(
+    assoc('emailPopupStatus', emailPopupStatuses.SUBMITTED),
+  )(state);
+}
+
+
+// SUBMIT PAYMENT
 function StateUserDetails__FormErrorObject(state) {
   if (!isFullArray(state.name)) {
     return {

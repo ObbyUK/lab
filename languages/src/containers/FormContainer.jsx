@@ -4,15 +4,18 @@ import { propEq, find, mergeAll, contains } from 'ramda';
 
 import './form-container.less';
 // Lib & Constants
+import { levelNames as skillLevelNames } from './../constants/skillLevels';
 import isFullArray from './../lib/isFullArray';
 import uniqObjectArray from '../lib/uniqObjectArray';
+import skillLevels from './../constants/skillLevels';
 // Actions & Style
 import { 
   selectSkillLevelAction,
   selectTimeAction,
   toggleLocationAction,
   submitQuestionsAction,
-  viewReadyToLearnPageAction
+  viewReadyToLearnPageAction,
+  openEmailPopupAction,
 } from '../appActions';
 // Components
 import BlankCard from './../components/BlankCard.jsx';
@@ -25,6 +28,7 @@ const mapStateToProps = (state) => ({
   flow: state.app.flow,
   locationOptions: uniqObjectArray('value', state.app.flow.locationOptions),
   skillLevel: state.app.skillLevel,
+  skillLevelName: skillLevelNames[state.app.skillLevel],
   time: state.app.time,
   locations: state.app.locations,
   status: state.app.status,
@@ -38,7 +42,8 @@ const mapDispatchToProps = (dispatch) => ({
   selectTime: (time) => dispatch(selectTimeAction(time)),
   toggleLocation: (location) => dispatch(toggleLocationAction(location)),
   submitQuestions: () => dispatch(submitQuestionsAction()),
-  viewReadyToLearnPage: () => dispatch(viewReadyToLearnPageAction())
+  openEmailPopup: (text) => dispatch(openEmailPopupAction(text)),
+  viewReadyToLearnPage: () => dispatch(viewReadyToLearnPageAction()),
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
@@ -46,7 +51,17 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
   dispatchProps,
   {
     submitQuestions: () => {
-      dispatchProps.submitQuestions();
+      if (contains(stateProps.skillLevel, [skillLevels.ADVANCED, skillLevels.INTERMEDIATE])) {
+        dispatchProps.openEmailPopup({
+          title: "Tell us where to find you",
+          description: `We’re still defining our ${stateProps.skillLevelName} curricullum, but give us your details and we’ll reach out when we’re ready.`,
+          submittedTitle: "Thank you",
+          submittedDescription: `We’re still defining our ${stateProps.skillLevelName} curricullum, but give us your details and we’ll reach out when we’re ready.`,
+          emailText: `Wants skill level ${stateProps.skillLevelName} available`
+        });
+      } else {
+        dispatchProps.submitQuestions();
+      }
     }
   }
 ]);
@@ -68,8 +83,8 @@ class FormContainer extends React.Component {
   render () {
     return (  
       <div className="form-container__body container">
-        
-        {/* SKILL LEVEL CARD */}
+
+        {/* SKILL LEVELS CARD */}
         <div className="form-container__card">
           <BlankCard>
             <h2 className="form-container__card-title">
@@ -86,7 +101,10 @@ class FormContainer extends React.Component {
           </BlankCard>
         </div>
 
-        {/* LOCATION CARD */}
+        {/* WE DONT HAVE THAT SKILL LEVEL POPUP */}
+        
+
+        {/* LOCATIONS CARD */}
         <div className="form-container__card">
           <BlankCard>
             <h2 className="form-container__card-title">
@@ -106,7 +124,7 @@ class FormContainer extends React.Component {
           </BlankCard>
         </div>
 
-        {/* TIME CARD */}
+        {/* TIMES CARD */}
         <div className="form-container__card">
           <BlankCard>
             <h2 className="form-container__card-title">

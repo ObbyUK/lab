@@ -1,0 +1,68 @@
+@import './../styles/variables';
+
+.small-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255,255,255, 0.3);
+  overflow: scroll;
+  z-index: @popup-z;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  &--hidden {
+    top: 100%;
+  }
+
+  &__body {
+    max-width: 500px;
+    margin-top: 40px;
+    height: auto;
+    padding: 30px 22px;
+    background-color: white;
+    box-shadow: 0 2px 4px 0 rgba(191, 191, 191, 0.5);
+    border: 1px solid @mercury;
+    border-radius: 3px;
+  }
+
+  &__controls {
+    position: relative;
+    display: flex;
+    width: 100%;
+    z-index: 1;
+    background-color: #fff;
+  }
+  
+  &__closeButton {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 22px;
+    width: 22px;
+    right: 0px;
+    top: 0px;
+    cursor: pointer;
+    text-align: right;
+    font-size: 28px;
+    font-weight: 400;
+    transition: all 700ms;
+    background-color: @camelot;
+    border-radius: 50px;
+    g {
+      stroke: @gallery;
+    }
+  }
+  
+  &__container {
+    display: flex;
+    justify-content: center;
+    min-width: @smallest-width;
+    padding: 0 20px;
+    overflow-y: auto;
+    width: 100%;
+  }
+}

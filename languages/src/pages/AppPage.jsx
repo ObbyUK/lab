@@ -19,6 +19,7 @@ import ClassSummaryContainer from './../containers/ClassSummaryContainer.jsx';
 import CheckoutContainer from './../containers/CheckoutContainer.jsx';
 import LandingContainer from './../containers/LandingContainer.jsx';
 import TransactionCompleteContainer from '../containers/TransactionCompleteContainer.jsx';
+import SubmitEmailPopupContainer from '../containers/SubmitEmailPopupContainer.jsx';
 
 const mapStateToProps = (state) => ({
   status: state.app.status,
@@ -71,6 +72,7 @@ class AppPageContainer extends React.Component {
         <div className="app-page__body">
           
           <Menu/>
+          <SubmitEmailPopupContainer/>
 
           {this.isShowingFormHeader() &&
             <HeaderContainer/>

@@ -17,10 +17,16 @@ const actions = {
   TYPE_EMAIL: 'userTypesEmail',
   CHOOSE_DATE: 'userSelectsAClassDate',
   BOOK_YOUR_SPOT: 'userClicksBookYourSpot',
-  SUBMIT: 'userSubmitsEmailAndInformation',
-  SUBMIT_COMPLETE: 'userSubmissionComplete',
+  
+  SUBMIT_EMAIL: 'userSubmitsEmailAndInformation',
+  SUBMIT_EMAIL_COMPLETE: 'userSubmissionComplete',
+
   SUBMIT_PAYMENT: 'userSubmitsPaidSubscription',
   SUBMIT_PAYMENT_COMPLETE: 'userSubmitsPaidSubscriptionComplete',
+
+  // MISC
+  OPEN_EMAIL_POPUP: 'userOpensEmailPopup',
+  CLOSE_EMAIL_POPUP: 'userClosesEmailPopup',
   ANALYTICS_TRACKED: 'analyticsHasBeenTracked',
 };
 
@@ -120,15 +126,17 @@ export const bookYourSpotAction = () => ({
   type: actions.BOOK_YOUR_SPOT,
 });
 
-export const submitAction = (details) => ({
-  type: actions.SUBMIT,
+// SUBMIT EMAIL
+export const submitEmailAction = (details) => ({
+  type: actions.SUBMIT_EMAIL,
   payload: details
 });
 
-export const submitCompleteAction = () => ({
-  type: actions.SUBMIT_COMPLETE
+export const submitEmailCompleteAction = () => ({
+  type: actions.SUBMIT_EMAIL_COMPLETE
 });
 
+// SUBMIT PAYMENT
 export const submitPaymentAction = (details) => ({
   type: actions.SUBMIT_PAYMENT,
   payload: details
@@ -138,6 +146,16 @@ export const submitPaymentCompleteAction = (details) => ({
   type: actions.SUBMIT_PAYMENT_COMPLETE,
   payload: details,
   error: !!details.type
+});
+
+// MISC
+export const openEmailPopupAction = (popupText) => ({
+  type: actions.OPEN_EMAIL_POPUP,
+  payload: popupText
+});
+
+export const closeEmailPopupAction = () => ({
+  type: actions.CLOSE_EMAIL_POPUP
 });
 
 export const analyticsTrackedAction = (details) => ({
