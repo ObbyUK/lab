@@ -54,7 +54,11 @@
     font-family: "Founders Grotesk", 'Arial', sans-serif; 
     font-size: @l-paragraph;
     line-height: @l-paragraph-lh;
-    margin: 23px 0 0;
+    padding: 25px;
+    @media (min-width:@sm-width) {
+      padding: 25px 0 0;
+
+    }
   }
 
   &__card-link {
