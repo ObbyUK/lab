@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { propEq, find, mergeAll, contains } from 'ramda';
+import { mergeAll, contains } from 'ramda';
 
 import './form-container.less';
 // Lib & Constants
@@ -56,8 +56,8 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
           title: "Tell us where to find you",
           description: `We’re still defining our ${stateProps.skillLevelName} curricullum, but give us your details and we’ll reach out when we’re ready.`,
           submittedTitle: "Thank you",
-          submittedDescription: `We’re still defining our ${stateProps.skillLevelName} curricullum, but give us your details and we’ll reach out when we’re ready.`,
-          emailText: `Wants skill level ${stateProps.skillLevelName} available`
+          submittedDescription: `We’re still defining our ${stateProps.skillLevelName} curricullum, thank you for your details and we’ll reach soon.`,
+          emailText: `Wants skill level ${stateProps.skillLevelName} for ${stateProps.selectedLanguage} available`
         });
       } else {
         dispatchProps.submitQuestions();

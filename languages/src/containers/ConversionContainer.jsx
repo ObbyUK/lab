@@ -6,7 +6,8 @@ import './conversion-container.less';
 // Actions & Style
 import { 
   chooseDateAction,
-  viewChooseDatePageAction
+  viewChooseDatePageAction,
+  openEmailPopupAction
 } from '../appActions';
 // Components
 import BlankCard from './../components/BlankCard.jsx';
@@ -15,19 +16,32 @@ import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
 import ThreePointSalesBanner from '../components/ThreePointSalesBanner.jsx';
 
 const mapStateToProps = (state) => ({
+  selectedLanguage: state.app.selectedLanguage,
   selectedLocationsOptions: state.app.flow.locationOptions.filter((location) => contains(location.name, state.app.locations)),
-  selectedTimes: state.app.time
+  selectedTimes: state.app.time,
+  locations: state.app.locations
 });
 
 const mapDispatchToProps = (dispatch) => ({
   chooseDate: (date) => dispatch(chooseDateAction(date)),
   viewChooseDatePage: () => dispatch(viewChooseDatePageAction()),
+  openEmailPopup: (text) => dispatch(openEmailPopupAction(text)),
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
   stateProps,
   dispatchProps,
-  {}
+  {
+    openEmailPopup: () => {
+      dispatchProps.openEmailPopup({
+        title: "Tell us where to find you",
+        description: `We’d love to know more about how to better suit your schedule. We’ll reach out with additional details.`,
+        submittedTitle: "Thank you",
+        submittedDescription: `We’re still defining our curriculums, thank you for your details and we’ll reach soon.`,
+        emailText: `None of the dates for ${stateProps.selectedLanguage} in ${stateProps.locations} work.`
+      });
+    }
+  }
 ]);
 
 class FormContainer extends React.Component {
@@ -40,6 +54,7 @@ class FormContainer extends React.Component {
     return (
       <div className="conversion-container__body container">
 
+        {/* DATES */}
         <div className="conversion-container__card">
           <BlankCard className="conversion-container__card-overide">
             <div className="conversion-container__card-section conversion-container__card-section--dates">
@@ -72,6 +87,9 @@ class FormContainer extends React.Component {
                 />
               </div>
             ))}
+            <div className="conversion-container__card-note">
+              None of these dates or locations work for you? <span onClick={this.props.openEmailPopup.bind(this)} className="conversion-container__card-link">Let us know</span>
+            </div>
           </BlankCard>
         </div>
         
