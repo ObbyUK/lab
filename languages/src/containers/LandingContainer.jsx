@@ -18,6 +18,7 @@ import LanguageButton from '../components/LanguageButton.jsx';
 import ReviewCard from '../components/ReviewCard.jsx';
 import CycleComponentsBanner from '../components/CycleComponentsBanner.jsx';
 import Header from '../components/Header.jsx';
+import TextBanner from '../components/TextBanner.jsx';
 
 const mapStateToProps = (state) => ({
 
@@ -75,6 +76,14 @@ class LandingContainer extends React.Component {
               title: "Money back guarantee", 
               description: "If your class doesn't reach your expectations, we'll give your money back"
             }
+          ]}
+        />
+        <TextBanner
+          title="Flexibility that works around your busy schedule"
+          description="There’s no better way to learn a language than learning from another person. But sometimes things come up, we get it. If you can’t make a class one week you can mix & match or catch-up online."
+          list={[
+            "Mix & match",
+            "Cath-up onlline"
           ]}
         />
         <CycleComponentsBanner
