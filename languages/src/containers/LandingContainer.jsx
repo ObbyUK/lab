@@ -83,7 +83,7 @@ class LandingContainer extends React.Component {
           description="There’s no better way to learn a language than learning from another person. But sometimes things come up, we get it. If you can’t make a class one week you can mix & match or catch-up online."
           list={[
             "Mix & match",
-            "Cath-up onlline"
+            "Catch-up onlline"
           ]}
         />
         <CycleComponentsBanner
