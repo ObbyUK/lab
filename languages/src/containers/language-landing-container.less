@@ -74,10 +74,21 @@
 
   &__pricing-boxes {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    @media (min-width:@sm-width) {
+      padding: 0;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+    }
   }
 
   &__pricing-box {
-    width: 32%;
+    width: 100%;
+    margin-bottom: 15px;
+    @media (min-width:@sm-width) {
+      margin-bottom: 0;
+      width: 32%;
+    }
   }
 }
