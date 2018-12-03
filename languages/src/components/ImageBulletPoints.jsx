@@ -4,7 +4,9 @@ import Icon from './Icon.jsx';
 
 import './image-bullet-points.less';
 
-const shouldCenterPoint = (point) => (point.title && !point.text) || (!point.title && point.text)
+const shouldCenterPoint = (point, props) =>
+  (point.title && (!point.text||props.hideMobileText)) || 
+  (!point.title && point.text);
 
 export default (props) => (
   <div className="image-bullet-points">
@@ -14,7 +16,7 @@ export default (props) => (
         className={`
           image-bullet-points__point
           image-bullet-points__point--${props.size||'large'}
-          image-bullet-points__point--${shouldCenterPoint(point) ? 'center' : 'start'}
+          image-bullet-points__point--${shouldCenterPoint(point, props) ? 'center' : 'start'}
         `}
       > 
         {point.image &&
@@ -34,7 +36,12 @@ export default (props) => (
             <div className="image-bullet-points__point-title">{point.title}</div>
           }
           {point.text && 
-            <div className="image-bullet-points__point-text">{point.text}</div>
+            <div 
+              className={`
+                image-bullet-points__point-text 
+                ${(props.hideMobileText ? 'image-bullet-points__point-text--hide-mobile' : '')}
+              `}
+            >{point.text}</div>
           }
         </div>
       </div>

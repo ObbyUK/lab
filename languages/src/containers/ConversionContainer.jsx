@@ -9,17 +9,17 @@ import {
   viewChooseDatePageAction,
   openEmailPopupAction
 } from '../appActions';
+import { classesByLocation } from './../constants/classes';
 // Components
 import BlankCard from './../components/BlankCard.jsx';
 import CenterIconBanner from './../components/CenterIconBanner.jsx';
-import ClassSelectableTimesCard from '../components/ClassSelectableTimesCard.jsx';
+import ClassesTable from '../components/ClassesTable.jsx';
 import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
-import ThreePointSalesBanner from '../components/ThreePointSalesBanner.jsx';
 import FocusBanner from '../components/FocusBanner.jsx';
 
 const mapStateToProps = (state) => ({
   selectedLanguage: state.app.selectedLanguage,
-  selectedLocationsOptions: state.app.flow.locationOptions.filter((location) => contains(location.name, state.app.locations)),
+  selectedLocationsOptions: classesByLocation.filter((location) => contains(location.name, state.app.locations)),
   selectedTimes: state.app.time,
   locations: state.app.locations
 });
@@ -64,6 +64,7 @@ class FormContainer extends React.Component {
             </h2>
             <div className="conversion-container__card-section conversion-container__card-section--weekly-classes">
               <ImageBulletPoints 
+                hideMobileText={true}
                 points={[
                   {
                     image: "/icons/calendar-circle.svg",
@@ -99,30 +100,26 @@ class FormContainer extends React.Component {
         <div className="conversion-container__card">
           <BlankCard className="conversion-container__card-overide">
             <div className="conversion-container__card-section conversion-container__card-section--dates">
-              <h2 className="conversion-container__card-title">
+              <h2 className="conversion-container__card-title conversion-container__card-title--pad-mobile">
                 Here's what we have for you
               </h2>
             </div>
             {this.props.selectedLocationsOptions.map((location, index) => (
               <div key={index} className="conversion-container__card-section conversion-container__card-section--dates">
-                <ClassSelectableTimesCard 
+                <ClassesTable 
                   title={location.name}
                   address={location.address}
-                  lessonsStart={location.lessonsStart}
-                  lessonsEnd={location.lessonsEnd}
+                  pillText="Payable in weekly instalments"
                   priceLabel="8 classes"
-                  previousPrice="£200"
-                  price="£180"
-                  dates={location.dates.filter(pipe(prop('type'), contains(__, this.props.selectedTimes)))}
-                  onClick={(session) => {
+                  price="£200"
+                  dates={location.dates}
+                  onClick={({ date, slot }) => {
                     this.props.chooseDate({ 
-                      session, 
-                      location,
                       region: location.value,
                       address: location.address,
-                      date: session.starts,
-                      startTime: session.lessonsStart,
-                      endTime: session.lessonsEnd
+                      date: date.starts,
+                      startTime: slot.starts,
+                      endTime: slot.ends
                     });
                   }}
                 />
@@ -130,64 +127,6 @@ class FormContainer extends React.Component {
             ))}
             <div className="conversion-container__card-note">
               None of these dates or locations work for you? <span onClick={this.props.openEmailPopup.bind(this)} className="conversion-container__card-link">Let us know</span>
-            </div>
-          </BlankCard>
-        </div>
-        
-        {/* MONEY BACK GURANTEE */}
-        <div className="conversion-container__card">
-          <BlankCard>
-            <h2 className="conversion-container__card-title">
-              100% Moneyback guarantee
-            </h2>
-            <p className="conversion-container__card-description">
-              We promise all of our learners a great experience. If you’re unhappy after your first class, we’ll refund you in full.
-            </p>
-            <div className="conversion-container__card-section">
-              <ImageBulletPoints
-                points={[
-                  {
-                    image: "/icons/tick.svg",
-                    title: "Full refund",
-                  },
-                  {
-                    image: "/icons/tick.svg",
-                    title: "No hard feelings",
-                  },
-                ]}
-              />
-            </div>
-          </BlankCard>
-        </div>
-        
-        {/* MORE ABOUT OBBY */}
-        <div className="conversion-container__card">
-          <BlankCard>
-            <h2 className="conversion-container__card-title">
-              More about Obby
-            </h2>
-            <div className="conversion-container__card-section conversion-container__card-section--three-point-sales-banner">
-              <ThreePointSalesBanner
-                color="white"
-                size="small"
-                points={[
-                  { 
-                    image: "/icons/trusted.svg", 
-                    title: "Trusted teachers", 
-                    description: "We vet all our teachers personally, to ensure the highest quality teaching so you don't have to worry."
-                  },
-                  { 
-                    image: "/icons/loved.svg",
-                    title: "Loved by 10,000 Londoners", 
-                    description: "Consistent 5 ⭐️ reviews by our community"
-                  },
-                  { 
-                    image: "/icons/small_class.svg", 
-                    title: "Small class sizes", 
-                    description: "Our students are given the attention they neeed. That's why we only have a maximum of 10 students per class"
-                  }
-                ]}
-              />
             </div>
           </BlankCard>
         </div>

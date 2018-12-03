@@ -3,6 +3,11 @@
 .price-sum {
 
   font-family: "Founders Grotesk", 'Arial', sans-serif; 
+  display: block;
+
+  @media (min-width:@sm-width) {
+    display: flex;
+  }
 
   &--small {
     font-size: @l-paragraph;
@@ -12,6 +17,30 @@
   &--normal {
     font-size: 28px;
     line-height: 1.25;   
+  }
+
+  &__pill {
+    border-radius: 5px;
+    background-color: @cruise;
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @xsm-paragraph;
+    line-height: @xsm-paragraph-lh;
+    padding: 3px 8px;
+    font-weight: 600;
+    margin-right: 10px;
+    display: none;
+
+    @media (min-width:@sm-width) {
+      display: block;
+    }
+
+    &--mobile {
+      display: block;
+      margin-top: 10px;
+      @media (min-width:@sm-width) {
+        display: none;
+      } 
+    }
   }
   
   &__calculation {

@@ -63,5 +63,12 @@
     font-size: @m-paragraph;
     line-height: @m-paragraph-lh;
     width: 100%;
+
+    &--hide-mobile {
+      display: none;
+      @media (min-width:@sm-width) {
+        display: block;
+      }
+    }
   }
 }

@@ -49,6 +49,13 @@
       padding: 35px 35px 0;
       margin-bottom: 0;
     }
+
+    &--pad-mobile {
+      padding: 0 25px;
+      @media (min-width:@sm-width) {
+        padding: 0;
+      }
+    }
   }
 
   &__card-description {
@@ -87,10 +94,9 @@
     }
     
     &--dates {
-      padding: 0 22px;
+      padding: 0;
       border-bottom: 1px solid @alto;
       @media (min-width:@sm-width) {
-        padding: 0;
         border-bottom: none;
       }
     }

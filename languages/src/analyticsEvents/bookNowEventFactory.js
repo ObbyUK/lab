@@ -9,8 +9,6 @@ export default ({ state }) => {
         time: state.time,
         locations: state.locations,
         date: state.date,
-        chosenSession: state.chosenSession,
-        chosenLocation: state.chosenLocation
       },
     ]
   }

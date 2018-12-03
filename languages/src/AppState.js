@@ -44,9 +44,6 @@ export default class AppState {
     this.address = null;
     this.startTime = null;
     this.endTime = null;
-    
-    this.chosenSession = {};
-    this.chosenLocation = {};
 
     // Checkout info
     this.name = "";

@@ -181,9 +181,6 @@ function chooseDate(state, { payload }) {
     assoc('address', payload.address ),
     assoc('startTime', payload.startTime ),
     assoc('endTime', payload.endTime ),
-
-    assoc('chosenSession', payload.session),
-    assoc('chosenLocation', payload.location),
   )(state);
 }
 
