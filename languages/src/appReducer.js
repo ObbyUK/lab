@@ -117,12 +117,12 @@ function viewAnyPage(state, { payload }) {
   )(state);
 }
 
-// INTERACRTIONS
+// FORM STARTERS
 function chooseLanguage(state, { payload }) {
   return pipe(
     assoc('selectedLanguage', payload.language),
     assoc('flow', flows[payload.language]),
-    assoc('status', appStatuses.ANWSERING_QUESTIONS)
+    assoc('status', appStatuses.VIEWING)
   )(state);
 }
 

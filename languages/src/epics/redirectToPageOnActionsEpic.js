@@ -21,6 +21,13 @@ export default (action$, store) =>
     .filter(pipe(prop('type'), contains(__, pageChangingActions)))
     .map(({ type, payload }) => {
       
+      if (type === appActions.CHOOSE_LANGUAGE) {
+        var urlData = {
+          language: store.value.app.selectedLanguage,
+        };
+        window.history.pushState(urlData, 'learn', "/"+urlData.language);
+      }
+
       if (type === appActions.SELECT_COURSE_TYPE && payload.type === courseTypes.WEEKLY) {
         var urlData = {
           language: store.value.app.selectedLanguage,
