@@ -11,9 +11,11 @@ import {
 } from '../appActions';
 // Components
 import BlankCard from './../components/BlankCard.jsx';
+import CenterIconBanner from './../components/CenterIconBanner.jsx';
 import ClassSelectableTimesCard from '../components/ClassSelectableTimesCard.jsx';
 import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
 import ThreePointSalesBanner from '../components/ThreePointSalesBanner.jsx';
+import FocusBanner from '../components/FocusBanner.jsx';
 
 const mapStateToProps = (state) => ({
   selectedLanguage: state.app.selectedLanguage,
@@ -53,6 +55,45 @@ class FormContainer extends React.Component {
   render () {
     return (
       <div className="conversion-container__body container">
+
+        {/* WEEKLY CLASSES */}
+        <div className="conversion-container__card">
+          <BlankCard className="conversion-container__card-overide conversion-container__card-overide--flat">
+            <h2 className="conversion-container__card-title conversion-container__card-title--flat-card">
+              Weekly classes
+            </h2>
+            <div className="conversion-container__card-section conversion-container__card-section--weekly-classes">
+              <ImageBulletPoints 
+                points={[
+                  {
+                    image: "/icons/calendar-circle.svg",
+                    title: "Classes one day per week for 8 weeks straight",
+                    text: "If you can’t make a class one week you can mix & match or catch-up online.",
+                  },
+                  {
+                    image: "/icons/people-circle.svg",
+                    title: "In-person learning (8 people groups)",
+                    text: "We offer in-person learning, but we also have our online community where you can interact with other students and teacher.",
+                  },
+                  {
+                    image: "/icons/location-circle.svg",
+                    title: "Locations all across London",
+                    text: "We offer classes all across London, from East to West - so you don’t have to worry about travelling for an hour to get to your class.",
+                  }
+                ]}
+              />
+            </div>
+            <CenterIconBanner
+              image="/icons/tick.svg"
+              title="100% Moneyback guarantee!"
+              description="We promise all of our learners a great experience. If you’re unhappy after your first class, we’ll refund you in full."
+            />
+            <FocusBanner
+              priceText="8 classes = £200"
+              buttonText="Payable in weekly instalments"
+            />
+          </BlankCard>
+        </div>
 
         {/* DATES */}
         <div className="conversion-container__card">
