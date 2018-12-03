@@ -43,6 +43,13 @@ export const Tick = {
   )
 };
 
+export const ThinTick = {
+  viewBox: '0 0 18 16',
+  body: () => (
+    <path d="M1 9.01899L5.83493 13L16 2" stroke="#32C864" strokeWidth="3"/>
+  )
+};
+
 export const Location = {
   viewBox: '0 0 20 20',
   body: () => (

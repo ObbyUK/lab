@@ -1,0 +1,147 @@
+@import './../styles/variables';
+
+.pricing-box {
+
+  border-radius: 4px;
+  
+  &--cruise {
+    background-color: @cruise;
+  }
+  
+  &--humming-bird {
+    background-color: @humming-bird;
+  }
+  
+  &--astra {
+    background-color: @astra;
+  }
+  
+  
+  &__top-section {
+    padding: 30px 35px 10px;
+
+    &--cruise {
+      border-bottom: 1px solid #A6CCCA;
+    }
+    
+    &--humming-bird {
+      border-bottom: 1px solid #9EBECB;
+    }
+    
+    &--astra {
+      border-bottom: 1px solid #9EBECB;
+    }
+  }
+
+  
+  &__title {
+    width: 100%;
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    letter-spacing: 0.3px;
+    font-size: 28px;
+    line-height: 1;
+    color: @ebony-clay;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  
+  &__description {
+    width: 100%;
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    letter-spacing: 0.3px;
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    color: @dolphin;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  
+  &__pricing {
+    width: 100%;
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    letter-spacing: 0.3px;
+    font-size: 28px;
+    line-height: 1;
+    color: @ebony-clay;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  &__bottom-section {
+    padding: 30px 35px;
+  }
+
+  
+  &__list {
+    margin-bottom: 30px;
+  }
+
+  
+  &__list-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  
+  &__list-icon {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 5px;
+    margin-right: 10px;
+    svg {
+      fill: none;
+    }
+
+    &--cruise {
+      path {
+        stroke: @emerald;
+      }
+    }
+    
+    &--humming-bird {
+      path {
+        stroke: @robbins-egg-blue;
+      }
+    }
+    
+    &--astra {
+      path {
+        stroke: @sun;
+      }
+    }
+  }
+
+  
+  &__list-text {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    letter-spacing: 0.3px;
+    font-size: @l-paragraph;
+    line-height: 1;
+    color: @ebony-clay;
+    font-weight: 400;
+  }
+
+  
+  &__button {
+    margin-bottom: 15px;
+  }
+
+  
+  &__button-note {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    letter-spacing: 0.3px;
+    font-size: @m-paragraph;
+    line-height: 1;
+    color: @ebony-clay;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+}

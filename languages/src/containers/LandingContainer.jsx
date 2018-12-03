@@ -19,6 +19,7 @@ import ReviewCard from '../components/ReviewCard.jsx';
 import CycleComponentsBanner from '../components/CycleComponentsBanner.jsx';
 import Header from '../components/Header.jsx';
 import TextBanner from '../components/TextBanner.jsx';
+import PricingBox from '../components/PricingBox.jsx';
 
 const mapStateToProps = (state) => ({
   selectedLanguageName: languageNames[state.app.selectedLanguage]
@@ -59,6 +60,71 @@ class LandingContainer extends React.Component {
             1-to-1 lessons
           </div>
         </Header>
+        <div className="landing-container__section container">
+          
+          <div className="landing-container__title">
+            What type of learning works best for you?
+          </div>
+
+          <div className="landing-container__pricing-boxes">
+            {/* WEEKLY CLASSES */}
+            <div className="landing-container__pricing-box">
+              <PricingBox
+                color="cruise"
+                title="Weekly classes"
+                description="The perfect way to get started. One class per week, for 8 weeks"
+                pricing="8 classes = £200"
+                list={[
+                  "Daytime, Evenings & Weekends",
+                  "Small class sizes (10 people max)",
+                  "Locations all across London",
+                  "Money back guarantee",
+                  "Catch-up online if you can’t make one week",
+                ]}
+                buttonText="Find your class"
+                onClick={console.log}
+                buttonNote="Payable in weekly instalments"
+              />
+            </div>
+            {/* INTENSIVE COURSES */}
+            <div className="landing-container__pricing-box">
+              <PricingBox
+                color="humming-bird"
+                title="Intensive courses"
+                description="Go from zero to hero in a week. 6 hours per day, for a full week"
+                pricing="5-full days = £500"
+                list={[
+                  "Daytime, Evenings & Weekends",
+                  "Small class sizes (10 people max)",
+                  "Locations all across London",
+                  "Money back guarantee",
+                  "Lifetime access to our online portal",
+                ]}
+                buttonText="Find out more"
+                onClick={console.log}
+              />
+            </div>
+            {/* ONE TO ONE */}
+            <div className="landing-container__pricing-box">
+              <PricingBox
+                color="astra"
+                title="1-to-1 lessons"
+                description="Keep it flexible, or top-up. At your home, or one of our locations"
+                pricing="1 hour = £35"
+                list={[
+                  "Learn at your own pace",
+                  "Locations all across London",
+                  "Hand-selected, native teachers",
+                  "Money back guarantee",
+                  "Lifetime access to our online portal",
+                ]}
+                buttonText="Find out more"
+                onClick={console.log}
+              />
+            </div>
+          </div>
+
+        </div>
         <ThreePointSalesBanner
           title="What you get"
           points={[
