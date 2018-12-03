@@ -20,6 +20,7 @@ import CycleComponentsBanner from '../components/CycleComponentsBanner.jsx';
 import Header from '../components/Header.jsx';
 import TextBanner from '../components/TextBanner.jsx';
 import PricingBox from '../components/PricingBox.jsx';
+import CenterIconBanner from '../components/CenterIconBanner.jsx';
 
 const mapStateToProps = (state) => ({
   selectedLanguageName: languageNames[state.app.selectedLanguage]
@@ -60,6 +61,8 @@ class LandingContainer extends React.Component {
             1-to-1 lessons
           </div>
         </Header>
+
+        {/* COURSE TYPES */}
         <div className="landing-container__section container">
           
           <div className="landing-container__title">
@@ -125,6 +128,13 @@ class LandingContainer extends React.Component {
           </div>
 
         </div>
+
+        <CenterIconBanner
+          image="/icons/tick.svg"
+          title="100% Moneyback guarantee!"
+          description="We promise all of our learners a great experience. If you’re unhappy after your first class, we’ll refund you in full."
+        />
+
         <ThreePointSalesBanner
           title="What you get"
           points={[
