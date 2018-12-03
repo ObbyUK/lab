@@ -15,9 +15,13 @@ import completeFormEventFactory from '../analyticsEvents/completeFormEventFactor
 import conversionEventFactory from '../analyticsEvents/conversionEventFactory';
 import bookNowEventFactory from '../analyticsEvents/bookNowEventFactory';
 import choseDateEventFactory from '../analyticsEvents/choseDateEventFactory';
+import chooseLanguageEventFactory from '../analyticsEvents/chooseLanguageEventFactory';
 
 const trackedActions = [
   actions.VIEW_LANDING_PAGE,
+  actions.VIEW_LANGUAGE_LANDING_PAGE,
+  actions.CHOOSE_LANGUAGE,
+  actions.SELECT_COURSE_TYPE,
   actions.VIEW_READY_TO_LEARN_PAGE,
   actions.VIEW_CHOOSE_DATE_PAGE,
   actions.VIEW_CLASS_SUMMARY_PAGE,
@@ -38,10 +42,27 @@ export default (action$, store) => {
         ])
       ],
       [
+        propEq('type', actions.CHOOSE_LANGUAGE), 
+        EventFactoryArray__TypeAndAppState__EventObjectsArray([
+          chooseLanguageEventFactory
+        ])
+      ],
+      [
+        propEq('type', actions.VIEW_LANGUAGE_LANDING_PAGE), 
+        EventFactoryArray__TypeAndAppState__EventObjectsArray([
+          pageViewedEventFactory('Languages Test Specific Language LP'),
+        ])
+      ],
+      [
+        propEq('type', actions.SELECT_COURSE_TYPE), 
+        EventFactoryArray__TypeAndAppState__EventObjectsArray([
+          startFormEventFactory
+        ])
+      ],
+      [
         propEq('type', actions.VIEW_READY_TO_LEARN_PAGE), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
           pageViewedEventFactory('Languages Test Form'),
-          startFormEventFactory
         ])
       ],
       [

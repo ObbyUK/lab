@@ -1,9 +1,13 @@
-export default ({ state }) => {
+export default ({ payload }) => {
   return {
     type: 'track',
     payload: [
       'Start Form',
-      { selectedLanguage: state.selectedLanguage },
+      { 
+        selectedLanguage: payload.language,
+        type: payload.type,
+        location: payload.location
+      },
     ]
   }
 };
