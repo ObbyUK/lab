@@ -5,25 +5,25 @@ const languages = {
   GERMAN: 'german',
 };
 
-export default languages;
+const languageNames = {};
+languageNames[languages.SPANISH] = 'Spanish';
+languageNames[languages.ITALIAN] = 'Italian';
+languageNames[languages.FRENCH] = 'French';
+languageNames[languages.GERMAN] = 'German';
 
-export const languageNames = {
-  SPANISH: 'Spanish',
-  ITALIAN: 'Italian',
-  FRENCH: 'French',
-  GERMAN: 'German',
-};
-
-export const languagesValueAndName = [
+const languagesValueAndName = [
   { value: languages.SPANISH, name: 'Spanish' },
   { value: languages.ITALIAN, name: 'Italian' },
   { value: languages.FRENCH, name: 'French' },
   { value: languages.GERMAN, name: 'German' },
 ];
 
-export const languageToFlagSvg = {
+const languageToFlagSvg = {
   spanish: "/icons/spain-flag.svg",
   italian: "/icons/italy-flag.svg",
   french: "/icons/france-flag.svg",
   german: "/icons/germany-flag.svg",
 };
+
+export { languageNames, languagesValueAndName, languageToFlagSvg};
+export default languages;

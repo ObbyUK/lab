@@ -8,7 +8,14 @@ import AppPage from './../pages/AppPage.jsx';
 export default (
   <AppWrap>
     <Switch>
-      <Route exact path="/" component={AppPage} />
+      
+      {/* LANDING PAGES */}
+      <Route exact path="/french" component={AppPage} />
+      <Route exact path="/spanish" component={AppPage} />
+      <Route exact path="/german" component={AppPage} />
+      <Route exact path="/italian" component={AppPage} />
+
+      {/* FLOW PAGES */}
       <Route exact path="/learn" component={AppPage} />
       <Route exact path="/choose" component={AppPage} />
       <Route exact path="/summary" component={AppPage} />

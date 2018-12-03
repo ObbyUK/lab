@@ -1,4 +1,4 @@
-import { isEmpty, pipe, assoc, identity, T, cond, propEq } from 'ramda';
+import { isEmpty, pipe, assoc, identity, T, cond, propEq, contains } from 'ramda';
 
 // Lib & Constants
 import isActionType from './lib/isActionType';
@@ -74,16 +74,32 @@ export default (state = new AppState(), action) =>
 
 
 // VIEW PAGES
+
+function getSelectedLanguageFromPath(path) {
+  var langaugePaths = ["french", "italian", "german", "spanish"];
+  if (contains(path.pathName), langaugePaths) {
+    return path.pathName;
+  }
+  return path.language;
+}
+
 function viewAnyPage(state, { payload }) {
-  var language = payload.language||state.language;
-  console.log(payload)
+  
+  // var payloadLanguage = 
+  var language = getSelectedLanguageFromPath(payload)||state.language;
+
   var pathNameToStatus = {
     "": appStatuses.VIEWING,
-    learn: appStatuses.ANWSERING_QUESTIONS,
-    choose: appStatuses.VIEWING_CLASS_OPTIONS,
-    summary: appStatuses.VIEWING_CLASS_SUMMARY,
-    checkout: appStatuses.CHECKING_OUT
-  }
+    "french": appStatuses.VIEWING,
+    "italian": appStatuses.VIEWING,
+    "german": appStatuses.VIEWING,
+    "spanish": appStatuses.VIEWING,
+    "learn": appStatuses.ANWSERING_QUESTIONS,
+    "choose": appStatuses.VIEWING_CLASS_OPTIONS,
+    "summary": appStatuses.VIEWING_CLASS_SUMMARY,
+    "checkout": appStatuses.CHECKING_OUT
+  };
+
   return pipe(
     assoc('status', pathNameToStatus[payload.pathName]),
     assoc('flow', flows[language]),

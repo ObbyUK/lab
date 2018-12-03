@@ -10,7 +10,7 @@ import {
 } from './../appActions.js';
 // Constants
 import reviews from './../constants/reviews';
-import { languagesValueAndName } from './../constants/languages';
+import { languageNames, languagesValueAndName } from './../constants/languages';
 // Components
 import ThreePointSalesBanner from './../components/ThreePointSalesBanner.jsx';
 import ImageTextListBanner from '../components/ImageTextListBanner.jsx';
@@ -21,7 +21,7 @@ import Header from '../components/Header.jsx';
 import TextBanner from '../components/TextBanner.jsx';
 
 const mapStateToProps = (state) => ({
-
+  selectedLanguageName: languageNames[state.app.selectedLanguage]
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
@@ -46,17 +46,18 @@ class LandingContainer extends React.Component {
       <div>
         <Header
           image="/images/header-image.jpg"
-          title={["The most personal", "language course", "ever.", ]}
-          description={`Obby's language courses are designed to create the best learning experience for you. In-person learning, flexible locations, and ongoing support via our online platform & community.`}
+          title={["The most personal", `${this.props.selectedLanguageName} course`, "ever.", ]}
+          description={`Obby's ${this.props.selectedLanguageName} courses are designed to create the best learning experience for you. In-person learning, flexible locations, and ongoing support via our online platform & community.`}
         >
-          {languagesValueAndName.map(({ value, name }) => (
-            <LanguageButton 
-              key={value}
-              onClick={() => this.props.chooseLanguage(value)}
-              language={value}
-              text={name}
-            />
-          ))}
+          <div className="landing-container__header-button">
+            Weekly classes 
+          </div>
+          <div className="landing-container__header-button">
+            Intensive courses
+          </div>
+          <div className="landing-container__header-button">
+            1-to-1 lessons
+          </div>
         </Header>
         <ThreePointSalesBanner
           title="What you get"
