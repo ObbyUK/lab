@@ -102,7 +102,7 @@ function viewAnyPage(state, { payload }) {
 
   return pipe(
     assoc('status', pathNameToStatus[payload.pathName]),
-    assoc('flow', flows[language]),
+    assoc('flow', language? flows[language]: {}),
     assoc('selectedLanguage', language),
     assoc('skillLevel', payload.skillLevel||state.skillLevel),
     assoc('time', payload.time || state.time),

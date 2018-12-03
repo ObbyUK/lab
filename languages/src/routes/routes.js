@@ -10,6 +10,7 @@ export default (
     <Switch>
       
       {/* LANDING PAGES */}
+      <Route exact path="/" component={AppPage} />
       <Route exact path="/french" component={AppPage} />
       <Route exact path="/spanish" component={AppPage} />
       <Route exact path="/german" component={AppPage} />

@@ -17,12 +17,14 @@ import HeaderContainer from './../containers/HeaderContainer.jsx';
 import ConversionContainer from './../containers/ConversionContainer.jsx';
 import ClassSummaryContainer from './../containers/ClassSummaryContainer.jsx';
 import CheckoutContainer from './../containers/CheckoutContainer.jsx';
-import LandingContainer from './../containers/LandingContainer.jsx';
+import LangaugeLandingContainer from '../containers/LangaugeLandingContainer.jsx';
+import LandingContainer from '../containers/LandingContainer.jsx';
 import TransactionCompleteContainer from '../containers/TransactionCompleteContainer.jsx';
 import SubmitEmailPopupContainer from '../containers/SubmitEmailPopupContainer.jsx';
 
 const mapStateToProps = (state) => ({
   status: state.app.status,
+  selectedLanguage: state.app.selectedLanguage
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
@@ -78,8 +80,12 @@ class AppPageContainer extends React.Component {
             <HeaderContainer/>
           }
           
-          {this.props.status === appStatuses.VIEWING &&
+          {(this.props.status === appStatuses.VIEWING && !this.props.selectedLanguage ) &&
             <LandingContainer/>
+          }
+
+          {(this.props.status === appStatuses.VIEWING && this.props.selectedLanguage ) &&
+            <LangaugeLandingContainer/>
           }
 
           {this.props.status === appStatuses.ANWSERING_QUESTIONS &&

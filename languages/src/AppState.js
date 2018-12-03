@@ -32,7 +32,8 @@ export default class AppState {
     };
   
     // Questionare
-    this.selectedLanguage = languages.SPANISH;
+    this.selectedLanguage = null;
+    // this.selectedLanguage = languages.SPANISH;
     this.skillLevel = null;
     this.time = [];
     this.locations = [];

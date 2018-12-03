@@ -7,23 +7,21 @@ import './landing-container.less';
 import { 
   chooseLanguageAction,
   viewLandingPageAction
-} from './../appActions.js';
+} from '../appActions.js';
 // Constants
-import reviews from './../constants/reviews';
-import { languageNames, languagesValueAndName } from './../constants/languages';
+import reviews from '../constants/reviews';
+import { languagesValueAndName } from '../constants/languages';
 // Components
-import ThreePointSalesBanner from './../components/ThreePointSalesBanner.jsx';
+import ThreePointSalesBanner from '../components/ThreePointSalesBanner.jsx';
 import ImageTextListBanner from '../components/ImageTextListBanner.jsx';
 import LanguageButton from '../components/LanguageButton.jsx';
 import ReviewCard from '../components/ReviewCard.jsx';
 import CycleComponentsBanner from '../components/CycleComponentsBanner.jsx';
 import Header from '../components/Header.jsx';
 import TextBanner from '../components/TextBanner.jsx';
-import PricingBox from '../components/PricingBox.jsx';
-import CenterIconBanner from '../components/CenterIconBanner.jsx';
 
 const mapStateToProps = (state) => ({
-  selectedLanguageName: languageNames[state.app.selectedLanguage]
+
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
@@ -43,106 +41,23 @@ class LandingContainer extends React.Component {
     this.props.viewLandingPage();
   }
 
-  renderCourseTypeButtons() {
-    return (
-      <div>
-        <div className="landing-container__header-button">
-          Weekly classes 
-        </div>
-        <div className="landing-container__header-button">
-          Intensive courses
-        </div>
-        <div className="landing-container__header-button">
-          1-to-1 lessons
-        </div>
-      </div>
-    );
-  }
-
   render () {
     return (
       <div>
         <Header
           image="/images/header-image.jpg"
-          title={["The most personal", `${this.props.selectedLanguageName} course`, "ever.", ]}
-          description={`Obby's ${this.props.selectedLanguageName} courses are designed to create the best learning experience for you. In-person learning, flexible locations, and ongoing support via our online platform & community.`}
+          title={["The most personal", "language course", "ever.", ]}
+          description={`Obby's language courses are designed to create the best learning experience for you. In-person learning, flexible locations, and ongoing support via our online platform & community.`}
         >
-          {this.renderCourseTypeButtons()}
+          {languagesValueAndName.map(({ value, name }) => (
+            <LanguageButton 
+              key={value}
+              onClick={() => this.props.chooseLanguage(value)}
+              language={value}
+              text={name}
+            />
+          ))}
         </Header>
-
-        {/* COURSE TYPES */}
-        <div className="landing-container__section container">
-          
-          <div className="landing-container__title">
-            What type of learning works best for you?
-          </div>
-
-          <div className="landing-container__pricing-boxes">
-            {/* WEEKLY CLASSES */}
-            <div className="landing-container__pricing-box">
-              <PricingBox
-                color="cruise"
-                title="Weekly classes"
-                description="The perfect way to get started. One class per week, for 8 weeks"
-                pricing="8 classes = £200"
-                list={[
-                  "Daytime, Evenings & Weekends",
-                  "Small class sizes (10 people max)",
-                  "Locations all across London",
-                  "Money back guarantee",
-                  "Catch-up online if you can’t make one week",
-                ]}
-                buttonText="Find your class"
-                onClick={console.log}
-                buttonNote="Payable in weekly instalments"
-              />
-            </div>
-            {/* INTENSIVE COURSES */}
-            <div className="landing-container__pricing-box">
-              <PricingBox
-                color="humming-bird"
-                title="Intensive courses"
-                description="Go from zero to hero in a week. 6 hours per day, for a full week"
-                pricing="5-full days = £500"
-                list={[
-                  "Daytime, Evenings & Weekends",
-                  "Small class sizes (10 people max)",
-                  "Locations all across London",
-                  "Money back guarantee",
-                  "Lifetime access to our online portal",
-                ]}
-                buttonText="Find out more"
-                onClick={console.log}
-              />
-            </div>
-            {/* ONE TO ONE */}
-            <div className="landing-container__pricing-box">
-              <PricingBox
-                color="astra"
-                title="1-to-1 lessons"
-                description="Keep it flexible, or top-up. At your home, or one of our locations"
-                pricing="1 hour = £35"
-                list={[
-                  "Learn at your own pace",
-                  "Locations all across London",
-                  "Hand-selected, native teachers",
-                  "Money back guarantee",
-                  "Lifetime access to our online portal",
-                ]}
-                buttonText="Find out more"
-                onClick={console.log}
-              />
-            </div>
-          </div>
-
-        </div>
-
-        <CenterIconBanner
-          image="/icons/tick.svg"
-          title="100% Moneyback guarantee!"
-          description="We promise all of our learners a great experience. If you’re unhappy after your first class, we’ll refund you in full."
-        />
-
         <ThreePointSalesBanner
           title="What you get"
           points={[
@@ -187,6 +102,37 @@ class LandingContainer extends React.Component {
           )}
         />
         <ImageTextListBanner
+          title="100% Moneyback guarantee"
+          description="We promise all of our learners a great experience. If you’re unhappy after your first class, we’ll refund you in full."
+          image="/images/money-back.png"
+          reverse={true}
+          points={[
+            { image: "/icons/tick.svg", text: "Full-refund" },
+            { image: "/icons/tick.svg", text: "No hard feelings" },
+          ]}
+        />
+        <ThreePointSalesBanner
+          color="cruise"
+          title="How it works"
+          points={[
+            { 
+              image: "/icons/1.svg", 
+              title: "Tell us more about you", 
+              description: "We need to know things like your location, skill level and availability in order to match you with the right teachers"
+            },
+            { 
+              image: "/icons/2.svg",
+              title: "Choose your options", 
+              description: "You can choose from a large variety of options, from single day classes to monthly subscriptions"
+            },
+            { 
+              image: "/icons/3.svg", 
+              title: "Start learning", 
+              description: "Start learning from London’s best language teachers with no commitments. Cancel at any time"
+            }
+          ]}
+        />
+        <ImageTextListBanner
           title="Learn with people on the same journey"
           description="We believe good, healthy learning happens in a social environment, so we focus on group classes instead of individual."
           image="/images/learn.png"
@@ -197,8 +143,15 @@ class LandingContainer extends React.Component {
           ]}
         />
         <div className="landing-container__here-to-learn">
-          <h2 className="landing-container__sub-title">The most personal Spanish course ever.</h2>
-          {this.renderCourseTypeButtons()}
+          <h2 className="landing-container__sub-title">What are you here to learn?</h2>
+          {languagesValueAndName.map(({ value, name }) => (
+            <LanguageButton 
+              key={value}
+              onClick={() => this.props.chooseLanguage(value)}
+              language={value}
+              text={name}
+            />
+          ))}
         </div>
       </div>
     );

@@ -1,0 +1,83 @@
+@import './../styles/variables';
+
+.language-landing-container {
+
+  display: flex;
+
+  &__body {
+    position: relative;
+    letter-spacing: 0.3px;
+    margin-top: 93px;
+    width: 100%;
+    @media (min-width:@sm-width) {
+      margin-top: 58px;
+    }
+  }
+
+
+  &__here-to-learn {
+    background-color: @astra;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    padding: 95px 10px;
+  }
+
+  &__sub-title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    letter-spacing: 0.3px;
+    color: @ebony-clay;
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 44px;
+    font-weight: 600;
+  }
+
+  &__language-button {}
+
+  &__header-button {
+    display: inline-flex;
+    background-color: @ebony-clay;
+    padding: 15px 19px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    letter-spacing: 0.3px;
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    color: white;
+    font-weight: 600;
+  }
+
+  &__section {
+    padding: 70px 0;
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: @m-heading-mobile;
+    line-height: 1;
+    font-weight: 600;
+    color: @ebony-clay;
+    margin: 0 0 66px;
+
+    @media (min-width:@sm-width) {
+      font-size: @m-heading;
+    }
+  }
+
+  &__pricing-boxes {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__pricing-box {
+    width: 32%;
+  }
+}
