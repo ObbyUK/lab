@@ -53,7 +53,7 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
     submitQuestions: () => {
       if (contains(stateProps.skillLevel, [skillLevels.ADVANCED, skillLevels.INTERMEDIATE])) {
         dispatchProps.openEmailPopup({
-          title: "Tell us where to find you",
+          title: "It's on the way",
           description: `We’re still defining our ${stateProps.skillLevelName} curriculum, but give us your details and we’ll reach out when we’re ready.`,
           submittedTitle: "Thank you",
           submittedDescription: `We will be in touch soon!`,

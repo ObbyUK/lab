@@ -42,8 +42,8 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
     selectCourseType: ({ type, location }) => {
       if (type !== courseTypes.WEEKLY) {
         dispatchProps.openEmailPopup({
-          title: "This here be filler title",
-          description: `This here be fillter description yada yada yada `,
+          title: "It's on the way",
+          description: `We’re still defining our ${type} curriculum, but give us your details and we’ll reach out when we’re ready.`,
           submittedTitle: "Thank you",
           submittedDescription: `We will be in touch shortly!`,
           emailText: `User is interested in ${type} courses`
