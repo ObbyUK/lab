@@ -6,13 +6,15 @@ import './language-landing-container.less';
 // Actions
 import { 
   viewLanguageLandingPageAction,
-  selectCourseTypeAction
+  selectCourseTypeAction,
+  openEmailPopupAction
 } from '../appActions.js';
 // Constants
 import reviews from '../constants/reviews';
 import courseTypes, { courseNames } from './../constants/courseTypes';
 import { languageNames } from '../constants/languages';
 // Components
+import SubmitEmailPopupContainer from './SubmitEmailPopupContainer.jsx';
 import ThreePointSalesBanner from '../components/ThreePointSalesBanner.jsx';
 import ImageTextListBanner from '../components/ImageTextListBanner.jsx';
 import ReviewCard from '../components/ReviewCard.jsx';
@@ -29,7 +31,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch, state) => ({
   viewLanguageLandingPage: () => dispatch(viewLanguageLandingPageAction()),
-  selectCourseType: (details) => dispatch(selectCourseTypeAction(details))
+  selectCourseType: (details) => dispatch(selectCourseTypeAction(details)),
+  openEmailPopup: (text) => dispatch(openEmailPopupAction(text)),
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
@@ -37,11 +40,20 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
   dispatchProps,
   {
     selectCourseType: ({ type, location }) => {
+      if (type !== courseTypes.WEEKLY) {
+        dispatchProps.openEmailPopup({
+          title: "This here be filler title",
+          description: `This here be fillter description yada yada yada `,
+          submittedTitle: "Thank you",
+          submittedDescription: `We will be in touch shortly!`,
+          emailText: `User is interested in ${type} courses`
+        });
+      }
       dispatchProps.selectCourseType({
         type,
         location,
         language: stateProps.selectedLanguage
-      })
+      });
     }
   }
 ]);
@@ -92,6 +104,8 @@ class LanguageLandingContainer extends React.Component {
         >
           {this.renderCourseTypeButtons("header")}
         </Header>
+
+        <SubmitEmailPopupContainer />
 
         {/* COURSE TYPES */}
         <div className="language-landing-container__section container">

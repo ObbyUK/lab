@@ -16,7 +16,7 @@ import {
 } from '../appActions';
 import { emailPopupStatuses } from '../AppState';
 // Components
-import BigPopup from '../components/SmallPopup.jsx';
+import SmallPopup from '../components/SmallPopup.jsx';
 import LabelInput from '../components/LabelInput.jsx';
 import PrimaryButton from '../components/PrimaryButton.jsx';
 
@@ -59,7 +59,7 @@ class SubmitEmailPopupContainer extends React.Component {
   render () {
     return (
       <div className="submit-email-popup-container">
-        <BigPopup 
+        <SmallPopup 
           isOpen={this.props.isOpen}
           onClose={this.props.closeEmailPopup.bind(this)}
         >
@@ -119,7 +119,7 @@ class SubmitEmailPopupContainer extends React.Component {
               </div>
             </div>
           }
-        </BigPopup>
+        </SmallPopup>
       </div>
     );
   }

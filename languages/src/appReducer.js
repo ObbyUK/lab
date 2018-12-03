@@ -15,6 +15,12 @@ import appActions from './appActions';
 const viewingReducer = cond([
   [isActionType(appActions.CHOOSE_LANGUAGE), chooseLanguage],
   [isActionType(appActions.SELECT_COURSE_TYPE), selectCourseType],
+
+  [isActionType(appActions.OPEN_EMAIL_POPUP), openEmailPopup],
+  [isActionType(appActions.CLOSE_EMAIL_POPUP), closeEmailPopup],
+  [isActionType(appActions.TYPE_FIRST_NAME), typeName],
+  [isActionType(appActions.TYPE_EMAIL), typeEmail],
+  [isActionType(appActions.SUBMIT_EMAIL_COMPLETE), submitEmailComplete],
   [T, identity]
 ]);
 
@@ -23,6 +29,7 @@ const anwseringQuestionsReducer = cond([
   [isActionType(appActions.SELECT_TIME), toggleTime],
   [isActionType(appActions.TOGGLE_LOCATION), toggleLocation],
   [isActionType(appActions.SUBMIT_QUESTIONS), submitQuestions],
+
   [isActionType(appActions.OPEN_EMAIL_POPUP), openEmailPopup],
   [isActionType(appActions.CLOSE_EMAIL_POPUP), closeEmailPopup],
   [isActionType(appActions.TYPE_FIRST_NAME), typeName],
@@ -33,6 +40,7 @@ const anwseringQuestionsReducer = cond([
 
 const viewingClassOptionsReducer = cond([
   [isActionType(appActions.CHOOSE_DATE), chooseDate],
+  
   [isActionType(appActions.OPEN_EMAIL_POPUP), openEmailPopup],
   [isActionType(appActions.CLOSE_EMAIL_POPUP), closeEmailPopup],
   [isActionType(appActions.TYPE_FIRST_NAME), typeName],
