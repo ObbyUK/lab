@@ -1,12 +1,17 @@
 const actions = {
   VIEW_PAGE: 'userViewsAnyPage',
   VIEW_LANDING_PAGE: 'landingPageHasBeenViewed',
+  VIEW_LANGUAGE_LANDING_PAGE: 'languageLandingPageHasBeenViewed',
   VIEW_READY_TO_LEARN_PAGE: 'readyToLearnPageHasBeenViewed',
   VIEW_CHOOSE_DATE_PAGE: 'chooseDatePageHasBeenViewed',
   VIEW_CLASS_SUMMARY_PAGE: 'classSummaryPageHasBeenViewed',
   VIEW_CHECKOUT_PAGE: 'checkoutPageHasBeenViewed',
 
+  // FORM COMMENCMENT ACTIONS
   CHOOSE_LANGUAGE: 'userSelectsLanguageToLearn',
+  SELECT_COURSE_TYPE: 'userSelectsCourseType',
+
+  // FORM ACTIONS
   SELECT_SKILL_LEVEL: 'userSelectsSkillLevel',
   SELECT_TIME: 'userSelectsTime',
   TOGGLE_LOCATION: 'userTogglesLocation',
@@ -17,6 +22,7 @@ const actions = {
   TYPE_EMAIL: 'userTypesEmail',
   CHOOSE_DATE: 'userSelectsAClassDate',
   BOOK_YOUR_SPOT: 'userClicksBookYourSpot',
+  
   
   SUBMIT_EMAIL: 'userSubmitsEmailAndInformation',
   SUBMIT_EMAIL_COMPLETE: 'userSubmissionComplete',
@@ -40,6 +46,10 @@ export const viewLandingPageAction = () => ({
   type: actions.VIEW_LANDING_PAGE
 });
 
+export const viewLanguageLandingPageAction = () => ({
+  type: actions.VIEW_LANGUAGE_LANDING_PAGE
+});
+
 export const viewReadyToLearnPageAction = () => ({
   type: actions.VIEW_READY_TO_LEARN_PAGE,
 });
@@ -56,7 +66,8 @@ export const viewCheckoutPageAction = () => ({
   type: actions.VIEW_CHECKOUT_PAGE,
 });
 
-// INTERACTIONS
+// FORM COMMENCMENT ACTIONS
+
 export const chooseLanguageAction = (language) => ({
   type: actions.CHOOSE_LANGUAGE,
   payload: {
@@ -64,12 +75,21 @@ export const chooseLanguageAction = (language) => ({
   }
 });
 
+export const selectCourseTypeAction = (details) => ({
+  type: actions.SELECT_COURSE_TYPE,
+  payload: details
+});
+
+
+// FORM ACTIONS
+
 export const selectSkillLevelAction = (skillLevel) => ({
   type: actions.SELECT_SKILL_LEVEL,
   payload: {
     skillLevel
   }
 });
+
 
 export const selectTimeAction = (time) => ({
   type: actions.SELECT_TIME,

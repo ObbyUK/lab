@@ -5,6 +5,7 @@ import isActionType from './lib/isActionType';
 import isFullArray from './lib/isFullArray';
 import isValidEmail from './lib/isValidEmail';
 import toggleValueFromCheckboxArray from './lib/toggleValueFromCheckboxArray';
+import courseTypes from './constants/courseTypes';
 import flows from './constants/flows';
 // Actions & State
 import AppState, { appStatuses, emailPopupStatuses } from './AppState';
@@ -13,6 +14,7 @@ import appActions from './appActions';
 
 const viewingReducer = cond([
   [isActionType(appActions.CHOOSE_LANGUAGE), chooseLanguage],
+  [isActionType(appActions.SELECT_COURSE_TYPE), selectCourseType],
   [T, identity]
 ]);
 
@@ -77,7 +79,7 @@ export default (state = new AppState(), action) =>
 
 function getSelectedLanguageFromPath(path) {
   var langaugePaths = ["french", "italian", "german", "spanish"];
-  if (contains(path.pathName), langaugePaths) {
+  if (contains(path.pathName, langaugePaths)) {
     return path.pathName;
   }
   return path.language;
@@ -122,6 +124,17 @@ function chooseLanguage(state, { payload }) {
     assoc('flow', flows[payload.language]),
     assoc('status', appStatuses.ANWSERING_QUESTIONS)
   )(state);
+}
+
+function selectCourseType(state, { payload }) {
+  if (payload.type === courseTypes.WEEKLY) {
+    return pipe(
+      assoc('selectedLanguage', payload.language),
+      assoc('flow', flows[payload.language]),
+      assoc('status', appStatuses.ANWSERING_QUESTIONS)
+    )(state);
+  }
+  return state;
 }
 
 function selectSkillLevel(state, { payload }) {

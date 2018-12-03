@@ -5,11 +5,12 @@ import { mergeAll } from 'ramda';
 import './language-landing-container.less';
 // Actions
 import { 
-  chooseLanguageAction,
-  viewLandingPageAction
+  viewLanguageLandingPageAction,
+  selectCourseTypeAction
 } from '../appActions.js';
 // Constants
 import reviews from '../constants/reviews';
+import courseTypes, { courseNames } from './../constants/courseTypes';
 import { languageNames } from '../constants/languages';
 // Components
 import ThreePointSalesBanner from '../components/ThreePointSalesBanner.jsx';
@@ -22,37 +23,60 @@ import PricingBox from '../components/PricingBox.jsx';
 import CenterIconBanner from '../components/CenterIconBanner.jsx';
 
 const mapStateToProps = (state) => ({
+  selectedLanguage: state.app.selectedLanguage,
   selectedLanguageName: languageNames[state.app.selectedLanguage]
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
-  chooseLanguage: (language) => dispatch(chooseLanguageAction(language)),
-  viewLandingPage: () => dispatch(viewLandingPageAction())
+  viewLanguageLandingPage: () => dispatch(viewLanguageLandingPageAction()),
+  selectCourseType: (details) => dispatch(selectCourseTypeAction(details))
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
   stateProps,
   dispatchProps,
-  {}
+  {
+    selectCourseType: ({ type, location }) => {
+      dispatchProps.selectCourseType({
+        type,
+        location,
+        language: stateProps.selectedLanguage
+      })
+    }
+  }
 ]);
 
 class LanguageLandingContainer extends React.Component {
 
   componentDidMount() {
-    this.props.viewLandingPage();
+    this.props.viewLanguageLandingPage();
   }
 
-  renderCourseTypeButtons() {
+  renderCourseTypeButtons(location) {
+
+    const selectCourseType = (type) => this.props.selectCourseType({ type, location});
+
     return (
       <div>
-        <div className="language-landing-container__header-button">
-          Weekly classes 
+        <div 
+          className="language-landing-container__header-button"
+          onClick={() => selectCourseType(courseTypes.WEEKLY)}
+        >
+          {courseNames[courseTypes.WEEKLY]}
         </div>
-        <div className="language-landing-container__header-button">
-          Intensive courses
+
+        <div 
+          className="language-landing-container__header-button"
+          onClick={() => selectCourseType(courseTypes.INTENSIVE)}
+        >
+          {courseNames[courseTypes.INTENSIVE]}
         </div>
-        <div className="language-landing-container__header-button">
-          1-to-1 lessons
+
+        <div 
+          className="language-landing-container__header-button"
+          onClick={() => selectCourseType(courseTypes.ONE_TO_ONE)}
+        >
+          {courseNames[courseTypes.ONE_TO_ONE]}
         </div>
       </div>
     );
@@ -66,7 +90,7 @@ class LanguageLandingContainer extends React.Component {
           title={["The most personal", `${this.props.selectedLanguageName} course`, "ever.", ]}
           description={`Obby's ${this.props.selectedLanguageName} courses are designed to create the best learning experience for you. In-person learning, flexible locations, and ongoing support via our online platform & community.`}
         >
-          {this.renderCourseTypeButtons()}
+          {this.renderCourseTypeButtons("header")}
         </Header>
 
         {/* COURSE TYPES */}
@@ -81,7 +105,7 @@ class LanguageLandingContainer extends React.Component {
             <div className="language-landing-container__pricing-box">
               <PricingBox
                 color="cruise"
-                title="Weekly classes"
+                title={courseNames[courseTypes.WEEKLY]}
                 description="The perfect way to get started. One class per week, for 8 weeks"
                 pricing="8 classes = £200"
                 list={[
@@ -92,7 +116,10 @@ class LanguageLandingContainer extends React.Component {
                   "Catch-up online if you can’t make one week",
                 ]}
                 buttonText="Find your class"
-                onClick={console.log}
+                onClick={() => this.props.selectCourseType({
+                  type: courseTypes.WEEKLY,
+                  location: "pricing module",
+                })}
                 buttonNote="Payable in weekly instalments"
               />
             </div>
@@ -100,7 +127,7 @@ class LanguageLandingContainer extends React.Component {
             <div className="language-landing-container__pricing-box">
               <PricingBox
                 color="humming-bird"
-                title="Intensive courses"
+                title={courseNames[courseTypes.INTENSIVE]}
                 description="Go from zero to hero in a week. 6 hours per day, for a full week"
                 pricing="5-full days = £500"
                 list={[
@@ -111,14 +138,17 @@ class LanguageLandingContainer extends React.Component {
                   "Lifetime access to our online portal",
                 ]}
                 buttonText="Find out more"
-                onClick={console.log}
+                onClick={() => this.props.selectCourseType({
+                  type: courseTypes.INTENSIVE,
+                  location: "pricing module",
+                })}
               />
             </div>
             {/* ONE TO ONE */}
             <div className="language-landing-container__pricing-box">
               <PricingBox
                 color="astra"
-                title="1-to-1 lessons"
+                title={courseNames[courseTypes.ONE_TO_ONE]}
                 description="Keep it flexible, or top-up. At your home, or one of our locations"
                 pricing="1 hour = £35"
                 list={[
@@ -129,7 +159,10 @@ class LanguageLandingContainer extends React.Component {
                   "Lifetime access to our online portal",
                 ]}
                 buttonText="Find out more"
-                onClick={console.log}
+                onClick={() => this.props.selectCourseType({
+                  type: courseTypes.ONE_TO_ONE,
+                  location: "pricing module",
+                })}
               />
             </div>
           </div>
@@ -197,7 +230,7 @@ class LanguageLandingContainer extends React.Component {
         />
         <div className="language-landing-container__here-to-learn">
           <h2 className="language-landing-container__sub-title">The most personal Spanish course ever.</h2>
-          {this.renderCourseTypeButtons()}
+          {this.renderCourseTypeButtons("footer")}
         </div>
       </div>
     );

@@ -6,6 +6,7 @@ import appActions from '../appActions';
 
 var pageChangingActions = [
   appActions.CHOOSE_LANGUAGE,
+  appActions.SELECT_COURSE_TYPE,
   appActions.SUBMIT_QUESTIONS,
   appActions.CHOOSE_DATE,
   appActions.SUBMIT_PAYMENT_COMPLETE,
@@ -18,4 +19,4 @@ export default (action$, store) =>
     .filter(pipe(prop('type'), contains(__, pageChangingActions)))
     .map(prop('payload'))
     .map(() => window.scrollTo(0, 0))
-    .map(always({ type: 'DUD' }));
+    .map(always({ type: 'scrolledToTheTopComplete' }));

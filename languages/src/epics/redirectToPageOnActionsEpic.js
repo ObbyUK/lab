@@ -4,11 +4,13 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/map';
 
 import appActions from '../appActions';
+import courseTypes from '../constants/courseTypes';
 
 var eventToUrlName = {}
 
 var pageChangingActions = [
   appActions.CHOOSE_LANGUAGE,
+  appActions.SELECT_COURSE_TYPE,
   appActions.SUBMIT_QUESTIONS,
   appActions.CHOOSE_DATE,
   appActions.BOOK_YOUR_SPOT,
@@ -17,9 +19,9 @@ var pageChangingActions = [
 export default (action$, store) =>
   action$
     .filter(pipe(prop('type'), contains(__, pageChangingActions)))
-    .map(({ type }) => {
+    .map(({ type, payload }) => {
       
-      if (type === appActions.CHOOSE_LANGUAGE) {
+      if (type === appActions.SELECT_COURSE_TYPE && payload.type === courseTypes.WEEKLY) {
         var urlData = {
           language: store.value.app.selectedLanguage,
         };

@@ -18,8 +18,8 @@ export default (props) => (
     <div className="pricing-box__bottom-section">
       {/* LIST */}
       <div className="pricing-box__list">
-        {props.list.map((item) => (
-          <div className="pricing-box__list-item">
+        {props.list.map((item, index) => (
+          <div key={index} className="pricing-box__list-item">
             <div className={`pricing-box__list-icon pricing-box__list-icon--${props.color||'cruise'}`}>
               <Icon icon={ThinTick} height={14} />
             </div>

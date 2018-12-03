@@ -17,7 +17,7 @@ import HeaderContainer from './../containers/HeaderContainer.jsx';
 import ConversionContainer from './../containers/ConversionContainer.jsx';
 import ClassSummaryContainer from './../containers/ClassSummaryContainer.jsx';
 import CheckoutContainer from './../containers/CheckoutContainer.jsx';
-import LangaugeLandingContainer from '../containers/LangaugeLandingContainer.jsx';
+import LanguageLandingContainer from '../containers/LanguageLandingContainer.jsx';
 import LandingContainer from '../containers/LandingContainer.jsx';
 import TransactionCompleteContainer from '../containers/TransactionCompleteContainer.jsx';
 import SubmitEmailPopupContainer from '../containers/SubmitEmailPopupContainer.jsx';
@@ -85,7 +85,7 @@ class AppPageContainer extends React.Component {
           }
 
           {(this.props.status === appStatuses.VIEWING && this.props.selectedLanguage ) &&
-            <LangaugeLandingContainer/>
+            <LanguageLandingContainer/>
           }
 
           {this.props.status === appStatuses.ANWSERING_QUESTIONS &&
