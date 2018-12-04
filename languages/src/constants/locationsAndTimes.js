@@ -25,12 +25,22 @@ export const locations = [
             lessonsEnd: "1:30PM",
           },
           {
-            starts: "06/02/2019",
+            starts: "05/02/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
           },
           {
-            starts: "08/02/2019",
+            starts: "07/02/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "05/03/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "07/03/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
           },
@@ -87,6 +97,7 @@ export const locations = [
             starts: "10/02/2019",
             lessonsStart: "11:00PM",
             lessonsEnd: "12:30PM",
+            soldOut: true,
           },
           {
             starts: "10/03/2019",
@@ -115,7 +126,23 @@ export const locations = [
             lessonsEnd: "1:30PM",
           },
           {
-            starts: "16/01/2019",
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+            soldOut: true,
+          },
+          {
+            starts: "15/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "15/01/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
           },
@@ -137,20 +164,29 @@ export const locations = [
             lessonsEnd: "8PM",
           },
           {
-            starts: "16/01/2019",
-            lessonsStart: "6:30PM",
-            lessonsEnd: "8PM",
-          },
-          {
             starts: "17/01/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
-          {
-            starts: "18/01/2019",
+                    {
+            starts: "12/02/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
-            soldOut: true,
+          },
+          {
+            starts: "14/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "12/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "14/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
           },
         ]
       },
@@ -160,16 +196,21 @@ export const locations = [
         label: "(11AM- 12:30PM)",
         options: [
           {
-            starts: "19/01/2019",
+            starts: "20/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "17/02/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "17/03/2019",
             lessonsStart: "11:00PM",
             lessonsEnd: "12:30PM",
             soldOut: true,
           },
-          {
-            starts: "20/01/2019",
-            lessonsStart: "11:00PM",
-            lessonsEnd: "12:30PM",
-          }
         ]
       },
     ],
@@ -192,14 +233,31 @@ export const locations = [
             lessonsEnd: "1:30PM",
           },
           {
-            starts: "09/01/2019",
+            starts: "10/01/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
           },
           {
-            starts: "10/01/2019",
+            starts: "05/02/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "07/02/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+            soldOut: true,
+          },
+          {
+            starts: "05/03/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "07/03/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+            soldOut: true,
           },
         ]
       },
@@ -214,14 +272,53 @@ export const locations = [
             lessonsEnd: "8PM",
           },
           {
-            starts: "09/01/2019",
+            starts: "10/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "05/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+            soldOut: true,
+          },
+          {
+            starts: "07/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+            soldOut: true,
+          },
+                    {
+            starts: "05/03/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
           {
-            starts: "10/01/2019",
+            starts: "07/03/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.WEEKENDS,
+        title: "Weekends",
+        label: "(11AM- 12:30PM)",
+        options: [
+          {
+            starts: "13/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "10/02/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "10/03/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
           },
         ]
       },
@@ -245,7 +342,13 @@ export const locations = [
             lessonsEnd: "1:30PM",
           },
           {
-            starts: "16/01/2019",
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+            soldOut: true,
+          },
+          {
+            starts: "15/01/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
           },
@@ -255,10 +358,14 @@ export const locations = [
             lessonsEnd: "1:30PM",
           },
           {
-            starts: "18/01/2019",
+            starts: "15/01/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
-            soldOut: true,
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
           },
         ]
       },
@@ -273,12 +380,27 @@ export const locations = [
             lessonsEnd: "8PM",
           },
           {
-            starts: "16/01/2019",
+            starts: "17/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "12/02/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
           {
-            starts: "17/01/2019",
+            starts: "14/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "12/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "14/03/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
@@ -290,16 +412,21 @@ export const locations = [
         label: "(11AM- 12:30PM)",
         options: [
           {
-            starts: "19/01/2019",
+            starts: "20/01/2019",
             lessonsStart: "11:00PM",
             lessonsEnd: "12:30PM",
             soldOut: true,
           },
           {
-            starts: "20/01/2019",
+            starts: "17/02/2019",
             lessonsStart: "11:00PM",
             lessonsEnd: "12:30PM",
-          }
+          },
+          {
+            starts: "17/03/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
         ]
       },
     ],
@@ -322,20 +449,29 @@ export const locations = [
             lessonsEnd: "1:30PM",
           },
           {
-            starts: "09/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
             starts: "10/01/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
           },
           {
-            starts: "11/01/2019",
+            starts: "05/02/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
-            soldOut: true,
+          },
+          {
+            starts: "07/02/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "05/03/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "07/03/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
           },
         ]
       },
@@ -350,12 +486,28 @@ export const locations = [
             lessonsEnd: "8PM",
           },
           {
-            starts: "09/01/2019",
+            starts: "10/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "05/02/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
           {
-            starts: "10/01/2019",
+            starts: "07/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+            soldOut: true,
+          },
+                    {
+            starts: "05/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "07/03/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
@@ -367,16 +519,21 @@ export const locations = [
         label: "(11AM- 12:30PM)",
         options: [
           {
-            starts: "12/01/2019",
+            starts: "13/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "10/02/2019",
             lessonsStart: "11:00PM",
             lessonsEnd: "12:30PM",
             soldOut: true,
           },
           {
-            starts: "13/01/2019",
+            starts: "10/03/2019",
             lessonsStart: "11:00PM",
             lessonsEnd: "12:30PM",
-          }
+          },
         ]
       },
     ],
@@ -399,7 +556,12 @@ export const locations = [
             lessonsEnd: "1:30PM",
           },
           {
-            starts: "16/01/2019",
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "15/01/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
           },
@@ -409,10 +571,14 @@ export const locations = [
             lessonsEnd: "1:30PM",
           },
           {
-            starts: "18/01/2019",
+            starts: "15/01/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
-            soldOut: true,
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
           },
         ]
       },
@@ -427,12 +593,28 @@ export const locations = [
             lessonsEnd: "8PM",
           },
           {
-            starts: "16/01/2019",
+            starts: "17/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+            soldOut: true,
+          },
+                    {
+            starts: "12/02/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
           {
-            starts: "17/01/2019",
+            starts: "14/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "12/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "14/03/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
@@ -444,16 +626,20 @@ export const locations = [
         label: "(11AM- 12:30PM)",
         options: [
           {
-            starts: "19/01/2019",
-            lessonsStart: "11:00PM",
-            lessonsEnd: "12:30PM",
-            soldOut: true,
-          },
-          {
             starts: "20/01/2019",
             lessonsStart: "11:00PM",
             lessonsEnd: "12:30PM",
-          }
+          },
+          {
+            starts: "17/02/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "17/03/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
         ]
       },
     ],
@@ -476,20 +662,29 @@ export const locations = [
             lessonsEnd: "1:30PM",
           },
           {
-            starts: "09/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
             starts: "10/01/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
           },
           {
-            starts: "11/01/2019",
+            starts: "05/02/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
-            soldOut: true,
+          },
+          {
+            starts: "07/02/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "05/03/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "07/03/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
           },
         ]
       },
@@ -504,12 +699,28 @@ export const locations = [
             lessonsEnd: "8PM",
           },
           {
-            starts: "09/01/2019",
+            starts: "10/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "05/02/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
           {
-            starts: "10/01/2019",
+            starts: "07/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+            soldOut: true,
+          },
+                    {
+            starts: "05/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "07/03/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
@@ -521,16 +732,20 @@ export const locations = [
         label: "(11AM- 12:30PM)",
         options: [
           {
-            starts: "12/01/2019",
-            lessonsStart: "11:00PM",
-            lessonsEnd: "12:30PM",
-            soldOut: true,
-          },
-          {
             starts: "13/01/2019",
             lessonsStart: "11:00PM",
             lessonsEnd: "12:30PM",
-          }
+          },
+          {
+            starts: "10/02/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "10/03/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
         ]
       },
     ],
