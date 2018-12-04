@@ -27,7 +27,7 @@ const DateButton = (props) => (
     }
     <div className="class-selectable-times-card__day-text-wrap">
       <div className="class-selectable-times-card__day-text">{moment(props.classSession.starts, 'DD/MM/YYYY').format('dddd')}s</div>
-      <div className="class-selectable-times-card__day-note">Starts on {moment(props.classSession.starts, 'DD/MM/YYYY').format('Do MMM ')}</div>
+      <div className="class-selectable-times-card__day-note">From {moment(props.classSession.starts, 'DD/MM/YYYY').format('Do MMM ')}</div>
     </div>
     <div className="class-selectable-times-card__day-icon">
       <Icon icon={ArrowRightThick} height={22} />

@@ -20,13 +20,17 @@ export const locations = [
             lessonsEnd: "1:30PM",
           },
           {
-            starts: "09/01/2019",
+            starts: "10/01/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
-            soldOut: true,
           },
           {
-            starts: "10/01/2019",
+            starts: "06/02/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "08/02/2019",
             lessonsStart: "12:00PM",
             lessonsEnd: "1:30PM",
           },
@@ -43,12 +47,27 @@ export const locations = [
             lessonsEnd: "8PM",
           },
           {
-            starts: "09/01/2019",
+            starts: "10/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "05/02/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
           {
-            starts: "10/01/2019",
+            starts: "07/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "05/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "07/03/2019",
             lessonsStart: "6:30PM",
             lessonsEnd: "8PM",
           },
@@ -63,7 +82,17 @@ export const locations = [
             starts: "13/01/2019",
             lessonsStart: "11:00PM",
             lessonsEnd: "12:30PM",
-          }
+          },
+          {
+            starts: "10/02/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "10/03/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
         ]
       },
     ],
