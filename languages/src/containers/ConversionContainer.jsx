@@ -60,7 +60,7 @@ class FormContainer extends React.Component {
         <div className="conversion-container__card">
           <BlankCard className="conversion-container__card-overide conversion-container__card-overide--flat">
             <h2 className="conversion-container__card-title conversion-container__card-title--flat-card">
-              Weekly classes
+              Here's how it works
             </h2>
             <div className="conversion-container__card-section conversion-container__card-section--weekly-classes">
               <ImageBulletPoints 
@@ -68,18 +68,18 @@ class FormContainer extends React.Component {
                 points={[
                   {
                     image: "/icons/calendar-circle.svg",
-                    title: "Classes one day per week for 8 weeks straight",
-                    text: "If you can’t make a class one week you can mix & match or catch-up online.",
+                    title: "Our classes run once per week for 8 weeks all across London",
+                    text: "",
                   },
                   {
                     image: "/icons/people-circle.svg",
-                    title: "In-person learning (8 people groups)",
-                    text: "We offer in-person learning, but we also have our online community where you can interact with other students and teacher.",
+                    title: "Get teacher and additional learning support on-the-go via our online community",
+                    text: "",
                   },
                   {
                     image: "/icons/location-circle.svg",
-                    title: "Locations all across London",
-                    text: "We offer classes all across London, from East to West - so you don’t have to worry about travelling for an hour to get to your class.",
+                    title: "All classes are recorded & made available online in case you miss a class or want a recap",
+                    text: "",
                   }
                 ]}
               />
@@ -109,7 +109,7 @@ class FormContainer extends React.Component {
                 <ClassesTable 
                   title={location.name}
                   address={location.address}
-                  pillText="Payable in weekly instalments"
+                  pillText=""
                   priceLabel="8 classes"
                   price="£200"
                   dates={location.dates}

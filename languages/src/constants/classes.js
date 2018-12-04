@@ -8,25 +8,115 @@ export const classesByLocation = [
     dates: [
       {
         starts: "08/01/2019",
-        ends: "09/02/2019",
+        ends: "26/02/2019",
         slots: [
           {
             starts: "12pm",
             ends: "1.30pm"
           },
           {
-            starts: "12pm",
-            ends: "1.30pm"
+            starts: "6.30pm",
+            ends: "8pm"
           },
         ]
       },
       {
         starts: "10/01/2019",
-        ends: "12/02/2019",
+        ends: "28/02/2019",
         slots: [
           {
             starts: "12pm",
             ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "13/01/2019",
+        ends: "03/03/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
+          },
+        ]
+      },
+      {
+        starts: "05/02/2019",
+        ends: "26/03/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "07/02/2019",
+        ends: "28/03/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "10/02/2019",
+        ends: "31/03/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
+          },
+        ]
+      },
+      {
+        starts: "05/03/2019",
+        ends: "23/04/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "07/03/2019",
+        ends: "25/04/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "10/03/2019",
+        ends: "28/04/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
           },
         ]
       },
@@ -39,25 +129,115 @@ export const classesByLocation = [
     dates: [
       {
         starts: "08/01/2019",
-        ends: "09/02/2019",
+        ends: "26/02/2019",
         slots: [
           {
             starts: "12pm",
             ends: "1.30pm"
           },
           {
-            starts: "12pm",
-            ends: "1.30pm"
+            starts: "6.30pm",
+            ends: "8pm"
           },
         ]
       },
       {
         starts: "10/01/2019",
-        ends: "12/02/2019",
+        ends: "28/02/2019",
         slots: [
           {
             starts: "12pm",
             ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "13/01/2019",
+        ends: "03/03/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
+          },
+        ]
+      },
+      {
+        starts: "05/02/2019",
+        ends: "26/03/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "07/02/2019",
+        ends: "28/03/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "10/02/2019",
+        ends: "31/03/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
+          },
+        ]
+      },
+      {
+        starts: "05/03/2019",
+        ends: "23/04/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "07/03/2019",
+        ends: "25/04/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "10/03/2019",
+        ends: "28/04/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
           },
         ]
       },
@@ -70,25 +250,115 @@ export const classesByLocation = [
     dates: [
       {
         starts: "08/01/2019",
-        ends: "09/02/2019",
+        ends: "26/02/2019",
         slots: [
           {
             starts: "12pm",
             ends: "1.30pm"
           },
           {
-            starts: "12pm",
-            ends: "1.30pm"
+            starts: "6.30pm",
+            ends: "8pm"
           },
         ]
       },
       {
         starts: "10/01/2019",
-        ends: "12/02/2019",
+        ends: "28/02/2019",
         slots: [
           {
             starts: "12pm",
             ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "13/01/2019",
+        ends: "03/03/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
+          },
+        ]
+      },
+      {
+        starts: "05/02/2019",
+        ends: "26/03/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "07/02/2019",
+        ends: "28/03/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "10/02/2019",
+        ends: "31/03/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
+          },
+        ]
+      },
+      {
+        starts: "05/03/2019",
+        ends: "23/04/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "07/03/2019",
+        ends: "25/04/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "10/03/2019",
+        ends: "28/04/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
           },
         ]
       },
@@ -101,25 +371,115 @@ export const classesByLocation = [
     dates: [
       {
         starts: "08/01/2019",
-        ends: "09/02/2019",
+        ends: "26/02/2019",
         slots: [
           {
             starts: "12pm",
             ends: "1.30pm"
           },
           {
-            starts: "12pm",
-            ends: "1.30pm"
+            starts: "6.30pm",
+            ends: "8pm"
           },
         ]
       },
       {
         starts: "10/01/2019",
-        ends: "12/02/2019",
+        ends: "28/02/2019",
         slots: [
           {
             starts: "12pm",
             ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "13/01/2019",
+        ends: "03/03/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
+          },
+        ]
+      },
+      {
+        starts: "05/02/2019",
+        ends: "26/03/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "07/02/2019",
+        ends: "28/03/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "10/02/2019",
+        ends: "31/03/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
+          },
+        ]
+      },
+      {
+        starts: "05/03/2019",
+        ends: "23/04/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "07/03/2019",
+        ends: "25/04/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "10/03/2019",
+        ends: "28/04/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
           },
         ]
       },
@@ -132,25 +492,115 @@ export const classesByLocation = [
     dates: [
       {
         starts: "08/01/2019",
-        ends: "09/02/2019",
+        ends: "26/02/2019",
         slots: [
           {
             starts: "12pm",
             ends: "1.30pm"
           },
           {
-            starts: "12pm",
-            ends: "1.30pm"
+            starts: "6.30pm",
+            ends: "8pm"
           },
         ]
       },
       {
         starts: "10/01/2019",
-        ends: "12/02/2019",
+        ends: "28/02/2019",
         slots: [
           {
             starts: "12pm",
             ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "13/01/2019",
+        ends: "03/03/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
+          },
+        ]
+      },
+      {
+        starts: "05/02/2019",
+        ends: "26/03/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "07/02/2019",
+        ends: "28/03/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "10/02/2019",
+        ends: "31/03/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
+          },
+        ]
+      },
+      {
+        starts: "05/03/2019",
+        ends: "23/04/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "07/03/2019",
+        ends: "25/04/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "10/03/2019",
+        ends: "28/04/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
           },
         ]
       },
@@ -163,25 +613,115 @@ export const classesByLocation = [
     dates: [
       {
         starts: "08/01/2019",
-        ends: "09/02/2019",
+        ends: "26/02/2019",
         slots: [
           {
             starts: "12pm",
             ends: "1.30pm"
           },
           {
-            starts: "12pm",
-            ends: "1.30pm"
+            starts: "6.30pm",
+            ends: "8pm"
           },
         ]
       },
       {
         starts: "10/01/2019",
-        ends: "12/02/2019",
+        ends: "28/02/2019",
         slots: [
           {
             starts: "12pm",
             ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "13/01/2019",
+        ends: "03/03/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
+          },
+        ]
+      },
+      {
+        starts: "05/02/2019",
+        ends: "26/03/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "07/02/2019",
+        ends: "28/03/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "10/02/2019",
+        ends: "31/03/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
+          },
+        ]
+      },
+      {
+        starts: "05/03/2019",
+        ends: "23/04/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "07/03/2019",
+        ends: "25/04/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "10/03/2019",
+        ends: "28/04/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
           },
         ]
       },
@@ -194,25 +734,115 @@ export const classesByLocation = [
     dates: [
       {
         starts: "08/01/2019",
-        ends: "09/02/2019",
+        ends: "26/02/2019",
         slots: [
           {
             starts: "12pm",
             ends: "1.30pm"
           },
           {
-            starts: "12pm",
-            ends: "1.30pm"
+            starts: "6.30pm",
+            ends: "8pm"
           },
         ]
       },
       {
         starts: "10/01/2019",
-        ends: "12/02/2019",
+        ends: "28/02/2019",
         slots: [
           {
             starts: "12pm",
             ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "13/01/2019",
+        ends: "03/03/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
+          },
+        ]
+      },
+      {
+        starts: "05/02/2019",
+        ends: "26/03/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "07/02/2019",
+        ends: "28/03/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "10/02/2019",
+        ends: "31/03/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
+          },
+        ]
+      },
+      {
+        starts: "05/03/2019",
+        ends: "23/04/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "07/03/2019",
+        ends: "25/04/2019",
+        slots: [
+          {
+            starts: "12pm",
+            ends: "1.30pm"
+          },
+          {
+            starts: "6.30pm",
+            ends: "8pm"
+          },
+        ]
+      },
+      {
+        starts: "10/03/2019",
+        ends: "28/04/2019",
+        slots: [
+          {
+            starts: "11am",
+            ends: "12.30pm"
           },
         ]
       },
