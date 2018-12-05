@@ -27,10 +27,10 @@ const DateButton = (props) => (
     }
     <div className="class-selectable-times-card__day-text-wrap">
       <div className="class-selectable-times-card__day-text">{moment(props.classSession.starts, 'DD/MM/YYYY').format('dddd')}s</div>
-      <div className="class-selectable-times-card__day-note">Starts on {moment(props.classSession.starts, 'DD/MM/YYYY').format('Do MMM ')}</div>
+      <div className="class-selectable-times-card__day-note">From {moment(props.classSession.starts, 'DD/MM/YYYY').format('Do MMM-YY')}</div>
     </div>
     <div className="class-selectable-times-card__day-icon">
-      <Icon icon={ArrowRightThick} height={22} />
+      <Icon icon={ArrowRightThick} height={18} />
     </div>
   </div>
 );
@@ -41,10 +41,7 @@ export default (props) => (
     {/* TITLE */}
     <div className="class-selectable-times-card__top-row">
       <div className="class-selectable-times-card__title-wrap">
-        <h3 className="class-selectable-times-card__title">{props.title}</h3>
-        <div className="class-selectable-times-card__address">
-          <IconLabel hideIconOnMobile={true} icon={Location} text={props.address}/>
-        </div>
+        <h3 className="class-selectable-times-card__title">{props.title} - {props.address}</h3>
       </div>
       <div className="class-selectable-times-card__price">
         <PriceSum 
