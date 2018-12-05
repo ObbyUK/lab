@@ -12,6 +12,7 @@ import {
 import { classesByLocation } from './../constants/classes';
 // Components
 import BlankCard from './../components/BlankCard.jsx';
+import ClassSelectableTimesCard from '../components/ClassSelectableTimesCard.jsx';
 import CenterIconBanner from './../components/CenterIconBanner.jsx';
 import ClassesTable from '../components/ClassesTable.jsx';
 import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
@@ -19,7 +20,7 @@ import FocusBanner from '../components/FocusBanner.jsx';
 
 const mapStateToProps = (state) => ({
   selectedLanguage: state.app.selectedLanguage,
-  selectedLocationsOptions: classesByLocation.filter((location) => contains(location.name, state.app.locations)),
+  selectedLocationsOptions: state.app.flow.locationOptions.filter((location) => contains(location.name, state.app.locations)),
   selectedTimes: state.app.time,
   locations: state.app.locations
 });
@@ -100,26 +101,27 @@ class FormContainer extends React.Component {
         <div className="conversion-container__card">
           <BlankCard className="conversion-container__card-overide">
             <div className="conversion-container__card-section conversion-container__card-section--dates">
-              <h2 className="conversion-container__card-title conversion-container__card-title--pad-mobile">
+              <h2 className="conversion-container__card-title">
                 Here's what we have for you
               </h2>
             </div>
             {this.props.selectedLocationsOptions.map((location, index) => (
               <div key={index} className="conversion-container__card-section conversion-container__card-section--dates">
-                <ClassesTable 
+                <ClassSelectableTimesCard 
                   title={location.name}
                   address={location.address}
-                  pillText=""
+                  lessonsStart={location.lessonsStart}
+                  lessonsEnd={location.lessonsEnd}
                   priceLabel="8 classes"
                   price="£200"
-                  dates={location.dates}
-                  onClick={({ date, slot }) => {
+                  dates={location.dates.filter(pipe(prop('type'), contains(__, this.props.selectedTimes)))}
+                  onClick={(session) => {
                     this.props.chooseDate({ 
                       region: location.value,
                       address: location.address,
-                      date: date.starts,
-                      startTime: slot.starts,
-                      endTime: slot.ends
+                      date: session.starts,
+                      startTime: session.lessonsStart,
+                      endTime: session.lessonsEnd
                     });
                   }}
                 />
