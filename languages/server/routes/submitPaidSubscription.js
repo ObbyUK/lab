@@ -1,4 +1,5 @@
 var { propEq } = require("ramda");
+var moment = require("moment");
 var stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const productName = "Obby Language Course";
@@ -44,15 +45,18 @@ const getCustomer = async (customerDetails) => {
     email: customerDetails.email,
     source: customerDetails.token.id,
     metadata: {
-      firstName: customerDetails.name,
-      lastName: customerDetails.lastName,
-      phoneNumber: customerDetails.phoneNumber,
-      email: customerDetails.email,
-      language: customerDetails.language,
+      date: customerDetails.date,
+      address: customerDetails.address,
       skillLevel: customerDetails.skillLevel,
-      locations: customerDetails.locations.join(', '),
-      time: customerDetails.time.join(', '),
-      firstBookedDate: customerDetails.date,
+      language: customerDetails.language,
+      region: customerDetails.region,
+      startTime: customerDetails.startTime,
+      endTime: customerDetails.endTime,
+      region: customerDetails.region,
+      name: customerDetails.name,
+      lastName: customerDetails.lastName,
+      email: customerDetails.email,
+      phoneNumber: customerDetails.phoneNumber,
     }
   });
 }
@@ -67,7 +71,7 @@ module.exports = app =>
         customer: customer.id,
         items: [{plan: plan.id}],
         // has to be a unix timestamp 
-        trial_end: req.body.trialEnd
+        trial_end: moment(req.body.date, 'DD/MM/YYYY').add(2, 'd').unix()
       });
       res
         .status(200)
