@@ -8,6 +8,7 @@ import { levelNames as skillLevelNames } from './../constants/skillLevels';
 import isFullArray from './../lib/isFullArray';
 import uniqObjectArray from '../lib/uniqObjectArray';
 import skillLevels from './../constants/skillLevels';
+import courseTypes from './../constants/courseTypes';
 // Actions & Style
 import { 
   selectSkillLevelAction,
@@ -34,7 +35,8 @@ const mapStateToProps = (state) => ({
   status: state.app.status,
   name: state.app.name,
   email: state.app.email,
-  header: state.app.flow.headers[state.app.status]||{}
+  header: state.app.flow.headers[state.app.status]||{},
+  courseType: state.app.courseType,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -73,11 +75,23 @@ class FormContainer extends React.Component {
   }
 
   areAllQuestionsAnwsered() {
-    return (
-      isFullArray(this.props.skillLevel) &&
-      isFullArray(this.props.time) &&
-      isFullArray(this.props.locations)
-    );
+    if (this.props.courseType === courseTypes.WEEKLY) {
+      return (
+        isFullArray(this.props.skillLevel) &&
+        isFullArray(this.props.time) &&
+        isFullArray(this.props.locations)
+      );
+    }
+    if (this.props.courseType === courseTypes.INTENSIVE) {
+      return (
+        isFullArray(this.props.skillLevel) &&
+        isFullArray(this.props.locations)
+      );
+    }
+  }
+
+  isTimesSelectionShowing() {
+    return this.props.courseType !== courseTypes.INTENSIVE
   }
 
   render () {
@@ -125,23 +139,25 @@ class FormContainer extends React.Component {
         </div>
 
         {/* TIMES CARD */}
-        <div className="form-container__card">
-          <BlankCard>
-            <h2 className="form-container__card-title">
-              When are you available?
-            </h2>
-            <p className="form-container__card-description">
-              We know your time is important, so let us know your availability.
-            </p>
-            <div className="form-container__checkboxes">
-              <MultipleCheckboxes
-                checked={this.props.time}
-                options={this.props.flow.timeOptions}
-                onChange={this.props.selectTime.bind(this)}
-              />
-            </div>
-          </BlankCard>
-        </div>
+        {this.isTimesSelectionShowing() &&
+          <div className="form-container__card">
+            <BlankCard>
+              <h2 className="form-container__card-title">
+                When are you available?
+              </h2>
+              <p className="form-container__card-description">
+                We know your time is important, so let us know your availability.
+              </p>
+              <div className="form-container__checkboxes">
+                <MultipleCheckboxes
+                  checked={this.props.time}
+                  options={this.props.flow.timeOptions}
+                  onChange={this.props.selectTime.bind(this)}
+                />
+              </div>
+            </BlankCard>
+          </div>
+        }
 
         {/* CONTINUE */}
         <div className="form-container__continue-row">

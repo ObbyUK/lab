@@ -33,7 +33,7 @@ export default class AppState {
   
     // Questionare
     this.selectedLanguage = null;
-    // this.selectedLanguage = languages.SPANISH;
+    this.courseType = null;
     this.skillLevel = null;
     this.time = [];
     this.locations = [];

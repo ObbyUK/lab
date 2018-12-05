@@ -138,10 +138,20 @@ function selectCourseType(state, { payload }) {
   if (payload.type === courseTypes.WEEKLY) {
     return pipe(
       assoc('selectedLanguage', payload.language),
+      assoc('courseType', courseTypes.WEEKLY),
       assoc('flow', flows[payload.language]),
       assoc('status', appStatuses.ANWSERING_QUESTIONS)
     )(state);
   }
+  if (payload.type === courseTypes.INTENSIVE) {
+    return pipe(
+      assoc('selectedLanguage', payload.language),
+      assoc('courseType', courseTypes.INTENSIVE),
+      assoc('flow', flows[payload.language]),
+      assoc('status', appStatuses.ANWSERING_QUESTIONS)
+    )(state);
+  }
+
   return state;
 }
 

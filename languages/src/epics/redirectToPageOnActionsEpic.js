@@ -28,9 +28,10 @@ export default (action$, store) =>
         window.history.pushState(urlData, 'learn', "/"+urlData.language);
       }
 
-      if (type === appActions.SELECT_COURSE_TYPE && payload.type === courseTypes.WEEKLY) {
+      if (type === appActions.SELECT_COURSE_TYPE && payload.type !== courseTypes.ONE_TO_ONE) {
         var urlData = {
           language: store.value.app.selectedLanguage,
+          courseType: store.value.app.courseType
         };
         var urlString = queryString.stringify(urlData);
         window.history.pushState(urlData, 'learn', "/learn?"+urlString);
