@@ -36,14 +36,14 @@ export default class extends React.Component {
   render () {
     return (
       <div className={`cookie-toast cookie-toast--${this.props.color||'ebony-clay'} ${this.state.hasBeenAcknowledged ? "cookie-toast--hidden" : ""}`}>
+        <div className={`cookie-toast__text cookie-toast__text--${this.props.color||'ebony-clay'}`}>
+          {this.props.text}
+        </div>
         <div
           onClick={this.dismiss.bind(this)}
           className={`cookie-toast__button cookie-toast__button--${this.props.color||'ebony-clay'}`}
         >
           <Icon icon={Cross} height="16" />
-        </div>
-        <div className={`cookie-toast__text cookie-toast__text--${this.props.color||'ebony-clay'}`}>
-          {this.props.text}
         </div>
       </div>
     );

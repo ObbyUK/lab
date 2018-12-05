@@ -1,5 +1,10 @@
+@import './../styles/variables';
+
 .cookie-toast-column {
   &__toast {
-    margin-bottom: 16px;
+    margin-bottom: 0px;
+    @media (min-width:@sm-width) {
+      margin-bottom: 16px;
+    }
   }
 }

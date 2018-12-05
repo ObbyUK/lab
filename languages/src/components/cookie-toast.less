@@ -5,11 +5,17 @@
 .cookie-toast {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: flex-start;
   background-color: @ebony-clay;
-  border-radius: 4px;
-  padding: 20px;
-  width: 300px;
+  padding: 15px;
+  width: 100%;
+  
+  @media (min-width:@sm-width) {
+    border-radius: 4px;
+    padding: 20px;
+    justify-content: flex-end;
+    width: 300px;
+  }
   
   &--hidden {
     display: none;
@@ -20,7 +26,6 @@
   }
   
   &__text {
-    width: 300px;
     letter-spacing: 0.3px;
     font-family: "Founders Grotesk", sans-serif;
     font-weight: 400;
@@ -28,6 +33,12 @@
     line-height: @m-paragraph-lh;
     color: @humming-bird;
     animation:popout 250ms, fadeIn 250ms;
+    flex: 1;
+    padding-right: 15px;
+    
+    @media (min-width:@sm-width) {
+      // width: 300px;
+    }
 
     &--sun {
       color: @camelot;
@@ -35,8 +46,8 @@
   }
   
   &__button {
-    width: 34px;
-    height: 34px;
+    width: 20px;
+    height: 20px;
     border-radius: 50px;
     display: flex;
     justify-content: center;
