@@ -199,17 +199,25 @@ class CheckoutContainer extends React.Component {
             <BlankCard>
               <div className="checkout-container__sidebar">
                 <div className="checkout-container__sidebar-section">
-                  <div className="checkout-container__sidebar-sale">
-                    Sale! Book today to get £20 off
+                  <div className="checkout-container__sidebar-text-row">
+                    <h3 className="checkout-container__sidebar-title">
+                      8 Classes
+                    </h3>
+                    <h3 className="checkout-container__sidebar-title">
+                      £200
+                    </h3>
                   </div>
-                  <PriceSum
-                    calculation="8 classes"
-                    previousTotal="£200"
-                    total="£180"
-                  />
+                  <div className="checkout-container__sidebar-text">
+                    Pay a £25 deposit now, then £25 after each class for 8 weeks
+                  </div>
                 </div>
-                <div className="checkout-container__sidebar-text">
-                  Obby classes are <strong>20% cheaper</strong> than most London language classes.
+                <div className="checkout-container__sidebar-text-row">
+                  <h3 className="checkout-container__sidebar-highlight">
+                    Pay now
+                  </h3>
+                  <h3 className="checkout-container__sidebar-highlight">
+                    Only £25
+                  </h3>
                 </div>
               </div>
             </BlankCard>
