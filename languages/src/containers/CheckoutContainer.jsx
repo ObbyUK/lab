@@ -77,6 +77,7 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
   {
     submitPayment: (token) => dispatchProps.submitPayment({
       token: token.token,
+      baseCharge: stateProps.pageFlow.baseChargePrice,
       charge: stateProps.pageFlow.chargePrice,
       date: stateProps.date,
       address: stateProps.address,

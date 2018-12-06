@@ -45,6 +45,7 @@ courseTypeFlows[courseTypes.WEEKLY] = {
     }
   },
   checkoutPage: {
+    baseChargePrice: 20000,
     chargePrice: 18000,
     priceSum: {
       calculation: '8 classes',
@@ -80,6 +81,7 @@ courseTypeFlows[courseTypes.INTENSIVE] = {
     }
   },
   checkoutPage: {
+    baseChargePrice: 34400,
     chargePrice: 27500,
     priceSum: {
       calculation: '5 classes',
