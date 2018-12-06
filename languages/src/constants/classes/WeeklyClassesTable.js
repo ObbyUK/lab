@@ -1,4 +1,4 @@
-import regions, { regionNames } from './regions'; 
+import regions, { regionNames } from '../regions'; 
 
 export const classesByLocation = [
   {

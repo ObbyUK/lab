@@ -1,0 +1,753 @@
+import regions, { regionNames } from './../regions'; 
+import timeOfDay from './../timeOfDay';
+
+export default [
+  {
+    name: regionNames.CENTRAL_LONDON,
+    value: regions.CENTRAL_LONDON,
+    address: "Oxford Circus, W1S 1YR",
+    lessonsStart: "6:30PM",
+    lessonsEnd: "8PM",
+    dates: [
+      {
+        type: timeOfDay.DAYTIME,
+        title: "Daytime",
+        label: "(12:00PM - 1:30PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "10/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "05/02/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "07/02/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "05/03/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "07/03/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.EVENING,
+        title: "Evening",
+        label: "(6:30PM - 8PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "10/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "05/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "07/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "05/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "07/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.WEEKENDS,
+        title: "Weekends",
+        label: "(11AM- 12:30PM)",
+        options: [
+          {
+            starts: "13/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "10/02/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+            soldOut: true,
+          },
+          {
+            starts: "10/03/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+        ]
+      },
+    ],
+  },
+  {
+    name: regionNames.CENTRAL_LONDON,
+    value: regions.CENTRAL_LONDON,
+    address: "Covent Garden, WC2E 7LL",
+    lessonsStart: "6:30PM",
+    lessonsEnd: "8PM",
+    dates: [
+      {
+        type: timeOfDay.DAYTIME,
+        title: "Daytime",
+        label: "(12:00PM - 1:30PM)",
+        options: [
+          {
+            starts: "15/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+            soldOut: true,
+          },
+          {
+            starts: "15/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "15/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.EVENING,
+        title: "Evening",
+        label: "(6:30PM - 8PM)",
+        options: [
+          {
+            starts: "15/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "12/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "14/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "12/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "14/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.WEEKENDS,
+        title: "Weekends",
+        label: "(11AM- 12:30PM)",
+        options: [
+          {
+            starts: "20/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "17/02/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "17/03/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+            soldOut: true,
+          },
+        ]
+      },
+    ],
+  },
+    {
+    name: regionNames.CENTRAL_LONDON,
+    value: regions.CENTRAL_LONDON,
+    address: "Holborn, WC1V 7QH",
+    lessonsStart: "6:30PM",
+    lessonsEnd: "8PM",
+    dates: [
+      {
+        type: timeOfDay.DAYTIME,
+        title: "Daytime",
+        label: "(12:00PM - 1:30PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "10/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "05/02/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "07/02/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+            soldOut: true,
+          },
+          {
+            starts: "05/03/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "07/03/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+            soldOut: true,
+          },
+        ]
+      },
+      {
+        type: timeOfDay.EVENING,
+        title: "Evening",
+        label: "(6:30PM - 8PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "10/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "05/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+            soldOut: true,
+          },
+          {
+            starts: "07/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+            soldOut: true,
+          },
+                    {
+            starts: "05/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "07/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.WEEKENDS,
+        title: "Weekends",
+        label: "(11AM- 12:30PM)",
+        options: [
+          {
+            starts: "13/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "10/02/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "10/03/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+        ]
+      },
+    ],
+  },
+  {
+    name: regionNames.WEST_LONDON,
+    value: regions.WEST_LONDON,
+    address: "White City, W12 7FP",
+    lessonsStart: "6:30PM",
+    lessonsEnd: "8PM",
+    dates: [
+      {
+        type: timeOfDay.DAYTIME,
+        title: "Daytime",
+        label: "(12:00PM - 1:30PM)",
+        options: [
+          {
+            starts: "15/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+            soldOut: true,
+          },
+          {
+            starts: "15/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "15/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.EVENING,
+        title: "Evening",
+        label: "(6:30PM - 8PM)",
+        options: [
+          {
+            starts: "15/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "12/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "14/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "12/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "14/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.WEEKENDS,
+        title: "Weekends",
+        label: "(11AM- 12:30PM)",
+        options: [
+          {
+            starts: "20/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+            soldOut: true,
+          },
+          {
+            starts: "17/02/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "17/03/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+        ]
+      },
+    ],
+  },
+  {
+    name: regionNames.NORTH_LONDON,
+    value: regions.NORTH_LONDON,
+    address: "Kings Cross, N1 9SQ",
+    lessonsStart: "6:30PM",
+    lessonsEnd: "8PM",
+    dates: [
+      {
+        type: timeOfDay.DAYTIME,
+        title: "Daytime",
+        label: "(12:00PM - 1:30PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "10/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "05/02/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "07/02/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "05/03/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "07/03/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.EVENING,
+        title: "Evening",
+        label: "(6:30PM - 8PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "10/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "05/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "07/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+            soldOut: true,
+          },
+                    {
+            starts: "05/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "07/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.WEEKENDS,
+        title: "Weekends",
+        label: "(11AM- 12:30PM)",
+        options: [
+          {
+            starts: "13/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "10/02/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+            soldOut: true,
+          },
+          {
+            starts: "10/03/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+        ]
+      },
+    ],
+  },
+  {
+    name: regionNames.EAST_LONDON,
+    value: regions.EAST_LONDON,
+    address: "Shoreditch, EC2A 4HT",
+    lessonsStart: "6:30PM",
+    lessonsEnd: "8PM",
+    dates: [
+      {
+        type: timeOfDay.DAYTIME,
+        title: "Daytime",
+        label: "(12:00PM - 1:30PM)",
+        options: [
+          {
+            starts: "15/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "15/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "15/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.EVENING,
+        title: "Evening",
+        label: "(6:30PM - 8PM)",
+        options: [
+          {
+            starts: "15/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "17/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+            soldOut: true,
+          },
+                    {
+            starts: "12/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "14/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "12/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "14/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.WEEKENDS,
+        title: "Weekends",
+        label: "(11AM- 12:30PM)",
+        options: [
+          {
+            starts: "20/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "17/02/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "17/03/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+        ]
+      },
+    ],
+  },
+  {
+    name: regionNames.SOUTH_LONDON,
+    value: regions.SOUTH_LONDON,
+    address: "Brixton, SW9 8BQ",
+    lessonsStart: "6:30PM",
+    lessonsEnd: "8PM",
+    dates: [
+      {
+        type: timeOfDay.DAYTIME,
+        title: "Daytime",
+        label: "(12:00PM - 1:30PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "10/01/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "05/02/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "07/02/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "05/03/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+          {
+            starts: "07/03/2019",
+            lessonsStart: "12:00PM",
+            lessonsEnd: "1:30PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.EVENING,
+        title: "Evening",
+        label: "(6:30PM - 8PM)",
+        options: [
+          {
+            starts: "08/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "10/01/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+                    {
+            starts: "05/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "07/02/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+            soldOut: true,
+          },
+                    {
+            starts: "05/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+          {
+            starts: "07/03/2019",
+            lessonsStart: "6:30PM",
+            lessonsEnd: "8PM",
+          },
+        ]
+      },
+      {
+        type: timeOfDay.WEEKENDS,
+        title: "Weekends",
+        label: "(11AM- 12:30PM)",
+        options: [
+          {
+            starts: "13/01/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "10/02/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+          {
+            starts: "10/03/2019",
+            lessonsStart: "11:00PM",
+            lessonsEnd: "12:30PM",
+          },
+        ]
+      },
+    ],
+  }
+];

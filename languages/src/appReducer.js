@@ -114,6 +114,7 @@ function viewAnyPage(state, { payload }) {
     assoc('status', pathNameToStatus[payload.pathName]),
     assoc('flow', language? flows[language]: {}),
     assoc('selectedLanguage', language),
+    assoc('courseType', payload.courseType||state.courseType),
     assoc('skillLevel', payload.skillLevel||state.skillLevel),
     assoc('time', payload.time || state.time),
     assoc('locations', payload.locations || state.locations),

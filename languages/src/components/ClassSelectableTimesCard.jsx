@@ -4,36 +4,7 @@ import moment from 'moment';
 import './class-selectable-times-card.less';
 // Components
 import PriceSum from './PriceSum.jsx';
-import { Location, ArrowRightThick } from './../components/Icons.jsx';
-import Icon from './../components/Icon.jsx';
-import IconLabel from './../components/IconLabel.jsx';
-
-const DateButton = (props) => (
-  <div 
-    className={`
-      class-selectable-times-card__day
-      ${props.classSession.soldOut ? 'class-selectable-times-card__day--sold-out' : ''}
-    `}
-    onClick={() => {
-      if (!props.classSession.soldOut) {
-        props.onClick(props.classSession)
-      }
-    }}
-  >
-    {props.classSession.soldOut &&
-      <div className="class-selectable-times-card__day-sold-out-label">
-        Sold out
-      </div>
-    }
-    <div className="class-selectable-times-card__day-text-wrap">
-      <div className="class-selectable-times-card__day-text">{moment(props.classSession.starts, 'DD/MM/YYYY').format('dddd')}s</div>
-      <div className="class-selectable-times-card__day-note">From {moment(props.classSession.starts, 'DD/MM/YYYY').format('Do MMM-YY')}</div>
-    </div>
-    <div className="class-selectable-times-card__day-icon">
-      <Icon icon={ArrowRightThick} height={18} />
-    </div>
-  </div>
-);
+import DateButton from './../components/DateButton.jsx';
 
 export default (props) => (
   <div className="class-selectable-times-card">
@@ -77,8 +48,11 @@ export default (props) => (
             {dates.options.map((classSession, index) => (
               <DateButton 
                 key={index}
-                classSession={classSession}
+                soldOut={classSession.soldOut}
                 onClick={props.onClick}
+                session={classSession}
+                text={`${moment(classSession.starts, 'DD/MM/YYYY').format('dddd')}s`}
+                note={`From ${moment(classSession.starts, 'DD/MM/YYYY').format('Do MMM-YY')}`}
               />
             ))}
           </div>

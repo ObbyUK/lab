@@ -43,6 +43,7 @@ export default (action$, store) =>
           skillLevel: store.value.app.skillLevel,
           time: store.value.app.time,
           locations: store.value.app.locations,
+          courseType: store.value.app.courseType
         };
         var urlString = queryString.stringify(urlData);
         window.history.pushState(urlData, 'choose', "/choose?"+urlString);
@@ -51,6 +52,7 @@ export default (action$, store) =>
       if (type === appActions.CHOOSE_DATE) {
         var urlData = {
           language: store.value.app.selectedLanguage,
+          courseType: store.value.app.courseType,
           skillLevel: store.value.app.skillLevel,
           region: store.value.app.region,
           address: store.value.app.address,
@@ -65,6 +67,7 @@ export default (action$, store) =>
       if (type === appActions.BOOK_YOUR_SPOT) {
         var urlData = {
           language: store.value.app.selectedLanguage,
+          courseType: store.value.app.courseType,
           skillLevel: store.value.app.skillLevel,
           region: store.value.app.region,
           address: store.value.app.address,

@@ -9,20 +9,20 @@ import {
   viewChooseDatePageAction,
   openEmailPopupAction
 } from '../appActions';
-import { classesByLocation } from './../constants/classes';
+import { courseTypeFlows } from './../constants/flows';
+import isFullArray from './../lib/isFullArray';
 // Components
 import BlankCard from './../components/BlankCard.jsx';
 import ClassSelectableTimesCard from '../components/ClassSelectableTimesCard.jsx';
 import CenterIconBanner from './../components/CenterIconBanner.jsx';
-import ClassesTable from '../components/ClassesTable.jsx';
 import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
 import FocusBanner from '../components/FocusBanner.jsx';
 
 const mapStateToProps = (state) => ({
   selectedLanguage: state.app.selectedLanguage,
-  selectedLocationsOptions: state.app.flow.locationOptions.filter((location) => contains(location.name, state.app.locations)),
   selectedTimes: state.app.time,
-  locations: state.app.locations
+  locations: state.app.locations,
+  pageFlow: courseTypeFlows[state.app.courseType].conversionPage
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -53,6 +53,22 @@ class FormContainer extends React.Component {
     this.props.viewChooseDatePage();
   }
 
+  filterLocations(locations) {
+    return locations
+      .filter((location) => contains(location.name, this.props.locations));
+  }
+
+  filterLocationDates(dates) {
+    if (isFullArray(this.props.times)) {
+      return dates
+        .filter(pipe(
+          prop('type'), 
+          contains(__, this.props.selectedTimes)
+        ));
+    }
+    return dates;
+  }
+
   render () {
     return (
       <div className="conversion-container__body container">
@@ -66,23 +82,7 @@ class FormContainer extends React.Component {
             <div className="conversion-container__card-section conversion-container__card-section--weekly-classes">
               <ImageBulletPoints 
                 hideMobileText={true}
-                points={[
-                  {
-                    image: "/icons/calendar-circle.svg",
-                    title: "Our classes run once per week for 8 weeks all across London",
-                    text: "",
-                  },
-                  {
-                    image: "/icons/people-circle.svg",
-                    title: "Get teacher and additional learning support on-the-go via our online community",
-                    text: "",
-                  },
-                  {
-                    image: "/icons/location-circle.svg",
-                    title: "All classes are recorded & made available online in case you miss a class or want a recap",
-                    text: "",
-                  }
-                ]}
+                points={this.props.pageFlow.points}
               />
             </div>
             <CenterIconBanner
@@ -91,8 +91,8 @@ class FormContainer extends React.Component {
               description="We promise all of our learners a great experience. If you’re unhappy after your first class, we’ll refund you in full."
             />
             <FocusBanner
-              priceText="8 classes = £200"
-              buttonText="Payable in weekly instalments"
+              priceText={this.props.pageFlow.focusBanner.priceText}
+              buttonText={this.props.pageFlow.focusBanner.buttonText}
             />
           </BlankCard>
         </div>
@@ -105,16 +105,16 @@ class FormContainer extends React.Component {
                 Here's what we have for you
               </h2>
             </div>
-            {this.props.selectedLocationsOptions.map((location, index) => (
+            {this.filterLocations(this.props.pageFlow.classes).map((location, index) => (
               <div key={index} className="conversion-container__card-section conversion-container__card-section--dates">
                 <ClassSelectableTimesCard 
                   title={location.name}
                   address={location.address}
                   lessonsStart={location.lessonsStart}
                   lessonsEnd={location.lessonsEnd}
-                  priceLabel="8 classes"
-                  price="£200"
-                  dates={location.dates.filter(pipe(prop('type'), contains(__, this.props.selectedTimes)))}
+                  priceLabel={this.props.pageFlow.classesPriceLabel}
+                  price={this.props.pageFlow.classesPrice}
+                  dates={this.filterLocationDates(location.dates)}
                   onClick={(session) => {
                     this.props.chooseDate({ 
                       region: location.value,
