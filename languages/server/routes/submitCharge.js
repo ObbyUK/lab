@@ -56,7 +56,7 @@ module.exports = app =>
       var product = await getProduct();
       var plan = await getProductPlan(product.id);
       var charge = await stripe.charges.create({
-        amount: 18000,
+        amount: req.body.charge,
         currency: 'gbp',
         source: req.body.token.id,
         receipt_email: req.body.email,

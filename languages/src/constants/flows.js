@@ -44,6 +44,14 @@ courseTypeFlows[courseTypes.WEEKLY] = {
       buttonText: "Payable in weekly instalments",
     }
   },
+  checkoutPage: {
+    chargePrice: 18000,
+    priceSum: {
+      calculation: '8 classes',
+      previousTotal: '£200',
+      total: '£180',
+    }
+  }
 };
 courseTypeFlows[courseTypes.INTENSIVE] = {
   conversionPage: {
@@ -71,6 +79,14 @@ courseTypeFlows[courseTypes.INTENSIVE] = {
       priceText: "5 day intensive = £215",
     }
   },
+  checkoutPage: {
+    chargePrice: 27500,
+    priceSum: {
+      calculation: '5 classes',
+      previousTotal: '£344',
+      total: '£275',
+    }
+  }
 };
 
 export default flows;
