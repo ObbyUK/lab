@@ -1,7 +1,7 @@
 // Constants
 import languages from './languages';
 import courseTypes from './courseTypes';
-import IntenseClasses from './classes/IntenseClasses';
+import IntensiveClasses from './classes/IntensiveClasses';
 import WeeklyClasses from './classes/WeeklyClasses';
 // Flows
 import spanishFlow from './flows/spanish';
@@ -47,7 +47,7 @@ courseTypeFlows[courseTypes.WEEKLY] = {
 };
 courseTypeFlows[courseTypes.INTENSIVE] = {
   conversionPage: {
-    classes: IntenseClasses,
+    classes: IntensiveClasses,
     classesPriceLabel: "5 day intensive",
     classesPrice: "£275",
     points: [

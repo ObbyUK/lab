@@ -45,14 +45,11 @@ export default (props) => (
           </div>
           {/* CATEGORY DATES */}
           <div className="class-selectable-times-card__days">
-            {dates.options.map((classSession, index) => (
+            {dates.options.map((option, index) => (
               <DateButton 
                 key={index}
-                soldOut={classSession.soldOut}
                 onClick={props.onClick}
-                session={classSession}
-                text={`${moment(classSession.starts, 'DD/MM/YYYY').format('dddd')}s`}
-                note={`From ${moment(classSession.starts, 'DD/MM/YYYY').format('Do MMM-YY')}`}
+                {...option}
               />
             ))}
           </div>

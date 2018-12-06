@@ -1,6 +1,7 @@
 import React from 'react';
+import moment from 'moment';
 import { connect } from 'react-redux';
-import { __, pipe, prop, mergeAll, contains } from 'ramda';
+import { evolve, map, __, pipe, prop, mergeAll, contains } from 'ramda';
 
 import './conversion-container.less';
 // Actions & Style
@@ -17,11 +18,13 @@ import ClassSelectableTimesCard from '../components/ClassSelectableTimesCard.jsx
 import CenterIconBanner from './../components/CenterIconBanner.jsx';
 import ImageBulletPoints from '../components/ImageBulletPoints.jsx';
 import FocusBanner from '../components/FocusBanner.jsx';
+import courseTypes from '../constants/courseTypes';
 
 const mapStateToProps = (state) => ({
   selectedLanguage: state.app.selectedLanguage,
   selectedTimes: state.app.time,
   locations: state.app.locations,
+  courseType: state.app.courseType,
   pageFlow: courseTypeFlows[state.app.courseType].conversionPage
 });
 
@@ -64,9 +67,46 @@ class FormContainer extends React.Component {
         .filter(pipe(
           prop('type'), 
           contains(__, this.props.selectedTimes)
-        ));
+        ))
+        .map(this.Location__LocationWithDateButtonProps.bind(this))
     }
-    return dates;
+    return dates
+      .map(this.Location__LocationWithDateButtonProps.bind(this))
+  }
+
+  Location__LocationWithDateButtonProps(location) {
+
+    if (this.props.courseType === courseTypes.WEEKLY) {
+      return evolve(
+        { options: map(this.LocationDate__WeeklyDateButtonProps) },
+        location
+      );
+    }
+
+    if (this.props.courseType === courseTypes.INTENSIVE) {
+      return evolve(
+        { options: map(this.LocationDate__IntensiveDateButtonProps) },
+        location
+      );
+    }
+  }
+
+  LocationDate__WeeklyDateButtonProps(date) {
+    return {
+      soldOut: date.soldOut,
+      text: `${moment(date.starts, 'DD/MM/YYYY').format('dddd')}s`,
+      note: `From ${moment(date.starts, 'DD/MM/YYYY').format('Do MMM-YY')}`,
+      date,
+    };
+  }
+
+  LocationDate__IntensiveDateButtonProps(date) {
+    return {
+      soldOut: date.soldOut,
+      text: moment(date.starts, 'DD/MM/YYYY').format('Do MMM'),
+      note: `From ${moment(date.starts, 'DD/MM/YYYY').format('Do MMM')}-${moment(date.ends, 'DD/MM/YYYY').format('Do')}`,
+      date,
+    };
   }
 
   render () {
@@ -110,8 +150,6 @@ class FormContainer extends React.Component {
                 <ClassSelectableTimesCard 
                   title={location.name}
                   address={location.address}
-                  lessonsStart={location.lessonsStart}
-                  lessonsEnd={location.lessonsEnd}
                   priceLabel={this.props.pageFlow.classesPriceLabel}
                   price={this.props.pageFlow.classesPrice}
                   dates={this.filterLocationDates(location.dates)}

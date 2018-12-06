@@ -12,7 +12,7 @@ export default (props) => (
     `}
     onClick={() => {
       if (!props.soldOut) {
-        props.onClick(props.session)
+        props.onClick(props.date)
       }
     }}
   >
