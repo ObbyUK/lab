@@ -90,6 +90,16 @@ class FormContainer extends React.Component {
     };
   }
 
+  Session__Dates(session) {
+    if (session.ends) {
+      return [
+        session.starts,
+        session.ends
+      ];
+    }
+    return [session.starts]
+  }
+
   render () {
     return (
       <div className="conversion-container__body container">
@@ -141,6 +151,7 @@ class FormContainer extends React.Component {
                       region: location.value,
                       address: location.address,
                       date: session.starts,
+                      dates: this.Session__Dates(session),
                       startTime: session.lessonsStart,
                       endTime: session.lessonsEnd
                     });

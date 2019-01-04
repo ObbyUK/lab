@@ -85,7 +85,7 @@ courseTypeFlows[courseTypes.INTENSIVE] = {
     baseChargePrice: 34400,
     chargePrice: 20000,
     priceSum: {
-      calculation: '2 classes',
+      calculation: '2-day intensive',
       previousTotal: '£200',
       total: '£200',
     }

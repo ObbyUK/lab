@@ -57,6 +57,7 @@ export default (action$, store) =>
           region: store.value.app.region,
           address: store.value.app.address,
           date: store.value.app.date,
+          dates: store.value.app.dates,
           startTime: store.value.app.startTime,
           endTime: store.value.app.endTime
         };
@@ -72,6 +73,7 @@ export default (action$, store) =>
           region: store.value.app.region,
           address: store.value.app.address,
           date: store.value.app.date,
+          dates: store.value.app.dates,
           startTime: store.value.app.startTime,
           endTime: store.value.app.endTime
         };

@@ -40,6 +40,7 @@ export default class AppState {
     
     // Selected date data
     this.date = null;
+    this.dates = [];
     this.region = null;
     this.address = null;
     this.startTime = null;
