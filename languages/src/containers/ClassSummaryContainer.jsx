@@ -261,7 +261,7 @@ class ClassSummaryContainer extends React.Component {
                   { 
                     image: "/icons/small_class.svg", 
                     title: "Small class sizes", 
-                    description: "Our students are given the attention they neeed. That's why we only have a maximum of 10 students per class"
+                    description: "Our students are given the attention they need. That's why we only have a maximum of 10 students per class"
                   }
                 ]}
               />
