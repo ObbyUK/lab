@@ -83,8 +83,8 @@ class FormContainer extends React.Component {
   LocationDate__IntensiveDateButtonProps(date) {
     return {
       soldOut: date.soldOut,
-      text: `From ${moment(date.starts, 'DD/MM/YYYY').format('Do MMM')}`,
-      note: `From ${moment(date.starts, 'DD/MM/YYYY').format('Do MMM')}-${moment(date.ends, 'DD/MM/YYYY').format('Do')}`,
+      text: `${moment(date.starts, 'DD/MM/YYYY').format('Do')}-${moment(date.ends, 'DD/MM/YYYY').format('Do MMM')}`,
+      note: `Every ${moment(date.starts, 'DD/MM/YYYY').format('dddd')}`,
       secondNote: `${date.lessonsStart} - ${date.lessonsEnd}`,
       date,
     };
