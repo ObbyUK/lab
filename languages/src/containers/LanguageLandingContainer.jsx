@@ -40,7 +40,7 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
   dispatchProps,
   {
     selectCourseType: ({ type, location }) => {
-      if (type !== courseTypes.WEEKLY) {
+      if (type === courseTypes.ONE_TO_ONE) {
         dispatchProps.openEmailPopup({
           title: "It's on the way",
           description: `We’re still defining our ${type} curriculum, but give us your details and we’ll reach out when we’re ready.`,
@@ -134,7 +134,6 @@ class LanguageLandingContainer extends React.Component {
                   type: courseTypes.WEEKLY,
                   location: "pricing module",
                 })}
-                buttonNote="Payable in weekly instalments"
               />
             </div>
             {/* INTENSIVE COURSES */}
@@ -142,8 +141,8 @@ class LanguageLandingContainer extends React.Component {
               <PricingBox
                 color="humming-bird"
                 title={courseNames[courseTypes.INTENSIVE]}
-                description="Go from zero to hero in a week. 6 hours per day, for a full week"
-                pricing="5-full days = £500"
+                description="Go from zero to hero in two full days. 6 hours per day."
+                pricing="2-full days = £200"
                 list={[
                   "Daytime, Evenings & Weekends",
                   "Small class sizes (10 people max)",
@@ -243,7 +242,7 @@ class LanguageLandingContainer extends React.Component {
           ]}
         />
         <div className="language-landing-container__here-to-learn">
-          <h2 className="language-landing-container__sub-title">The most personal Spanish course ever.</h2>
+          <h2 className="language-landing-container__sub-title">The most personal {this.props.selectedLanguageName} course ever.</h2>
           {this.renderCourseTypeButtons("footer")}
         </div>
       </div>

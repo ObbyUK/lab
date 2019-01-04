@@ -67,10 +67,6 @@ class AppPageContainer extends React.Component {
     return (
       <div className="app-page">
 
-        <div className="app-page__sales-banner">
-          <SalesBar text="SALE! Book today to get £20 off, ends in" />
-        </div>
-
         <div className="app-page__body">
           
           <Menu/>

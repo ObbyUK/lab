@@ -7,6 +7,7 @@ import './class-summary-container.less';
 // Constants & Actions & Lib
 import { levelNames as skillLevelNames } from './../constants/skillLevels';
 import String__UpperCaseFirstLetter from './../lib/String__UpperCaseFirstLetter';
+import DatesArray__FormatedDatesString from './../lib/DatesArray__FormatedDatesString';
 import { 
   bookYourSpotAction,
   viewClassSummaryPageAction
@@ -35,8 +36,8 @@ const mapStateToProps = (state) => ({
   address: state.app.address,
   chosenLanguage: state.app.selectedLanguage,
   chosenLanguageName: String__UpperCaseFirstLetter(state.app.selectedLanguage),
+  lessonDate: DatesArray__FormatedDatesString(state.app.dates, 'Do MMM'),
   lessonDayAndTime: `${moment(state.app.date, 'DD/MM/YYYY').format('dddd')}s, ${state.app.startTime} - ${state.app.endTime}`,
-  lessonDate: moment(state.app.date, 'DD/MM/YYYY').format('Do MMM')
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
@@ -75,7 +76,7 @@ class ClassSummaryContainer extends React.Component {
                     <IconLabel icon={Location} text={this.props.address}/>
                   </div>
                   <div className="class-summary-container__icon-label">
-                    <IconLabel icon={Calendar} text={`Starts ${this.props.lessonDate}`}/>
+                    <IconLabel icon={Calendar} text={`${this.props.lessonDate}`}/>
                   </div>
                   <div className="class-summary-container__icon-label">
                     <IconLabel icon={Clock} text={this.props.lessonDayAndTime}/>
@@ -261,7 +262,7 @@ class ClassSummaryContainer extends React.Component {
                   { 
                     image: "/icons/small_class.svg", 
                     title: "Small class sizes", 
-                    description: "Our students are given the attention they neeed. That's why we only have a maximum of 10 students per class"
+                    description: "Our students are given the attention they need. That's why we only have a maximum of 10 students per class"
                   }
                 ]}
               />

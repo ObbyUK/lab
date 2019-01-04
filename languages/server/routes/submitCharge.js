@@ -1,4 +1,4 @@
-var { propEq } = require("ramda");
+var { propEq, merge } = require("ramda");
 var stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const productName = "Obby Language Course";
@@ -55,17 +55,31 @@ module.exports = app =>
     try {
       var product = await getProduct();
       var plan = await getProductPlan(product.id);
+      var metadata = RequestBoy__Metadata(req.body);
       var charge = await stripe.charges.create({
-        amount: 18000,
+        amount: req.body.charge,
         currency: 'gbp',
         source: req.body.token.id,
         receipt_email: req.body.email,
         description: `Obby language course: ${req.body.language}, ${req.body.skillLevel} starts on ${req.body.date} at ${req.body.address}.`,
-        metadata: RequestBoy__Metadata(req.body)
+        metadata,
       });
       res
         .status(200)
-        .json({ product, plan, customer: {}, charge });
+        .json({ 
+          product, 
+          plan, 
+          charge, 
+          customer: {},
+          course: merge(
+            {
+              base: req.body.baseCharge,
+              final: req.body.charge,
+              discount: req.body.baseCharge-req.body.charge,
+            },
+            metadata
+          ),
+        });
     } catch (error) {
       res
         .status(500)

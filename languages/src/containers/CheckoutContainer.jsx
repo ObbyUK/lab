@@ -8,6 +8,7 @@ import String__UpperCaseFirstLetter from './../lib/String__UpperCaseFirstLetter'
 import { stripe } from './../../settings';
 import { appStatuses } from '../AppState';
 import { checkoutReviews } from './../constants/reviews';
+import { courseTypeFlows } from './../constants/flows';
 // Actions & Components
 import "./checkout-container.less";
 import {
@@ -41,6 +42,7 @@ const ImageTitleText = (props) => (
 
 const mapStateToProps = (state) => ({
   status: state.app.status,
+  pageFlow: courseTypeFlows[state.app.courseType].checkoutPage,
   errorMessage: state.app.formError.message,
   teacher: state.app.flow.teacher,
   selectedLanguage: state.app.selectedLanguage,
@@ -75,6 +77,8 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
   {
     submitPayment: (token) => dispatchProps.submitPayment({
       token: token.token,
+      baseCharge: stateProps.pageFlow.baseChargePrice,
+      charge: stateProps.pageFlow.chargePrice,
       date: stateProps.date,
       address: stateProps.address,
       skillLevel: stateProps.skillLevel,
@@ -199,13 +203,9 @@ class CheckoutContainer extends React.Component {
             <BlankCard>
               <div className="checkout-container__sidebar">
                 <div className="checkout-container__sidebar-section">
-                  <div className="checkout-container__sidebar-sale">
-                    Sale! Book today to get £20 off
-                  </div>
                   <PriceSum
-                    calculation="8 classes"
-                    previousTotal="£200"
-                    total="£180"
+                    calculation={this.props.pageFlow.priceSum.calculation}
+                    total={this.props.pageFlow.priceSum.total}
                   />
                 </div>
                 <div className="checkout-container__sidebar-text">

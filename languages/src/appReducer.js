@@ -109,17 +109,19 @@ function viewAnyPage(state, { payload }) {
     "summary": appStatuses.VIEWING_CLASS_SUMMARY,
     "checkout": appStatuses.CHECKING_OUT
   };
-
+  
   return pipe(
     assoc('status', pathNameToStatus[payload.pathName]),
     assoc('flow', language? flows[language]: {}),
     assoc('selectedLanguage', language),
+    assoc('courseType', payload.courseType||state.courseType),
     assoc('skillLevel', payload.skillLevel||state.skillLevel),
     assoc('time', payload.time || state.time),
     assoc('locations', payload.locations || state.locations),
     assoc('region', payload.region||state.region),
     assoc('address', payload.address||state.address),
     assoc('date', payload.date||state.date),
+    assoc('dates', payload.dates||state.dates),
     assoc('startTime', payload.startTime||state.startTime),
     assoc('endTime', payload.endTime||state.endTime),
   )(state);
@@ -138,10 +140,20 @@ function selectCourseType(state, { payload }) {
   if (payload.type === courseTypes.WEEKLY) {
     return pipe(
       assoc('selectedLanguage', payload.language),
+      assoc('courseType', courseTypes.WEEKLY),
       assoc('flow', flows[payload.language]),
       assoc('status', appStatuses.ANWSERING_QUESTIONS)
     )(state);
   }
+  if (payload.type === courseTypes.INTENSIVE) {
+    return pipe(
+      assoc('selectedLanguage', payload.language),
+      assoc('courseType', courseTypes.INTENSIVE),
+      assoc('flow', flows[payload.language]),
+      assoc('status', appStatuses.ANWSERING_QUESTIONS)
+    )(state);
+  }
+
   return state;
 }
 
@@ -177,6 +189,7 @@ function chooseDate(state, { payload }) {
   return pipe(
     assoc('status', appStatuses.VIEWING_CLASS_SUMMARY),
     assoc('date', payload.date ),
+    assoc('dates', payload.dates ),
     assoc('region', payload.region ),
     assoc('address', payload.address ),
     assoc('startTime', payload.startTime ),

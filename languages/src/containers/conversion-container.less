@@ -19,7 +19,7 @@
   &__card-overide {
     padding: 0px;
     @media (min-width:@sm-width) {
-      padding: 35px;
+      // padding: 35px;
     }
 
     &--flat {
@@ -38,7 +38,7 @@
     font-family: "Founders Grotesk", 'Arial', sans-serif; 
     font-size: 28px;
     line-height: 1.25;   
-    margin: 0 0 30px;
+    margin: 0;
     font-weight: 600;
     
     &--flat {
@@ -75,7 +75,7 @@
     line-height: @l-paragraph-lh;
     padding: 25px;
     @media (min-width:@sm-width) {
-      padding: 25px 0 0;
+      padding: 40px;
 
     }
   }
@@ -86,7 +86,10 @@
   }
 
   &__card-section {
-    margin-top: 20px;
+    // margin-top: 20px;
+    // margin-bottom: ;
+
+    
 
     &--weekly-classes {
       max-width: 750px;
@@ -97,12 +100,8 @@
     }
     
     &--dates {
-      padding: 0 22px;
+      padding: 40px;
       border-bottom: 1px solid @alto;
-      @media (min-width:@sm-width) {
-        padding: 0;
-        border-bottom: none;
-      }
     }
     
     &--table-dates {
@@ -117,5 +116,9 @@
       margin-top: 40px;
     }
 
+  }
+
+  &__bullet-points {
+    padding: 40px;
   }
 }

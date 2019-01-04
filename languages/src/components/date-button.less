@@ -1,0 +1,75 @@
+@import './../styles/variables';
+
+.date-button {
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: no-wrap;
+  font-family: "Founders Grotesk", sans-serif;
+  font-weight: 400;
+  margin: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid @alto;
+  background-color: transparent;
+  outline: none !important;
+  transition: all 350ms;
+  padding: 10px 15px;
+  width: 100%;
+
+  @media (min-width:@md-width) {
+    max-width: 180px;
+    margin: 0 15px 0 0;
+  }
+
+  &--sold-out {
+    // background-color: @gray;
+    // border: 1px solid @dolphin;
+    cursor: default;
+  }
+
+  &__text-wrap {
+    // display: flex;
+    // flex-wrap: wrap;
+  }
+
+  &__text {
+    width: 100%;
+    font-size: @m-paragraph;
+    line-height: 1;
+    font-weight: 600;
+    color: @camelot;
+  }
+
+  &__note {
+    width: 100%;
+    font-size: @xsm-paragraph;
+    line-height: 1;
+    color: @gray;
+    margin-top: 5px;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    // only way to acces svg in an <Icon> component and change color
+    path {
+      stroke: @camelot;
+    }
+  }
+
+  &__sold-out-label {
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    padding: 0 5px;
+    color: white;
+    font-weight: 600;
+    background-color: @ebony-clay;
+    font-size: @xsm-paragraph;
+    text-transform: uppercase;
+    transform: rotate(10deg);
+
+  }
+}
