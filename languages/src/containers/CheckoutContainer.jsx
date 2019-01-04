@@ -203,12 +203,8 @@ class CheckoutContainer extends React.Component {
             <BlankCard>
               <div className="checkout-container__sidebar">
                 <div className="checkout-container__sidebar-section">
-                  <div className="checkout-container__sidebar-sale">
-                    Sale! Book today to get £20 off
-                  </div>
                   <PriceSum
                     calculation={this.props.pageFlow.priceSum.calculation}
-                    previousTotal={this.props.pageFlow.priceSum.previousTotal}
                     total={this.props.pageFlow.priceSum.total}
                   />
                 </div>
