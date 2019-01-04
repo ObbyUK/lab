@@ -46,11 +46,11 @@ courseTypeFlows[courseTypes.WEEKLY] = {
   },
   checkoutPage: {
     baseChargePrice: 20000,
-    chargePrice: 18000,
+    chargePrice: 20000,
     priceSum: {
       calculation: '8 classes',
       previousTotal: '£200',
-      total: '£180',
+      total: '£200',
     }
   }
 };
