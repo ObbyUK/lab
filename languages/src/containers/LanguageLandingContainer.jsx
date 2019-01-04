@@ -142,8 +142,8 @@ class LanguageLandingContainer extends React.Component {
               <PricingBox
                 color="humming-bird"
                 title={courseNames[courseTypes.INTENSIVE]}
-                description="Go from zero to hero in a week. 6 hours per day, for a full week"
-                pricing="5-full days = £500"
+                description="Go from zero to hero in two full days. 6 hours per day."
+                pricing="2-full days = £200"
                 list={[
                   "Daytime, Evenings & Weekends",
                   "Small class sizes (10 people max)",
