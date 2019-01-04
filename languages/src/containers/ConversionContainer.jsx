@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
-import { evolve, map, __, pipe, prop, mergeAll, contains } from 'ramda';
+import { mergeAll, contains } from 'ramda';
 
 import './conversion-container.less';
 // Actions & Style
@@ -11,7 +11,6 @@ import {
   openEmailPopupAction
 } from '../appActions';
 import { courseTypeFlows } from './../constants/flows';
-import isFullArray from './../lib/isFullArray';
 // Components
 import BlankCard from './../components/BlankCard.jsx';
 import ClassSelectableTimesCard from '../components/ClassSelectableTimesCard.jsx';
@@ -22,7 +21,6 @@ import courseTypes from '../constants/courseTypes';
 
 const mapStateToProps = (state) => ({
   selectedLanguage: state.app.selectedLanguage,
-  selectedTimes: state.app.time,
   locations: state.app.locations,
   courseType: state.app.courseType,
   pageFlow: courseTypeFlows[state.app.courseType].conversionPage
@@ -61,41 +59,23 @@ class FormContainer extends React.Component {
       .filter((location) => contains(location.name, this.props.locations));
   }
 
-  filterLocationDates(dates) {
-    if (isFullArray(this.props.times)) {
-      return dates
-        .filter(pipe(
-          prop('type'), 
-          contains(__, this.props.selectedTimes)
-        ))
-        .map(this.Location__LocationWithDateButtonProps.bind(this))
-    }
-    return dates
-      .map(this.Location__LocationWithDateButtonProps.bind(this))
-  }
-
-  Location__LocationWithDateButtonProps(location) {
+  Location__LocationWithDateButtonProps(dates) {
 
     if (this.props.courseType === courseTypes.WEEKLY) {
-      return evolve(
-        { options: map(this.LocationDate__WeeklyDateButtonProps) },
-        location
-      );
+      return dates.map(this.LocationDate__WeeklyDateButtonProps);
     }
 
     if (this.props.courseType === courseTypes.INTENSIVE) {
-      return evolve(
-        { options: map(this.LocationDate__IntensiveDateButtonProps) },
-        location
-      );
+      return dates.map(this.LocationDate__IntensiveDateButtonProps);
     }
   }
 
   LocationDate__WeeklyDateButtonProps(date) {
     return {
       soldOut: date.soldOut,
-      text: `${moment(date.starts, 'DD/MM/YYYY').format('dddd')}s`,
-      note: `From ${moment(date.starts, 'DD/MM/YYYY').format('Do MMM-YY')}`,
+      text: `From ${moment(date.starts, 'DD/MM/YYYY').format('Do MMM')}`,
+      note: `Every ${moment(date.starts, 'DD/MM/YYYY').format('dddd')}`,
+      secondNote: `${date.lessonsStart} - ${date.lessonsEnd}`,
       date,
     };
   }
@@ -103,8 +83,9 @@ class FormContainer extends React.Component {
   LocationDate__IntensiveDateButtonProps(date) {
     return {
       soldOut: date.soldOut,
-      text: moment(date.starts, 'DD/MM/YYYY').format('Do MMM'),
+      text: `From ${moment(date.starts, 'DD/MM/YYYY').format('Do MMM')}`,
       note: `From ${moment(date.starts, 'DD/MM/YYYY').format('Do MMM')}-${moment(date.ends, 'DD/MM/YYYY').format('Do')}`,
+      secondNote: `${date.lessonsStart} - ${date.lessonsEnd}`,
       date,
     };
   }
@@ -113,13 +94,15 @@ class FormContainer extends React.Component {
     return (
       <div className="conversion-container__body container">
 
-        {/* WEEKLY CLASSES */}
+        {/* HOW IT WORKS INFOGRAPHIC */}
         <div className="conversion-container__card">
           <BlankCard className="conversion-container__card-overide conversion-container__card-overide--flat">
-            <h2 className="conversion-container__card-title conversion-container__card-title--flat-card">
-              Here's how it works
-            </h2>
-            <div className="conversion-container__card-section conversion-container__card-section--weekly-classes">
+            <div className="conversion-container__card-section conversion-container__card-section--dates">
+              <h2 className="conversion-container__card-title">
+                {this.props.pageFlow.title}
+              </h2>
+            </div>
+            <div className="conversion-container__bullet-points">
               <ImageBulletPoints 
                 hideMobileText={true}
                 points={this.props.pageFlow.points}
@@ -132,7 +115,6 @@ class FormContainer extends React.Component {
             />
             <FocusBanner
               priceText={this.props.pageFlow.focusBanner.priceText}
-              buttonText={this.props.pageFlow.focusBanner.buttonText}
             />
           </BlankCard>
         </div>
@@ -150,9 +132,10 @@ class FormContainer extends React.Component {
                 <ClassSelectableTimesCard 
                   title={location.name}
                   address={location.address}
+                  mapsLink={location.mapsLink}
                   priceLabel={this.props.pageFlow.classesPriceLabel}
                   price={this.props.pageFlow.classesPrice}
-                  dates={this.filterLocationDates(location.dates)}
+                  dates={this.Location__LocationWithDateButtonProps(location.dates)}
                   onClick={(session) => {
                     this.props.chooseDate({ 
                       region: location.value,
@@ -165,6 +148,7 @@ class FormContainer extends React.Component {
                 />
               </div>
             ))}
+            
             <div className="conversion-container__card-note">
               None of these dates or locations work for you? <span onClick={this.props.openEmailPopup.bind(this)} className="conversion-container__card-link">Let us know</span>
             </div>

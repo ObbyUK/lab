@@ -1,9 +1,10 @@
 import React from 'react';
-import moment from 'moment';
 
 import './class-selectable-times-card.less';
 // Components
 import PriceSum from './PriceSum.jsx';
+import Icon from './Icon.jsx';
+import { Location } from './Icons.jsx';
 import DateButton from './../components/DateButton.jsx';
 
 export default (props) => (
@@ -12,49 +13,36 @@ export default (props) => (
     {/* TITLE */}
     <div className="class-selectable-times-card__top-row">
       <div className="class-selectable-times-card__title-wrap">
-        <h3 className="class-selectable-times-card__title">{props.title} - {props.address}</h3>
+        <h3 className="class-selectable-times-card__title">{props.title}</h3>
+        <div className="class-selectable-times-card__address-wrap">
+          <div className="class-selectable-times-card__address-icon">
+            <Icon icon={Location} height={22} /> 
+          </div>
+          <h3 className="class-selectable-times-card__address">
+            {props.address}
+          </h3>
+        </div>
+        <a target="_blank" href={props.mapsLink} className="class-selectable-times-card__address-link">
+          See on map
+        </a>
       </div>
       <div className="class-selectable-times-card__price">
-        <PriceSum 
-          size="small"
-          calculation={props.priceLabel} 
-          previousTotal={props.previousPrice}
-          total={props.price}
-        />
+        {props.priceLabel} - {props.price}
       </div>
     </div>
 
     {/* DATE CHOICE */}
     <div className="class-selectable-times-card__bottom-row">
-
-      {/* DATES BY CATEGORY */}
-      {props.dates.map((dates, datesIndex) => (
-        <div 
-          key={datesIndex} 
-          className="class-selectable-times-card__dates-row"
-        >
-          <div className="class-selectable-times-card__dates-title-wrap">
-            <div className="class-selectable-times-card__dates-title">
-              {dates.title}
-            </div>
-            {dates.label &&
-              <div className="class-selectable-times-card__dates-label">
-                {dates.label}
-              </div>
-            }
-          </div>
-          {/* CATEGORY DATES */}
-          <div className="class-selectable-times-card__days">
-            {dates.options.map((option, index) => (
+      <div className="class-selectable-times-card__dates-row">
+          {props.dates.map((option, index) => (
+            <div key={index} className="class-selectable-times-card__date">
               <DateButton 
-                key={index}
                 onClick={props.onClick}
                 {...option}
               />
-            ))}
-          </div>
-        </div>
-      ))}
+            </div>
+          ))}
+      </div>
     </div>
   </div>
 );

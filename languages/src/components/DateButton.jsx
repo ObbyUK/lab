@@ -24,9 +24,10 @@ export default (props) => (
     <div className="date-button__text-wrap">
       <div className="date-button__text">{props.text}</div>
       <div className="date-button__note">{props.note}</div>
+      <div className="date-button__note">{props.secondNote}</div>
     </div>
     <div className="date-button__icon">
-      <Icon icon={ArrowRightThick} height={18} />
+      <Icon icon={ArrowRightThick} height={14} />
     </div>
   </div>
 );

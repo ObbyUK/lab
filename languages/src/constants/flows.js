@@ -19,6 +19,7 @@ flows[languages.GERMAN] = germanFlow;
 var courseTypeFlows = {};
 courseTypeFlows[courseTypes.WEEKLY] = {
   conversionPage: {
+    title: "Weekly classes",
     classes: WeeklyClasses,
     classesPriceLabel: "8 classes",
     classesPrice: "£200",
@@ -56,6 +57,7 @@ courseTypeFlows[courseTypes.WEEKLY] = {
 };
 courseTypeFlows[courseTypes.INTENSIVE] = {
   conversionPage: {
+    title: "Intensive classes",
     classes: IntensiveClasses,
     classesPriceLabel: "5 day intensive",
     classesPrice: "£275",
