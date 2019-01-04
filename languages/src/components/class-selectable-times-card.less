@@ -54,6 +54,10 @@
 
   &__address-icon {
     margin-right: 5px;
+    display: none;
+    @media (min-width:@sm-width) {
+      display: block;
+    }
   }
 
   &__address-link {
@@ -151,5 +155,9 @@
   &__date {
     display: inline-block;
     margin: 0 10px 10px 0;
+    width: 100%;
+    @media (min-width:@md-width) {
+      width: auto;
+    }
   }
 }
