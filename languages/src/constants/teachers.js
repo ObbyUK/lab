@@ -40,7 +40,7 @@ teachers[languages.FRENCH] = {
     {
       image: '/images/user_french_katie.png',
       name: 'Katie',
-      label: "Learned French before a summer in Fance",
+      label: "Learned French before a summer in France",
       text: 'I have been learning French with Anaïs now for 4 months. I started from scratch, as an absolute beginner, and during that time I learnt the structure of the language, how to form sentences, pronunciation, masculine/feminine, verbs, nouns, phrases, and more. As with learning anything new, the teacher is 90% of the motivation. In this, I have found Anaïs to be friendly, personable and patient. I can highly recommend her to you.',
     }
   ],

@@ -242,7 +242,7 @@ class LanguageLandingContainer extends React.Component {
           ]}
         />
         <div className="language-landing-container__here-to-learn">
-          <h2 className="language-landing-container__sub-title">The most personal Spanish course ever.</h2>
+          <h2 className="language-landing-container__sub-title">The most personal {this.props.selectedLanguageName} course ever.</h2>
           {this.renderCourseTypeButtons("footer")}
         </div>
       </div>
