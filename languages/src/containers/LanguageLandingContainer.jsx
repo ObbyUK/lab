@@ -134,7 +134,6 @@ class LanguageLandingContainer extends React.Component {
                   type: courseTypes.WEEKLY,
                   location: "pricing module",
                 })}
-                buttonNote="Payable in weekly instalments"
               />
             </div>
             {/* INTENSIVE COURSES */}

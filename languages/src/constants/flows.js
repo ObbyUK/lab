@@ -42,7 +42,6 @@ courseTypeFlows[courseTypes.WEEKLY] = {
     ],
     focusBanner: {
       priceText: "8 classes = £200",
-      buttonText: "Payable in weekly instalments",
     }
   },
   checkoutPage: {
