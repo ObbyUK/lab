@@ -23,7 +23,7 @@ export default (props) => (
           </h3>
         </div>
         <a target="_blank" href={props.mapsLink} className="class-selectable-times-card__address-link">
-          See on map
+          (See on map)
         </a>
       </div>
       <div className="class-selectable-times-card__price">
