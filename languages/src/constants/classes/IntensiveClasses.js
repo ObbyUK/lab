@@ -8,98 +8,50 @@ export default [
     mapsLink: "https://goo.gl/maps/cmSBWg6z7Xu",
     dates: [
       {
-        type: "jan start 10pm-1pm",
-        title: "January start, Monday-Friday, 10am-1pm",
+        type: "Consecutive Sundays, 10am-5pm",
+        title: "Consecutive Sundays, 10am-5pm",
         options: [
           {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
+            starts: "17/02/2019",
+            ends: "24/02/2019",
             lessonsStart: "10:00PM",
-            lessonsEnd: "1:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
+            starts: "17/03/2019",
+            ends: "24/03/2019",
             lessonsStart: "10:00PM",
-            lessonsEnd: "1:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
+            starts: "07/04/2019",
+            ends: "14/04/2019",
             lessonsStart: "10:00PM",
-            lessonsEnd: "1:00PM",
-          },
-        ]
-      },
-      {
-        type: "jan start 2pm-5pm",
-        title: "January start, Monday-Friday, 2pm-5pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "12/05/2019",
+            ends: "19/05/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "jan start 10pm-1pm",
-        title: "January start, Monday-Friday, 10am-1pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "09/06/2019",
+            ends: "16/06/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "14/07/2019",
+            ends: "21/07/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "feb start 2pm-5pm",
-        title: "Feb start, Monday-Friday, 2pm-5pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "11/08/2019",
+            ends: "18/08/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
         ]
       },
@@ -112,98 +64,50 @@ export default [
     mapsLink: "https://goo.gl/maps/z2Yq1qL5hdr",
     dates: [
       {
-        type: "jan start 10pm-1pm",
-        title: "January start, Monday-Friday, 10am-1pm",
+        type: "Consecutive Sundays, 10am-5pm",
+        title: "Consecutive Sundays, 10am-5pm",
         options: [
           {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "17/02/2019",
+            ends: "24/02/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "17/03/2019",
+            ends: "24/03/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "jan start 2pm-5pm",
-        title: "January start, Monday-Friday, 2pm-5pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "07/04/2019",
+            ends: "14/04/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "12/05/2019",
+            ends: "19/05/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "jan start 10pm-1pm",
-        title: "January start, Monday-Friday, 10am-1pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "09/06/2019",
+            ends: "16/06/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "14/07/2019",
+            ends: "21/07/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "feb start 2pm-5pm",
-        title: "Feb start, Monday-Friday, 2pm-5pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "11/08/2019",
+            ends: "18/08/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
         ]
       },
@@ -216,98 +120,50 @@ export default [
     mapsLink: "https://goo.gl/maps/ELfyCCte2vu",
     dates: [
       {
-        type: "jan start 10pm-1pm",
-        title: "January start, Monday-Friday, 10am-1pm",
+        type: "Consecutive Sundays, 10am-5pm",
+        title: "Consecutive Sundays, 10am-5pm",
         options: [
           {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "17/02/2019",
+            ends: "24/02/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "17/03/2019",
+            ends: "24/03/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "jan start 2pm-5pm",
-        title: "January start, Monday-Friday, 2pm-5pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "07/04/2019",
+            ends: "14/04/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "12/05/2019",
+            ends: "19/05/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "jan start 10pm-1pm",
-        title: "January start, Monday-Friday, 10am-1pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "09/06/2019",
+            ends: "16/06/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "14/07/2019",
+            ends: "21/07/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "feb start 2pm-5pm",
-        title: "Feb start, Monday-Friday, 2pm-5pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "11/08/2019",
+            ends: "18/08/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
         ]
       },
@@ -320,98 +176,50 @@ export default [
     mapsLink: "https://goo.gl/maps/izBbTMMg7F92",
     dates: [
       {
-        type: "jan start 10pm-1pm",
-        title: "January start, Monday-Friday, 10am-1pm",
+        type: "Consecutive Sundays, 10am-5pm",
+        title: "Consecutive Sundays, 10am-5pm",
         options: [
           {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "17/02/2019",
+            ends: "24/02/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "17/03/2019",
+            ends: "24/03/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "jan start 2pm-5pm",
-        title: "January start, Monday-Friday, 2pm-5pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "07/04/2019",
+            ends: "14/04/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "12/05/2019",
+            ends: "19/05/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "jan start 10pm-1pm",
-        title: "January start, Monday-Friday, 10am-1pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "09/06/2019",
+            ends: "16/06/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "14/07/2019",
+            ends: "21/07/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "feb start 2pm-5pm",
-        title: "Feb start, Monday-Friday, 2pm-5pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "11/08/2019",
+            ends: "18/08/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
         ]
       },
@@ -424,98 +232,50 @@ export default [
     mapsLink: "https://goo.gl/maps/awAeAPJf6rS2",
     dates: [
       {
-        type: "jan start 10pm-1pm",
-        title: "January start, Monday-Friday, 10am-1pm",
+        type: "Consecutive Sundays, 10am-5pm",
+        title: "Consecutive Sundays, 10am-5pm",
         options: [
           {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "17/02/2019",
+            ends: "24/02/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "17/03/2019",
+            ends: "24/03/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "jan start 2pm-5pm",
-        title: "January start, Monday-Friday, 2pm-5pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "07/04/2019",
+            ends: "14/04/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "12/05/2019",
+            ends: "19/05/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "jan start 10pm-1pm",
-        title: "January start, Monday-Friday, 10am-1pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "09/06/2019",
+            ends: "16/06/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "14/07/2019",
+            ends: "21/07/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "feb start 2pm-5pm",
-        title: "Feb start, Monday-Friday, 2pm-5pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "11/08/2019",
+            ends: "18/08/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
         ]
       },
@@ -528,98 +288,50 @@ export default [
     mapsLink: "https://goo.gl/maps/iRgKSeqhECr",
     dates: [
       {
-        type: "jan start 10pm-1pm",
-        title: "January start, Monday-Friday, 10am-1pm",
+        type: "Consecutive Sundays, 10am-5pm",
+        title: "Consecutive Sundays, 10am-5pm",
         options: [
           {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "17/02/2019",
+            ends: "24/02/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "17/03/2019",
+            ends: "24/03/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "jan start 2pm-5pm",
-        title: "January start, Monday-Friday, 2pm-5pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "07/04/2019",
+            ends: "14/04/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "12/05/2019",
+            ends: "19/05/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "jan start 10pm-1pm",
-        title: "January start, Monday-Friday, 10am-1pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "09/06/2019",
+            ends: "16/06/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "14/07/2019",
+            ends: "21/07/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "feb start 2pm-5pm",
-        title: "Feb start, Monday-Friday, 2pm-5pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "11/08/2019",
+            ends: "18/08/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
         ]
       },
@@ -632,98 +344,50 @@ export default [
     mapsLink: "https://goo.gl/maps/PS5xLzzHVEw",
     dates: [
       {
-        type: "jan start 10pm-1pm",
-        title: "January start, Monday-Friday, 10am-1pm",
+        type: "Consecutive Sundays, 10am-5pm",
+        title: "Consecutive Sundays, 10am-5pm",
         options: [
           {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "17/02/2019",
+            ends: "24/02/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "17/03/2019",
+            ends: "24/03/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "jan start 2pm-5pm",
-        title: "January start, Monday-Friday, 2pm-5pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "07/04/2019",
+            ends: "14/04/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "12/05/2019",
+            ends: "19/05/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "jan start 10pm-1pm",
-        title: "January start, Monday-Friday, 10am-1pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "09/06/2019",
+            ends: "16/06/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "14/07/2019",
+            ends: "21/07/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
           {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-        ]
-      },
-      {
-        type: "feb start 2pm-5pm",
-        title: "Feb start, Monday-Friday, 2pm-5pm",
-        options: [
-          {
-            starts: "08/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
-            starts: "10/01/2019",
-            ends: "20/01/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
-          },
-          {
-            starts: "05/02/2019",
-            ends: "20/02/2019",
-            lessonsStart: "12:00PM",
-            lessonsEnd: "1:30PM",
+            starts: "11/08/2019",
+            ends: "18/08/2019",
+            lessonsStart: "10:00PM",
+            lessonsEnd: "5:00PM",
           },
         ]
       },

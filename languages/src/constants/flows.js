@@ -59,12 +59,12 @@ courseTypeFlows[courseTypes.INTENSIVE] = {
   conversionPage: {
     title: "Intensive classes",
     classes: IntensiveClasses,
-    classesPriceLabel: "5 day intensive",
-    classesPrice: "£275",
+    classesPriceLabel: "2 day intensive",
+    classesPrice: "£200",
     points: [
       {
         image: "/icons/calendar-circle.svg",
-        title: "Our intensive courses run for 3 hours a day for 5 days in a row",
+        title: "Our 2-day intensive courses run for 6 hours per day over two separate days",
         text: "",
       },
       {
@@ -79,16 +79,16 @@ courseTypeFlows[courseTypes.INTENSIVE] = {
       }
     ],
     focusBanner: {
-      priceText: "5 day intensive = £215",
+      priceText: "2-day intensive = £200",
     }
   },
   checkoutPage: {
     baseChargePrice: 34400,
-    chargePrice: 27500,
+    chargePrice: 20000,
     priceSum: {
-      calculation: '5 classes',
-      previousTotal: '£344',
-      total: '£275',
+      calculation: '2 classes',
+      previousTotal: '£200',
+      total: '£200',
     }
   }
 };
