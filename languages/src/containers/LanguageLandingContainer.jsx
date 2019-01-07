@@ -40,15 +40,15 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
   dispatchProps,
   {
     selectCourseType: ({ type, location }) => {
-      if (type === courseTypes.ONE_TO_ONE) {
-        dispatchProps.openEmailPopup({
-          title: "It's on the way",
-          description: `We’re still defining our ${type} curriculum, but give us your details and we’ll reach out when we’re ready.`,
-          submittedTitle: "Thank you",
-          submittedDescription: `We will be in touch shortly!`,
-          emailText: `User is interested in ${type} courses`
-        });
-      }
+      // if (type === courseTypes.ONE_TO_ONE) {
+      //   dispatchProps.openEmailPopup({
+      //     title: "It's on the way",
+      //     description: `We’re still defining our ${type} curriculum, but give us your details and we’ll reach out when we’re ready.`,
+      //     submittedTitle: "Thank you",
+      //     submittedDescription: `We will be in touch shortly!`,
+      //     emailText: `User is interested in ${type} courses`
+      //   });
+      // }
       dispatchProps.selectCourseType({
         type,
         location,

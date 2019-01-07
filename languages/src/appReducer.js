@@ -107,6 +107,7 @@ function viewAnyPage(state, { payload }) {
     "learn": appStatuses.ANWSERING_QUESTIONS,
     "choose": appStatuses.VIEWING_CLASS_OPTIONS,
     "summary": appStatuses.VIEWING_CLASS_SUMMARY,
+    "one-to-one": appStatuses.VIEWING_ONE_TO_ONE_CLASS_SUMMARY,
     "checkout": appStatuses.CHECKING_OUT
   };
   
@@ -153,7 +154,14 @@ function selectCourseType(state, { payload }) {
       assoc('status', appStatuses.ANWSERING_QUESTIONS)
     )(state);
   }
-
+  if (payload.type === courseTypes.ONE_TO_ONE) {
+    return pipe(
+      assoc('selectedLanguage', payload.language),
+      assoc('courseType', courseTypes.ONE_TO_ONE),
+      assoc('flow', flows[payload.language]),
+      assoc('status', appStatuses.VIEWING_ONE_TO_ONE_CLASS_SUMMARY)
+    )(state);
+  }
   return state;
 }
 

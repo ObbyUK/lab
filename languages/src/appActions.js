@@ -6,6 +6,7 @@ const actions = {
   VIEW_CHOOSE_DATE_PAGE: 'chooseDatePageHasBeenViewed',
   VIEW_CLASS_SUMMARY_PAGE: 'classSummaryPageHasBeenViewed',
   VIEW_CHECKOUT_PAGE: 'checkoutPageHasBeenViewed',
+  VIEW_ONE_TO_ONE_SUMMARY_PAGE: 'oneToOnePageSummaryHasBeenViewed',
 
   // FORM COMMENCMENT ACTIONS
   CHOOSE_LANGUAGE: 'userSelectsLanguageToLearn',
@@ -64,6 +65,10 @@ export const viewClassSummaryPageAction = () => ({
 
 export const viewCheckoutPageAction = () => ({
   type: actions.VIEW_CHECKOUT_PAGE,
+});
+
+export const viewOneToOneSummaryPage = () => ({
+  type: actions.VIEW_ONE_TO_ONE_SUMMARY_PAGE,
 });
 
 // FORM COMMENCMENT ACTIONS

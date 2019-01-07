@@ -1,0 +1,75 @@
+@import './../styles/variables';
+
+.one-to-one-summary-container {
+
+  margin-top: 100px;
+
+  &__header {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    margin-bottom: -30px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: @m-heading-mobile;
+    line-height: @m-heading-lh;
+    font-weight: 600;
+    margin: 0;
+    @media (min-width:@md-width) {
+      font-size: 35px;
+    }
+  }
+
+  &__header-image {
+    height: 250px;
+  }
+
+
+  &__bullet-point-section {
+    background-color: @cruise;
+    padding: 50px 40px;
+  }
+
+  &__card-wrap {
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__card {
+    padding: 0;
+  }
+
+  &__money-back-section {
+    padding: 40px;
+    border-bottom: 1px solid @alto;
+  }
+
+  &__card-title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: 28px;
+    line-height: 1.25;   
+    margin: 0 0 30px;
+    font-weight: 600;
+    text-align: center;
+
+    @media (min-width:@sm-width) {
+      text-align: left;
+    }
+  }
+
+  &__card-description {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    margin: 0 0 23px;
+  }
+
+  &__card-section {
+  }
+
+}

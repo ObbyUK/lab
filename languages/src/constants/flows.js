@@ -91,6 +91,36 @@ courseTypeFlows[courseTypes.INTENSIVE] = {
     }
   }
 };
+courseTypeFlows[courseTypes.ONE_TO_ONE] = {
+  summaryPage: {
+    points: [
+      {
+        image: "/icons/calendar-circle.svg",
+        title: "Book a language class on Obby",
+        text: "You can book a trial 1h class, or go straight for 5 or 10 hours. Top up at any time without any price change.",
+      },
+      {
+        image: "/icons/people-circle.svg",
+        title: "Get matched with a teacher",
+        text: "In the next 24h you’ll get matched with one of our trusted teachers. If you’re unhappy with your teacher we’ll match you with a new one.",
+      },
+      {
+        image: "/icons/location-circle.svg",
+        title: "Agree on time, date & location",
+        text: "We offer full flexibility. You can choose the time, date and location that makes most sense for you. ",
+      }
+    ],
+  },
+  checkoutPage: {
+    baseChargePrice: 34400,
+    chargePrice: 20000,
+    priceSum: {
+      calculation: '2-day intensive',
+      previousTotal: '£200',
+      total: '£200',
+    }
+  }
+};
 
 export default flows;
 export { courseTypeFlows };

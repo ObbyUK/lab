@@ -12,6 +12,7 @@ export const appStatuses = {
   ANWSERING_QUESTIONS: 'userIsAnwseringQuestions',
   VIEWING_CLASS_OPTIONS: 'userIsViewingClassOptions',
   VIEWING_CLASS_SUMMARY: 'userIsViewingChosenClassSummary',
+  VIEWING_ONE_TO_ONE_CLASS_SUMMARY: 'userIsVewingOneToOneClassSummary',
   CHECKING_OUT: 'userIsCheckingOut',
   SUBMITTING: 'userIsSubmitting',
   TRANSACTION_COMPLETE: 'userHasCompletedTransaction',

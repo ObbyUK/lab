@@ -6,8 +6,6 @@ import 'rxjs/add/operator/map';
 import appActions from '../appActions';
 import courseTypes from '../constants/courseTypes';
 
-var eventToUrlName = {}
-
 var pageChangingActions = [
   appActions.CHOOSE_LANGUAGE,
   appActions.SELECT_COURSE_TYPE,
@@ -35,6 +33,15 @@ export default (action$, store) =>
         };
         var urlString = queryString.stringify(urlData);
         window.history.pushState(urlData, 'learn', "/learn?"+urlString);
+      }
+      
+      if (type === appActions.SELECT_COURSE_TYPE && payload.type === courseTypes.ONE_TO_ONE) {
+        var urlData = {
+          language: store.value.app.selectedLanguage,
+          courseType: store.value.app.courseType
+        };
+        var urlString = queryString.stringify(urlData);
+        window.history.pushState(urlData, 'one-to-one', "/one-to-one?"+urlString);
       }
 
       if (type === appActions.SUBMIT_QUESTIONS) {
