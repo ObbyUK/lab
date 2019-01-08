@@ -4,7 +4,6 @@ import { mergeAll } from 'ramda';
 
 // Constants & Actions
 import { courseTypeFlows } from './../constants/flows';
-import reviews from './../constants/reviews';
 import { languageNames } from '../constants/languages';
 import {
   viewOneToOneSummaryPageAction
@@ -14,13 +13,15 @@ import BlankCard from './../components/BlankCard.jsx';
 import ImageBulletPoints from './../components/ImageBulletPoints.jsx';
 import ReviewsBanner from './../components/ReviewsBanner.jsx';
 import ImageTextListBanner from './../components/ImageTextListBanner.jsx';
-import PriceBox from './../components/PriceBox.jsx';
+import PriceBoxes from '../components/PriceBoxes.jsx';
+import RatingSpotlight from '../components/RatingSpotlight.jsx';
 
 import './one-to-one-summary-container.less';
 
 const mapStateToProps = (state) => ({
   pageFlow: courseTypeFlows[state.app.courseType].summaryPage,
-  selectedLanguageName: languageNames[state.app.selectedLanguage]
+  selectedLanguageName: languageNames[state.app.selectedLanguage],
+  selectedLanguage: state.app.selectedLanguage
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
@@ -55,23 +56,20 @@ class OneToOneSummaryContainer extends React.Component {
               </h2>
             </div>
             <img 
-              src="/images/german-sticker.png" alt=""
               className="one-to-one-summary-container__header-image"
+              src={`/icons/${this.props.selectedLanguage}.svg`}
             />
           </div>
 
           {/* PRICES & SUMMARY */}
           <div className="one-to-one-summary-container__card-wrap">
             <BlankCard className="one-to-one-summary-container__card">
-              <PriceBox
-                color="sun"
-                title="10 hours"
-                previousPrice="£350"
-                price="£300"
-                note="Save £50"
-                buttonText="Select"
+              
+              <PriceBoxes 
+                boxes={this.props.pageFlow.priceBoxes}
                 onClick={console.log}
               />
+
               <div className="one-to-one-summary-container__bullet-point-section">
                 <ImageBulletPoints 
                   points={this.props.pageFlow.points}
@@ -83,15 +81,23 @@ class OneToOneSummaryContainer extends React.Component {
           {/* RECOMENDATIONS */}
           <div className="one-to-one-summary-container__card-wrap">
             <BlankCard className="one-to-one-summary-container__card">
-              
-              <ReviewsBanner reviews={reviews} />
-              
+              {/* TEACHERS SPOTLIGHT */}
+              <RatingSpotlight
+                image="images/teachers-circles.png"
+                rating={10}
+                title="Our teachers are trusted worldwide."
+                text="Louise has been teaching Spanish since 2008 when she moved from Barcelona to London. Since then, she helped hundreds of people transition from zero Spanish to fluent. Her teaching style is simple, organised and fun."
+              />
+              {/* REVIEWS */}
+              <ReviewsBanner />
+              {/* PERSONALISED CURRICULUM */}
               <ImageTextListBanner
                 reverse={true}
                 natrualImageSize={true}
+                imageClassName="one-to-one-summary-container__image-text-list-banner-image"                
                 title="Personalised curricullum"
                 description="Our teachers will assess your language level and build a personalised curricullum just for you."
-                image="/images/personalised.png"
+                image="/icons/personalised.svg"
               />
             </BlankCard>
           </div>
@@ -99,6 +105,8 @@ class OneToOneSummaryContainer extends React.Component {
           {/* PRICES & SUMMARY */}
           <div className="one-to-one-summary-container__card-wrap">
             <BlankCard className="one-to-one-summary-container__card">
+
+              {/* MONEY BACK SECTION */}
               <div className="one-to-one-summary-container__money-back-section">
                 <h2 className="one-to-one-summary-container__card-title">
                   100% Moneyback guarantee
@@ -121,6 +129,11 @@ class OneToOneSummaryContainer extends React.Component {
                   />
                 </div>
               </div>
+              {/* PRICE BOXES */}
+              <PriceBoxes 
+                boxes={this.props.pageFlow.priceBoxes}
+                onClick={console.log}
+              />
             </BlankCard>
           </div>
         </div>

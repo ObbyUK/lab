@@ -30,6 +30,19 @@ const Rating__RatingStarArray = (ratingStarArray, rating, iterations) => {
   return ratingStarArray;
 }
 
+const Props__StarIconSize = (props) => {
+  if (!props.size || props.size === 'large') {
+    return 15;
+  }
+  if (props.size === 'small') {
+    return 11;
+  }
+  if (props.size === 'huge') {
+    return 25;
+  }
+  return props.size;
+}
+
 export default ({ rating, label, color, size }) => (
   <div className="rating-stars">
     {Rating__RatingStarArray([], rating/2, 5).map((starValue, index) => (
@@ -41,12 +54,10 @@ export default ({ rating, label, color, size }) => (
           rating-stars__star--${size||'large'}
         `}
       >
-        {size === 'small' &&
-          <Icon icon={Star} height={11} />
-        }
-        {(!size || size === 'large') &&
-          <Icon icon={Star} height={15} />
-        }
+        <Icon 
+          icon={Star} 
+          height={Props__StarIconSize({ size })} 
+        />
       </div>
     ))}
     {label &&

@@ -8,9 +8,12 @@
     display: flex;
     align-items:center;
     justify-content: space-between;
-    margin-bottom: -30px;
     position: relative;
     z-index: 1;
+    margin-bottom: 30px;
+    @media (min-width:@sm-width) {
+      margin-bottom: -30px;
+    }
   }
 
   &__title {
@@ -25,12 +28,16 @@
   }
 
   &__header-image {
+    display: none;
     height: 250px;
+    @media (min-width:@sm-width) {
+      display: block;
+    }
   }
 
 
   &__bullet-point-section {
-    background-color: @cruise;
+    background-color: @humming-bird;
     padding: 50px 40px;
   }
 
@@ -44,9 +51,37 @@
     padding: 0;
   }
 
+  &__price-boxes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 25px;
+    
+    @media (min-width:@md-width) {
+      padding: 60px 40px;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__price-box {
+    width: 100%;
+    margin-bottom: 15px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (min-width:@md-width) {
+      width: 32%;
+    }
+  }
+
   &__money-back-section {
-    padding: 40px;
     border-bottom: 1px solid @alto;
+    padding: 30px 25px;
+    @media (min-width:@sm-width) {
+      padding: 40px;
+    }
   }
 
   &__card-title {
@@ -70,6 +105,15 @@
   }
 
   &__card-section {
+  }
+
+  &__image-text-list-banner-image {
+    width: 250px;
+    padding-top: 50px;
+    @media (min-width:@md-width) {
+      width: auto;
+      padding-top: 0;
+    }
   }
 
 }

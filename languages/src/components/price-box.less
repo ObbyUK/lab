@@ -1,6 +1,84 @@
 @import './../styles/variables';
 
 .price-box {
+
+  &__mobile {
+    display: flex;
+    padding: 18px;
+    border: 1px solid @mercury;
+    border-radius: 5px;
+    justify-content: space-between;
+    cursor: pointer;
+    @media (min-width:@md-width) {
+      display: none;
+    }
+  }
+
+  &__mobile-title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  &__mobile-price {
+    font-weight: 600;
+    margin-left: 5px;
+
+    &--sun {
+      color: @sun;
+    }
+
+    &--robbins-egg-blue {
+      color: @robbins-egg-blue;
+    }
+    
+    &--camelot {
+      color: @camelot;
+    }
+  }
+
+  &__mobile-notes {
+    display: flex;
+    align-items: center;
+    padding: 10px 0 0;
+  }
+
+  &__mobile-previous-price {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: @l-paragraph;
+    line-height: 1;
+    color: @gray;
+    text-align: center;
+    text-decoration: line-through;
+    text-decoration-color: @robbins-egg-blue;
+    margin-right: 15px;
+  }
+
+  &__mobile-note {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: @l-paragraph;
+    line-height: 1;
+    color: @gray;
+  }
+
+  &__mobile-arrow {
+    display: flex;
+    align-items: center;
+    path {
+      stroke: @camelot;
+    }
+  }
+
+  // DESKTOP
+  &__desktop {
+    border: 1px solid @mercury;
+    border-radius: 5px;
+    display: none;
+    @media (min-width:@md-width) {
+      display: block;
+    }
+  }
+
   
   &__header {
     font-family: "Founders Grotesk", 'Arial', sans-serif;
@@ -9,12 +87,16 @@
     padding: 25px;
     text-align: center;
 
-    &--white {
-      background-color: white;
-    }
-
     &--sun {
       background-color: @astra;
+    }
+
+    &--robbins-egg-blue {
+      background-color: @cruise;
+    }
+    
+    &--camelot {
+      background-color: @azalea;
     }
   }
 
@@ -24,20 +106,30 @@
   }
 
   
-  &__text-wrap {}
+  &__text-wrap {
+    height: 110px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
   
   &__previous-price {
+    width: 100%;
     font-family: "Founders Grotesk", 'Arial', sans-serif;
     font-size: @m-paragraph;
     line-height: 1;
     color: @gray;
     text-align: center;
     margin-bottom: 10px;
+    text-decoration: line-through;
+    text-decoration-color: @robbins-egg-blue;
   }
 
   
   &__price {
+    width: 100%;
     font-family: "Founders Grotesk", 'Arial', sans-serif;
     font-size: 48px;
     font-weight: 600;
@@ -47,10 +139,19 @@
     &--sun {
       color: @sun;
     }
+
+    &--robbins-egg-blue {
+      color: @robbins-egg-blue;
+    }
+    
+    &--camelot {
+      color: @camelot;
+    }
   }
 
   
   &__note {
+    width: 100%;
     margin-top: 10px;
     font-family: "Founders Grotesk", 'Arial', sans-serif;
     font-size: @m-paragraph;

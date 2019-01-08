@@ -19,6 +19,7 @@ export default (props) => (
           className={`
             image-text-list-banner__image
             ${props.natrualImageSize ? 'image-text-list-banner__image--natrual' : ''}
+            ${props.imageClassName||''}
           `}
           alt={props.title} 
           src={props.image}
