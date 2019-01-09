@@ -54,6 +54,11 @@ const viewingClassSummaryReducer = cond([
   [T, identity]
 ]);
 
+const viewingOneToOneClassSummaryReducer = cond([
+  [isActionType(appActions.BOOK_ONE_TO_ONE), bookOneToOne],
+  [T, identity]
+]);
+
 const checkingOutReducer = cond([
   [isActionType(appActions.TYPE_FIRST_NAME), typeName],
   [isActionType(appActions.TYPE_LAST_NAME), typeLastName],
@@ -76,6 +81,7 @@ export default (state = new AppState(), action) =>
     [propEq('status', appStatuses.ANWSERING_QUESTIONS), anwseringQuestionsReducer],
     [propEq('status', appStatuses.VIEWING_CLASS_OPTIONS), viewingClassOptionsReducer],
     [propEq('status', appStatuses.VIEWING_CLASS_SUMMARY), viewingClassSummaryReducer],
+    [propEq('status', appStatuses.VIEWING_ONE_TO_ONE_CLASS_SUMMARY), viewingOneToOneClassSummaryReducer],
     [propEq('status', appStatuses.CHECKING_OUT), checkingOutReducer],
     [propEq('status', appStatuses.SUBMITTING), submittingReducer],
 
@@ -125,6 +131,7 @@ function viewAnyPage(state, { payload }) {
     assoc('dates', payload.dates||state.dates),
     assoc('startTime', payload.startTime||state.startTime),
     assoc('endTime', payload.endTime||state.endTime),
+    assoc('oneToOneCourse', payload.oneToOneCourse||state.oneToOneCourse),
   )(state);
 }
 
@@ -208,6 +215,13 @@ function chooseDate(state, { payload }) {
 function bookYourSpot(state) {
   return pipe(
     assoc('status', appStatuses.CHECKING_OUT),
+  )(state);
+}
+
+function bookOneToOne(state, { payload }) {
+  return pipe(
+    assoc('status', appStatuses.CHECKING_OUT),
+    assoc('oneToOneCourse', payload.courseType),
   )(state);
 }
 

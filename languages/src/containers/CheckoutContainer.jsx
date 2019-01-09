@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
 import mergeAll from 'ramda/src/mergeAll';
+import propEq from 'ramda/src/propEq';
 
 // Lib & Constants
 import String__UpperCaseFirstLetter from './../lib/String__UpperCaseFirstLetter';
@@ -25,6 +26,7 @@ import LabelInput from '../components/LabelInput.jsx';
 import MiniReviews from '../components/MiniReviews.jsx';
 import PriceSum from '../components/PriceSum.jsx';
 import RatingStars from '../components/RatingStars.jsx';
+import courseTypes from '../constants/courseTypes';
 
 const ImageTitleText = (props) => (
   <div className="image-title-text">
@@ -40,9 +42,26 @@ const ImageTitleText = (props) => (
   </div>
 );
 
+const AppState__CourseTypeChargeDetails = (state) => {
+  
+  if (state.courseType === courseTypes.ONE_TO_ONE) {
+    return courseTypeFlows
+      [state.courseType]
+      .checkoutPage
+      .chargeOptions
+        .find(propEq('value', state.oneToOneCourse));
+  }
+
+  return courseTypeFlows
+    [state.courseType]
+    .checkoutPage
+    .chargeDetails;
+}
+
 const mapStateToProps = (state) => ({
   status: state.app.status,
-  pageFlow: courseTypeFlows[state.app.courseType].checkoutPage,
+  chargeDetails: AppState__CourseTypeChargeDetails(state.app),
+  courseType: state.app.courseType,
   errorMessage: state.app.formError.message,
   teacher: state.app.flow.teacher,
   selectedLanguage: state.app.selectedLanguage,
@@ -77,8 +96,8 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
   {
     submitPayment: (token) => dispatchProps.submitPayment({
       token: token.token,
-      baseCharge: stateProps.pageFlow.baseChargePrice,
-      charge: stateProps.pageFlow.chargePrice,
+      baseCharge: stateProps.chargeDetails.baseChargePrice,
+      charge: stateProps.chargeDetails.chargePrice,
       date: stateProps.date,
       address: stateProps.address,
       skillLevel: stateProps.skillLevel,
@@ -204,8 +223,9 @@ class CheckoutContainer extends React.Component {
               <div className="checkout-container__sidebar">
                 <div className="checkout-container__sidebar-section">
                   <PriceSum
-                    calculation={this.props.pageFlow.priceSum.calculation}
-                    total={this.props.pageFlow.priceSum.total}
+                    calculation={this.props.chargeDetails.title}
+                    previousTotal={this.props.chargeDetails.baseChargePrice}
+                    total={this.props.chargeDetails.chargePrice}
                   />
                 </div>
                 <div className="checkout-container__sidebar-text">
@@ -217,30 +237,39 @@ class CheckoutContainer extends React.Component {
 
           <div className="checkout-container__card">
             <BlankCard>
+
               {/* CHOICE SUMMARY */}
-              <div className="checkout-container__sidebar-section">
-                <div className="checkout-container__sidebar-text-row">
-                  <div className="checkout-container__sidebar-text">
-                    {String__UpperCaseFirstLetter(this.props.selectedLanguage)} {String__UpperCaseFirstLetter(this.props.skillLevel)}
+              {this.props.courseType !== courseTypes.ONE_TO_ONE &&
+                <div className="checkout-container__sidebar-section">
+                  {/* CLASS SUMMARY */}
+                  <div className="checkout-container__sidebar-text-row">
+                    <div className="checkout-container__sidebar-text">
+                      {String__UpperCaseFirstLetter(this.props.selectedLanguage)} {String__UpperCaseFirstLetter(this.props.skillLevel)}
+                    </div>
+                  </div>
+                  
+                  {/* TEACHER SUMMARY */}
+                  <div className="checkout-container__sidebar-text-row checkout-container__sidebar-text-row--left-aligned-row">
+                    <div className="checkout-container__sidebar-text">With {this.props.teacher.name}</div>
+                    <div className="checkout-container__sidebar-rating">
+                      <RatingStars
+                        rating={10}
+                        color={'sun'}
+                        label={`23`}
+                      />
+                    </div>
+                  </div>
+
+                  {/* LOCATION & DATE SUMMARY */}
+                  <div className="checkout-container__sidebar-text-row">
+                    <div className="checkout-container__sidebar-text">{this.props.region} - {this.props.address}</div>
+                  </div>
+                  <div className="checkout-container__sidebar-text-row">
+                    <div className="checkout-container__sidebar-text">Every {moment(this.props.date, 'DD/MM/YYYY').format('dddd')} at {this.props.startTime}</div>
                   </div>
                 </div>
-                <div className="checkout-container__sidebar-text-row checkout-container__sidebar-text-row--left-aligned-row">
-                  <div className="checkout-container__sidebar-text">With {this.props.teacher.name}</div>
-                  <div className="checkout-container__sidebar-rating">
-                    <RatingStars
-                      rating={10}
-                      color={'sun'}
-                      label={`23`}
-                    />
-                  </div>
-                </div>
-                <div className="checkout-container__sidebar-text-row">
-                  <div className="checkout-container__sidebar-text">{this.props.region} - {this.props.address}</div>
-                </div>
-                <div className="checkout-container__sidebar-text-row">
-                  <div className="checkout-container__sidebar-text">Every {moment(this.props.date, 'DD/MM/YYYY').format('dddd')} at {this.props.startTime}</div>
-                </div>
-              </div>
+              }
+
               {/* MONEY BACK */}
               <div className="checkout-container__sidebar-section">
                 <ImageTitleText

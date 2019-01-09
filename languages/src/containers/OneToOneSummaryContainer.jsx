@@ -6,7 +6,7 @@ import { mergeAll } from 'ramda';
 import { courseTypeFlows } from './../constants/flows';
 import { languageNames } from '../constants/languages';
 import {
-  viewOneToOneSummaryPageAction
+  bookOneToOneAction
 } from '../appActions';
 // Components
 import BlankCard from './../components/BlankCard.jsx';
@@ -25,6 +25,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
+  bookOneToOne: (courseType) => dispatch(bookOneToOneAction(courseType))
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
@@ -67,7 +68,7 @@ class OneToOneSummaryContainer extends React.Component {
               
               <PriceBoxes 
                 boxes={this.props.pageFlow.priceBoxes}
-                onClick={console.log}
+                onClick={(box) => this.props.bookOneToOne(box.value)}
               />
 
               <div className="one-to-one-summary-container__bullet-point-section">
@@ -132,7 +133,7 @@ class OneToOneSummaryContainer extends React.Component {
               {/* PRICE BOXES */}
               <PriceBoxes 
                 boxes={this.props.pageFlow.priceBoxes}
-                onClick={console.log}
+                onClick={(box) => this.props.bookOneToOne(box.value)}
               />
             </BlankCard>
           </div>

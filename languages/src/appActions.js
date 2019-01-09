@@ -23,6 +23,7 @@ const actions = {
   TYPE_EMAIL: 'userTypesEmail',
   CHOOSE_DATE: 'userSelectsAClassDate',
   BOOK_YOUR_SPOT: 'userClicksBookYourSpot',
+  BOOK_ONE_TO_ONE: 'usersBooksOneToOne',
   
   
   SUBMIT_EMAIL: 'userSubmitsEmailAndInformation',
@@ -149,6 +150,11 @@ export const chooseDateAction = (details) => ({
 
 export const bookYourSpotAction = () => ({
   type: actions.BOOK_YOUR_SPOT,
+});
+
+export const bookOneToOneAction = (courseType) => ({
+  type: actions.BOOK_ONE_TO_ONE,
+  payload: { courseType }
 });
 
 // SUBMIT EMAIL

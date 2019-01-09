@@ -17,6 +17,7 @@
     "pm2": "pm2"
   },
   "dependencies": {
+    "accounting": "^0.4.1",
     "analytics-node": "^3.3.0",
     "batch-promises": "^0.0.3",
     "body-parser": "^1.18.3",

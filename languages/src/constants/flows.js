@@ -45,12 +45,10 @@ courseTypeFlows[courseTypes.WEEKLY] = {
     }
   },
   checkoutPage: {
-    baseChargePrice: 20000,
-    chargePrice: 20000,
-    priceSum: {
-      calculation: '8 classes',
-      previousTotal: '£200',
-      total: '£200',
+    chargeDetails: {
+      baseChargePrice: 20000,
+      chargePrice: 20000,
+      title: '8 classes',
     }
   }
 };
@@ -82,14 +80,18 @@ courseTypeFlows[courseTypes.INTENSIVE] = {
     }
   },
   checkoutPage: {
-    baseChargePrice: 34400,
-    chargePrice: 20000,
-    priceSum: {
-      calculation: '2-day intensive',
-      previousTotal: '£200',
-      total: '£200',
-    }
+    chargeDetails: {
+      baseChargePrice: 20000,
+      chargePrice: 20000,
+      title: '2-day intensive',
+    },
   }
+};
+
+var oneToOneCourses = {
+  TEN_HOURS: '10 hours',
+  FIVE_HOURS: '5 hours',
+  ONE_HOUR: '1 hour',
 };
 courseTypeFlows[courseTypes.ONE_TO_ONE] = {
   summaryPage: {
@@ -118,6 +120,7 @@ courseTypeFlows[courseTypes.ONE_TO_ONE] = {
         price: "£300",
         note: "Save £50",
         buttonText: "Select",
+        value: oneToOneCourses.TEN_HOURS
       },
       {
         color: "robbins-egg-blue",
@@ -126,23 +129,38 @@ courseTypeFlows[courseTypes.ONE_TO_ONE] = {
         price: "£150",
         note: "Save £25",
         buttonText: "Select",
+        value: oneToOneCourses.FIVE_HOURS
       },
       {
         color: "camelot",
         title: "1 hour",
         price: "£35",
         buttonText: "Select",
+        value: oneToOneCourses.ONE_HOUR
       }
     ],
   },
   checkoutPage: {
-    baseChargePrice: 34400,
-    chargePrice: 20000,
-    priceSum: {
-      calculation: '2-day intensive',
-      previousTotal: '£200',
-      total: '£200',
-    }
+    chargeOptions: [
+      {
+        value: oneToOneCourses.TEN_HOURS,
+        baseChargePrice: 35000,
+        chargePrice: 30000,
+        title: "10 x 1-to-1 Classes",
+      },
+      {
+        value: oneToOneCourses.FIVE_HOURS,
+        baseChargePrice: 17500,
+        chargePrice: 15000,
+        title: '5 x 1-to-1 Classes',
+      },
+      {
+        value: oneToOneCourses.ONE_HOUR,
+        baseChargePrice: 3500,
+        chargePrice: 3500,
+        title: '1-to-1 Class',
+      }
+    ],
   }
 };
 

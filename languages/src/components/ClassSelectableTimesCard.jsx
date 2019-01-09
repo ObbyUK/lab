@@ -2,7 +2,6 @@ import React from 'react';
 
 import './class-selectable-times-card.less';
 // Components
-import PriceSum from './PriceSum.jsx';
 import Icon from './Icon.jsx';
 import { Location } from './Icons.jsx';
 import DateButton from './../components/DateButton.jsx';
