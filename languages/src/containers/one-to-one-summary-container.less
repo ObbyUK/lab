@@ -11,6 +11,7 @@
     position: relative;
     z-index: 1;
     margin-bottom: 30px;
+    position: relative;
     @media (min-width:@sm-width) {
       margin-bottom: -30px;
     }
@@ -28,9 +29,16 @@
   }
 
   &__header-image {
-    display: none;
-    height: 250px;
+    position: absolute;
+    // display: none;
+    height: 150px;
+    z-index: -1;
+    left: 135px;
+    bottom: -20px;
+    transform: rotate(0deg);
     @media (min-width:@sm-width) {
+      position: static;
+      height: 250px;
       display: block;
     }
   }
