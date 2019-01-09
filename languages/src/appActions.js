@@ -6,6 +6,7 @@ const actions = {
   VIEW_CHOOSE_DATE_PAGE: 'chooseDatePageHasBeenViewed',
   VIEW_CLASS_SUMMARY_PAGE: 'classSummaryPageHasBeenViewed',
   VIEW_CHECKOUT_PAGE: 'checkoutPageHasBeenViewed',
+  VIEW_ONE_TO_ONE_SUMMARY_PAGE: 'oneToOnePageSummaryHasBeenViewed',
 
   // FORM COMMENCMENT ACTIONS
   CHOOSE_LANGUAGE: 'userSelectsLanguageToLearn',
@@ -22,6 +23,7 @@ const actions = {
   TYPE_EMAIL: 'userTypesEmail',
   CHOOSE_DATE: 'userSelectsAClassDate',
   BOOK_YOUR_SPOT: 'userClicksBookYourSpot',
+  BOOK_ONE_TO_ONE: 'usersBooksOneToOne',
   
   
   SUBMIT_EMAIL: 'userSubmitsEmailAndInformation',
@@ -64,6 +66,10 @@ export const viewClassSummaryPageAction = () => ({
 
 export const viewCheckoutPageAction = () => ({
   type: actions.VIEW_CHECKOUT_PAGE,
+});
+
+export const viewOneToOneSummaryPage = () => ({
+  type: actions.VIEW_ONE_TO_ONE_SUMMARY_PAGE,
 });
 
 // FORM COMMENCMENT ACTIONS
@@ -144,6 +150,11 @@ export const chooseDateAction = (details) => ({
 
 export const bookYourSpotAction = () => ({
   type: actions.BOOK_YOUR_SPOT,
+});
+
+export const bookOneToOneAction = (courseType) => ({
+  type: actions.BOOK_ONE_TO_ONE,
+  payload: { courseType }
 });
 
 // SUBMIT EMAIL

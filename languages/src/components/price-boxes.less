@@ -1,0 +1,26 @@
+@import './../styles/variables';
+
+.price-boxes {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 25px;
+  
+  @media (min-width:@md-width) {
+    padding: 60px 40px;
+    flex-wrap: nowrap;
+  }
+
+  &__box {
+    width: 100%;
+    margin-bottom: 15px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (min-width:@md-width) {
+      width: 32%;
+    }
+  }
+}

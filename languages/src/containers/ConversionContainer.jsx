@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { mergeAll, contains } from 'ramda';
 
 import './conversion-container.less';
-// Actions & Style
+// Actions & Constants
 import { 
   chooseDateAction,
   viewChooseDatePageAction,

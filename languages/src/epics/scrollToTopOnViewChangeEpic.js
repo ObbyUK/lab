@@ -10,7 +10,7 @@ var pageChangingActions = [
   appActions.SUBMIT_QUESTIONS,
   appActions.CHOOSE_DATE,
   appActions.SUBMIT_PAYMENT_COMPLETE,
-  appActions.BOOK_YOUR_SPOT,
+  appActions.BOOK_ONE_TO_ONE,
   appActions.SUBMIT,
 ];
 

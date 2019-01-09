@@ -4,13 +4,13 @@ import sendEmailOnSubmitEmailEpic from './epics/sendEmailOnSubmitEmailEpic';
 import scrollToTopOnViewChangeEpic from './epics/scrollToTopOnViewChangeEpic';
 import submitPaidSubscriptionOnSubmitPaymentEpic from './epics/submitPaidSubscriptionOnSubmitPaymentEpic';
 import submitChargeOnSubmitPaymentEpic from './epics/submitChargeOnSubmitPaymentEpic';
-import redirectToPageOnActionsEpic from './epics/redirectToPageOnActionsEpic';
+import redirectToRouteEpic from './epics/redirectToRouteEpic';
 import updateStateOnRouteChange from './epics/updateStateOnRouteChange';
 import analyticsEpic from './epics/analyticsEpic';
 
 export default combineEpics(
   analyticsEpic,
-  redirectToPageOnActionsEpic,
+  redirectToRouteEpic,
   sendEmailOnSubmitEmailEpic,
   submitChargeOnSubmitPaymentEpic,
   scrollToTopOnViewChangeEpic,

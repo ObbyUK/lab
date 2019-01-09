@@ -12,6 +12,7 @@ export const appStatuses = {
   ANWSERING_QUESTIONS: 'userIsAnwseringQuestions',
   VIEWING_CLASS_OPTIONS: 'userIsViewingClassOptions',
   VIEWING_CLASS_SUMMARY: 'userIsViewingChosenClassSummary',
+  VIEWING_ONE_TO_ONE_CLASS_SUMMARY: 'userIsVewingOneToOneClassSummary',
   CHECKING_OUT: 'userIsCheckingOut',
   SUBMITTING: 'userIsSubmitting',
   TRANSACTION_COMPLETE: 'userHasCompletedTransaction',
@@ -38,13 +39,14 @@ export default class AppState {
     this.time = [];
     this.locations = [];
     
-    // Selected date data
+    // Selected checkout data
     this.date = null;
     this.dates = [];
     this.region = null;
     this.address = null;
     this.startTime = null;
     this.endTime = null;
+    this.oneToOneCourse = null;
 
     // Checkout info
     this.name = "";

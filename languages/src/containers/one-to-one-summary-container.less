@@ -1,0 +1,120 @@
+@import './../styles/variables';
+
+.one-to-one-summary-container {
+
+  margin-top: 100px;
+
+  &__header {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px;
+    position: relative;
+    @media (min-width:@sm-width) {
+      margin-bottom: -30px;
+    }
+  }
+
+  &__title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif;
+    font-size: @m-heading-mobile;
+    line-height: @m-heading-lh;
+    font-weight: 600;
+    margin: 0;
+    @media (min-width:@md-width) {
+      font-size: 35px;
+    }
+  }
+
+  &__header-image {
+    display: none;
+    @media (min-width:@sm-width) {
+      height: 250px;
+      display: block;
+    }
+  }
+
+
+  &__bullet-point-section {
+    background-color: @humming-bird;
+    padding: 50px 40px;
+  }
+
+  &__card-wrap {
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__card {
+    padding: 0;
+  }
+
+  &__price-boxes {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 25px;
+    
+    @media (min-width:@md-width) {
+      padding: 60px 40px;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__price-box {
+    width: 100%;
+    margin-bottom: 15px;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (min-width:@md-width) {
+      width: 32%;
+    }
+  }
+
+  &__money-back-section {
+    border-bottom: 1px solid @alto;
+    padding: 30px 25px;
+    @media (min-width:@sm-width) {
+      padding: 40px;
+    }
+  }
+
+  &__card-title {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: 28px;
+    line-height: 1.25;   
+    margin: 0 0 30px;
+    font-weight: 600;
+    text-align: center;
+
+    @media (min-width:@sm-width) {
+      text-align: left;
+    }
+  }
+
+  &__card-description {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: @l-paragraph;
+    line-height: @l-paragraph-lh;
+    margin: 0 0 23px;
+  }
+
+  &__card-section {
+  }
+
+  &__image-text-list-banner-image {
+    width: 250px;
+    padding-top: 50px;
+    @media (min-width:@md-width) {
+      width: auto;
+      padding-top: 0;
+    }
+  }
+
+}

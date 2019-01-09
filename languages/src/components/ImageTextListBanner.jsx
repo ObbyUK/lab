@@ -9,16 +9,25 @@ export default (props) => (
       image-text-list-banner__body
       ${props.reverse && 'image-text-list-banner__body--reverse'}
     `}>
+      
       {/* IMAGE */}
-      <div className="image-text-list-banner__image-wrap col-sm-12 col-md-6">
+      <div className={`
+        image-text-list-banner__image-wrap
+        ${props.natrualImageSize ? 'image-text-list-banner__image-wrap--natrual' : ''}
+      `}>
         <img 
-          className="image-text-list-banner__image" 
+          className={`
+            image-text-list-banner__image
+            ${props.natrualImageSize ? 'image-text-list-banner__image--natrual' : ''}
+            ${props.imageClassName||''}
+          `}
           alt={props.title} 
           src={props.image}
         />
       </div>
+
       {/* BULLET POINTS */}
-      <div className="image-text-list-banner__text col-sm-12 col-md-6">
+      <div className="image-text-list-banner__text">
         <BulletPointSalesBox 
           title={props.title}
           description={props.description}

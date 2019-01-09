@@ -9,7 +9,6 @@ import './app-page.less';
 import { viewAnyPageAction } from './../appActions';
 import { appStatuses } from './../AppState';
 // Components & Containers
-import SalesBar from './../components/SalesBar.jsx';
 import Menu from './../components/Menu.jsx';
 import Footer from './../components/Footer.jsx';
 import FormContainer from './../containers/FormContainer.jsx';
@@ -21,6 +20,7 @@ import LanguageLandingContainer from '../containers/LanguageLandingContainer.jsx
 import LandingContainer from '../containers/LandingContainer.jsx';
 import TransactionCompleteContainer from '../containers/TransactionCompleteContainer.jsx';
 import SubmitEmailPopupContainer from '../containers/SubmitEmailPopupContainer.jsx';
+import OneToOneSummaryContainer from '../containers/OneToOneSummaryContainer.jsx';
 
 const mapStateToProps = (state) => ({
   status: state.app.status,
@@ -91,6 +91,11 @@ class AppPageContainer extends React.Component {
           {this.props.status === appStatuses.VIEWING_CLASS_OPTIONS &&
             <ConversionContainer/>
           }
+
+          {this.props.status === appStatuses.VIEWING_ONE_TO_ONE_CLASS_SUMMARY &&
+            <OneToOneSummaryContainer />
+          }
+          
           
           {this.props.status === appStatuses.VIEWING_CLASS_SUMMARY &&
             <ClassSummaryContainer/>

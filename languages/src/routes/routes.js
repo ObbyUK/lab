@@ -18,6 +18,7 @@ export default (
 
       {/* FLOW PAGES */}
       <Route exact path="/learn" component={AppPage} />
+      <Route exact path="/one-to-one" component={AppPage} />
       <Route exact path="/choose" component={AppPage} />
       <Route exact path="/summary" component={AppPage} />
       <Route exact path="/checkout" component={AppPage} />

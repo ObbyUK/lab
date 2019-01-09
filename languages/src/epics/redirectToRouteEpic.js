@@ -6,14 +6,13 @@ import 'rxjs/add/operator/map';
 import appActions from '../appActions';
 import courseTypes from '../constants/courseTypes';
 
-var eventToUrlName = {}
-
 var pageChangingActions = [
   appActions.CHOOSE_LANGUAGE,
   appActions.SELECT_COURSE_TYPE,
   appActions.SUBMIT_QUESTIONS,
   appActions.CHOOSE_DATE,
   appActions.BOOK_YOUR_SPOT,
+  appActions.BOOK_ONE_TO_ONE,
 ];
 
 export default (action$, store) =>
@@ -35,6 +34,15 @@ export default (action$, store) =>
         };
         var urlString = queryString.stringify(urlData);
         window.history.pushState(urlData, 'learn', "/learn?"+urlString);
+      }
+      
+      if (type === appActions.SELECT_COURSE_TYPE && payload.type === courseTypes.ONE_TO_ONE) {
+        var urlData = {
+          language: store.value.app.selectedLanguage,
+          courseType: store.value.app.courseType
+        };
+        var urlString = queryString.stringify(urlData);
+        window.history.pushState(urlData, 'one-to-one', "/one-to-one?"+urlString);
       }
 
       if (type === appActions.SUBMIT_QUESTIONS) {
@@ -64,7 +72,6 @@ export default (action$, store) =>
         var urlString = queryString.stringify(urlData);
         window.history.pushState(urlData, 'summary', "/summary?"+urlString);
       }
-      
       if (type === appActions.BOOK_YOUR_SPOT) {
         var urlData = {
           language: store.value.app.selectedLanguage,
@@ -76,6 +83,18 @@ export default (action$, store) =>
           dates: store.value.app.dates,
           startTime: store.value.app.startTime,
           endTime: store.value.app.endTime
+        };
+        var urlString = queryString.stringify(urlData);
+        window.history.pushState(urlData, 'checkout', "/checkout?"+urlString);
+      }
+      
+      if (type === appActions.BOOK_ONE_TO_ONE) {
+        var urlData = {
+          language: store.value.app.selectedLanguage,
+          courseType: store.value.app.courseType,
+          skillLevel: store.value.app.skillLevel,
+          region: store.value.app.region,
+          oneToOneCourse: store.value.app.oneToOneCourse,
         };
         var urlString = queryString.stringify(urlData);
         window.history.pushState(urlData, 'checkout', "/checkout?"+urlString);

@@ -2,60 +2,56 @@
 
 .price-sum {
 
-  font-family: "Founders Grotesk", 'Arial', sans-serif; 
-  display: block;
-
-  @media (min-width:@sm-width) {
+  &__top-row {
+    width: 100%;
     display: flex;
+    justify-content: flex-end;
+    
   }
 
-  &--small {
+  &__previous-total {
+    color: @gray;
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
     font-size: @l-paragraph;
     line-height: 1;
-  }
-  
-  &--normal {
-    font-size: 28px;
-    line-height: 1.25;   
+    font-weight: 400;
   }
 
-  &__pill {
-    border-radius: 5px;
-    background-color: @cruise;
+  &__save-text {
+    color: @gray;
     font-family: "Founders Grotesk", 'Arial', sans-serif; 
-    font-size: @xxsm-paragraph;
-    line-height: @xxsm-paragraph-lh;
-    padding: 3px 8px;
-    font-weight: 500;
-    margin-right: 10px;
-    display: none;
+    font-size: @l-paragraph;
+    line-height: 1;
+    font-weight: 400;
+  }
 
-    @media (min-width:@sm-width) {
-      display: block;
-    }
+  &__middle-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
 
-    &--mobile {
-      display: block;
-      margin-top: 10px;
-      @media (min-width:@sm-width) {
-        display: none;
-      } 
-    }
+  &__bottom-row {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
   }
   
   &__calculation {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: 28px;
+    line-height: 1.25;   
     font-weight: 400;
     color: @ebony-clay;
     margin-right: 6px;
     font-weight: 600;
   }
 
-  &__previous-total {
-    color: @ebony-clay;
-    padding-right: 10px;
-  }
-
   &__total {
+    font-family: "Founders Grotesk", 'Arial', sans-serif; 
+    font-size: 28px;
+    line-height: 1.25;   
     color: @robbins-egg-blue;
     font-weight: 600;
 

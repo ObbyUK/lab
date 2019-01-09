@@ -2,35 +2,43 @@ import React from 'react';
 
 import './price-sum.less';
 
+// Lib
+import Int__FormattedMoney from './../lib/Int__FormattedMoney';
+
+const isThereADiscount = (props) => props.previousTotal !== props.total;
+
 export default (props) => (
   <div 
     className={`
       price-sum
-      price-sum--${props.size||'normal'}
     `}
   > 
-    {props.pillText &&
-      <span className="price-sum__pill">
-        {props.pillText}
-      </span>
-    }
-    <span className="price-sum__calculation">
-      {props.calculation} =
-    </span>
-    {props.previousTotal &&
-      <span className="price-sum__total price-sum__total--line-through">
-        <span className="price-sum__previous-total">
-          {props.previousTotal}
+    {/* PREVIOUS PRICE */}
+    {isThereADiscount(props) &&
+      <div className="price-sum__top-row">
+        <span className="price-sum__total price-sum__total--line-through">
+          <span className="price-sum__previous-total">
+            {Int__FormattedMoney(props.previousTotal)}
+          </span>
         </span>
-      </span>
+      </div>
     }
-    <span className="price-sum__total">
-      {props.total}
-    </span>
-    {props.pillText &&
-    <span className="price-sum__pill price-sum__pill--mobile">
-      {props.pillText}
-    </span>
+    {/* CALCULATION TEXT && TOTAL */}
+    <div className="price-sum__middle-row">
+      <span className="price-sum__calculation">
+        {props.calculation}
+      </span>
+      <span className="price-sum__total">
+        {Int__FormattedMoney(props.total)}
+      </span>
+    </div>
+    {/* YOUVE SAVED TEXT */}
+    {isThereADiscount(props) &&
+      <div className="price-sum__bottom-row">
+        <span className="price-sum__save-text">
+          Save {Int__FormattedMoney(props.previousTotal - props.total)}
+        </span>
+      </div>
     }
   </div>
 );
