@@ -68,7 +68,7 @@ export const viewCheckoutPageAction = () => ({
   type: actions.VIEW_CHECKOUT_PAGE,
 });
 
-export const viewOneToOneSummaryPage = () => ({
+export const viewOneToOneSummaryPageAction = () => ({
   type: actions.VIEW_ONE_TO_ONE_SUMMARY_PAGE,
 });
 

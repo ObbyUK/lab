@@ -16,6 +16,7 @@ import conversionEventFactory from '../analyticsEvents/conversionEventFactory';
 import bookNowEventFactory from '../analyticsEvents/bookNowEventFactory';
 import choseDateEventFactory from '../analyticsEvents/choseDateEventFactory';
 import chooseLanguageEventFactory from '../analyticsEvents/chooseLanguageEventFactory';
+import chooseOneToOneCourse from '../analyticsEvents/chooseOneToOneCourse';
 
 const trackedActions = [
   actions.VIEW_LANDING_PAGE,
@@ -25,6 +26,7 @@ const trackedActions = [
   actions.VIEW_READY_TO_LEARN_PAGE,
   actions.VIEW_CHOOSE_DATE_PAGE,
   actions.VIEW_CLASS_SUMMARY_PAGE,
+  actions.VIEW_ONE_TO_ONE_SUMMARY_PAGE,
   actions.VIEW_CHECKOUT_PAGE,
   actions.SUBMIT_PAYMENT_COMPLETE,
 ];
@@ -75,6 +77,12 @@ export default (action$, store) => {
         propEq('type', actions.VIEW_CLASS_SUMMARY_PAGE), 
         EventFactoryArray__TypeAndAppState__EventObjectsArray([
           choseDateEventFactory
+        ])
+      ],
+      [
+        propEq('type', actions.VIEW_ONE_TO_ONE_SUMMARY_PAGE), 
+        EventFactoryArray__TypeAndAppState__EventObjectsArray([
+          chooseOneToOneCourse
         ])
       ],
       [
