@@ -7,15 +7,15 @@ export default ({ state, payload }) => {
       {
         order_id: payload.charge.id,
         affiliation: 'Obby',
-        total: payload.course.base,
-        revenue: payload.course.final,
-        discount: payload.course.discount,
+        total: payload.course.base/100,
+        revenue: payload.course.final/100,
+        discount: payload.course.discount/100,
         currency: 'GBP',
         products: [
           {
             product_id: payload.product.id,
             name: payload.product.name,
-            price: payload.course.final,
+            price: payload.course.final/100,
             quantity: 1,
             category: 'Learning',
             url: window.location.href
