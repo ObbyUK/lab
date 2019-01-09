@@ -87,7 +87,7 @@ class OneToOneSummaryContainer extends React.Component {
                 image="images/teachers-circles.png"
                 rating={10}
                 title="Our teachers are trusted worldwide."
-                text="Louise has been teaching Spanish since 2008 when she moved from Barcelona to London. Since then, she helped hundreds of people transition from zero Spanish to fluent. Her teaching style is simple, organised and fun."
+                text="We believe you should only learn from the best. That is why we go through the effort of finding the best language teachers with relevant qualifications and years of teaching experience. We think our teachers are great and think you will too - so much so that if you aren’t satisfied we will give you your money back with no questions asked!"
               />
               {/* REVIEWS */}
               <ReviewsBanner />
