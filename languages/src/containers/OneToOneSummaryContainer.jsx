@@ -6,7 +6,8 @@ import { mergeAll } from 'ramda';
 import { courseTypeFlows } from './../constants/flows';
 import { languageNames } from '../constants/languages';
 import {
-  bookOneToOneAction
+  bookOneToOneAction,
+  viewOneToOneSummaryPageAction
 } from '../appActions';
 // Components
 import BlankCard from './../components/BlankCard.jsx';
@@ -25,7 +26,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch, state) => ({
-  bookOneToOne: (courseType) => dispatch(bookOneToOneAction(courseType))
+  bookOneToOne: (courseType) => dispatch(bookOneToOneAction(courseType)),
+  viewOneToOneSummaryPage: () => dispatch(viewOneToOneSummaryPageAction())
 });
 
 const mergeProps = (stateProps, dispatchProps) => mergeAll([
@@ -39,6 +41,7 @@ const mergeProps = (stateProps, dispatchProps) => mergeAll([
 class OneToOneSummaryContainer extends React.Component {
 
   componentDidMount() {
+    this.props.viewOneToOneSummaryPage();
   }
 
   render () {
